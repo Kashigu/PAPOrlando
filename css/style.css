@@ -363,8 +363,19 @@ ol {
 
 .header-section .logo {
 	float: left;
-	margin-right: 115px;
+	width: 75px;
+	height: 65px;;
 }
+
+
+
+direita{
+
+	float:right;
+
+}
+
+
 
 .header-section .logo a {
 	display: inline-block;
