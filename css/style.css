@@ -1745,6 +1745,13 @@ direita{
 	border-radius: 50%;
 }
 
+.client-reviews a{
+	color:deeppink;
+	background-color: transparent;
+	text-decoration: none;
+
+}
+
 .about-left .client-reviews h3 {
 	color: #242424;
 	font-weight: 700;
@@ -2053,7 +2060,13 @@ direita{
 /*---------------------
   Contact
 -----------------------*/
+.contact-form a{
 
+	color: white;
+	background-color: transparent;
+	text-decoration: none;
+
+}
 .contact-form {
 	margin-bottom: 42px;
 }
