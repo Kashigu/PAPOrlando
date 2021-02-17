@@ -45,8 +45,8 @@
             </nav>
             <div class="header-right">
                 <div class="user-access">
-                    <a href="Login_v3/registar.html">Registar/</a>
-                    <a href="Login_v3/index.html">Conectar</a>
+                    <a data-toggle="modal" data-target="#registar">Registar/</a>
+                    <a data-toggle="modal" data-target="#login">Iniciar Sessão</a>
                 </div>
             <div id="mobile-menu-wrap"></div>
         </div>
@@ -279,6 +279,83 @@
     <script src="js/jquery.nice-select.min.js"></script>
     <script src="js/mixitup.min.js"></script>
     <script src="js/main.js"></script>
+
+    <div class="container">
+
+        <!-- Modal Login-->
+        <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="perfil.html" class="contact-form">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="login">Iniciar Sessão</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <div class="modal-body">
+                                <div class="col-lg-6 mt-3 center">
+                                    <input type="text" placeholder="Nome de Utilizador">
+                                </div>
+                                <div class="col-lg-6 mt-3 center">
+                                    <input type="password" placeholder="Palavra-Passe">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer mt-2">
+                            <div class="col-lg-8 center">
+                                <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
+                            </div>
+                            <div class="col-lg-4 center">
+                                <button type="button" class="btn btn-primary mt-2">Entrar</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Modal Registar-->
+        <div class="modal fade" id="registar" tabindex="-1" aria-labelledby="registar" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="perfil.html" class="contact-form">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="registar">Registar</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <div class="modal-body">
+                                <div class="col-lg-6 mt-3 center">
+                                    <input type="text" placeholder="Nome de Utilizador">
+                                </div>
+                                <div class="col-lg-6 mt-3 center">
+                                    <input type="email" placeholder="Email">
+                                </div>
+                                <div class="col-lg-6 mt-3 center">
+                                    <input type="password" placeholder="Palavra-Passe">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer mt-2">
+                            <div class="col-lg-8 center">
+                                <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
+                            </div>
+                            <div class="col-lg-4 center">
+                                <button type="button" class="btn btn-primary mt-2">Entrar</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
