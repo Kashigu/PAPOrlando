@@ -23,6 +23,16 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <style>
+        #comentar{
+            display: none;
+        }
+
+    </style>
+    <script>
+
+    </script>
+
 </head>
 
 <body>
@@ -178,104 +188,51 @@
             </div>
         </div>
     </section>
-    <div class="col-lg-4 offset-lg-1">
-        <div class="intro-share">
-            <div class="share-btn">
-                <a href="comentar.html">Fazer Comentário</a>
-            </div>
-    <!-- About Secton End -->
+    <div class="container" id="comentar">
+        <div class="row">
+            <div class="col-lg-12">
 
-    <!-- Footer Section Begin -->
-    <!--<footer class="footer-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <form action="#" class="newslatter-form">
-                        <input type="text" placeholder="Your email address">
-                        <button type="submit">Subscribe to our Newsletter</button>
-                    </form>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-widget">
-                        <h4>Usefull Links</h4>
-                        <ul>
-                            <li>About us</li>
-                            <li>Testimonials</li>
-                            <li>How it works</li>
-                            <li>Create an account</li>
-                            <li>Our Services</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-widget">
-                        <h4>Categories</h4>
-                        <ul>
-                            <li>Hotels</li>
-                            <li>Restaurant</li>
-                            <li>Spa & resorts</li>
-                            <li>Concert & Events</li>
-                            <li>Bars & Pubs</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-widget">
-                        <h4>Usefull Links</h4>
-                        <ul>
-                            <li>About us</li>
-                            <li>Testimonials</li>
-                            <li>How it works</li>
-                            <li>Create an account</li>
-                            <li>Our Services</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-widget">
-                        <h4>From the Blog</h4>
-                        <div class="single-blog">
-                            <div class="blog-pic">
-                                <img src="img/f-blog-1.jpg" alt="">
-                            </div>
-                            <div class="blog-text">
-                                <h6>10 Best clubs in town</h6>
-                                <span>March 27, 2019</span>
-                            </div>
+                <form action="criado.html" class="contact-form">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input type="text" placeholder="Titulo do Comentário">
                         </div>
-                        <div class="single-blog">
-                            <div class="blog-pic">
-                                <img src="img/f-blog-2.jpg" alt="">
-                            </div>
-                            <div class="blog-text">
-                                <h6>10 Best clubs in town</h6>
-                                <span>March 27, 2019</span>
-                            </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <textarea placeholder="Comentário"></textarea>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row footer-bottom">
-                <div class="col-lg-5 order-2 order-lg-1">
-                    <div class="copyright"><p class="text-white">
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-           <!-- </p></div>
-                </div>
-                <div class="col-lg-7 text-center text-lg-right order-1 order-lg-2">
-                    <div class="footer-menu">
-                        <a href="#">Home</a>
-                        <a href="#">Explore</a>
-                        <a href="#">More Cities</a>
-                        <a href="#">News</a>
-                        <a href="#">Contact</a>
+                    <div class="row">
+                        <div class="col-lg-12 mt-3 centrinho">
+                            <button type="submit">Fazer Comentário</button>
+                        </div>
                     </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-lg-4 offset-lg-1">
+            <div class="intro-share">
+                <div class="share-btn">
+                    <button id="btnComentar" onclick="mostra();">Fazer Comentário</button>
                 </div>
             </div>
         </div>
+
+    </div>
+
+
+    <!-- About Secton End -->
+
+    <!-- Footer Section Begin -->
+  <footer >
+
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+
     </footer>
     <!-- Footer Section End -->
 
@@ -288,6 +245,12 @@
     <script src="js/jquery.nice-select.min.js"></script>
     <script src="js/mixitup.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        function mostra(){
+            $('#comentar').toggle();
+            $('#btnComentar').hide();
+        }
+    </script>
 </body>
 
 </html>

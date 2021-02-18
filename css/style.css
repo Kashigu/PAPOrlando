@@ -1763,7 +1763,7 @@ direita{
 	margin-bottom: 45px;
 }
 
-.intro-share .share-btn a {
+.intro-share .share-btn a, button {
 	color: #fff;
 	display: inline-block;
 	font-size: 16px;
