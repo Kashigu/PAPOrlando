@@ -194,7 +194,11 @@ p {
 
 
 
+.contact-form centrinho{
 
+	text-align: center;
+
+}
 
 .center {
 	display: block;
@@ -2210,6 +2214,30 @@ direita{
 .contact-form textarea:focus {
 	border-color: #FF5581;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .contact-form button {
 	color: #fff;
