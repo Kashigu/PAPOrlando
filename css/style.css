@@ -1805,6 +1805,8 @@ direita {
     font-size: 14px;
     color: #fff;
     letter-spacing: 0.2px;
+    margin-right: 12px;
+    margin-bottom: 15px;
 }
 
 .intro-share {
