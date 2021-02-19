@@ -193,7 +193,7 @@ p {
 
 
 .ratings:not(:checked) > label {
-     float: right;
+    float: right;
     width: 1em;
     padding: 0 .1em;
     overflow: hidden;
@@ -205,17 +205,17 @@ p {
     text-shadow: 1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0, 0, 0, .5);
 }
 
- .ratings:not(:checked) > label:before {
-     content: '★ ';
+.ratings:not(:checked) > label:before {
+    content: '★ ';
 }
 
- .ratings > input:checked ~ label {
-     color: gold;
+.ratings > input:checked ~ label {
+    color: gold;
     text-shadow: gold;
 }
 
- .ratings:not(:checked) > label:hover, .ratings:not(:checked) > label:hover ~ label {
-     color: gold;
+.ratings:not(:checked) > label:hover, .ratings:not(:checked) > label:hover ~ label {
+    color: gold;
     text-shadow: gold;
 }
 
@@ -224,35 +224,32 @@ p {
     text-shadow: gold;
 }
 
- .ratings > label:active {
-     position: relative;
+.ratings > label:active {
+    position: relative;
     top: 2px;
     left: 2px;
 }
 
- /* end of Lea's code */ /* * Clearfix from html5 boilerplate */ .clearfix:before, .clearfix:after {
+/* end of Lea's code */ /* * Clearfix from html5 boilerplate */
+.clearfix:before, .clearfix:after {
     content: " "; /* 1 */
     display: table; /* 2 */
 }
 
- .clearfix:after {
+.clearfix:after {
     clear: both;
 }
 
-/* * For IE 6/7 only * Include this rule to trigger hasLayout and contain floats. */ .clearfix {
-    *
-    zoom: 1;
+/* * For IE 6/7 only * Include this rule to trigger hasLayout and contain floats. */
+.clearfix {
+    *zoom: 1;
 }
 
-/* my stuff */ #status, button {
-                   margin: 20px 0;
-               }
-
-.contact-form centrinho {
-
-    text-align: center;
-
+/* my stuff */
+#status, button {
+    margin: 20px 0;
 }
+
 
 .center {
     display: block;
