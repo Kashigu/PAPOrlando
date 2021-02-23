@@ -257,6 +257,17 @@ p {
     margin-right: auto;
 }
 
+
+.normal{
+    display: inline;
+    width: 280px;
+    height: 250px;
+}
+
+
+
+
+
 .reduzido {
     display: inline;
     width: 75px;
