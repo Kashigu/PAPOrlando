@@ -260,6 +260,7 @@ p {
 }
 
 
+
 .normal{
     display: inline;
     width: 280px;
@@ -378,6 +379,7 @@ ol {
 .spad {
     padding-top: 100px;
     padding-bottom: 100px;
+
 }
 
 .text-white h1,
@@ -677,6 +679,7 @@ direita {
     display: inline-block;
     width: calc(41% - 20px);
 
+
 }
 
 .filter-search .location-search1 { /* tem haver com o local select */
@@ -692,7 +695,7 @@ direita {
     margin-bottom: 12px;
 }
 
-.filter-search .location-search .nice-select {
+.filter-search .location-search .nice-select { /* tamanho da barra de select */
     width: calc(100% - 20px);
     font-size: 16px;
     color: #fff;
@@ -701,20 +704,21 @@ direita {
     line-height: 46px;
     border-radius: 0;
     padding-left: 31px;
+
 }
 
 .filter-search .location-search .nice-select:after {
     display: none;
 }
 
-.filter-search .location-search .nice-select .option {
+.filter-search .location-search .nice-select .option { /* padding dentro do select */
     padding-left: 30px;
     padding-right: 29px;
     padding-top: 8px;
     padding-bottom: 8px;
 }
 
-.filter-search .location-search .nice-select .list {
+.filter-search .location-search .nice-select .list { /*background da seleção */
     background-color: #1D1D1D;
     border-radius: 0;
     margin-top: 1px;
