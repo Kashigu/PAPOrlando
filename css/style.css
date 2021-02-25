@@ -259,6 +259,13 @@ p {
     height: 250px;
 }
 
+.meio{
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 
 .normal{
