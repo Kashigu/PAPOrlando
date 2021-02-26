@@ -889,14 +889,13 @@ direita {
 }
 
 .categories-left {
-    width: 45.8%;
+    width: 49.4%;
     float: left;
-    padding-right: 30px;
 }
 
 .categories-right {
-    width: 54.2%;
-    float: left;
+    width: 49.4%;
+    float: right;
 }
 
 .categories-item {
