@@ -682,16 +682,16 @@ direita {
     height: 150px;
 }
 
-.filter-search .location-search { /* tem haver com o local select */
+.filter-search .location-search { /* tem haver com a barra do select */
     display: inline-block;
     width: calc(41% - 20px);
 
 
 }
 
-.filter-search .location-search1 { /* tem haver com o local select */
+.filter-search1 .location-search1 { /* tem haver com a barra para escrever o local  */
     display: inline-block;
-    width: calc(82% - 20px);
+    width: calc(81% - 20px);
 
 }
 
@@ -702,10 +702,17 @@ direita {
     margin-bottom: 12px;
 }
 
-.filter-search .location-search .nice-select { /* tamanho da barra de select */
+.filter-search1 .location-search1 h5 { /* texto em cima da input box*/
+    color: #fff;
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+.filter-search .location-search .nice-select { /* tem haver com a barra de select */
     width: calc(100% - 20px);
     font-size: 16px;
-    color: #fff;
+    color: #fff; /* tem haver com a cor das letras da barra de select */
     background: transparent;
     height: 50px;
     line-height: 46px;
@@ -713,6 +720,29 @@ direita {
     padding-left: 31px;
 
 }
+
+.filter-search1 .location-search1 .nice-select1 { /* tem haver com a barra de select */
+    width: calc(100% - 20px);
+    font-size: 20px;
+    color: #fff; /* tem haver com a cor das letras da barra de select */
+    font-weight: bold;
+    background: transparent;
+    height: 50px;
+    line-height: 46px;
+    border-radius: 0;
+    padding-left: 31px;
+
+}
+
+
+
+
+
+
+
+
+
+
 
 .filter-search .location-search .nice-select:after {
     display: none;
@@ -748,6 +778,12 @@ direita {
 .nice-select.open,
 .nice-select:focus {
     border-color: #fff;
+}
+
+.nice-select1:active, /* TEM HAVER COM A COR DA BARRA DE PESQUISA EM TEXTO */
+.nice-select1.open,
+.nice-select1:focus {
+    border-color: #FF5581;
 }
 
 .nice-select .option:hover,
