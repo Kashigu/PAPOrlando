@@ -793,6 +793,13 @@ direita {
     color: #fff;
 }
 
+.nice-select2 .option:hover, /* tem haver com o "Ordenar por" No procurar.html*/
+.nice-select2 .option.focus,
+.nice-select2 .option.selected.focus {
+    background-color: #FF5581;
+    color: black;
+}
+
 /*---------------------
   Trending Restaurant
 -----------------------*/
@@ -1640,7 +1647,7 @@ direita {
     margin-bottom: 45px;
 }
 
-.arrange-select span { /*texto do arranjar por*/
+.arrange-select span { /*texto do ordenar por*/
     display: inline-block;
     color: #787878;
     font-size: 16px;
@@ -1658,7 +1665,7 @@ direita {
     width: 130px;
 }
 
-.arrange-select .nice-select .current { /* o que está escrito dentro da caixa "novo ou velho" */
+.arrange-select .nice-select2 .current { /* o que está escrito dentro da caixa "novo ou velho" */
     display: none;
 }
 
@@ -1669,8 +1676,8 @@ direita {
 }
 
 .arrange-select .nice-select:after { /* seta para abrir a escolha entre "novo e velho"*/
-    border-bottom: 2px solid #CFCFCF;
-    border-right: 2px solid #CFCFCF;
+    border-bottom: 2px solid #FF5581;
+    border-right: 2px solid #FF5581;
     height: 8px;
     width: 8px;
     top: 42%;
