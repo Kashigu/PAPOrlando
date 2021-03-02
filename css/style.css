@@ -718,7 +718,7 @@ direita {
     line-height: 46px;
     border-radius: 0;
     padding-left: 31px;
-
+    z-index: 2;
 }
 
 .filter-search1 .location-search1 .nice-select1 { /* tem haver com a barra de select */
@@ -944,7 +944,7 @@ direita {
 .categories-item {
     position: relative;
     margin-bottom: 26px;
-    z-index: 1;
+    z-index: 0;
     height: 360px;
     padding: 22px;
 }
