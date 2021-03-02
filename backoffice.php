@@ -124,7 +124,7 @@ toponovo();
                     <div class="categories-item set-bg" data-setbg="img/categories/cafezinho.jpg">
                         <a href="img/categories/cafezinho.jpg" class="img-hover pop-up"><img src="img/zoom.png" alt=""></a>
                         <div class="categories-text">
-                            <h4>Cafés</h4>
+                            <h4>CafÃ©s</h4>
                             <p>2373 Listados</p>
                             <a href="procurar.html">Ver Todos</a>
                         </div>

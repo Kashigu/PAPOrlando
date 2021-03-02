@@ -20,7 +20,7 @@ toponovo();
                             <h2>Ratoeira</h2>
                             <h4>Marinha Grande</h4>
                             <p>Encontre alguns dos melhores sitios do Mundo</p>
-                            <div class="open">Abre amanh„ ‡s 10 da manh„</div>
+                            <div class="open">Abre amanh√£ √†s 10 da manh√£</div>
                             <div class="closed">Fechado agora</div>
                         </div>
                     </div>
@@ -28,7 +28,7 @@ toponovo();
                 <div class="col-lg-4 offset-lg-1">
                     <div class="intro-share">
                         <div class="share-btn">
-                            <a href="definicoesEstabelecimento.php">DefiniÁıes</a>
+                            <a href="definicoesEstabelecimento.php">Defini√ß√µes</a>
                         </div>
                         <div class="share-icon">
                             <!--<a href="#"><i class="fa fa-map-marker"></i></a> -->
@@ -72,7 +72,7 @@ toponovo();
                                     class="fa fa-play"></i></a>
                         </div>
                         <div class="client-reviews">
-                            <h3>Revis„o</h3>
+                            <h3>Revis√£o</h3>
                             <div class="reviews-item">
                                 <div class="rating">
                                     <i class="fa fa-star"></i>
@@ -123,7 +123,7 @@ toponovo();
                                 <img src="img/pin.png" alt="">
                             </div>
                             <div class="contact-text">
-                                <h4>InformaÁ„o</h4>
+                                <h4>Informa√ß√£o</h4>
                                 <span>Main Road , No 25/11</span>
                                 <ul>
                                     <li>+34 556788 3221</li>
@@ -135,11 +135,11 @@ toponovo();
                             <h4>Horas de Trabalho</h4>
                             <ul>
                                 <li>Segunda-Feira<span>08:00 - 22:00</span></li>
-                                <li>TerÁa-Feira<span>08:00 - 22:00</span></li>
+                                <li>Ter√ßa-Feira<span>08:00 - 22:00</span></li>
                                 <li>Quarta-Feira<span>08:00 - 22:00</span></li>
                                 <li>Quinta-Feira<span>08:00 - 22:00</span></li>
                                 <li>Sexta-Feira <span>08:00 - 22:00</span></li>
-                                <li>S·bado<span>08:00 - 22:00</span></li>
+                                <li>S√°bado<span>08:00 - 22:00</span></li>
                                 <li>Domingo<span>Closed</span></li>
                             </ul>
                         </div>

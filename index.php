@@ -15,29 +15,29 @@ top();
                             <h5>Procurar Categoria</h5>
                             <select class="ca-search">
                                 <option>Restaurantes</option>
-                                <option>Cafés</option>
+                                <option>CafÃ©s</option>
                                 <option>Hoteis</option>
                             </select>
                         </div>
                         <div class="location-search col-lg-5">
-                            <h5>Tua Localização</h5>
+                            <h5>Tua LocalizaÃ§Ã£o</h5>
                             <select class="lo-search">
                                 <option>Viana do Castelo</option>
                                 <option>Braga</option>
                                 <option>Porto</option>
                                 <option>Vila Real</option>
-                                <option>Bragança</option>
+                                <option>BraganÃ§a</option>
                                 <option>Aveiro</option>
                                 <option>Viseu</option>
                                 <option>Guarda</option>
                                 <option>Coimbra</option>
                                 <option>Leiria</option>
                                 <option>Castelo Branco</option>
-                                <option>Santarém</option>
+                                <option>SantarÃ©m</option>
                                 <option>Portalegre</option>
                                 <option>Lisboa</option>
-                                <option>Setúbal</option>
-                                <option>Évora</option>
+                                <option>SetÃºbal</option>
+                                <option>Ã‰vora</option>
                                 <option>Beja</option>
                                 <option>Faro</option>
                             </select>
@@ -167,7 +167,7 @@ top();
                     <div class="categories-item set-bg" data-setbg="img/categories/cafezinho.jpg">
                         <a href="img/categories/cafezinho.jpg" class="img-hover pop-up"><img src="img/zoom.png" alt=""></a>
                         <div class="categories-text">
-                            <h4>Cafés</h4>
+                            <h4>CafÃ©s</h4>
                             <p>2373 Listados</p>
                             <a href="procurar.php">Ver Todos</a>
                         </div>
@@ -299,15 +299,15 @@ top();
                 <div class="app-text">
                     <div class="section-title">
                         <h2>Arranja a App Gratuita Agora!</h2>
-                        <p>Procura Restaurantes, Cafés, Hoteis de todo Portugal Continental</p>
+                        <p>Procura Restaurantes, CafÃ©s, Hoteis de todo Portugal Continental</p>
                     </div>
-                    <p>Melhor aplicativo para procurar Restaurantes, Cafés, Hoteis a pouca distância onde se encontra,
+                    <p>Melhor aplicativo para procurar Restaurantes, CafÃ©s, Hoteis a pouca distÃ¢ncia onde se encontra,
                         sem contar
-                        com a procura dos melhor preços para satisfazer as suas necessidades financeiras</p>
+                        com a procura dos melhor preÃ§os para satisfazer as suas necessidades financeiras</p>
                     <ul>
-                        <li><img src="img/check-icon.png" alt="">Fácil Acesso</li>
-                        <li><img src="img/check-icon.png" alt="">Fácil Procura</li>
-                        <li><img src="img/check-icon.png" alt="">Fácil Reservas
+                        <li><img src="img/check-icon.png" alt="">FÃ¡cil Acesso</li>
+                        <li><img src="img/check-icon.png" alt="">FÃ¡cil Procura</li>
+                        <li><img src="img/check-icon.png" alt="">FÃ¡cil Reservas
                         </li>
                     </ul>
                     <a href="#"><img src="img/apple-store.jpg" alt=""></a>

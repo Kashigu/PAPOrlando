@@ -98,7 +98,7 @@ topsegundo();
                                 <img src="img/pin.png" alt="">
                             </div>
                             <div class="contact-text">
-                                <h4>Informação</h4>
+                                <h4>InformaÃ§Ã£o</h4>
                                 <span>Main Road , No 25/11</span>
                                 <ul>
                                     <li>+34 556788 3221</li>
@@ -110,11 +110,11 @@ topsegundo();
                             <h4>Horas de Trabalho</h4>
                             <ul>
                                 <li>Segunda-Feira<span>08:00 - 22:00</span></li>
-                                <li>Terça-Feira<span>08:00 - 22:00</span></li>
+                                <li>TerÃ§a-Feira<span>08:00 - 22:00</span></li>
                                 <li>Quarta-Feira<span>08:00 - 22:00</span></li>
                                 <li>Quinta-Feira<span>08:00 - 22:00</span></li>
                                 <li>Sexta-Feira <span>08:00 - 22:00</span></li>
-                                <li>Sábado<span>08:00 - 22:00</span></li>
+                                <li>SÃ¡bado<span>08:00 - 22:00</span></li>
                                 <li>Domingo<span>Closed</span></li>
                             </ul>
                         </div>

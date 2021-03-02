@@ -24,29 +24,29 @@ toprocura();
                         <h5>Procurar Categoria</h5>
                         <select class="ca-search">
                             <option>Restaurantes</option>
-                            <option>CafÈs</option>
+                            <option>Caf√©s</option>
                             <option>Hoteis</option>
                         </select>
                     </div>
                     <div class="location-search col-lg-5">
-                        <h5>Tua LocalizaÁ„o</h5>
+                        <h5>Tua Localiza√ß√£o</h5>
                         <select class="lo-search">
                             <option>Viana do Castelo</option>
                             <option>Braga</option>
                             <option>Porto</option>
                             <option>Vila Real</option>
-                            <option>BraganÁa</option>
+                            <option>Bragan√ßa</option>
                             <option>Aveiro</option>
                             <option>Viseu</option>
                             <option>Guarda</option>
                             <option>Coimbra</option>
                             <option>Leiria</option>
                             <option>Castelo Branco</option>
-                            <option>SantarÈm</option>
+                            <option>Santar√©m</option>
                             <option>Portalegre</option>
                             <option>Lisboa</option>
-                            <option>Set˙bal</option>
-                            <option>…vora</option>
+                            <option>Set√∫bal</option>
+                            <option>√âvora</option>
                             <option>Beja</option>
                             <option>Faro</option>
                         </select>
@@ -78,7 +78,7 @@ toprocura();
                              </div>
                              <div class="co-item">
                                  <input type="radio">
-                                 <label>CafÈs</label>
+                                 <label>Caf√©s</label>
                              </div>
                              <div class="co-item">
                                  <input type="radio">
@@ -148,7 +148,7 @@ toprocura();
                         </div>
                     </div>
                     <div class="distance-filter">
-                        <h3>Dist‚ncia</h3>
+                        <h3>Dist√¢ncia</h3>
                         <div class="distance-option">
                             <div class="do-item">
                                 <input type="radio">
@@ -180,7 +180,7 @@ toprocura();
                         <form action="procurar.php" class="arrange-select nice-select2">
                             <span>Ordenar por</span>
                             <select>
-                                <option>Relev‚ncia</option>
+                                <option>Relev√¢ncia</option>
                                 <option>Recente</option>
                             </select>
                         </form>
@@ -196,7 +196,7 @@ toprocura();
                                 <h5>Ratoeira</h5>
                                 <span>Marinha Grande , No 25/11</span>
                                 <p>Fusce urna quam, euismod sit</p>
-                                <div class="open tomorrow">Abre amanh„ ‡s 10 da manh„</div>
+                                <div class="open tomorrow">Abre amanh√£ √†s 10 da manh√£</div>
                             </div>
                         </a>
                     </div>

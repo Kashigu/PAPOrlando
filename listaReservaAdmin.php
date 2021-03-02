@@ -19,7 +19,7 @@ toponovo();
                     <tr>
                         <th width="15%">Data</th>
                         <th width="10%">Hora</th>
-                        <th colspan="3">Observações</th>
+                        <th colspan="3">ObservaÃ§Ãµes</th>
                     </tr>
                     <tr>
                         <td>12-02-2021</td>

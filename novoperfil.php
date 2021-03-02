@@ -31,7 +31,7 @@ toponovo();
                 <div class="col-lg-4 ">
                     <div class="intro-share">
                         <div class="share-btn">
-                            <a href="DefPerfil.php">Definições</a>
+                            <a href="DefPerfil.php">DefiniÃ§Ãµes</a>
                             <a  href="listaReserva.php">Ver Reservas</a>
                             <a class="mt-2" href="criarEstabelecimento.php">Criar Estabelecimento</a>
                         </div>
@@ -53,7 +53,7 @@ toponovo();
                 <div class="col-lg-8">
                     <div class="about-left">
                         <div class="client-reviews">
-                            <h3>Comentários Feitos</h3>
+                            <h3>ComentÃ¡rios Feitos</h3>
                             <div class="reviews-item">
                                 <div class="rating">
                                     <i class="fa fa-star"></i>

@@ -28,10 +28,10 @@ toponovo();
                             <input type="password" placeholder="Nova Palavra-passe">
                         </div>
                         <div class="col-lg-6">
-                            <input type="password" placeholder="Comfirmação Nova Palavra-passe">
+                            <input type="password" placeholder="ComfirmaÃ§Ã£o Nova Palavra-passe">
                         </div>
                         <div class="col-lg-6">
-                            <button type="submit">Confirmar alterações </button>
+                            <button type="submit">Confirmar alteraÃ§Ãµes </button>
                         </div>
                 </form>
                 <div class="col-lg-6  contact-form">

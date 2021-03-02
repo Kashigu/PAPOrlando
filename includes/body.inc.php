@@ -86,7 +86,7 @@ function top()
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
 
         <!-- Css Styles -->
-        <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> Sem ele tenho o modal com ele n„o tenho-->
+        <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> Sem ele tenho o modal com ele n√£o tenho-->
         <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
         <link rel="stylesheet" href="css/flaticon.css" type="text/css">
@@ -114,7 +114,7 @@ function top()
                 <ul>
                     <li class="active"><a href="index.php">Portugal</a></li>
                     <li><a href="procurar.php">Procurar</a></li>
-                    <!--<li><a href="cafe.html">CafÈs</a></li>
+                    <!--<li><a href="cafe.html">Caf√©s</a></li>
                     <li><a href="hoteis.html">Hoteis</a></li>-->
                     <!--<li><a href="criarEstabelecimento.html">Contactos</a></li>-->
                 </ul>
@@ -122,7 +122,7 @@ function top()
             <div class="header-right">
                 <div class="user-access">
                     <a data-toggle="modal" data-target="#registar">Registar/</a>
-                    <a data-toggle="modal" data-target="#login">Iniciar Sess„o</a>
+                    <a data-toggle="modal" data-target="#login">Iniciar Sess√£o</a>
                     <div id="mobile-menu-wrap"></div>
                 </div>
     </header>
@@ -161,7 +161,7 @@ function topsegundo()
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
 
         <!-- Css Styles -->
-        <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> Sem ele tenho o modal com ele n„o tenho-->
+        <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> Sem ele tenho o modal com ele n√£o tenho-->
         <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
         <link rel="stylesheet" href="css/flaticon.css" type="text/css">
@@ -189,7 +189,7 @@ function topsegundo()
                 <ul>
                     <li><a href="index.php">Portugal</a></li>
                     <li><a href="procurar.php">Procurar</a></li>
-                    <!--<li><a href="cafe.html">CafÈs</a></li>
+                    <!--<li><a href="cafe.html">Caf√©s</a></li>
                     <li><a href="hoteis.html">Hoteis</a></li>-->
                     <!--<li><a href="criarEstabelecimento.html">Contactos</a></li>-->
                 </ul>
@@ -197,7 +197,7 @@ function topsegundo()
             <div class="header-right">
                 <div class="user-access">
                     <a data-toggle="modal" data-target="#registar">Registar/</a>
-                    <a data-toggle="modal" data-target="#login">Iniciar Sess„o</a>
+                    <a data-toggle="modal" data-target="#login">Iniciar Sess√£o</a>
                     <div id="mobile-menu-wrap"></div>
                 </div>
     </header>
@@ -238,7 +238,7 @@ function topsegundo()
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
 
         <!-- Css Styles -->
-        <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> Sem ele tenho o modal com ele n„o tenho-->
+        <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> Sem ele tenho o modal com ele n√£o tenho-->
         <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
         <link rel="stylesheet" href="css/flaticon.css" type="text/css">
@@ -266,7 +266,7 @@ function topsegundo()
                 <ul>
                     <li><a href="index.php">Portugal</a></li>
                     <li class="active"><a href="procurar.php">Procurar</a></li>
-                    <!--<li><a href="cafe.html">CafÈs</a></li>
+                    <!--<li><a href="cafe.html">Caf√©s</a></li>
                     <li><a href="hoteis.html">Hoteis</a></li>-->
                     <!--<li><a href="criarEstabelecimento.html">Contactos</a></li>-->
                 </ul>
@@ -274,7 +274,7 @@ function topsegundo()
             <div class="header-right">
                 <div class="user-access">
                     <a data-toggle="modal" data-target="#registar">Registar/</a>
-                    <a data-toggle="modal" data-target="#login">Iniciar Sess„o</a>
+                    <a data-toggle="modal" data-target="#login">Iniciar Sess√£o</a>
                     <div id="mobile-menu-wrap"></div>
                 </div>
     </header>
@@ -343,7 +343,7 @@ function topsegundo()
                 <ul>
                     <li><a href="index.php">Portugal</a></li>
                     <li><a href="procurar.php">Procurar</a></li>
-                    <li > <a href="backoffice.php">Gest„o do Site </a> </li>
+                    <li > <a href="backoffice.php">Gest√£o do Site </a> </li>
                 </ul>
             </nav>
         </div>
@@ -369,7 +369,7 @@ function bottomsingle()
                 <form action="single-listing.php" class="contact-form" id="ratingForm">
                     <div class="row">
                         <div class="col-lg-12">
-                            <input type="text" placeholder="Titulo do Coment·rio">
+                            <input type="text" placeholder="Titulo do Coment√°rio">
                         </div>
                         <div id="status"></div>
                         <fieldset class="ratings ">
@@ -388,12 +388,12 @@ function bottomsingle()
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <textarea placeholder="Coment·rio"></textarea>
+                            <textarea placeholder="Coment√°rio"></textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12 mt-3 centrinho">
-                            <button type="submit">Fazer Coment·rio</button>
+                            <button type="submit">Fazer Coment√°rio</button>
                         </div>
                     </div>
                 </form>
@@ -405,7 +405,7 @@ function bottomsingle()
         <div class="col-lg-4 offset-lg-1">
             <div class="intro-share">
                 <div class="share-btn">
-                    <button id="btnComentar" onclick="mostra();">Fazer Coment·rio</button>
+                    <button id="btnComentar" onclick="mostra();">Fazer Coment√°rio</button>
                 </div>
             </div>
         </div>
@@ -458,7 +458,7 @@ function bottom()
                 <div class="modal-content">
                     <form action="novoperfil.php" class="contact-form">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="login">Iniciar Sess„o</h5>
+                            <h5 class="modal-title" id="login">Iniciar Sess√£o</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>

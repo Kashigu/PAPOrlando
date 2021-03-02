@@ -30,13 +30,13 @@ toponovo();
                         <div class="row">
                             <div class="col-lg-4 ">
 
-                                <label class="check">Café
+                                <label class="check">CafÃ©
                                     <input type="radio" checked="checked" name="radio">
                                     <span class="checkmark"></span>
                                 </label>
 
 
-                               <!-- <label for="cafe">Café
+                               <!-- <label for="cafe">CafÃ©
                                 <input type="radio" name="gender" id="cafe" value="cafe"></label> -->
                             </div>
                             <div class="col-lg-4 ">
@@ -76,7 +76,7 @@ toponovo();
                              </div>
                              <div class="col-lg-6">
                                  <input type="text" placeholder="Rua">
-                                 <input type="text" placeholder="Número">
+                                 <input type="text" placeholder="NÃºmero">
                                  <input type="email" placeholder="Email do Estabelecimento">
                              </div>
                              <div class="col-lg-6">
@@ -91,7 +91,7 @@ toponovo();
                                  </div>
                                  <div class="row">
                                      <div class="col-5">
-                                         <label>Sábado</label>
+                                         <label>SÃ¡bado</label>
                                      </div>
                                      <div class="col-7">
                                          <input type="text" placeholder="8:00 - 22:00">
@@ -115,11 +115,11 @@ toponovo();
                                          <select>
                                              <option>Sem descanso</option>
                                              <option>Segunda-Feira</option>
-                                             <option>Terça-Feira</option>
+                                             <option>TerÃ§a-Feira</option>
                                              <option>Quarta-Feira</option>
                                              <option>Quinta-Feira</option>
                                              <option>Sexta-Feira</option>
-                                             <option>Sábado</option>
+                                             <option>SÃ¡bado</option>
                                              <option>Domingo</option>
                                          </select>
                                      </div>
@@ -136,7 +136,7 @@ toponovo();
 
                              </div>
                             <div class="col-lg-6">
-                                <label>Logótipo:    </label>
+                                <label>LogÃ³tipo:    </label>
                                 <input type="file">
 
                             </div>
@@ -145,7 +145,7 @@ toponovo();
                                 <input type="file">
                             </div>
                             <div class="col-lg-6">
-                                <label>Posição do Estabelecimento no Google Earth:   </label>
+                                <label>PosiÃ§Ã£o do Estabelecimento no Google Earth:   </label>
                                 <input type="file">
 
                             </div>

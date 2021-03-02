@@ -4,7 +4,7 @@ toposingle();
 
 ?>
 
-<!--                                                 EST¡ COM PROBLEMAS ESTA P¡GINA                                                      -->
+<!--                                                 EST√Å COM PROBLEMAS ESTA P√ÅGINA                                                      -->
 <div class="hero-listing set-bg" data-setbg="img/ratoeira1.jpg">
 </div>
 <!-- Hero Section End -->
@@ -21,7 +21,7 @@ toposingle();
                             <h2>Ratoeira</h2>
                             <h4>Marinha Grande</h4>
                             <p>Encontre alguns dos melhores sitios do Mundo</p>
-                            <div class="open">Abre amanh„ ‡s 10 da manh„</div>
+                            <div class="open">Abre amanh√£ √†s 10 da manh√£</div>
                             <div class="closed">Fechado agora</div>
                         </div>
                     </div>
@@ -73,7 +73,7 @@ toposingle();
                                     class="fa fa-play"></i></a>
                         </div>
                         <div class="client-reviews">
-                            <h3>Revis„o</h3>
+                            <h3>Revis√£o</h3>
                             <div class="reviews-item">
                                 <div class="rating">
                                     <i class="fa fa-star"></i>
@@ -124,7 +124,7 @@ toposingle();
                                 <img src="img/pin.png" alt="">
                             </div>
                             <div class="contact-text">
-                                <h4>InformaÁ„o</h4>
+                                <h4>Informa√ß√£o</h4>
                                 <span>Main Road , No 25/11</span>
                                 <ul>
                                     <li>+34 556788 3221</li>
@@ -136,11 +136,11 @@ toposingle();
                             <h4>Horas de Trabalho</h4>
                             <ul>
                                 <li>Segunda-Feira<span>08:00 - 22:00</span></li>
-                                <li>TerÁa-Feira<span>08:00 - 22:00</span></li>
+                                <li>Ter√ßa-Feira<span>08:00 - 22:00</span></li>
                                 <li>Quarta-Feira<span>08:00 - 22:00</span></li>
                                 <li>Quinta-Feira<span>08:00 - 22:00</span></li>
                                 <li>Sexta-Feira <span>08:00 - 22:00</span></li>
-                                <li>S·bado<span>08:00 - 22:00</span></li>
+                                <li>S√°bado<span>08:00 - 22:00</span></li>
                                 <li>Domingo<span>Closed</span></li>
                             </ul>
                         </div>
