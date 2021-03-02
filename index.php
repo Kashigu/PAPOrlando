@@ -147,7 +147,7 @@ top();
                 <div class="categories-text">
                     <h4>Restaurantes</h4>
                     <p>2373 Listados</p>
-                    <a href="procurar.html">Ver Todos</a>
+                    <a href="procurar.php">Ver Todos</a>
                 </div>
             </div>
         </div>
@@ -169,7 +169,7 @@ top();
                         <div class="categories-text">
                             <h4>Cafés</h4>
                             <p>2373 Listados</p>
-                            <a href="procurar.html">Ver Todos</a>
+                            <a href="procurar.php">Ver Todos</a>
                         </div>
                     </div>
                 </div>
@@ -179,7 +179,7 @@ top();
                         <div class="categories-text">
                             <h4>Hoteis</h4>
                             <p>2373 Listados</p>
-                            <a href="procurar.html">Ver Todos</a>
+                            <a href="procurar.php">Ver Todos</a>
                         </div>
                     </div>
                 </div>
