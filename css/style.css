@@ -1502,6 +1502,17 @@ direita {
     border: 1px solid #FF5581;
 }
 
+.search-filter .filter-search2 button {
+    color: #fff;
+    background: #FF5581;
+    font-size: 16px;
+    position: absolute;
+    right: 55px;
+    top: 54px;
+    padding: 13px 65px;
+    cursor: pointer;
+    border: 1px solid #FF5581;
+}
 /*---------------------
   Filter Section
 -----------------------*/

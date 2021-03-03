@@ -19,7 +19,7 @@ toprocura();
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form action="" class="filter-search filter-search1">
+                <form action="procurar.php" class="filter-search filter-search1">
                     <div class="category-search col-lg-5">
                         <h5>Procurar Categoria</h5>
                         <select class="ca-search">
