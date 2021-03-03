@@ -62,7 +62,7 @@ toponovo();
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                 </div>
-                                <a href="single-listing.html"><h5>?A Great Place?</h5></a>
+                                <a href="single-listing.php"><h5>?A Great Place?</h5></a>
                                 <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae
                                     massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class
                                     aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
@@ -76,7 +76,7 @@ toponovo();
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                 </div>
-                                <a href="single-listing.html"><h5>?A Great Place?</h5></a>
+                                <a href="single-listing.php"><h5>?A Great Place?</h5></a>
                                 <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae
                                     massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class
                                     aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
