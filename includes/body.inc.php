@@ -1,7 +1,13 @@
 <?php
+include_once("config.inc.php");
+$con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+$con->set_charset("utf8");
+?>
+
+<?php
 function toposingle()
 {
-?>
+    ?>
 
     <!DOCTYPE html>
     <html lang="zxx">
@@ -26,7 +32,8 @@ function toposingle()
         <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
         <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
         <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <style>
             #comentar {
@@ -63,16 +70,19 @@ function toposingle()
     </header>
 
 
-<?php
+    <?php
 }
-
-function top()
-{
 
 ?>
 
+<?php
+function top()
+{
+
+    ?>
+
     <!DOCTYPE html>
-    <html lang="zxx">
+<html lang="zxx">
 
     <head>
         <meta charset="UTF-8">
@@ -95,10 +105,11 @@ function top()
         <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
         <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
         <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
-    <body>
+<body>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -129,25 +140,18 @@ function top()
     <!-- Header End -->
 
 
-
-
-
-
-
-
-
-<?php
+    <?php
 }
 ?>
 
 <?php
 function topsegundo()
-    {
+{
 
     ?>
 
     <!DOCTYPE html>
-    <html lang="zxx">
+<html lang="zxx">
 
     <head>
         <meta charset="UTF-8">
@@ -170,10 +174,11 @@ function topsegundo()
         <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
         <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
         <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
-    <body>
+<body>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -204,27 +209,19 @@ function topsegundo()
     <!-- Header End -->
 
 
-
-
-
-
-
-
-
     <?php
 }
 ?>
 
 
-
 <?php
-    function toprocura()
-    {
+function toprocura()
+{
 
     ?>
 
     <!DOCTYPE html>
-    <html lang="zxx">
+<html lang="zxx">
 
     <head>
         <meta charset="UTF-8">
@@ -247,10 +244,11 @@ function topsegundo()
         <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
         <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
         <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
-    <body>
+<body>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -281,13 +279,6 @@ function topsegundo()
     <!-- Header End -->
 
 
-
-
-
-
-
-
-
     <?php
 }
 ?>
@@ -295,7 +286,7 @@ function topsegundo()
 <?php
 function topocriado()
 {
-?>
+    ?>
 
     <!DOCTYPE html>
 <html lang="zxx">
@@ -320,7 +311,8 @@ function topocriado()
         <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
         <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
         <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     </head>
 
@@ -340,7 +332,7 @@ function topocriado()
                 <ul>
                     <li><a href="index.html">Portugal</a></li>
                     <li><a href="procurar.html">Procurar</a></li>
-                    <li> <a href="backoffice.html">Gestão do Site </a> </li>
+                    <li><a href="backoffice.html">Gestão do Site </a></li>
                 </ul>
             </nav>
 
@@ -365,13 +357,13 @@ function topocriado()
             </div>
     </header>
 
-<?php
-    }
-    ?>
+    <?php
+}
+?>
 
 <?php
-    function toponovo()
-    {
+function toponovo()
+{
 
     ?>
     <!DOCTYPE html>
@@ -397,7 +389,8 @@ function topocriado()
         <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
         <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
         <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     </head>
 
@@ -417,7 +410,7 @@ function topocriado()
                 <ul>
                     <li><a href="index.php">Portugal</a></li>
                     <li><a href="procurar.php">Procurar</a></li>
-                    <li > <a href="backoffice.php">Gestão do Site </a> </li>
+                    <li><a href="backoffice.php">Gestão do Site </a></li>
                 </ul>
             </nav>
         </div>
@@ -429,8 +422,8 @@ function topocriado()
     </header>
 
     <?php
-    }
-    ?>
+}
+?>
 
 <?php
 function bottomsingle()
@@ -448,15 +441,20 @@ function bottomsingle()
                         <div id="status"></div>
                         <fieldset class="ratings ">
                             <legend>Rating:</legend>
-                            <input type="radio" id="star5" name="ratings" value="5"/><label for="star5" title="Muito Bom">5
-                                stars</label> <input type="radio" id="star4" name="ratings" value="4"/><label for="star4"
-                                                                                                              title="Bom">4
-                                stars</label> <input type="radio" id="star3" name="ratings" value="3"/><label for="star3"
-                                                                                                              title="Normal">3
-                                stars</label> <input type="radio" id="star2" name="ratings" value="2"/><label for="star2"
-                                                                                                              title="Mau">2
-                                stars</label> <input type="radio" id="star1" name="ratings" value="1"/><label for="star1"
-                                                                                                              title="Horrivel">1
+                            <input type="radio" id="star5" name="ratings" value="5"/><label for="star5"
+                                                                                            title="Muito Bom">5
+                                stars</label> <input type="radio" id="star4" name="ratings" value="4"/><label
+                                    for="star4"
+                                    title="Bom">4
+                                stars</label> <input type="radio" id="star3" name="ratings" value="3"/><label
+                                    for="star3"
+                                    title="Normal">3
+                                stars</label> <input type="radio" id="star2" name="ratings" value="2"/><label
+                                    for="star2"
+                                    title="Mau">2
+                                stars</label> <input type="radio" id="star1" name="ratings" value="1"/><label
+                                    for="star1"
+                                    title="Horrivel">1
                                 star</label></fieldset>
                         <div class="clearfix"></div>
                     </div>
@@ -487,15 +485,17 @@ function bottomsingle()
     </div>
 
 
-<?php
+    <?php
 }
+
 function bottom()
 {
-?>
+    ?>
 
-    Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+    Copyright &copy;
+    <script>document.write(new Date().getFullYear());</script>
     All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a
-            href="https://colorlib.com" target="_blank">Colorlib</a>
+        href="https://colorlib.com" target="_blank">Colorlib</a>
     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
     <!--   </p></div>
            </div>
@@ -606,6 +606,7 @@ function bottom()
             </div>
         </div>
     </div>
-<?php
-    }
-    ?>
+    <?php
+}
+
+?>

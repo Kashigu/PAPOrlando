@@ -10,7 +10,7 @@ top();
                 <div class="hero-text">
 
                     <h1>Portugal</h1>
-                    <form action="procurar.html" class="filter-search filter-search1">
+                    <form action="procurar.php" class="filter-search filter-search1">
                         <div class="category-search col-lg-5">
                             <h5>Procurar Categoria</h5>
                             <select class="ca-search">

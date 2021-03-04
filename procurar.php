@@ -216,7 +216,7 @@ toprocura();
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="arrange-items" href="single-listing.html">
+                        <a class="arrange-items" href="hotel.php">
                             <div class="arrange-pic">
                                 <img src="img/arrange/arrange-3.jpg" alt="">
                                 <div class="rating">4.9</div>
@@ -231,7 +231,7 @@ toprocura();
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="arrange-items" href="single-listing.html">
+                        <a class="arrange-items" href="restaurante.php">
                             <div class="arrange-pic">
                                 <img src="img/arrange/arrange-4.jpg" alt="">
                                 <div class="rating">4.9</div>
