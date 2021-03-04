@@ -20,17 +20,18 @@ toponovo();
         <div class="col-12 mt-4">
             <table class="table table-striped table-hover">
                 <tr>
-                    <th width="15%">Nome</th>
-                    <th width="10%">Imagem</th>
-                    <th colspan="3">Estabelecimentos criados</th>
+                    <th width="3%">Nome</th>
+                    <th width="3%">Imagem</th>
+                    <th width="3%">Estabelecimentos Criados</th>
+                    <th colspan="3" class="centertext">Opções</th>
 
                 </tr>
                 <tr>
                     <td>Kashigu</td>
                     <td>imagem</td>
-                    <td>4</td>
-                    <td width="5%">Editar</td>
-                    <td width="5%">Eliminar</td>
+                    <td>42</td>
+                    <td width="5%" class="centertext">Editar</td>
+                    <td width="5%" class="centertext">Eliminar</td>
                 </tr>
             </table>
         </div>
@@ -38,51 +39,54 @@ toponovo();
         <div class="col-12 mt-4">
             <table class="table table-striped table-hover">
                 <tr>
-                    <th width="15%">Nome</th>
-                    <th width="10%">Imagem</th>
-                    <th colspan="3">Estabelecimentos criados</th>
+                    <th width="3%">Nome</th>
+                    <th width="3%">Imagem</th>
+                    <th width="3%">Estabelecimentos Criados</th>
+                    <th colspan="3" class="centertext">Opções</th>
 
                 </tr>
                 <tr>
-                    <td>Master Perv3rt</td>
+                    <td>Kashigu</td>
                     <td>imagem</td>
-                    <td>4</td>
-                    <td width="5%">Editar</td>
-                    <td width="5%">Eliminar</td>
+                    <td>42</td>
+                    <td width="5%" class="centertext">Editar</td>
+                    <td width="5%" class="centertext">Eliminar</td>
                 </tr>
             </table>
         </div>
         <div class="col-12 mt-4">
             <table class="table table-striped table-hover">
                 <tr>
-                    <th width="15%">Nome</th>
-                    <th width="10%">Imagem</th>
-                    <th colspan="3">Estabelecimentos criados</th>
+                    <th width="3%">Nome</th>
+                    <th width="3%">Imagem</th>
+                    <th width="3%">Estabelecimentos Criados</th>
+                    <th colspan="3" class="centertext">Opções</th>
 
                 </tr>
                 <tr>
-                    <td>Master Perv3rt</td>
+                    <td>Kashigu</td>
                     <td>imagem</td>
-                    <td>4</td>
-                    <td width="5%">Editar</td>
-                    <td width="5%">Eliminar</td>
+                    <td>42</td>
+                    <td width="5%" class="centertext">Editar</td>
+                    <td width="5%" class="centertext">Eliminar</td>
                 </tr>
             </table>
         </div>
         <div class="col-12 mt-4">
             <table class="table table-striped table-hover">
                 <tr>
-                    <th width="15%">Nome</th>
-                    <th width="10%">Imagem</th>
-                    <th colspan="3">Estabelecimentos criados</th>
+                    <th width="3%">Nome</th>
+                    <th width="3%">Imagem</th>
+                    <th width="3%">Estabelecimentos Criados</th>
+                    <th colspan="3" class="centertext">Opções</th>
 
                 </tr>
                 <tr>
-                    <td>Master Perv3rt</td>
+                    <td>Kashigu</td>
                     <td>imagem</td>
-                    <td>4</td>
-                    <td width="5%">Editar</td>
-                    <td width="5%">Eliminar</td>
+                    <td>42</td>
+                    <td width="5%" class="centertext">Editar</td>
+                    <td width="5%" class="centertext">Eliminar</td>
                 </tr>
             </table>
         </div>

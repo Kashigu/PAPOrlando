@@ -20,17 +20,20 @@ toponovo();
     <div class="col-12 mt-4">
         <table class="table table-striped table-hover">
             <tr>
-                <th width="15%">Nome</th>
-                <th width="10%">Imagem</th>
-                <th colspan="3">Criador</th>
+                <th width="3%">Nome</th>
+                <th width="3%">Imagem</th>
+                <th width="3%">Criador</th>
+                <th width="10%">Tipo</th>
+                <th colspan="3"  class="centertext">Opções</th>
 
             </tr>
             <tr>
                 <td>Ratoeira</td>
                 <td>imagem</td>
                 <td>Kashigu</td>
-                <td width="5%">Editar</td>
-                <td width="5%">Eliminar</td>
+                <td>Restaurante</td>
+                <td width="5%" class="centertext">Editar</td>
+                <td width="5%" class="centertext">Eliminar</td>
             </tr>
         </table>
     </div>
@@ -38,51 +41,60 @@ toponovo();
     <div class="col-12 mt-4">
         <table class="table table-striped table-hover">
             <tr>
-                <th width="15%">Nome</th>
-                <th width="10%">Imagem</th>
-                <th colspan="3">Criador</th>
+                <th width="3%">Nome</th>
+                <th width="3%">Imagem</th>
+                <th width="3%">Criador</th>
+                <th width="10%">Tipo</th>
+                <th colspan="3"  class="centertext">Opções</th>
 
             </tr>
             <tr>
-                <td>Pizzaria sem Nome</td>
+                <td>Ratoeira</td>
                 <td>imagem</td>
-                <td>Master Perv3rt</td>
-                <td width="5%">Editar</td>
-                <td width="5%">Eliminar</td>
+                <td>Kashigu</td>
+                <td>Restaurante</td>
+                <td width="5%" class="centertext">Editar</td>
+                <td width="5%" class="centertext">Eliminar</td>
             </tr>
         </table>
     </div>
     <div class="col-12 mt-4">
         <table class="table table-striped table-hover">
             <tr>
-                <th width="15%">Nome</th>
-                <th width="10%">Imagem</th>
-                <th colspan="3">Criador</th>
+                <th width="3%">Nome</th>
+                <th width="3%">Imagem</th>
+                <th width="3%">Criador</th>
+                <th width="10%">Tipo</th>
+                <th colspan="3"  class="centertext">Opções</th>
 
             </tr>
             <tr>
-                <td>Master Perv3rt</td>
+                <td>Pizzaria Sem Nome</td>
                 <td>imagem</td>
-                <td>4</td>
-                <td width="5%">Editar</td>
-                <td width="5%">Eliminar</td>
+                <td>Master Perv3rt</td>
+                <td>Restaurante</td>
+                <td width="5%" class="centertext">Editar</td>
+                <td width="5%" class="centertext">Eliminar</td>
             </tr>
         </table>
     </div>
     <div class="col-12 mt-4">
         <table class="table table-striped table-hover">
             <tr>
-                <th width="15%">Nome</th>
-                <th width="10%">Imagem</th>
-                <th colspan="3">Criador</th>
+                <th width="3%">Nome</th>
+                <th width="3%">Imagem</th>
+                <th width="3%">Criador</th>
+                <th width="10%">Tipo</th>
+                <th colspan="3"  class="centertext">Opções</th>
 
             </tr>
             <tr>
-                <td>Master Perv3rt</td>
+                <td>Ratoeira</td>
                 <td>imagem</td>
-                <td>4</td>
-                <td width="5%">Editar</td>
-                <td width="5%">Eliminar</td>
+                <td>Kashigu</td>
+                <td>Restaurante</td>
+                <td width="5%" class="centertext">Editar</td>
+                <td width="5%" class="centertext">Eliminar</td>
             </tr>
         </table>
     </div>
