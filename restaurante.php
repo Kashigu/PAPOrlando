@@ -68,7 +68,7 @@ toposingle();
                                 vehicula mauris, eget eleifend tortor magna luctus</p>
                         </div>
                         <div class="about-video">
-                            <img class="tamanho" src="img/card.jpg" alt="">
+                            <img class="tamanho1" src="img/card.jpg" alt="">
                             <a href="img/card.jpg" class="img-hover pop-up"><img src="img/zoom.png" alt=""></a>
                             </div>
             <div class="client-reviews">

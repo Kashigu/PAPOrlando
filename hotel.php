@@ -67,7 +67,7 @@ toposingle();
                                 eu sapien. Morbi ac aliquet erat. Sed dapibus, augue et malesuada maximus, neque ligula
                                 vehicula mauris, eget eleifend tortor magna luctus</p>
                         </div>
-                        <div class="about-video">
+                        <div class="about-video1">
                             <div id="carouselExampleIndicators" class="tamanho carousel slide"
                                  data-ride="carousel">
                                 <ol class=" carousel-indicators">
@@ -82,26 +82,21 @@ toposingle();
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img class=" tamanho d-block w-100" src="img/hero-bg.jpg">
-                                        <a href="img/hero-bg.jpg" class="img-hover pop-up"><img src="img/zoom.png"
-                                                                                                alt="4"></a>
+                                        <img class=" tamanho" src="img/hero-bg.jpg">
+                                        <a href="img/hero-bg.jpg" class="img-hover pop-up"></a>
 
                                     </div>
                                     <div class="carousel-item">
-                                        <img class=" tamanho d-block w-100" src="img/card.jpg">
-                                        <a href="img/card.jpg" class="img-hover pop-up"><img src="img/zoom.png" alt="3"></a>
+                                        <img class=" tamanho " src="img/card.jpg">
+                                        <a href="img/card.jpg" class="img-hover pop-up"></a>
                                     </div>
-
-
                                     <div class="carousel-item">
-                                        <img class=" tamanho d-block w-100" src="img/lisboa.jpg">
-                                        <a href="img/lisboa.jpg" class="img-hover pop-up"><img src="img/zoom.png" alt="2"></a>
+                                        <img class=" tamanho " src="img/lisboa.jpg">
+                                        <a href="img/lisboa.jpg" class="img-hover pop-up"></a>
                                     </div>
-
-
                                     <div class="carousel-item">
-                                        <img class=" tamanho d-block w-100" src="img/cant.jpg">
-                                        <a href="img/cant.jpg" class="img-hover pop-up"><img src="img/zoom.png" alt="1"></a>
+                                        <img class=" tamanho " src="img/cant.jpg">
+                                        <a href="img/cant.jpg" class="img-hover pop-up"></a>
                                     </div>
 
 
@@ -110,10 +105,15 @@ toposingle();
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Previous</span>
                                     </a>
+                                    <a class="carousel-control-next direita" href="#carouselExampleIndicators" role="button"
+                                       data-slide="next">
+                                        <span class="carousel-control-next-icon direita" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="client-reviews">
+                        <div class="client-reviews mt-5">
                             <h3>Revisão</h3>
                             <div class="reviews-item">
                                 <div class="rating">

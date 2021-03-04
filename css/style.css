@@ -734,9 +734,14 @@ direita {
 
 }
 
-.tamanho{
+.tamanho {
     display: inline;
     width: 754px;
+    height: 469px;
+}
+.tamanho1 {
+    display: inline;
+    width: 731px;
     height: 469px;
 }
 
@@ -1954,6 +1959,16 @@ direita {
 .about-left .about-video a {
     position: absolute;
     left: 0;
+    top: 50%;
+    right: 0;
+    text-align: center;
+    display: inline-block;
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+}
+
+.about-left1 .about-video1 a {
+    position: absolute;
     top: 50%;
     right: 0;
     text-align: center;
