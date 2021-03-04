@@ -734,7 +734,11 @@ direita {
 
 }
 
-
+.tamanho{
+    display: inline;
+    width: 754px;
+    height: 469px;
+}
 
 
 
