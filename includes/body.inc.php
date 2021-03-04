@@ -69,7 +69,6 @@ function toposingle()
             </div>
     </header>
 
-
     <?php
 }
 
@@ -510,7 +509,7 @@ function bottom()
            </div>
        </div>
     </div>
-    </footer>
+    </footer> -->
     <!-- Footer Section End -->
 
 
@@ -597,7 +596,7 @@ function bottom()
                                 <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
                             </div>
                             <div class="col-lg-5 meio">
-                                <button type="button" class="btn btn-primary mt-2">Entrar</button>
+                                <button type="button" class="btn btn-primary mt-2">Registar</button>
 
                             </div>
                         </div>
