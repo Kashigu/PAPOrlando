@@ -17,8 +17,6 @@ toponovo();
                 $('#contentModalDelete').html('Confirma que deseja eliminar o Distrito: ' + result + '?');
                 $('#idDistrito').val(id);
                 $('#staticBackdropDele').modal('toggle');
-                //if(confirm('Confirma que deseja eliminar a empresa:'+result+"?"))
-                // window.location="../elimina/eliminaEmpresa.php?id=" + id;
             }
         })
     };
