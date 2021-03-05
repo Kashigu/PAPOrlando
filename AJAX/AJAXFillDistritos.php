@@ -20,7 +20,7 @@ $result = mysqli_query($con, $sql);
                 <tr>
                     <th width="3%">Id</th>
                     <th width="3%">Nome</th>
-                    <th colspan="3" class="centertext">Opções</th>
+                    <th colspan="3" class="centertext">OpÃ§Ãµes</th>
                 </tr>
                 <?php
                 while ($dados = mysqli_fetch_array($result)) {

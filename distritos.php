@@ -1,34 +1,13 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include_once("includes/body.inc.php");
 toponovo();
 
 ?>
 
-
-<script>
-    function confirmaElimina(id) {
-        $.ajax({
-            url: "AJAX/AJAXGetNameDistritos.php",
-            type: "post",
-            data: {
-                idDistrito: id
-            },
-            success: function (result) {
-                $('#contentModalDelete').html('Confirma que deseja eliminar o Distrito: ' + result + '?');
-                $('#idDistrito').val(id);
-                $('#staticBackdropDele').modal('toggle');
-            }
-        })
-    };
-
-
-    $('document').ready(function () {
-        $('#search').keyup(function () {
-            fillTableDistritos(this.value);
-        });
-        fillTableDistritos();
-    })
-</script>
 
 <section class="contact-section search-filter spad">
     <div class="container">
@@ -104,7 +83,7 @@ toponovo();
                     <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
                 </div>
                 <div class="col-lg-5 meio">
-                    <button type="button" class="btn btn-primary mt-2">Adicionar</button>
+                    <button type="submit" class="btn btn-primary mt-2">Adicionar</button>
 
                 </div>
             </div>
@@ -135,7 +114,7 @@ toponovo();
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-danger">Confirmar</button>
+                    <button onclick="alert('isto falta')" type="button" class="btn btn-danger">Confirmar</button>
                 </div>
         </div>
         <input type="hidden" name="id" id="idDistrito">
@@ -146,3 +125,31 @@ toponovo();
 <?php
 bot();
 ?>
+<!-- script para o JQuery e AJAX -->
+
+<script>
+    function confirmaElimina(id) {
+        $.ajax({
+            url: "AJAX/AJAXGetNameDistritos.php",
+            type: "post",
+            data: {
+                idDistrito: id
+            },
+            success: function (result) {
+                $('#contentModalDelete').html('Confirma que deseja eliminar o Distrito: ' + result + '?');
+                $('#idDistrito').val(id);
+                $('#staticBackdropDele').modal('toggle');
+            }
+        })
+    };
+
+
+    $('document').ready(function () {
+        $('#search').keyup(function () {
+            fillTableDistritos(this.value);
+        });
+        fillTableDistritos();
+    })
+</script>
+</body>
+</html>
