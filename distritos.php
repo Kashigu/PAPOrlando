@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 include_once("includes/body.inc.php");
-toponovo();
+toponovo(Gestao);
 
 ?>
 
@@ -83,7 +83,7 @@ toponovo();
                     <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
                 </div>
                 <div class="col-lg-5 meio">
-                    <button type="submit" class="btn btn-primary mt-2">Adicionar</button>
+                    <button onclick="" type="submit" class="btn btn-primary mt-2">Adicionar</button>
 
                 </div>
             </div>
@@ -99,7 +99,7 @@ toponovo();
      aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="eliminaDistrito.php" method="post" enctype="multipart/form-data">
+            <form action="eliminaDistrito.php" method="post" enctype="multipart/form-data" class="contact-form">
 
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Eliminar Distrito</h5>
@@ -113,8 +113,12 @@ toponovo();
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <div class="col-lg-7 meio">
+                    <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Fechar</button>
+                    </div>
+                    <div class="col-lg-5 meio">
                     <button onclick="alert('isto falta')" type="button" class="btn btn-danger">Confirmar</button>
+                    </div>
                 </div>
         </div>
         <input type="hidden" name="id" id="idDistrito">
@@ -122,6 +126,43 @@ toponovo();
     </div>
 </div>
 
+
+
+
+<div class="modal fade" id="editar" tabindex="-1" aria-labelledby="editarlabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="contact-form">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editarlabel">Editar Distrito</h5>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="row">
+                <div class="modal-body">
+                    <div class="col-lg-6 mt-3 meio">
+                        <input type="text"  id="distritoNome"  >
+                    </div>
+                    <div class="col-lg-6 mt-3 meio">
+                    <input type="hidden" id="userId">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer mt-2">
+                <div class="col-lg-7 meio">
+                    <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
+                </div>
+                <div class="col-lg-5 meio">
+                    <button <a  href="#" type="button" id="save" class="btn btn-primary mt-2">Alterar </button> </a>
+
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
 <?php
 bot();
 ?>
@@ -150,6 +191,36 @@ bot();
         });
         fillTableDistritos();
     })
+
+    $(document).ready(function(){
+        $(document).on('click','a[data-role=update]',function (){
+            var id = $(this).data ('id');
+            var distritoNome = $('#'+id).children('td[data-target=distritoNome]').text();
+
+            $('#distritoNome').val(distritoNome);
+            $('#userId').val(id);
+            $('#editar').modal('toggle');
+        });
+
+        // update na database
+
+        $('#save').click(function (){
+            var id = $('#userId').val();
+           var distritoNome = $('#distritoNome').val();
+
+           $.ajax({
+               url: "AJAX/AJAXFillDistritos.php",
+               method: "post",
+               data: { distritoNome: distritoNome, id: id},
+               success: function (response) {
+                   $('#'+id).children('td[data-target=distritoNome]').text(distritoNome);
+                   $('#editar').modal('toggle');
+               }
+           })
+        })
+    });
+
+
 </script>
 </body>
 </html>

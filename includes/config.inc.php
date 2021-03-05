@@ -3,4 +3,7 @@ define("HOST","localhost");
 define("USER","root");
 define("PASSWORD","");
 define("DATABASE","pap2021portugal");
+define("Portugal",1);
+define("Procurar",2);
+define("Gestao",3);
 ?>

@@ -57,7 +57,7 @@ function toposingle()
             </div>
             <nav class="main-menu mobile-menu">
                 <ul>
-                    <li><a href="index.php">Portugal</a></li>
+                    <li ><a href="index.php">Portugal</a></li>
                     <li><a href="procurar.php">Procurar</a></li>
                 </ul>
             </nav>
@@ -75,7 +75,7 @@ function toposingle()
 ?>
 
 <?php
-function top()
+function top($menu = Portugal)
 {
 
     ?>
@@ -104,8 +104,7 @@ function top()
         <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
         <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
         <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
 <body>
@@ -122,8 +121,8 @@ function top()
             </div>
             <nav class="main-menu mobile-menu">
                 <ul>
-                    <li class="active"><a href="index.php">Portugal</a></li>
-                    <li><a href="procurar.php">Procurar</a></li>
+                    <li <?php if ($menu == Portugal) echo "class=\"active\""; ?>><a href="index.php">Portugal</a></li>
+                    <li <?php if ($menu == Procurar) echo "class=\"active\""; ?>><a href="procurar.php">Procurar</a></li>
                     <!--<li><a href="cafe.html">Cafés</a></li>
                     <li><a href="hoteis.html">Hoteis</a></li>-->
                     <!--<li><a href="criarEstabelecimento.html">Contactos</a></li>-->
@@ -143,228 +142,12 @@ function top()
 }
 ?>
 
-<?php
-function topsegundo()
-{
-
-    ?>
-
-    <!DOCTYPE html>
-<html lang="zxx">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Yoga Studio Template">
-        <meta name="keywords" content="Yoga, unica, creative, html">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title> Portugal Local</title>
-
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
-
-        <!-- Css Styles -->
-        <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> Sem ele tenho o modal com ele não tenho-->
-        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="css/flaticon.css" type="text/css">
-        <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-
-<body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Header Section Begin -->
-    <header class="header-section listings">
-        <div class="container-fluid">
-            <div class="logo">
-                <a href="./index.php"><img src="img/logo.png" alt=""></a>
-            </div>
-            <nav class="main-menu mobile-menu">
-                <ul>
-                    <li><a href="index.php">Portugal</a></li>
-                    <li><a href="procurar.php">Procurar</a></li>
-                    <!--<li><a href="cafe.html">Cafés</a></li>
-                    <li><a href="hoteis.html">Hoteis</a></li>-->
-                    <!--<li><a href="criarEstabelecimento.html">Contactos</a></li>-->
-                </ul>
-            </nav>
-            <div class="header-right">
-                <div class="user-access">
-                    <a data-toggle="modal" data-target="#registar">Registar/</a>
-                    <a data-toggle="modal" data-target="#login">Iniciar Sessão</a>
-                    <div id="mobile-menu-wrap"></div>
-                </div>
-    </header>
-    <!-- Header End -->
-
-
-    <?php
-}
-?>
-
-
-<?php
-function toprocura()
-{
-
-    ?>
-
-    <!DOCTYPE html>
-<html lang="zxx">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Yoga Studio Template">
-        <meta name="keywords" content="Yoga, unica, creative, html">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title> Portugal Local</title>
-
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
-
-        <!-- Css Styles -->
-        <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> Sem ele tenho o modal com ele não tenho-->
-        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="css/flaticon.css" type="text/css">
-        <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-
-<body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Header Section Begin -->
-    <header class="header-section listings">
-        <div class="container-fluid">
-            <div class="logo">
-                <a href="./index.php"><img src="img/logo.png" alt=""></a>
-            </div>
-            <nav class="main-menu mobile-menu">
-                <ul>
-                    <li><a href="index.php">Portugal</a></li>
-                    <li class="active"><a href="procurar.php">Procurar</a></li>
-                    <!--<li><a href="cafe.html">Cafés</a></li>
-                    <li><a href="hoteis.html">Hoteis</a></li>-->
-                    <!--<li><a href="criarEstabelecimento.html">Contactos</a></li>-->
-                </ul>
-            </nav>
-            <div class="header-right">
-                <div class="user-access">
-                    <a data-toggle="modal" data-target="#registar">Registar/</a>
-                    <a data-toggle="modal" data-target="#login">Iniciar Sessão</a>
-                    <div id="mobile-menu-wrap"></div>
-                </div>
-    </header>
-    <!-- Header End -->
-
-
-    <?php
-}
-?>
 
 <?php
 function topocriado()
 {
     ?>
 
-    <!DOCTYPE html>
-<html lang="zxx">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Yoga Studio Template">
-        <meta name="keywords" content="Yoga, unica, creative, html">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Local Directory | Template</title>
-
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
-
-        <!-- Css Styles -->
-        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="css/flaticon.css" type="text/css">
-        <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    </head>
-
-<body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Header Section Begin -->
-    <header class="header-section listings">
-        <div class="container-fluid">
-            <div class="logo">
-                <a href="./index.html"><img src="img/logo.png" alt=""></a>
-            </div>
-            <nav class="main-menu mobile-menu">
-                <ul>
-                    <li><a href="index.html">Portugal</a></li>
-                    <li><a href="procurar.html">Procurar</a></li>
-                    <li><a href="backoffice.html">Gestão do Site </a></li>
-                </ul>
-            </nav>
-
-        </div>
-        <div>
-            <nav class="arrange-select nice-select2 mobile-menu header-right">
-                <select name="estabe" id="estabe">
-                    <optgroup label="Cafés">
-                    </optgroup>
-                    <optgroup label="Restaurantes">
-                        <option value="ratoeira">Ratoeira</option>
-                    </optgroup>
-                    <optgroup label="Hotéis">
-                    </optgroup>
-                </select>
-            </nav>
-        </div>
-        <div class="header-right">
-            <div class="user-access">
-                <a href="novoperfil.html"><img src="img/perfilfoto.jpg" class="reduzido"></a>
-                <div id="mobile-menu-wrap"></div>
-            </div>
-    </header>
-
-    <?php
-}
-?>
-
-<?php
-function toponovo()
-{
-
-    ?>
     <!DOCTYPE html>
 <html lang="zxx">
 
@@ -410,6 +193,83 @@ function toponovo()
                     <li><a href="index.php">Portugal</a></li>
                     <li><a href="procurar.php">Procurar</a></li>
                     <li><a href="backoffice.php">Gestão do Site </a></li>
+                </ul>
+            </nav>
+
+        </div>
+        <div>
+            <nav class="arrange-select nice-select2 mobile-menu header-right">
+                <select name="estabe" id="estabe">
+                    <optgroup label="Cafés">
+                    </optgroup>
+                    <optgroup label="Restaurantes">
+                        <option value="ratoeira">Ratoeira</option>
+                    </optgroup>
+                    <optgroup label="Hotéis">
+                    </optgroup>
+                </select>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="user-access">
+                <a href="novoperfil.php"><img src="img/perfilfoto.jpg" class="reduzido"></a>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+    </header>
+
+    <?php
+}
+?>
+
+<?php
+function toponovo($menu = Gestao)
+{
+
+    ?>
+    <!DOCTYPE html>
+<html lang="zxx">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Yoga Studio Template">
+        <meta name="keywords" content="Yoga, unica, creative, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Local Directory | Template</title>
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="css/flaticon.css" type="text/css">
+        <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section listings">
+        <div class="container-fluid">
+            <div class="logo">
+                <a href="./index.php"><img src="img/logo.png" alt=""></a>
+            </div>
+            <nav class="main-menu mobile-menu">
+                <ul>
+                    <li><a href="index.php">Portugal</a></li>
+                    <li><a href="procurar.php">Procurar</a></li>
+                    <li <?php if ($menu == Gestao) echo "class=\"active\""; ?>><a href="backoffice.php">Gestão do Site </a></li>
                 </ul>
             </nav>
         </div>
@@ -612,14 +472,15 @@ function bottom()
 
 
 <?php
-function bot(){
-?>
+function bot()
+{
+    ?>
 
 
     Copyright &copy;
     <script>document.write(new Date().getFullYear());</script>
     All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a
-            href="https://colorlib.com" target="_blank">Colorlib</a>
+        href="https://colorlib.com" target="_blank">Colorlib</a>
     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
     <!--   </p></div>
            </div>
@@ -651,5 +512,6 @@ function bot(){
 
 
     <?php
-    }
-    ?>
+}
+
+?>

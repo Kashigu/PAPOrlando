@@ -6,6 +6,18 @@ $sql = "Select * from distritos where distritoNome LIKE '%$txt%'";
 
 $result = mysqli_query($con, $sql);
 
+
+if(isset($_POST[''])){
+
+    $distrito = $_POST['distritoNome'];
+    $id = $_POST['id'];
+
+}
+
+$resultado = mysqli_query($con, "UPDATE distritos SET distritoNome ='$distrito' WHERE id='$id'");
+    if($resultado){
+        echo 'data updated';
+    }
 ?>
 
 
@@ -25,10 +37,10 @@ $result = mysqli_query($con, $sql);
                 <?php
                 while ($dados = mysqli_fetch_array($result)) {
                 ?>
-                <tr>
+                <tr id="<?php echo $dados['distritoId']; ?>">
                     <td><?php echo $dados['distritoId'] ?></td>
-                    <td><?php echo $dados['distritoNome'] ?></td>
-                    <td><a href="editaDistrito.php?id=<?php echo $dados['distritoId'] ?>"> <i
+                    <td data-target="distritoNome" ><?php echo $dados['distritoNome'] ?></td>
+                    <td><a href="#" data-role="update" data-id="<?php echo $dados['distritoId'];?> " > <i
                                     class="fas fa-edit text-primary"></i></a></td>
                     <td><a onclick="confirmaElimina(<?php echo $dados['distritoId'] ?>);"> <i
                                     class="fas fa-trash  text-danger"></i></a></td>
