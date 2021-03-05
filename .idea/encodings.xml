@@ -2,12 +2,17 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/DefPerfil.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/backoffice.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/admin/backoffice.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/admin/backoffice.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/admin/distritos.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/admin/distritos.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/admin/estabelecimentos.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/admin/estabelecimentos.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/admin/utilizadores.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/admin/utilizadores.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/criado.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/criarEstabelecimento.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/definicoesEstabelecimento.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/distritos.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/estabelecimentos.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hotel.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/includes/body.inc.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/index.php" charset="UTF-8" />
@@ -19,7 +24,6 @@
     <file url="file://$PROJECT_DIR$/restaurante.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/segundo.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/single-listing.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/utilizadores.php" charset="UTF-8" />
     <file url="PROJECT" charset="ISO-8859-1" />
   </component>
 </project>
