@@ -193,6 +193,8 @@ bot();
         fillTableDistritos();
     })
 
+
+                                //----------------- Tentativa pelo youtube ---------------//
     $(document).ready(function(){
         $(document).on('click','a[data-role=update]',function (){
             var id = $(this).data ('id');
