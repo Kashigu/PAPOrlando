@@ -55,7 +55,7 @@ toputili();
 </div>-->
 <!--<div class="container"> -->
 
-<!-- Modal Login-->
+<!-- Modal do Adicionar-->
 
 <div class="modal fade" id="distrito" tabindex="-1" aria-labelledby="distritolabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -94,7 +94,7 @@ toputili();
 
 
 
-<!-- Modal -->
+<!-- Modal do Eliminar -->
 <div class="modal fade" id="staticBackdropDele" data-backdrop="static" data-keyboard="false" tabindex="-1"
      aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -117,7 +117,7 @@ toputili();
                     <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Fechar</button>
                     </div>
                     <div class="col-lg-5 meio">
-                    <button onclick="alert('isto falta')" type="button" class="btn btn-danger">Confirmar</button>
+                    <button onclick="confirmaElimina(id)" type="button" class="btn btn-danger">Confirmar</button>
                     </div>
                 </div>
         </div>
@@ -129,6 +129,7 @@ toputili();
 
 
 
+<!-- Modal do Editar-->
 <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="editarlabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
