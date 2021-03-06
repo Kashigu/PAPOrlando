@@ -93,12 +93,26 @@ toponovo();
 <section class="categories-section spad">
     <div class="container-fluid">
         <div class="categories-left">
-            <div class="categories-item set-bg large-img" data-setbg="img/categories/cat-1.jpg">
-                <a href="img/categories/cat-1.jpg" class="img-hover pop-up"><img src="img/zoom.png" alt=""></a>
-                <div class="categories-text">
-                    <h4>Estabelecimentos</h4>
-                    <p>2373 Listados</p>
-                    <a href="estabelecimentos.php">Ver Todos</a>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="categories-item set-bg" data-setbg="img/categories/cat-1.jpg">
+                        <a href="img/categories/cat-1.jpg" class="img-hover pop-up"><img src="img/zoom.png" alt=""></a>
+                        <div class="categories-text">
+                            <h4>Estabelecimentos</h4>
+                            <p>2373 Listados</p>
+                            <a href="estabelecimentos.php">Ver Todos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="categories-item set-bg" data-setbg="img/categories/cat-4.jpg">
+                        <a href="img/categories/cat-4.jpg" class="img-hover pop-up"><img src="img/zoom.png" alt=""></a>
+                        <div class="categories-text">
+                            <h4>Categorias</h4>
+                            <p>2373 Listados</p>
+                            <a href="categorias.php">Ver Todos</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -124,13 +138,13 @@ toponovo();
                         </div>
                     </div>
                 </div>
-           <!-- <div class="categories-item set-bg large-img" data-setbg="img/maozinhas.jpg">
-                <a href="img/maozinhas.jpg" class="img-hover pop-up"><img src="img/zoom.png" alt=""></a>
-                <div class="categories-text">
-                    <h4>Utilizadores</h4>
-                    <p>2373 Listados</p>
-                    <a href="utilizadores.php">Ver Todos</a>
-                </div> -->
+                <!-- <div class="categories-item set-bg large-img" data-setbg="img/maozinhas.jpg">
+                     <a href="img/maozinhas.jpg" class="img-hover pop-up"><img src="img/zoom.png" alt=""></a>
+                     <div class="categories-text">
+                         <h4>Utilizadores</h4>
+                         <p>2373 Listados</p>
+                         <a href="utilizadores.php">Ver Todos</a>
+                     </div> -->
                 <!--<div class="col-md-6">
                     <div class="categories-item set-bg" data-setbg="img/categories/cat-2.jpg">
                         <a href="img/categories/cat-2.jpg" class="img-hover pop-up"><img src="img/zoom.png" alt=""></a>
