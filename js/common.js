@@ -12,3 +12,18 @@ function fillTableDistritos(txt=''){
 
 
 }
+
+function fillTableCategorias(txt=''){
+    $.ajax({
+        url:"AJAX/AJAXFillCategorias.php",
+        type:"post",
+        data:{
+            txt:txt
+        },
+        success:function (result){
+            $('#tableContent').html(result);
+        }
+    });
+
+
+}
