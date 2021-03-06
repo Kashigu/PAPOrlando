@@ -285,6 +285,69 @@ function toponovo($menu = Gestao)
 ?>
 
 <?php
+function toputili($menu = Gestao)
+{
+
+    ?>
+    <!DOCTYPE html>
+<html lang="zxx">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Yoga Studio Template">
+        <meta name="keywords" content="Yoga, unica, creative, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Local Directory | Template</title>
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="css/flaticon.css" type="text/css">
+        <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section listings">
+        <div class="container-fluid">
+            <div class="logo">
+                <a href="./index.php"><img src="img/logo.png" alt=""></a>
+            </div>
+            <nav class="main-menu mobile-menu">
+                <ul>
+                    <li><a href="index.php">Portugal</a></li>
+                    <li><a href="procurar.php">Procurar</a></li>
+                    <li><a href="backoffice.php">Gestão do Site </a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="user-access">
+                <a href="novoperfil.php"><img src="img/perfilfoto.jpg" class="reduzido"></a>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+    </header>
+
+    <?php
+}
+?>
+
+<?php
 function bottomsingle()
 {
     ?>

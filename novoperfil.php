@@ -1,6 +1,6 @@
 <?php
 include_once("includes/body.inc.php");
-toponovo();
+toputili();
 
 ?>
 <div class="hero-listing set-bg" data-setbg="img/lisboa.jpg">
