@@ -2,19 +2,28 @@
 // dados na base de dados
 include_once("../includes/body.inc.php");
 $txt = addslashes($_POST['txt']);
+
+
+
+
 $sql = "Select * from distritos where distritoNome LIKE '%$txt%'";
+
+
+
+
+
 
 $result = mysqli_query($con, $sql);
 
 
-if(isset($_POST['mail'])){
+/*if(isset($_POST['mail'])){
 
     $distrito = $_POST['distritoNome'];
     $id = $_POST['distritoId'];
 
 }
 
-$resultado = mysqli_query($con, "UPDATE distritos SET distritoNome ='$distrito' WHERE id='$id'");
+//$resultado = mysqli_query($con,"UPDATE distritos SET distritoNome ='$distrito' WHERE id='$id'"); */
 
 ?>
 

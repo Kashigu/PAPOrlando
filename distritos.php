@@ -133,7 +133,7 @@ toputili();
 <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="editarlabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form class="contact-form">
+            <form class="contact-form" method="post" enctype="multipart/form-data">
             <div class="modal-header">
                 <h5 class="modal-title" id="editarlabel">Editar Distrito</h5>
 
@@ -147,7 +147,6 @@ toputili();
                         <input type="text"  id="distritoNome"  >
                     </div>
                     <div class="col-lg-6 mt-3 meio">
-                    <input type="hidden" id="userId">
                     </div>
                 </div>
             </div>
@@ -159,6 +158,7 @@ toputili();
                     <button <a  href="#" type="button" id="save" class="btn btn-primary mt-2">Alterar </button> </a>
 
                 </div>
+                <input type="hidden" id="distritoId">
             </form>
             </div>
         </div>
@@ -201,20 +201,20 @@ bot();
             var distritoNome = $('#'+id).children('td[data-target=distritoNome]').text();
 
             $('#distritoNome').val(distritoNome);
-            $('#userId').val(id);
+            $('#distritoId').val(id);
             $('#editar').modal('toggle');
         });
 
         // update na database
 
         $('#save').click(function (){
-            var id = $('#userId').val();
-           var distritoNome = $('#distritoNome').val();
+            var id = $('#distritoId').val();
+            var distritoNome = $('#distritoNome').val();
 
            $.ajax({
-               url: "AJAX/AJAXFillDistritos.php",
+               url: "AJAX/AJAXEditDistritos.php",
                method: "post",
-               data: { distritoNome: distritoNome, id: id},
+               data: { distritoNome: distritoNome, distritoId: id},
                success: function (response) {
                    $('#'+id).children('td[data-target=distritoNome]').text(distritoNome);
                    $('#editar').modal('toggle');
