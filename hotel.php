@@ -200,6 +200,5 @@ toposingle();
 
 
 <?php
-bottomsingle();
 bottom();
 ?>

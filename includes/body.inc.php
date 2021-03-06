@@ -445,6 +445,7 @@ function bottom()
     <script src="js/jquery.nice-select.min.js"></script>
     <script src="js/mixitup.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
 
     <div class="container">
 
