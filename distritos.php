@@ -93,13 +93,12 @@ toputili();
 </div>
 
 
-
 <!-- Modal do Eliminar -->
 <div class="modal fade" id="staticBackdropDele" data-backdrop="static" data-keyboard="false" tabindex="-1"
      aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="eliminaDistrito.php" method="post" enctype="multipart/form-data" class="contact-form">
+            <form method="post" enctype="multipart/form-data" class="contact-form">
 
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Eliminar Distrito</h5>
@@ -114,10 +113,10 @@ toputili();
                 </div>
                 <div class="modal-footer">
                     <div class="col-lg-7 meio">
-                    <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Fechar</button>
                     </div>
                     <div class="col-lg-5 meio">
-                    <button onclick="confirmaElimina(id)" type="button" class="btn btn-danger">Confirmar</button>
+                        <button <a href="#" type="button" id="eliminar" class="btn btn-danger pull-right ">Eliminar </button> </a>
                     </div>
                 </div>
         </div>
@@ -127,42 +126,41 @@ toputili();
 </div>
 
 
-
-
 <!-- Modal do Editar-->
 <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="editarlabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <form class="contact-form" method="post" enctype="multipart/form-data">
-            <div class="modal-header">
-                <h5 class="modal-title" id="editarlabel">Editar Distrito</h5>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editarlabel">Editar Distrito</h5>
 
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="row">
-                <div class="modal-body">
-                    <div class="col-lg-6 mt-3 meio">
-                        <input type="text"  id="distritoNome"  >
-                    </div>
-                    <div class="col-lg-6 mt-3 meio">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="modal-body">
+                        <div class="col-lg-6 mt-3 meio">
+                            <input type="text" id="distritoNome">
+                        </div>
+                        <div class="col-lg-6 mt-3 meio">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer mt-2">
-                <div class="col-lg-7 meio">
-                    <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
-                </div>
-                <div class="col-lg-5 meio">
-                    <button <a  href="#" type="button" id="save" class="btn btn-primary mt-2">Alterar </button> </a>
+                <div class="modal-footer mt-2">
+                    <div class="col-lg-7 meio">
+                        <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
+                    </div>
+                    <div class="col-lg-5 meio">
+                        <button
+                        <a href="#" type="button" id="save" class="btn btn-primary mt-2">Alterar </button> </a>
 
-                </div>
-                <input type="hidden" id="distritoId">
+                    </div>
+                    <input type="hidden" id="distritoId">
             </form>
-            </div>
         </div>
     </div>
+</div>
 </div>
 <?php
 bot();
@@ -170,6 +168,7 @@ bot();
 <!-- script para o JQuery e AJAX -->
 
 <script>
+
     function confirmaElimina(id) {
         $.ajax({
             url: "AJAX/AJAXGetNameDistritos.php",
@@ -194,11 +193,11 @@ bot();
     })
 
 
-                                //----------------- Tentativa pelo youtube ---------------//
-    $(document).ready(function(){
-        $(document).on('click','a[data-role=update]',function (){
-            var id = $(this).data ('id');
-            var distritoNome = $('#'+id).children('td[data-target=distritoNome]').text();
+    //----------------- Tentativa Bem feita pelo youtube ---------------//
+    $(document).ready(function () {
+        $(document).on('click', 'a[data-role=update]', function () {
+            var id = $(this).data('id');
+            var distritoNome = $('#' + id).children('td[data-target=distritoNome]').text();
 
             $('#distritoNome').val(distritoNome);
             $('#distritoId').val(id);
@@ -207,23 +206,54 @@ bot();
 
         // update na database
 
-        $('#save').click(function (){
+        $('#save').click(function () {
             var id = $('#distritoId').val();
             var distritoNome = $('#distritoNome').val();
 
-           $.ajax({
-               url: "AJAX/AJAXEditDistritos.php",
-               method: "post",
-               data: { distritoNome: distritoNome, distritoId: id},
-               success: function (response) {
-                   $('#'+id).children('td[data-target=distritoNome]').text(distritoNome);
-                   $('#editar').modal('toggle');
-               }
-           })
+            $.ajax({
+                url: "AJAX/AJAXEditDistritos.php",
+                method: "post",
+                data: {distritoNome: distritoNome, distritoId: id},
+                success: function (response) {
+                    $('#' + id).children('td[data-target=distritoNome]').text(distritoNome);
+                    $('#editar').modal('toggle');
+                }
+            })
         })
     });
 
 
+
+                            //------------------------ Tentativa de Eliminar ---------------------------//
+    /*
+    $(document).ready(function () {
+        $(document).on('click', 'a[data-role=eliminar]', function () {
+            var id = $(this).data('id');
+            var distritoNome = $('#' + id).children('td[data-target=distritoNomes]').text();
+
+            $('#distritoNome').val(distritoNome);
+            $('#idDistrito').val(id);
+            $('#staticBackdropDele').modal('toggle');
+        });
+
+        $('#eliminar').click(function () {
+            var id = $('#idDistrito').val();
+            var distritoId = $('#distritoId').val();
+
+            $.ajax({
+                url: "eliminaDistrito.php",
+                method: "post",
+                data: {idDistrito: distritoId, distritoId: id},
+                success: function (response) {
+                    $('#' + id).children('td[data-target=distritoId]').val(distritoId);
+                    $('#staticBackdropDele').modal('toggle');
+                }
+            })
+        })
+    });
+
+
+*/
 </script>
 </body>
 </html>
