@@ -2,7 +2,7 @@
 // dados na base de dados
 include_once("../includes/body.inc.php");
 $distrito = $_POST['distritoNome'];
-$id = intval($_GET['distritoId']);
+$id = $_POST['distritoId'];
 
 
 $sql ="UPDATE distritos set distritoNome ='".$distrito."' where distritoId='$id'";

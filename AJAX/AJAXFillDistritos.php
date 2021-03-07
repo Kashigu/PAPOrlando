@@ -30,8 +30,8 @@ $result = mysqli_query($con, $sql);
 
 <section class="contact-section search-filter spad">
     <div class="container">
-        <div class="col-12 mt-4">
-            <table class="table table-striped table-hover">
+        <div class="col-lg-12 mt-4">
+            <table class='table table-striped table-hover'>
                 <td colspan="5" align='right'>
                     <a data-toggle="modal" data-target="#distrito"><i class='fas text-dark'> Adiciona</i></a>
                 </td>
