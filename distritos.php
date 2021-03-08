@@ -216,7 +216,7 @@ bot();
             var distritoId = $('#contentModalIdDelete').val();
 
             $.ajax({
-                url: "eliminaDistrito.php",
+                url: "AJAX/AJAXDeleteDistrito.php",
                 method: "post",
                 data: {idDistrito: id, contentModalTextDelete: distritoNome, contentModalIdDelete: distritoId},
                 success: function (response) {

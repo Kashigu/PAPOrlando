@@ -1,5 +1,5 @@
 <?php
-include_once("includes/body.inc.php");
+include_once("../includes/body.inc.php");
 $id=$_POST['id'];
 $distrito=$_POST['contentModalTextDelete'];
 $distritoId=$_POST['contentModalIdDelete'];
