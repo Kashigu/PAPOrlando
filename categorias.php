@@ -118,9 +118,10 @@ toputili();
                 <div class="row">
                     <div class="modal-body">
                         <div class="col-lg-6 mt-3 meio">
-                            <input type="text"  id="distritoNome"  >
+                            <input type="text"  id="categoriaNome"  >
                         </div>
                         <div class="col-lg-6 mt-3 meio">
+                            <input type="file"  id="categoriaImagem"  >
                         </div>
                     </div>
                 </div>
@@ -132,7 +133,7 @@ toputili();
                         <button <a  href="#" type="button" id="save" class="btn btn-primary mt-2">Alterar </button> </a>
 
                     </div>
-                    <input type="hidden" id="distritoId">
+                    <input type="hidden" id="categoriaId">
             </form>
         </div>
     </div>
@@ -145,7 +146,7 @@ bottom();
 
 
 <script>
-    function confirmaElimina(id) {
+  /*  function confirmaElimina(id) {
         $.ajax({
             url: "AJAX/AJAXGetNameDistritos.php",
             type: "post",
@@ -159,7 +160,7 @@ bottom();
             }
         })
     };
-
+*/
 
     $('document').ready(function () {
         $('#search').keyup(function () {
@@ -178,6 +179,38 @@ bottom();
         }
         reader.readAsDataURL(event.target.files[0]);
     }
+
+    //----------------- Tentativa "Bem" feita pelo youtube ---------------//
+    $(document).ready(function () {
+        $(document).on('click', 'a[data-role=update]', function () {
+            var id = $(this).data('id');
+            var categoriaNome = $('#' + id).children('td[data-target=categoriaNome]').text();
+            var categoriaImagem = $('#' + id).children('td[data-target=categoriaImagem]').text();
+
+            $('#categoriaNome').val(categoriaNome);
+            $('#categoriaId').val(id);
+            $('#categoriaImagem').val(categoriaImagem);
+            $('#editar').modal('toggle');
+        });
+
+        // update na database
+
+        $('#save').click(function () {
+            var id = $('#categoriaId').val();
+            var categoriaNome = $('#categoriaNome').val();
+
+            $.ajax({
+                url: "AJAX/AJAXEditCategorias.php",
+                method: "post",
+                data: {categoriaNome: categoriaNome, categoriaId: id},
+                success: function (response) {
+                    $('#' + id).children('td[data-target=categoriaNome]').text(categoriaNome);
+                    $('#' + id).children('td[data-target=categoriaImagem]').text(categoriaImagem);
+                    $('#editar').modal('toggle');
+                }
+            })
+        })
+    });
 </script>
 </body>
 </html>

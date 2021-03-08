@@ -25,13 +25,13 @@ $result = mysqli_query($con, $sql);
     while ($dados = mysqli_fetch_array($result)) {
         ?>
 
-        <tr>
+        <tr id="<?php echo $dados['categoriaId']; ?>">
             <td><?php echo $dados['categoriaId'] ?></td>
-            <td><?php echo $dados['categoriaNome'] ?></td>
-            <td><img width='90' src="<?php echo $dados['categoriaImagemURL'] ?>"></td>
-            <td><a href="editaEmpresa.php?id=<?php echo $dados['categoriaId'] ?>"> <i
+            <td data-target="categoriaNome"><?php echo $dados['categoriaNome'] ?></td>
+            <td data-target="categoriaImagem"><img width='90' src="<?php echo $dados['categoriaImagemURL'] ?>"></td>
+            <td><a href="#" data-role="update" data-id="<?php echo $dados['categoriaId'] ?>"> <i
                         class="fas fa-edit text-primary"></i></a></td>
-            <td><a onclick="confirmaElimina(<?php echo $dados['categoriaId'] ?>);"> <i
+            <td><a href="#" data-role="eliminar" data-id="<?php echo $dados['categoriaId'] ?>"> <i
                         class="fas fa-trash  text-danger"></i></a></td>
         </tr>
         <?php
