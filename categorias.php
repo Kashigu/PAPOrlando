@@ -52,7 +52,7 @@ toputili();
                     <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
                 </div>
                 <div class="col-lg-5 meio">
-                    <button onclick="addTableCategorias();" type="submit" class="btn btn-primary mt-2">Adicionar</button>
+                    <button onclick="addTableCategorias();" type="button" class="btn btn-primary mt-2">Adicionar</button>
 
                 </div>
             </div>
