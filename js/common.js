@@ -11,6 +11,24 @@ function fillTableDistritos(txt=''){
     });
 
 
+}function addTableDistritos(txt=''){
+    $('#adicionar').modal('toggle');
+    $.ajax({
+        url:"AJAX/AJAXAddDistritos.php",
+        type:"post",
+        data:{
+            distrito:$('#nomeDistrito').val()
+        },
+        success:function (result){
+            fillTableDistritos();
+        }
+    });
+
+
+}
+
+function mensagemTeste(){
+    alert('aaa');
 }
 
 function fillTableCategorias(txt=''){

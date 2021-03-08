@@ -285,7 +285,7 @@ function toponovo($menu = Gestao)
 ?>
 
 <?php
-function toputili($menu = Gestao)
+function toputili($menu = GESTAO)
 {
 
     ?>
@@ -536,7 +536,7 @@ function bottom()
 
 
 <?php
-function bot()
+function bot($menu=HOME)
 {
     ?>
 
@@ -576,6 +576,27 @@ function bot()
 
 
     <?php
-}
+    switch ($menu){
+        case HOME:
+        case DISTRITOS:
+            ?>
 
+            <script>
+                $('document').ready(function () {
+                    $('#search').keyup(function () {
+                        fillTableDistritos(this.value);
+                    });
+                    fillTableDistritos();
+                })
+            </script>
+
+
+    <?php
+    }
 ?>
+    </body>
+    </html>
+<?php
+}
+?>
+
