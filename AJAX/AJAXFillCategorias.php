@@ -26,7 +26,7 @@ $result = mysqli_query($con, $sql);
         ?>
 
         <tr id="<?php echo $dados['categoriaId']; ?>">
-            <td><?php echo $dados['categoriaId'] ?></td>
+            <td data-target="categoriaId"><?php echo $dados['categoriaId'] ?></td>
             <td data-target="categoriaNome"><?php echo $dados['categoriaNome'] ?></td>
             <td data-target="categoriaImagem"><img width='90' src="<?php echo $dados['categoriaImagemURL'] ?>"></td>
             <td><a href="#" data-role="update" data-id="<?php echo $dados['categoriaId'] ?>"> <i

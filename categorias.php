@@ -23,11 +23,6 @@ toputili();
 </section>
 
 
-
-
-
-
-
 <!-- Modal do Adicionar -->
 <div class="modal fade" id="categoria" tabindex="-1" aria-labelledby="categorialabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -75,7 +70,7 @@ toputili();
      aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="eliminaDistrito.php" method="post" enctype="multipart/form-data" class="contact-form">
+            <form method="post" enctype="multipart/form-data" class="contact-form">
 
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Eliminar Distrito</h5>
@@ -84,8 +79,8 @@ toputili();
                     </button>
                 </div>
                 <div class="modal-body">
-
-                    <div id="contentModalDelete"></div>
+                    Tem a certeza que quer eliminar : <?php echo $dados ["distritoNome"] ?> ?
+                    <div id="contentModalIdDelete"></div>
 
                 </div>
                 <div class="modal-footer">
@@ -93,11 +88,13 @@ toputili();
                         <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Fechar</button>
                     </div>
                     <div class="col-lg-5 meio">
-                        <button onclick="confirmaElimina(id)" type="button" class="btn btn-danger">Confirmar</button>
+                        <button
+                        <a href="#" type="button" id="eliminar"
+                           class="btn btn-danger pull-right ">Eliminar </button> </a>
                     </div>
                 </div>
         </div>
-        <input type="hidden" name="id" id="idDistrito">
+        <input type="hidden" name="id" id="idCategoria">
         </form >
     </div>
 </div>
@@ -118,10 +115,10 @@ toputili();
                 <div class="row">
                     <div class="modal-body">
                         <div class="col-lg-6 mt-3 meio">
-                            <input type="text"  id="categoriaNome"  >
+                            <input type="text" id="categoriaNome">
                         </div>
                         <div class="col-lg-6 mt-3 meio">
-                            <input type="file"  id="categoriaImagem"  >
+                            <input type="file" id="categoriaImagem">
                         </div>
                     </div>
                 </div>
@@ -130,7 +127,8 @@ toputili();
                         <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
                     </div>
                     <div class="col-lg-5 meio">
-                        <button <a  href="#" type="button" id="save" class="btn btn-primary mt-2">Alterar </button> </a>
+                        <button
+                        <a href="#" type="button" id="save" class="btn btn-primary mt-2">Alterar </button> </a>
 
                     </div>
                     <input type="hidden" id="categoriaId">
@@ -146,21 +144,21 @@ bottom();
 
 
 <script>
-  /*  function confirmaElimina(id) {
-        $.ajax({
-            url: "AJAX/AJAXGetNameDistritos.php",
-            type: "post",
-            data: {
-                idDistrito: id
-            },
-            success: function (result) {
-                $('#contentModalDelete').html('Confirma que deseja eliminar o Distrito: ' + result + '?');
-                $('#idDistrito').val(id);
-                $('#staticBackdropDele').modal('toggle');
-            }
-        })
-    };
-*/
+    /*  function confirmaElimina(id) {
+          $.ajax({
+              url: "AJAX/AJAXGetNameDistritos.php",
+              type: "post",
+              data: {
+                  idDistrito: id
+              },
+              success: function (result) {
+                  $('#contentModalDelete').html('Confirma que deseja eliminar o Distrito: ' + result + '?');
+                  $('#idDistrito').val(id);
+                  $('#staticBackdropDele').modal('toggle');
+              }
+          })
+      };
+  */
 
     $('document').ready(function () {
         $('#search').keyup(function () {
@@ -169,16 +167,16 @@ bottom();
         fillTableCategorias();
     })
 
-    function preview_image(event)
-    {
+    function preview_image(event) {
         var reader = new FileReader();
-        reader.onload = function()
-        {
+        reader.onload = function () {
             var output = document.getElementById('output_image');
             output.src = reader.result;
         }
         reader.readAsDataURL(event.target.files[0]);
     }
+
+
 
     //----------------- Tentativa "Bem" feita pelo youtube ---------------//
     $(document).ready(function () {
@@ -198,11 +196,84 @@ bottom();
         $('#save').click(function () {
             var id = $('#categoriaId').val();
             var categoriaNome = $('#categoriaNome').val();
+            var categoriaImagem = $('#categoriaImagem').val();
 
             $.ajax({
                 url: "AJAX/AJAXEditCategorias.php",
                 method: "post",
-                data: {categoriaNome: categoriaNome, categoriaId: id},
+                data: {categoriaNome: categoriaNome, categoriaId: id, categoriaImagem : categoriaImagem},
+                success: function (response) {
+                    $('#' + id).children('td[data-target=categoriaNome]').text(categoriaNome);
+                    $('#' + id).children('td[data-target=categoriaImagem]').text(categoriaImagem);
+                    $('#editar').modal('toggle');
+                }
+            })
+        })
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+    //------------------------ Tentativa de Eliminar Mais ou Menos correta---------------------------//
+
+    $(document).ready(function () {
+        $(document).on('click', 'a[data-role=eliminar]', function () {
+            var id = $(this).data('id');
+            var categoriaId = $('#' + id).children('td[data-target=categoriaId]').text();
+
+            $('#contentModalIdDelete').val(categoriaId);
+            $('#idCategoria').val(id);
+            $('#staticBackdropDele').modal('toggle');
+        });
+
+        $('#eliminar').click(function () {
+            var id = $('#idCategoria').val();
+            var categoriaId = $('#contentModalIdDelete').val();
+
+            $.ajax({
+                url: "AJAX/AJAXDeleteCategorias.php",
+                method: "post",
+                data: {idCategoria: id, contentModalIdDelete: categoriaId},
+                success: function (response) {
+                    $('#' + id).children('td[data-target=categoriaId]').val(categoriaId);
+                    $('#staticBackdropDele').modal('toggle');
+                }
+            })
+        })
+    });
+
+    //----------------- Tentativa "Bem" feita pelo youtube ---------------//
+    $(document).ready(function () {
+        $(document).on('click', 'a[data-role=update]', function () {
+            var id = $(this).data('id');
+            var categoriaNome = $('#' + id).children('td[data-target=categoriaNome]').text();
+            var categoriaImagem = $('#' + id).children('td[data-target=categoriaImagem]').text();
+
+            $('#categoriaNome').val(categoriaNome);
+            $('#categoriaId').val(id);
+            $('#categoriaImagem').val(categoriaImagem);
+            $('#editar').modal('toggle');
+        });
+
+        // update na database
+
+        $('#save').click(function () {
+            var id = $('#categoriaId').val();
+            var categoriaNome = $('#categoriaNome').val();
+            var categoriaImagem = $('#categoriaImagem').val();
+
+            $.ajax({
+                url: "AJAX/AJAXEditCategorias.php",
+                method: "post",
+                data: {categoriaNome: categoriaNome, categoriaId: id, categoriaImagem : categoriaImagem},
                 success: function (response) {
                     $('#' + id).children('td[data-target=categoriaNome]').text(categoriaNome);
                     $('#' + id).children('td[data-target=categoriaImagem]').text(categoriaImagem);
