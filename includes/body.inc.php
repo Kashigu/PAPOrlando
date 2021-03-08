@@ -10,7 +10,7 @@ function toposingle()
     ?>
 
     <!DOCTYPE html>
-    <html lang="zxx">
+<html lang="zxx" xmlns="http://www.w3.org/1999/html">
 
     <head>
         <meta charset="UTF-8">
@@ -574,26 +574,29 @@ function bot($menu=HOME)
     <script src="js/main.js"></script>
     <script src="js/common.js"></script>
 
-
+    <script>
+        $('document').ready(function () {
     <?php
     switch ($menu){
         case HOME:
         case DISTRITOS:
             ?>
-
-            <script>
-                $('document').ready(function () {
                     $('#search').keyup(function () {
                         fillTableDistritos(this.value);
                     });
                     fillTableDistritos();
-                })
-            </script>
-
-
     <?php
+        case CATEGORIAS:
+            ?>
+                    $('#search').keyup(function () {
+                        fillTableCategorias(this.value);
+                    });
+                    fillTableCategorias();
+<?php
     }
 ?>
+        })
+    </script>
     </body>
     </html>
 <?php
