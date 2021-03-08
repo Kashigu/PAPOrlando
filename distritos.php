@@ -89,7 +89,7 @@ toputili();
 
                 </div>
             </div>
-           </form >
+           </form>
         </div>
     </div>
 </div>
@@ -110,9 +110,8 @@ toputili();
                 </div>
                 <div class="modal-body">
 
-                    <div id="contentModalTextDelete"></div>
-                    Tem a certeza que deseja eliminar: <?php echo $dados ["distritoNome"]  ?> ?
-                    <div id="contentModalIdDelete"></div>
+                    Tem a certeza que deseja eliminar:
+                    <div id="IdDistrito"></div>
 
                 </div>
                 <div class="modal-footer">
@@ -120,11 +119,10 @@ toputili();
                         <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Fechar</button>
                     </div>
                     <div class="col-lg-5 meio">
-                        <button <a href="#" type="button" id="eliminar" class="btn btn-danger pull-right ">Eliminar </button> </a>
+                        <button onclick="DeleteTableDistritos();" type="button" id="eliminar" class="btn btn-danger pull-right ">Eliminar </button>
                     </div>
                 </div>
         </div>
-        <input type="hidden" name="id" id="idDistrito">
         </form >
     </div>
 </div>

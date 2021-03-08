@@ -27,8 +27,8 @@ toputili();
 <div class="modal fade" id="categoria" tabindex="-1" aria-labelledby="categorialabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <?php echo "<form action=\"confirmaNovaCategoria.php\" class=\"contact-form\" method=\"post\" enctype=\"multipart/form-data\">";
-            ?>
+           <form class=contact-form method=post enctype=multipart/form-data>
+
             <div class="modal-header">
                 <h5 class="modal-title" id="categorialabel">Adicionar Nova Categoria</h5>
 
@@ -39,13 +39,10 @@ toputili();
             <div class="row">
                 <div class="modal-body">
                     <div class="col-lg-6 mt-3 meio">
-                        <?php
-                        echo "<input type=\"text\" name=\"nomeCategoria\" placeholder='Nome da Categoria'><br>";
 
-                        echo "<input type=\"file\" accept=\"image/*\" onchange=\"preview_image(event)\" name=\"logoCategoria\"><br>";
-                        echo "<img id=\"output_image\"/><hr>"
-                        ?>
+                       <input type=text id="nomeCategoria" name=nomeCategoria placeholder='Nome da Categoria'>
 
+                       <input type=file id="imagem" name="imagem" >
 
                     </div>
                 </div>
@@ -55,11 +52,11 @@ toputili();
                     <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
                 </div>
                 <div class="col-lg-5 meio">
-                    <button onclick="" type="submit" class="btn btn-primary mt-2">Adicionar</button>
+                    <button onclick="addTableCategorias();" type="submit" class="btn btn-primary mt-2">Adicionar</button>
 
                 </div>
             </div>
-            <?php echo "</form >" ?>
+            </form >
         </div>
     </div>
 </div>
