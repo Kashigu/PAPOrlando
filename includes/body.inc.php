@@ -75,7 +75,7 @@ function toposingle()
 ?>
 
 <?php
-function top($menu = Portugal)
+function top($menu = PORTUGAL)
 {
 
     ?>
@@ -121,8 +121,8 @@ function top($menu = Portugal)
             </div>
             <nav class="main-menu mobile-menu">
                 <ul>
-                    <li <?php if ($menu == Portugal) echo "class=\"active\""; ?>><a href="index.php">Portugal</a></li>
-                    <li <?php if ($menu == Procurar) echo "class=\"active\""; ?>><a href="procurar.php">Procurar</a></li>
+                    <li <?php if ($menu == PORTUGAL) echo "class=\"active\""; ?>><a href="index.php">Portugal</a></li>
+                    <li <?php if ($menu == PROCURAR) echo "class=\"active\""; ?>><a href="procurar.php">Procurar</a></li>
                     <!--<li><a href="cafe.html">Cafés</a></li>
                     <li><a href="hoteis.html">Hoteis</a></li>-->
                     <!--<li><a href="criarEstabelecimento.html">Contactos</a></li>-->
@@ -222,7 +222,7 @@ function topocriado()
 ?>
 
 <?php
-function toponovo($menu = Gestao)
+function toponovo($menu = GESTAO)
 {
 
     ?>
@@ -269,7 +269,7 @@ function toponovo($menu = Gestao)
                 <ul>
                     <li><a href="index.php">Portugal</a></li>
                     <li><a href="procurar.php">Procurar</a></li>
-                    <li <?php if ($menu == Gestao) echo "class=\"active\""; ?>><a href="backoffice.php">Gestão do Site </a></li>
+                    <li <?php if ($menu == GESTAO) echo "class=\"active\""; ?>><a href="backoffice.php">Gestão do Site </a></li>
                 </ul>
             </nav>
         </div>

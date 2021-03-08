@@ -1,6 +1,6 @@
 <?php
 include_once("includes/body.inc.php");
-top(Portugal);
+top(PORTUGAL);
 
 ?>
 <section class="hero-section set-bg" data-setbg="img/lisboa.jpg">
