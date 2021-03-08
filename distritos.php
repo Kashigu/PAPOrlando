@@ -59,13 +59,13 @@ toputili();
 
 <!-- Modal do Adicionar-->
 
-<div class="modal fade" id="distrito" tabindex="-1" aria-labelledby="distritolabel" aria-hidden="true">
+<div class="modal fade" id="adicionar" tabindex="-1" aria-labelledby="adicionarlabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <?php echo "<form action=\"confirmaNovoDistrito.php\" class=\"contact-form\" method=\"post\" enctype=\"multipart/form-data\">";
-            ?>
+            <form  class=contact-form  method=post enctype=multipart/form-data>
+
             <div class="modal-header">
-                <h5 class="modal-title" id="distritolabel">Adicionar Novo Distrito</h5>
+                <h5 class="modal-title" id="adicionarlabel">Adicionar Novo Distrito</h5>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -74,9 +74,9 @@ toputili();
             <div class="row">
                 <div class="modal-body">
                     <div class="col-lg-6 mt-3 meio">
-                        <?php
-                        echo "<input type=\"text\" name=\"nomeDistrito\" placeholder='Nome do Distrito'><br>";
-                        ?>
+
+                        <input type=text id="nomeDistrito" name=nomeDistrito placeholder='Nome do Distrito'><br>
+
                     </div>
                 </div>
             </div>
@@ -85,11 +85,11 @@ toputili();
                     <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
                 </div>
                 <div class="col-lg-5 meio">
-                    <button onclick="" type="submit" class="btn btn-primary mt-2">Adicionar</button>
+                    <button <a href="#"  type="button" id="salvar" class="btn btn-primary mt-2">Adicionar</button> </a>
 
                 </div>
             </div>
-            <?php echo "</form >" ?>
+           </form >
         </div>
     </div>
 </div>
@@ -196,8 +196,21 @@ bot();
         fillTableDistritos();
     })
 
-    //------------------------ Tentativa de Eliminar Mais ou Menos correta---------------------------//
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //------------------------ Tentativa de Eliminar Mais ou Menos correta---------------------------//
     $(document).ready(function () {
         $(document).on('click', 'a[data-role=eliminar]', function () {
             var id = $(this).data('id');
@@ -256,6 +269,35 @@ bot();
             })
         })
     });
+
+
+
+
+
+   //----------------- Tentativa de adicionar "Bem" feita pelo youtube ---------------//
+
+   $(document).ready(function () {
+       $(document).on('click', 'a[data-role=adicionar]', function () {
+           $('#adicionar').modal('toggle');
+       });
+
+       // update na database
+
+       $('#salvar').click(function () {
+           var id = $('#distritoId').val();
+           var distritoNome = $('#nomeDistrito').val();
+
+           $.ajax({
+               url: "confirmaNovoDistrito.php",
+               method: "post",
+               data: {nomeDistrito: distritoNome},
+               success: function (response) {
+                   $('#' + id).children('a[data-target=adicionar]').text(distritoNome);
+                   $('#adicionar').modal('toggle');
+               }
+           })
+       })
+   });
 
 
 
