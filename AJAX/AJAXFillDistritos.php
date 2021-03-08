@@ -3,27 +3,11 @@
 include_once("../includes/body.inc.php");
 $txt = addslashes($_POST['txt']);
 
-
-
-
 $sql = "Select * from distritos where distritoNome LIKE '%$txt%'";
-
-
-
-
 
 
 $result = mysqli_query($con, $sql);
 
-
-/*if(isset($_POST['mail'])){
-
-    $distrito = $_POST['distritoNome'];
-    $id = $_POST['distritoId'];
-
-}
-
-//$resultado = mysqli_query($con,"UPDATE distritos SET distritoNome ='$distrito' WHERE id='$id'"); */
 
 ?>
 
@@ -45,11 +29,11 @@ $result = mysqli_query($con, $sql);
                 while ($dados = mysqli_fetch_array($result)) {
                 ?>
                 <tr id="<?php echo $dados['distritoId']; ?>">
-                    <td><?php echo $dados['distritoId'] ?></td>
+                    <td data-target="distritoId"><?php echo $dados['distritoId'] ?></td>
                     <td data-target="distritoNome" ><?php echo $dados['distritoNome'] ?></td>
                     <td><a href="#" data-role="update" data-id="<?php echo $dados['distritoId'];?> " > <i
                                     class="fas fa-edit text-primary"></i></a></td>
-                    <td><a href="#" onclick="confirmaElimina(<?php echo $dados['distritoId'] ?>);"> <i
+                    <td><a href="#" data-role="eliminar" data-id="<?php echo $dados['distritoId'];?> " > <i
                                     class="fas fa-trash  text-danger"></i></a></td>
                 </tr>
                     <?php

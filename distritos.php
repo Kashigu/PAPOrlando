@@ -2,8 +2,10 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
 include_once("includes/body.inc.php");
+
+
+
 toputili();
 
 ?>
@@ -108,7 +110,9 @@ toputili();
                 </div>
                 <div class="modal-body">
 
-                    <div id="contentModalDelete"></div>
+                    <div id="contentModalTextDelete"></div>
+                    Tem a certeza que deseja eliminar: <?php echo $dados ["distritoNome"]  ?> ?
+                    <div id="contentModalIdDelete"></div>
 
                 </div>
                 <div class="modal-footer">
@@ -169,7 +173,7 @@ bot();
 
 <script>
 
-    function confirmaElimina(id) {
+   /* function confirmaElimina(id) {
         $.ajax({
             url: "AJAX/AJAXGetNameDistritos.php",
             type: "post",
@@ -182,7 +186,7 @@ bot();
                 $('#staticBackdropDele').modal('toggle');
             }
         })
-    };
+    }; */
 
 
     $('document').ready(function () {
@@ -192,6 +196,37 @@ bot();
         fillTableDistritos();
     })
 
+    //------------------------ Tentativa de Eliminar Mais ou Menos correta---------------------------//
+
+    $(document).ready(function () {
+        $(document).on('click', 'a[data-role=eliminar]', function () {
+            var id = $(this).data('id');
+            var distritoNome = $('#' + id).children('td[data-target=distritoNome]').text();
+            var distritoId = $('#' + id).children('td[data-target=distritoId]').text();
+
+            $('#contentModalTextDelete').val(distritoNome);
+            $('#contentModalIdDelete').val(distritoId);
+            $('#idDistrito').val(id);
+            $('#staticBackdropDele').modal('toggle');
+        });
+
+        $('#eliminar').click(function () {
+            var id = $('#idDistrito').val();
+            var distritoNome = $('#contentModalTextDelete').val();
+            var distritoId = $('#contentModalIdDelete').val();
+
+            $.ajax({
+                url: "eliminaDistrito.php",
+                method: "post",
+                data: {idDistrito: id, contentModalTextDelete: distritoNome, contentModalIdDelete: distritoId},
+                success: function (response) {
+                    $('#' + id).children('td[data-target=distritoId]').val(distritoId);
+                    $('#' + id).children('td[data-target=distritoNomes]').val(distritoNome);
+                    $('#staticBackdropDele').modal('toggle');
+                }
+            })
+        })
+    });
 
     //----------------- Tentativa Bem feita pelo youtube ---------------//
     $(document).ready(function () {
@@ -224,36 +259,6 @@ bot();
 
 
 
-                            //------------------------ Tentativa de Eliminar ---------------------------//
-    /*
-    $(document).ready(function () {
-        $(document).on('click', 'a[data-role=eliminar]', function () {
-            var id = $(this).data('id');
-            var distritoNome = $('#' + id).children('td[data-target=distritoNomes]').text();
-
-            $('#distritoNome').val(distritoNome);
-            $('#idDistrito').val(id);
-            $('#staticBackdropDele').modal('toggle');
-        });
-
-        $('#eliminar').click(function () {
-            var id = $('#idDistrito').val();
-            var distritoId = $('#distritoId').val();
-
-            $.ajax({
-                url: "eliminaDistrito.php",
-                method: "post",
-                data: {idDistrito: distritoId, distritoId: id},
-                success: function (response) {
-                    $('#' + id).children('td[data-target=distritoId]').val(distritoId);
-                    $('#staticBackdropDele').modal('toggle');
-                }
-            })
-        })
-    });
-
-
-*/
 </script>
 </body>
 </html>
