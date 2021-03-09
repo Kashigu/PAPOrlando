@@ -86,7 +86,6 @@ toputili();
                 </div>
                 <div class="col-lg-5 meio">
                     <button onclick="addTableDistritos();"  type="button" id="salvar" class="btn btn-primary mt-2">Adicionar</button>
-
                 </div>
             </div>
            </form>
@@ -100,7 +99,7 @@ toputili();
      aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form method="post" enctype="multipart/form-data" class="contact-form">
+            <form class=contact-form  method=post enctype=multipart/form-data>
 
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Eliminar Distrito</h5>
@@ -111,7 +110,7 @@ toputili();
                 <div class="modal-body">
 
                     Tem a certeza que deseja eliminar:
-                    <div id="IdDistrito"></div>
+                    <div type="hidden" id="IdDistrito" name=IdDistrito></div>
 
                 </div>
                 <div class="modal-footer">
