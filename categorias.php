@@ -77,7 +77,7 @@ toputili();
                 </div>
                 <div class="modal-body">
                     Tem a certeza que quer eliminar : ?
-                    <div id="idCategoria" id="idCategoria"></div>
+                    <div type="hidden" name="idCategoria" id="idCategoria"></div>
 
                 </div>
                 <div class="modal-footer">
@@ -90,7 +90,6 @@ toputili();
                     </div>
                 </div>
         </div>
-        <input type="hidden" name="idCategoria" id="idCategoria">
         </form >
     </div>
 </div>
