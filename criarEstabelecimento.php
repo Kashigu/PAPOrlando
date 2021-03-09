@@ -5,12 +5,7 @@ toputili();
 ?>
 
 
-
-
-
-
-
-<div class="hero-listing set-bg" data-setbg="img/maravilha.jpg">
+    <div class="hero-listing set-bg" data-setbg="img/maravilha.jpg">
     </div>
     <!-- Map Section Begin -->
     <!--<div class="map">
@@ -26,145 +21,143 @@ toputili();
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <form action="criado.php" class="contact-form">
-                        <div class="row">
-                            <div class="col-lg-4 ">
+                    <?php echo "<form action=\"confirmarNovoEstabelecimento.php\" class=\"contact-form\" method=\"post\" enctype=\"multipart/form-data\">"; ?>
+                    <div class="row">
+                        <div class="col-lg-4 ">
 
-                                <label class="check">Café
-                                    <input type="radio" checked="checked" name="radio">
-                                    <span class="checkmark"></span>
-                                </label>
-
-
-                               <!-- <label for="cafe">Café
-                                <input type="radio" name="gender" id="cafe" value="cafe"></label> -->
-                            </div>
-                            <div class="col-lg-4 ">
-
-                                <label class="check">Restaurante
-                                    <input type="radio" name="radio">
-                                    <span class="checkmark"></span>
-                                </label>
+                            <label class="check">Café
+                                <input type="radio" checked="checked" name="radio">
+                                <span class="checkmark"></span>
+                            </label>
 
 
-                                <!-- <label for="restaurante">Restaurante
-                                     <input type="radio" name="gender" id="restaurante" value="restaurante"></label> -->
+                            <!-- <label for="cafe">Café
+                             <input type="radio" name="gender" id="cafe" value="cafe"></label> -->
+                        </div>
+                        <div class="col-lg-4 ">
 
-                             </div>
-                             <div class="col-lg-4 ">
-                                 <label class="check">Hotel
-                                     <input type="radio" name="radio">
-                                     <span class="checkmark"></span>
-                                 </label>
-
-
-
-                                 <!--<label for="hotel">Hotel
-                                     <input type="radio" name="gender" id="hotel" value="hotel"></label> -->
-                             </div>
-                             <div class="col-lg-6 mt-4">
-                                 <input type="text" placeholder="Nome do Estabelecimento">
-                             </div>
-                             <div class="col-lg-3 mt-4">
-                                 <input type="text" placeholder="Localidade">
-                             </div>
-                             <div class="col-lg-3 mt-4">
-                             <input type="text" placeholder="Distrito">
-                              </div>
-                             <div class="col-lg-12">
-                                 <textarea placeholder="Sobre o Estabelecimento"></textarea>
-                             </div>
-                             <div class="col-lg-6">
-                                 <input type="text" placeholder="Rua">
-                                 <input type="text" placeholder="Número">
-                                 <input type="email" placeholder="Email do Estabelecimento">
-                             </div>
-                             <div class="col-lg-6">
-                                 <div class="row">
-                                     <div class="col-5">
-                                         <label>Segunda a sexta</label>
-                                     </div>
-                                     <div class="col-7">
-                                         <input type="text" placeholder="8:00 - 22:00">
-                                     </div>
-
-                                 </div>
-                                 <div class="row">
-                                     <div class="col-5">
-                                         <label>Sábado</label>
-                                     </div>
-                                     <div class="col-7">
-                                         <input type="text" placeholder="8:00 - 22:00">
-                                     </div>
-
-                                 </div>
-                                 <div class="row">
-                                     <div class="col-5">
-                                         <label>Domingo</label>
-                                     </div>
-                                     <div class="col-7">
-                                         <input type="text" placeholder="8:00 - 22:00">
-                                     </div>
-
-                                 </div>
-                                 <div class="row">
-                                     <div class="col-5">
-                                         <label>Descanso Semanal</label>
-                                     </div>
-                                     <div class="col-7">
-                                         <select>
-                                             <option>Sem descanso</option>
-                                             <option>Segunda-Feira</option>
-                                             <option>Terça-Feira</option>
-                                             <option>Quarta-Feira</option>
-                                             <option>Quinta-Feira</option>
-                                             <option>Sexta-Feira</option>
-                                             <option>Sábado</option>
-                                             <option>Domingo</option>
-                                         </select>
-                                     </div>
-
-                                 </div>
+                            <label class="check">Restaurante
+                                <input type="radio" name="radio">
+                                <span class="checkmark"></span>
+                            </label>
 
 
+                            <!-- <label for="restaurante">Restaurante
+                                 <input type="radio" name="gender" id="restaurante" value="restaurante"></label> -->
 
-                                 <hr>
+                        </div>
+                        <div class="col-lg-4 ">
+                            <label class="check">Hotel
+                                <input type="radio" name="radio">
+                                <span class="checkmark"></span>
+                            </label>
 
 
-
-
-
-                             </div>
-                            <div class="col-lg-6">
-                                <label>Logótipo:    </label>
-                                <input type="file">
+                            <!--<label for="hotel">Hotel
+                                <input type="radio" name="gender" id="hotel" value="hotel"></label> -->
+                        </div>
+                        <div class="col-lg-6 mt-4">
+                            <input type="text" name="nomeEsta" placeholder="Nome do Estabelecimento">
+                        </div>
+                        <div class="col-lg-3 mt-4">
+                            <input type="text" name="nomeLoca" placeholder="Localidade">
+                        </div>
+                        <div class="col-lg-3 mt-4">
+                            <input type="text" name="nomeDistrito" placeholder="Distrito">
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="text" name="nomeSlogan" placeholder="Slogan">
+                        </div>
+                        <div class="col-lg-12">
+                            <textarea name="sobre" placeholder="Sobre o Estabelecimento"></textarea>
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="text" name="rua" placeholder="Rua">
+                            <input type="tel" name="numero" placeholder="Número">
+                            <input type="email" name="email" placeholder="Email do Estabelecimento">
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="col-5">
+                                    <label>Segunda a sexta</label>
+                                </div>
+                                <div class="col-7">
+                                    <input type="text" name="horas" placeholder="8:00 - 22:00">
+                                </div>
 
                             </div>
-                            <div class="col-lg-6">
-                                <label>Imagem de Fundo:   </label>
-                                <input type="file">
-                            </div>
-                            <div class="col-lg-6">
-                                <label>Posição do Estabelecimento no Google Earth:   </label>
-                                <input type="file">
+                            <div class="row">
+                                <div class="col-5">
+                                    <label>Sábado</label>
+                                </div>
+                                <div class="col-7">
+                                    <input type="text" name="horas1" placeholder="8:00 - 22:00">
+                                </div>
 
                             </div>
-                            <div class="col-lg-6">
-                                <label>Imagens do Estabelecimento:   </label>
-                                <input type="file">
+                            <div class="row">
+                                <div class="col-5">
+                                    <label>Domingo</label>
+                                </div>
+                                <div class="col-7">
+                                    <input type="text" name="horas2" placeholder="8:00 - 22:00">
+                                </div>
 
                             </div>
-                             <div class="col-lg-4 mt-3">
-                             </div>
-                             <div class="col-lg-8 mt-3">
-                                 <button type="submit">Confirmar Estabelecimento </button>
-                             </div>
-                         </div>
-                     </form>
-                 </div>
-             </div>
-         </div>
-     </section>
+                            <div class="row">
+                                <div class="col-5">
+                                    <label>Descanso Semanal</label>
+                                </div>
+                                <div class="col-7">
+                                    <select>
+                                        <option>Sem descanso</option>
+                                        <option>Segunda-Feira</option>
+                                        <option>Terça-Feira</option>
+                                        <option>Quarta-Feira</option>
+                                        <option>Quinta-Feira</option>
+                                        <option>Sexta-Feira</option>
+                                        <option>Sábado</option>
+                                        <option>Domingo</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+
+                            <hr>
+
+
+                        </div>
+                        <div class="col-lg-6">
+                            <label>Logótipo: </label>
+                            <input type="file" name="logo">
+
+                        </div>
+                        <div class="col-lg-6">
+                            <label>Imagem de Fundo: </label>
+                            <input type="file" name="fundo">
+                        </div>
+                        <div class="col-lg-6">
+                            <label>Posição do Estabelecimento no Google Earth: </label>
+                            <input type="file" name="google">
+
+                        </div>
+                        <div class="col-lg-6">
+                            <label>Imagens do Estabelecimento: </label>
+                            <input type="file" name="estabelecimento">
+
+                        </div>
+                        <div class="col-lg-4 mt-3">
+                        </div>
+                        <div class="col-lg-8 mt-3">
+                            <button type="submit">Confirmar Estabelecimento</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
 <?php
 bottom();
