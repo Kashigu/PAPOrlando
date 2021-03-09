@@ -154,7 +154,7 @@ toputili();
                     </div>
                     <div class="col-lg-5 meio">
                         <button
-                        <a href="#" type="button" id="save" class="btn btn-primary mt-2">Alterar </button> </a>
+                        <button onclick="EditarTableDistritos();" type="button" class="btn btn-danger mt-2">Alterar</button>
 
                     </div>
                     <input type="hidden" id="distritoId">

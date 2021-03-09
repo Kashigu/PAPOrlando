@@ -48,6 +48,23 @@ function DeleteTableDistritos(txt=''){
 
 }
 
+function EditarTableDistritos(txt=''){
+    $('#editar').modal('toggle');
+    $.ajax({
+        url:"AJAX/AJAXEditDistritos.php",
+        type:"post",
+        data:{
+            distrito:$('#distritoId').val(),
+            distritoNome:$('#distritoNome')
+        },
+        success:function (result){
+            fillTableDistritos();
+        }
+    });
+
+
+}
+
 
 function mensagemTeste(){
     alert('aaa');
