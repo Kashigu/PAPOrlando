@@ -76,8 +76,8 @@ toputili();
                     </button>
                 </div>
                 <div class="modal-body">
-                    Tem a certeza que quer eliminar : <?php echo $dados ["distritoNome"] ?> ?
-                    <div id="contentModalIdDelete"></div>
+                    Tem a certeza que quer eliminar : ?
+                    <div id="idCategoria" id="idCategoria"></div>
 
                 </div>
                 <div class="modal-footer">
@@ -86,12 +86,11 @@ toputili();
                     </div>
                     <div class="col-lg-5 meio">
                         <button
-                        <a href="#" type="button" id="eliminar"
-                           class="btn btn-danger pull-right ">Eliminar </button> </a>
+                        <button onclick="DeleteTableCategorias();" type="button" class="btn btn-danger mt-2">Eliminar</button>
                     </div>
                 </div>
         </div>
-        <input type="hidden" name="id" id="idCategoria">
+        <input type="hidden" name="idCategoria" id="idCategoria">
         </form >
     </div>
 </div>
@@ -125,8 +124,7 @@ toputili();
                     </div>
                     <div class="col-lg-5 meio">
                         <button
-                        <a href="#" type="button" id="save" class="btn btn-primary mt-2">Alterar </button> </a>
-
+                        <button onclick="EditarTableCategorias();" type="button" class="btn btn-danger mt-2">Alterar</button>
                     </div>
                     <input type="hidden" id="categoriaId">
             </form>

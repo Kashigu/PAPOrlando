@@ -48,6 +48,7 @@ function DeleteTableDistritos(txt=''){
 
 }
 
+
 function mensagemTeste(){
     alert('aaa');
 }
@@ -75,6 +76,39 @@ function addTableCategorias(txt=''){
         data:{
             categoria:$('#nomeCategoria').val(),
             imagem:$('#imagem').val()
+        },
+        success:function (result){
+            fillTableDistritos();
+        }
+    });
+
+
+}
+
+function DeleteTableCategorias(txt=''){
+    $('#staticBackdropDele').modal('toggle');
+    $.ajax({
+        url:"AJAX/AJAXDeleteCategorias.php",
+        type:"post",
+        data:{
+            categoria:$('#idCategoria').val()
+        },
+        success:function (result){
+            fillTableDistritos();
+        }
+    });
+
+
+}
+
+function EditarTableCategorias(txt=''){
+    $('#editar').modal('toggle');
+    $.ajax({
+        url:"AJAX/AJAXEditCategorias.php",
+        type:"post",
+        data:{
+            categoriaNome:$('#categoriaNome').val(),
+            categoriaImagem:$('#categoriaImagem').val()
         },
         success:function (result){
             fillTableDistritos();

@@ -31,7 +31,7 @@ $result = mysqli_query($con, $sql);
                 <tr id="<?php echo $dados['distritoId']; ?>">
                     <td data-target="distritoId"><?php echo $dados['distritoId'] ?></td>
                     <td data-target="distritoNome" ><?php echo $dados['distritoNome'] ?></td>
-                    <td><a data-toggle="modal" data-target="#editar"<?php echo $dados['distritoId'];?> > <i
+                    <td><a data-toggle="modal" data-target="#editar" <?php echo $dados['distritoId'];?> > <i
                                     class="fas fa-edit text-primary"></i></a></td>
                     <td><a data-toggle="modal" data-target="#staticBackdropDele" <?php echo $dados['distritoId'];?> > <i
                                     class="fas fa-trash  text-danger"></i></a></td>
