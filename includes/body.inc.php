@@ -577,16 +577,15 @@ function bot($menu=HOME)
     <script>
         $('document').ready(function () {
     <?php
-    switch ($menu){
-        case HOME:
-        case DISTRITOS:
-            ?>
+    if ($menu == DISTRITOS){
+        ?>
                     $('#search').keyup(function () {
                         fillTableDistritos(this.value);
                     });
                     fillTableDistritos();
     <?php
-        case CATEGORIAS:
+    }
+        if($menu == CATEGORIAS){
             ?>
                     $('#search').keyup(function () {
                         fillTableCategorias(this.value);
