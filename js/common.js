@@ -1,7 +1,7 @@
 
 
 
-//---------------------------------------- FUN합ES PARA O DISTRITO -----------------------------------//
+//------------------------------------------------------------ FUN합ES PARA O DISTRITO ----------------------------------------------------------------------//
 
 function fillTableDistritos(txt=''){
     $.ajax({
@@ -29,6 +29,8 @@ function addTableDistritos(txt=''){
         }
     });
 }
+
+
 function eliminaDistrito(id){  // abre o modal e injecta o ID
     $("#idDistrito").html(id);
     $("#staticBackdropDele").modal("toggle");
@@ -89,7 +91,7 @@ function mensagemTeste(){
 }
 
 
-//---------------------------------------- FUN합ES PARA AS CATEGORIAS -----------------------------------//
+//--------------------------------------------------------------- FUN합ES PARA AS CATEGORIAS -------------------------------------------------------//
 function fillTableCategorias(txt=''){
     $.ajax({
         url:"AJAX/AJAXFillCategorias.php",
@@ -115,47 +117,74 @@ function addTableCategorias(txt=''){
             imagem:$('#imagem').val()
         },
         success:function (result){
-            fillTableDistritos();
+            fillTableCategorias();
         }
     });
 
 
 }
 
-function DeleteTableCategorias(txt=''){
+function eliminaCategorias(id){  // abre o modal e injecta o ID
+    $("#idCategoria").html(id);
+    $("#staticBackdropDele").modal("toggle");
+}
+
+
+
+function DeleteTableCategorias(){
     $('#staticBackdropDele').modal('toggle');
     $.ajax({
         url:"AJAX/AJAXDeleteCategorias.php",
         type:"post",
         data:{
-            categoria:$('#idCategoria').val()
+            categoria:parseInt($('#idCategoria').html())
         },
         success:function (result){
-            fillTableDistritos();
+            fillTableCategorias();
         }
     });
 
 
 }
 
-function EditarTableCategorias(txt=''){
+
+function editaCategoria(id){  // abre o modal e injecta o ID
+
+    /* precisas de ir buscar os dados da categoria para poder escrever no modal*/
+    $.ajax({
+        url:"AJAX/AJAXGetNameCategorias.php",
+        type:"post",
+        data:{
+            idCategoria:id
+        },
+        success:function (result){
+            $("#categoriaNome").val(result)
+            $("#categoriaImagem").val(result);
+        }
+    });
+    $("#categoriaId").val(id);
+    $("#editar").modal("toggle");
+}
+
+function EditarTableCategorias(){
     $('#editar').modal('toggle');
     $.ajax({
         url:"AJAX/AJAXEditCategorias.php",
         type:"post",
         data:{
             categoriaNome:$('#categoriaNome').val(),
+            categoriaId:$('#categoriaId').val(),
             categoriaImagem:$('#categoriaImagem').val()
         },
         success:function (result){
-            fillTableDistritos();
+            fillTableCategorias();
         }
     });
 
 
 }
 
-//---------------------------------------- FUN합ES PARA OS ESTABELECIMENTOS -----------------------------------//
+//----------------------------------------------------------------FUN합ES PARA OS ESTABELECIMENTOS ---------------------------------------------------------//
 
 function fillTableEstabelecimentos(txt=''){
     $.ajax({

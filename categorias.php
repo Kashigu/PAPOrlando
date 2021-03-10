@@ -76,8 +76,9 @@ toputili();
                     </button>
                 </div>
                 <div class="modal-body">
-                    Tem a certeza que quer eliminar : ?
-                    <div type="hidden" name="idCategoria" id="idCategoria"></div>
+
+                    Tem a certeza que deseja eliminar o ID #<span id="idCategoria"></span>:
+
 
                 </div>
                 <div class="modal-footer">
@@ -110,10 +111,10 @@ toputili();
                 <div class="row">
                     <div class="modal-body">
                         <div class="col-lg-6 mt-3 meio">
-                            <input type="text" id="categoriaNome">
+                            <input type="text" id="categoriaNome" name="categoriaNome">
                         </div>
                         <div class="col-lg-6 mt-3 meio">
-                            <input type="file" id="categoriaImagem">
+                            <input type="file" id="categoriaImagem" name="categoriaImagem">
                         </div>
                     </div>
                 </div>
