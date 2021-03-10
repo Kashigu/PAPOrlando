@@ -14,12 +14,7 @@ function fillTableDistritos(txt=''){
             $('#tableContent').html(result);
         }
     });
-
-
 }
-
-
-
 
 function addTableDistritos(txt=''){
     $('#adicionar').modal('toggle');
@@ -33,33 +28,51 @@ function addTableDistritos(txt=''){
             fillTableDistritos();
         }
     });
-
-
+}
+function eliminaDistrito(id){  // abre o modal e injecta o ID
+    $("#idDistrito").html(id);
+    $("#staticBackdropDele").modal("toggle");
 }
 
-function DeleteTableDistritos(txt=''){
+function DeleteTableDistritos(){ // vai buscar o ID injectado e faz o DELETE
     $('#staticBackdropDele').modal('toggle');
     $.ajax({
         url:"AJAX/AJAXDeleteDistrito.php",
         type:"post",
         data:{
-            distrito:$('#IdDistrito').val()
+            distrito:parseInt($('#idDistrito').html())
         },
         success:function (result){
             fillTableDistritos();
         }
     });
-
-
 }
 
-function EditarTableDistritos(txt=''){
+
+function editaDistrito(id){  // abre o modal e injecta o ID
+
+    /* precisas de ir buscar os dados do distrito para poder escrever no modal*/
+    $.ajax({
+        url:"AJAX/AJAXGetNameDistritos.php",
+        type:"post",
+        data:{
+            idDistrito:id
+        },
+        success:function (result){
+            $("#distritoNome").val(result);
+        }
+    });
+    $("#idDistrito").val(id);
+    $("#editar").modal("toggle");
+}
+
+function EditarTableDistritos(){
     $('#editar').modal('toggle');
     $.ajax({
         url:"AJAX/AJAXEditDistritos.php",
         type:"post",
         data:{
-            distrito:$('#distritoId').val(),
+            distrito:$("#idDistrito").val(),
             distritoNome:$('#distritoNome').val()
         },
         success:function (result){

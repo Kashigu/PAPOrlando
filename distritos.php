@@ -109,8 +109,7 @@ toputili();
                 </div>
                 <div class="modal-body">
 
-                    Tem a certeza que deseja eliminar:
-                    <div type="hidden" id="IdDistrito" name=IdDistrito></div>
+                    Tem a certeza que deseja eliminar o ID #<span id="idDistrito"></span>:
 
                 </div>
                 <div class="modal-footer">
@@ -142,7 +141,8 @@ toputili();
                 <div class="row">
                     <div class="modal-body">
                         <div class="col-lg-6 mt-3 meio">
-                            <input type="text" id="distritoNome">
+                            <input type="text" id="distritoNome" name="distritoNome">
+
                         </div>
                         <div class="col-lg-6 mt-3 meio">
                         </div>
@@ -157,7 +157,7 @@ toputili();
                         <button onclick="EditarTableDistritos();" type="button" class="btn btn-danger mt-2">Alterar</button>
 
                     </div>
-                    <input type="hidden" id="distritoId">
+                    <input type="hidden" id="idDistrito">
             </form>
         </div>
     </div>
