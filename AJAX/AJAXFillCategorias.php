@@ -29,7 +29,7 @@ $result = mysqli_query($con, $sql);
             <td data-target="categoriaId"><?php echo $dados['categoriaId'] ?></td>
             <td data-target="categoriaNome"><?php echo $dados['categoriaNome'] ?></td>
             <td data-target="categoriaImagem"><img width='90' src="<?php echo $dados['categoriaImagemURL'] ?>"></td>
-            <td><a data-toggle="modal" data-target="#editar" <?php echo $dados['categoriaId'] ?>"> <i
+            <td><a data-toggle="modal" data-target="#editar" <?php echo $dados['categoriaId'] ?> > <i
                         class="fas fa-edit text-primary"></i></a></td>
             <td><a data-toggle="modal" data-target="#staticBackdropDele" <?php echo $dados['categoriaId'] ?> <i
                         class="fas fa-trash  text-danger"></i></a></td>

@@ -55,7 +55,7 @@ function EditarTableDistritos(txt=''){
         type:"post",
         data:{
             distrito:$('#distritoId').val(),
-            distritoNome:$('#distritoNome')
+            distritoNome:$('#distritoNome').val()
         },
         success:function (result){
             fillTableDistritos();
