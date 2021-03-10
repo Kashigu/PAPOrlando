@@ -77,7 +77,7 @@ toputili();
                 </div>
                 <div class="modal-body">
 
-                    Tem a certeza que deseja eliminar o ID #<span id="idCategoria"></span>:
+                   <span id="idCategoria"></span>
 
 
                 </div>
@@ -91,6 +91,7 @@ toputili();
                     </div>
                 </div>
         </div>
+        <input type="hidden" id="CategoriaID">
         </form >
     </div>
 </div>
