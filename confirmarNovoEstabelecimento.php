@@ -2,10 +2,10 @@
 include_once ("includes/body.inc.php");
 
 
-$nome=$_POST['nomeEsta'];
-$nomeLoca=$_POST['nomeLoca'];
-$nomeDistrito=$_POST['nomeDistrito'];
-$nomeSlogan=$_POST['nomeSlogan'];
+$nome=addslashes($_POST['nomeEsta']);
+$nomeLoca=addslashes($_POST['nomeLoca']);
+$nomeDistrito=addslashes($_POST['nomeDistrito']);
+$nomeSlogan=addslashes($_POST['nomeSlogan']);
 $sobre=$_POST['sobre'];
 $rua=$_POST['rua'];
 $numero=$_POST['numero'];
@@ -32,5 +32,5 @@ $sql="insert into estabelecimentos (estabelecimentoNome,estabelecimentoSlogan,
                                                                         '".$google."','".$estabelecimento."');";
 
 mysqli_query($con,$sql);
-header("location:criado.php");
+header("location:../PAPOrlando/estabelecimentos.php");
 ?>

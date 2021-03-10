@@ -593,12 +593,26 @@ function bot($menu=HOME)
                     fillTableCategorias();
 <?php
     }
+        if($menu == ESTABELECIMENTOS){
 ?>
+            $('#search').keyup(function () {
+                    fillTableEstabelecimentos(this.value);
+                });
+                fillTableEstabelecimentos();
+
+ <?php }
+
+        ?>
+
+
+
+
         })
     </script>
-    </body>
-    </html>
+</body>
+</html>
 <?php
+
 }
 ?>
 

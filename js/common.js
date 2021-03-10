@@ -1,3 +1,8 @@
+
+
+
+//---------------------------------------- FUNÇÕES PARA O DISTRITO -----------------------------------//
+
 function fillTableDistritos(txt=''){
     $.ajax({
         url:"AJAX/AJAXFillDistritos.php",
@@ -70,6 +75,8 @@ function mensagemTeste(){
     alert('aaa');
 }
 
+
+//---------------------------------------- FUNÇÕES PARA AS CATEGORIAS -----------------------------------//
 function fillTableCategorias(txt=''){
     $.ajax({
         url:"AJAX/AJAXFillCategorias.php",
@@ -129,6 +136,23 @@ function EditarTableCategorias(txt=''){
         },
         success:function (result){
             fillTableDistritos();
+        }
+    });
+
+
+}
+
+//---------------------------------------- FUNÇÕES PARA OS ESTABELECIMENTOS -----------------------------------//
+
+function fillTableEstabelecimentos(txt=''){
+    $.ajax({
+        url:"AJAX/AJAXFillEstabelecimentos.php",
+        type:"post",
+        data:{
+            txt:txt
+        },
+        success:function (result){
+            $('#tableContent').html(result);
         }
     });
 

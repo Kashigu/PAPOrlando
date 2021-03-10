@@ -9,5 +9,6 @@ define("GESTAO",3);
 define("HOME",0);
 define("DISTRITOS",4);
 define("CATEGORIAS",5);
+define("ESTABELECIMENTOS",6);
 
 ?>
