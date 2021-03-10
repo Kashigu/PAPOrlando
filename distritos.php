@@ -109,7 +109,7 @@ toputili();
                 </div>
                 <div class="modal-body">
 
-                    Tem a certeza que deseja eliminar o ID #<span id="idDistrito"></span>:
+                    <span id="idDistrito"></span>
 
                 </div>
                 <div class="modal-footer">
@@ -121,6 +121,7 @@ toputili();
                     </div>
                 </div>
         </div>
+        <input type="hidden" id="DistritoID">
         </form >
     </div>
 </div>
