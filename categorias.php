@@ -27,7 +27,7 @@ toputili();
 <div class="modal fade" id="categoria" tabindex="-1" aria-labelledby="categorialabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-           <form class=contact-form method=post enctype=multipart/form-data>
+           <form action="confirmaNovaCategoria.php" class=contact-form method=post enctype=multipart/form-data>
 
             <div class="modal-header">
                 <h5 class="modal-title" id="categorialabel">Adicionar Nova Categoria</h5>
