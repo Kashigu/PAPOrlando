@@ -24,7 +24,7 @@ toputili();
                     <button type="submit">Voltar</button>
                 </form>
             </div>
-            <div id="tableContent">
+            <div class="col-lg-12 mt-3" id="tableContent">
             </div>
         </div>
 </section>

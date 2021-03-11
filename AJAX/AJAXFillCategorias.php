@@ -7,9 +7,9 @@ $sql = "Select * from categorias where categoriaNome LIKE '%$txt%'";
 $result = mysqli_query($con, $sql);
 
 ?>
-<section class="contact-section search-filter spad">
+
     <div class="container">
-        <div class="col-lg-12 mt-4">
+
             <table class="table table-striped table-hover">
                 <tr>
                 <td colspan="5" align='right'>
@@ -17,9 +17,10 @@ $result = mysqli_query($con, $sql);
                 </td>
                 </tr>
                 <tr>
-                    <th width="3%">Id</th>
-                    <th width="3%">Nome</th>
-                    <th colspan="3" class="centertext">Opções</th>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Imagem</th>
+                    <th colspan="2" class="centertext">Opções</th>
                 </tr>
     <?php
     while ($dados = mysqli_fetch_array($result)) {
