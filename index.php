@@ -13,33 +13,37 @@ top(PORTUGAL);
                     <form action="procurar.php" class="filter-search filter-search1">
                         <div class="category-search col-lg-5">
                             <h5>Procurar Categoria</h5>
-                            <select class="ca-search">
-                                <option>Restaurantes</option>
-                                <option>Cafés</option>
-                                <option>Hoteis</option>
+                            <select name="categoria" class="ca-search">
+                                    <option value="-1">Escolha da Categoria</option>
+                                    <?php
+                                    $sql="select * from categorias order by categoriaNome";
+                                    $resultCategorias=mysqli_query($con,$sql);
+                                    while ($dadosCategorias=mysqli_fetch_array($resultCategorias)){
+                                        ?>
+                                        <option value="<?php echo $dadosCategorias['categoriaId']?>">
+                                            <?php echo $dadosCategorias['categoriaNome']?>
+                                        </option>
+                                        <?php
+                                    }
+                                    ?>
+
                             </select>
                         </div>
                         <div class="location-search col-lg-5">
                             <h5>Tua Localização</h5>
-                            <select class="lo-search">
-                                <option>Viana do Castelo</option>
-                                <option>Braga</option>
-                                <option>Porto</option>
-                                <option>Vila Real</option>
-                                <option>Bragança</option>
-                                <option>Aveiro</option>
-                                <option>Viseu</option>
-                                <option>Guarda</option>
-                                <option>Coimbra</option>
-                                <option>Leiria</option>
-                                <option>Castelo Branco</option>
-                                <option>Santarém</option>
-                                <option>Portalegre</option>
-                                <option>Lisboa</option>
-                                <option>Setúbal</option>
-                                <option>Évora</option>
-                                <option>Beja</option>
-                                <option>Faro</option>
+                            <select name="distrito" class="lo-search">
+                                    <option value="-1">Escolha do distrito</option>
+                                    <?php
+                                    $sql="select * from distritos order by distritoNome";
+                                    $resultDistritos=mysqli_query($con,$sql);
+                                    while ($dadosDistritos=mysqli_fetch_array($resultDistritos)){
+                                        ?>
+                                        <option value="<?php echo $dadosDistritos['distritoId']?>">
+                                            <?php echo $dadosDistritos['distritoNome']?>
+                                        </option>
+                                        <?php
+                                    }
+                                    ?>
                             </select>
                         </div>
                         <p></p>
