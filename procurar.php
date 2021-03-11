@@ -185,7 +185,7 @@ top(PROCURAR);
                             <span>Ordenar por</span>
                             <select>
                                 <option>Relevância</option>
-                                <option>Recente</option>
+                                <option>Mais Recente</option>
                             </select>
                         </form>
                     </div>
