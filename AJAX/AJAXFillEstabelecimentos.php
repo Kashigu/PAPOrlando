@@ -28,7 +28,7 @@ $result = mysqli_query($con, $sql);
                 </tr>
                 <tr>
                     <?php
-                    $sql = "Select from estabelecimentos estabelecimentoNome,estabelecimentoImagemURl,";
+                    $sql = "Select from estabelecimentos estabelecimentoNome,estabelecimentoMiniaturaURl,";
                     $result = mysqli_query($con, $sql);
 
                     echo "<table>";

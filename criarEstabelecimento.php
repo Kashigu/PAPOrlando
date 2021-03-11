@@ -25,9 +25,20 @@ toputili();
                     <div class="row">
                         <div class="col-lg-4 ">
 
-                            <label class="check">Café
+                            <label name="categoria" class="check">
                                 <input type="radio" checked="checked" name="radio">
                                 <span class="checkmark"></span>
+                                    <?php
+                                    $sql="select * from categorias order by categoriaNome";
+                                    $resultCategorias=mysqli_query($con,$sql);
+                                    while ($dadosCategorias=mysqli_fetch_array($resultCategorias)){
+                                        ?>
+                                <span type="radio" values= "<?php echo $dadosCategorias['categoriaId']?>">
+                                            <?php echo $dadosCategorias['categoriaNome']?>
+                                </span>
+                                        <?php
+                                    }
+                                    ?>
                             </label>
 
 
@@ -62,8 +73,25 @@ toputili();
                         <div class="col-lg-3 mt-4">
                             <input type="text" name="nomeLoca" placeholder="Localidade">
                         </div>
-                        <div class="col-lg-3 mt-4">
-                            <input type="text" name="nomeDistrito" placeholder="Distrito">
+                        <div class="col-lg-3 mt-4 arrange-select nice-select2">
+                            <span>Distritos</span>
+                           <select name="distrito">
+                <option value="-1">Escolha do distrito</option>
+                <?php
+                $sql="select * from distritos order by distritoNome";
+                $resultDistritos=mysqli_query($con,$sql);
+                while ($dadosDistritos=mysqli_fetch_array($resultDistritos)){
+                    ?>
+                    <option value="<?php echo $dadosDistritos['distritoId']?>">
+                        <?php echo $dadosDistritos['distritoNome']?>
+                    </option>
+                    <?php
+                }
+                ?>
+                           </select>
+
+
+
                         </div>
                         <div class="col-lg-6">
                             <input type="text" name="nomeSlogan" placeholder="Slogan">
