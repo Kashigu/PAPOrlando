@@ -27,13 +27,14 @@ toputili();
 
                             <label name="categoria" class="check">
                                 <input type="radio" checked="checked" name="radio">
-                                <span class="checkmark"></span>
                                     <?php
                                     $sql="select * from categorias order by categoriaNome";
                                     $resultCategorias=mysqli_query($con,$sql);
                                     while ($dadosCategorias=mysqli_fetch_array($resultCategorias)){
                                         ?>
-                                <span type="radio" values= "<?php echo $dadosCategorias['categoriaId']?>">
+
+                                        <span class="checkmark"></span>
+                                <span type="radio"  values= "<?php echo $dadosCategorias['categoriaId']?>">
                                             <?php echo $dadosCategorias['categoriaNome']?>
                                 </span>
                                         <?php
@@ -68,21 +69,21 @@ toputili();
                                 <input type="radio" name="gender" id="hotel" value="hotel"></label> -->
                         </div>
                         <div class="col-lg-6 mt-4">
-                            <input type="text" name="nomeEsta" placeholder="Nome do Estabelecimento">
+                            <input type="text" name="nomeEsta"  id="nomeEsta" placeholder="Nome do Estabelecimento">
                         </div>
                         <div class="col-lg-3 mt-4">
-                            <input type="text" name="nomeLoca" placeholder="Localidade">
+                            <input type="text" name="nomeLoca" id="nomeLoca" placeholder="Localidade">
                         </div>
                         <div class="col-lg-3 mt-4 arrange-select nice-select2">
                             <span>Distritos</span>
-                           <select name="distrito">
+                           <select name="distrito" >
                 <option value="-1">Escolha do distrito</option>
                 <?php
                 $sql="select * from distritos order by distritoNome";
                 $resultDistritos=mysqli_query($con,$sql);
                 while ($dadosDistritos=mysqli_fetch_array($resultDistritos)){
                     ?>
-                    <option value="<?php echo $dadosDistritos['distritoId']?>">
+                    <option id="distrito" value="<?php echo $dadosDistritos['distritoId']?>">
                         <?php echo $dadosDistritos['distritoNome']?>
                     </option>
                     <?php
@@ -94,15 +95,15 @@ toputili();
 
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" name="nomeSlogan" placeholder="Slogan">
+                            <input type="text" name="nomeSlogan" id="nomeSlogan" placeholder="Slogan">
                         </div>
                         <div class="col-lg-12">
-                            <textarea name="sobre" placeholder="Sobre o Estabelecimento"></textarea>
+                            <textarea name="sobre" id="sobre" placeholder="Sobre o Estabelecimento"></textarea>
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" name="rua" placeholder="Rua">
-                            <input type="tel" name="numero" placeholder="Número">
-                            <input type="email" name="email" placeholder="Email do Estabelecimento">
+                            <input type="text" name="rua" id="rua" placeholder="Rua">
+                            <input type="tel" name="numero" id="numero" placeholder="Número">
+                            <input type="email" name="email" id="email" placeholder="Email do Estabelecimento">
                         </div>
                         <div class="col-lg-6">
                             <div class="row">
@@ -110,7 +111,7 @@ toputili();
                                     <label>Segunda a sexta</label>
                                 </div>
                                 <div class="col-7">
-                                    <input type="text" name="horas" placeholder="8:00 - 22:00">
+                                    <input type="text" name="horas" id="horas" placeholder="8:00 - 22:00">
                                 </div>
 
                             </div>
@@ -119,7 +120,7 @@ toputili();
                                     <label>Sábado</label>
                                 </div>
                                 <div class="col-7">
-                                    <input type="text" name="horas1" placeholder="8:00 - 22:00">
+                                    <input type="text" name="horas1" id="horas1" placeholder="8:00 - 22:00">
                                 </div>
 
                             </div>
@@ -128,12 +129,12 @@ toputili();
                                     <label>Domingo</label>
                                 </div>
                                 <div class="col-7">
-                                    <input type="text" name="horas2" placeholder="8:00 - 22:00">
+                                    <input type="text" name="horas2" id="horas2" placeholder="8:00 - 22:00">
                                 </div>
 
                             </div>
                             <div class="row">
-                                <div class="col-5">
+                                <div class="col-5" name="descanso" id="descanso">
                                     <label>Descanso Semanal</label>
                                 </div>
                                 <div class="col-7">
@@ -158,21 +159,21 @@ toputili();
                         </div>
                         <div class="col-lg-6">
                             <label>Logótipo: </label>
-                            <input type="file" name="logo">
+                            <input type="file" name="logo" id="logo">
 
                         </div>
                         <div class="col-lg-6">
                             <label>Imagem de Fundo: </label>
-                            <input type="file" name="fundo">
+                            <input type="file" name="fundo" id="fundo">
                         </div>
                         <div class="col-lg-6">
                             <label>Posição do Estabelecimento no Google Earth: </label>
-                            <input type="file" name="google">
+                            <input type="file" name="google" id="google">
 
                         </div>
                         <div class="col-lg-6">
                             <label>Imagens do Estabelecimento: </label>
-                            <input type="file" name="estabelecimento">
+                            <input type="file" name="estabelecimento" id="estabelecimento">
 
                         </div>
                         <div class="col-lg-4 mt-3">

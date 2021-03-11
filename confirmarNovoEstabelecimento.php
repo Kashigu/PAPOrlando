@@ -4,7 +4,8 @@ include_once("includes/body.inc.php");
 
 $nome = addslashes($_POST['nomeEsta']);
 $nomeLoca = addslashes($_POST['nomeLoca']);
-$nomeDistrito = addslashes($_POST['distrito']);
+$nomeDistrito = $_POST['distrito'];
+//$nomeCategoria =$_POST['categoria'];
 $nomeSlogan = addslashes($_POST['nomeSlogan']);
 $sobre = $_POST['sobre'];
 $rua = $_POST['rua'];
@@ -29,7 +30,7 @@ $sql = "insert into estabelecimentos (estabelecimentoNome,estabelecimentoSlogan,
                                                                         '" . $nomeDistrito . "','" . $rua . "','" . $numero . "',
                                                                         '" . $email . "',
                                                                         '" . $logo . "','" . $fundo . "',
-                                                                        '" . $google . "','" . $estabelecimento . "');";
+                                                                        '" . $estabelecimento . "');";
 
 mysqli_query($con, $sql);
 header("location:../PAPOrlando/estabelecimentos.php");
