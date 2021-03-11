@@ -23,7 +23,7 @@ top(PROCURAR);
                     <div class="category-search col-lg-5">
                         <h5>Procurar Categoria</h5>
                         <select name="categoria" class="ca-search">
-                            <option value="-1">Escolha da Categoria</option>
+                            <option value="-1">Escolha a Categoria</option>
                             <?php
                             $sql="select * from categorias order by categoriaNome";
                             $resultCategorias=mysqli_query($con,$sql);
@@ -41,7 +41,7 @@ top(PROCURAR);
                     <div class="location-search col-lg-5">
                         <h5>Tua Localização</h5>
                         <select name="distrito" class="lo-search">
-                            <option value="-1">Escolha do distrito</option>
+                            <option value="-1">Escolha o Distrito</option>
                             <?php
                             $sql="select * from distritos order by distritoNome";
                             $resultDistritos=mysqli_query($con,$sql);
