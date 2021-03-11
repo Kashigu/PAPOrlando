@@ -23,51 +23,31 @@ toputili();
                 <div class="col-lg-12">
                     <?php echo "<form action=\"confirmarNovoEstabelecimento.php\" class=\"contact-form\" method=\"post\" enctype=\"multipart/form-data\">"; ?>
                     <div class="row">
-                        <div class="col-lg-4 ">
 
-                            <label name="categoria" class="check">
-                                <input type="radio" checked="checked" name="radio">
                                     <?php
                                     $sql="select * from categorias order by categoriaNome";
                                     $resultCategorias=mysqli_query($con,$sql);
                                     while ($dadosCategorias=mysqli_fetch_array($resultCategorias)){
                                         ?>
+                        <div class="col-lg-4 ">
 
+                            <label name="categoria" class="check">
+                                <input type="radio" checked="checked" name="radio">
                                         <span class="checkmark"></span>
                                 <span type="radio"  values= "<?php echo $dadosCategorias['categoriaId']?>">
                                             <?php echo $dadosCategorias['categoriaNome']?>
-                                </span>
+                                </span> </label>
+                        </div>
                                         <?php
                                     }
                                     ?>
-                            </label>
+
 
 
                             <!-- <label for="cafe">Café
                              <input type="radio" name="gender" id="cafe" value="cafe"></label> -->
-                        </div>
-                        <div class="col-lg-4 ">
-
-                            <label class="check">Restaurante
-                                <input type="radio" name="radio">
-                                <span class="checkmark"></span>
-                            </label>
 
 
-                            <!-- <label for="restaurante">Restaurante
-                                 <input type="radio" name="gender" id="restaurante" value="restaurante"></label> -->
-
-                        </div>
-                        <div class="col-lg-4 ">
-                            <label class="check">Hotel
-                                <input type="radio" name="radio">
-                                <span class="checkmark"></span>
-                            </label>
-
-
-                            <!--<label for="hotel">Hotel
-                                <input type="radio" name="gender" id="hotel" value="hotel"></label> -->
-                        </div>
                         <div class="col-lg-6 mt-4">
                             <input type="text" name="nomeEsta"  id="nomeEsta" placeholder="Nome do Estabelecimento">
                         </div>
@@ -77,7 +57,7 @@ toputili();
                         <div class="col-lg-3 mt-4 arrange-select nice-select2">
                             <span>Distritos</span>
                            <select name="distrito" >
-                <option value="-1">Escolha do distrito</option>
+                <option value="-1">Escolha o Distrito</option>
                 <?php
                 $sql="select * from distritos order by distritoNome";
                 $resultDistritos=mysqli_query($con,$sql);
