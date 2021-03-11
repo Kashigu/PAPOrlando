@@ -4,9 +4,9 @@ include_once("../includes/body.inc.php");
 $categoria = addslashes($_POST['categoriaNome']);
 $id = $_POST['categoriaId'];
 $imagem =$_FILES['categoriaImagem']['name'];
-$novoNome="../imagens/".$imagem;
+$novoNome="imagens/".$imagem;
 
-$sql ="UPDATE categorias set categoriaNome ='".$categoria."'and categoriaImagemURL='".$imagem."' where categoriaId='$id'";
+$sql ="UPDATE categorias set categoriaNome ='".$categoria."'and categoriaImagemURL='".$novoNome."' where categoriaId='$id'";
 
 
 /*$sql="Update categorias set categoriaNome='".$categoria."'";

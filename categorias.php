@@ -52,8 +52,8 @@ toputili();
                     <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
                 </div>
                 <div class="col-lg-5 meio">
-                    <button onclick="addTableCategorias();" type="button" class="btn btn-primary mt-2">Adicionar</button>
-
+                    <button  type="submit" class="btn btn-primary mt-2">Adicionar</button>
+                    <!--onclick="addTableCategorias();" -->
                 </div>
             </div>
             </form >
@@ -101,7 +101,7 @@ toputili();
 <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="editarlabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form class="contact-form" method="post" enctype="multipart/form-data">
+            <form action="editarCategorias.php" class="contact-form" method="post" enctype="multipart/form-data">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editarlabel">Editar Distrito</h5>
 
@@ -117,6 +117,7 @@ toputili();
                         <div class="col-lg-6 mt-3 meio">
                             <input type="file" id="categoriaImagem" name="categoriaImagem">
                         </div>
+                        <input type="hidden" id="categoriaId">
                     </div>
                 </div>
                 <div class="modal-footer mt-2">
@@ -125,9 +126,10 @@ toputili();
                     </div>
                     <div class="col-lg-5 meio">
                         <button
-                        <button onclick="EditarTableCategorias();" type="button" class="btn btn-danger mt-2">Alterar</button>
+                        <button  type="submit" class="btn btn-danger mt-2">Alterar</button>
+                        <!-- onclick="EditarTableCategorias();"-->
                     </div>
-                    <input type="hidden" id="categoriaId">
+
             </form>
         </div>
     </div>
