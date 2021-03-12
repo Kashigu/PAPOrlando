@@ -529,6 +529,12 @@ function bottom()
             </div>
         </div>
     </div>
+    <script>
+        function mostra() {
+            $('#comentar').toggle();
+            $('#btnComentar').hide();
+        }
+    </script>
     <?php
 }
 

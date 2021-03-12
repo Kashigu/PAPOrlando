@@ -3,7 +3,6 @@ include_once("includes/body.inc.php");
 toposingle();
 
 ?>
-
 <!--                                                 ESTÁ COM PROBLEMAS ESTA PÁGINA                                                      -->
 <div class="hero-listing set-bg" data-setbg="img/ratoeira1.jpg">
 </div>
@@ -149,6 +148,55 @@ toposingle();
         </div>
     </div>
 </section>
+<div class="container" id="comentar">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <form action="single-listing.html" class="contact-form" id="ratingForm">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <input type="text" placeholder="Titulo do Comentário">
+                    </div>
+                    <div id="status"></div>
+                    <fieldset class="ratings ">
+                        <legend>Rating:</legend>
+                        <input type="radio" id="star5" name="ratings" value="5"/><label for="star5" title="Muito Bom">5
+                            stars</label> <input type="radio" id="star4" name="ratings" value="4"/><label for="star4"
+                                                                                                          title="Bom">4
+                            stars</label> <input type="radio" id="star3" name="ratings" value="3"/><label for="star3"
+                                                                                                          title="Normal">3
+                            stars</label> <input type="radio" id="star2" name="ratings" value="2"/><label for="star2"
+                                                                                                          title="Mau">2
+                            stars</label> <input type="radio" id="star1" name="ratings" value="1"/><label for="star1"
+                                                                                                          title="Horrivel">1
+                            star</label></fieldset>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <textarea placeholder="Comentário"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 mt-3 centrinho">
+                        <button type="submit">Fazer Comentário</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="col-lg-4 offset-lg-1">
+        <div class="intro-share">
+            <div class="share-btn">
+                <button id="btnComentar" onclick="mostra();">Fazer Comentário</button>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 
 
