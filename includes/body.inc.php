@@ -415,7 +415,7 @@ function toputili($menu = GESTAO)
 <header class="header-section listings">
     <div class="container-fluid">
         <div class="logo">
-            <a href="./index.php"><img src="img/logo.png" alt=""></a>
+            <a href="index.php"><img src="img/logo.png" alt=""></a>
         </div>
         <nav class="main-menu mobile-menu">
             <ul>
