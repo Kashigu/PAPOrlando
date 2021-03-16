@@ -19,5 +19,5 @@ copy($_FILES['imagem']['tmp_name'],"../".$novoNome);
 
 $sql="insert into categorias(categoriaId,categoriaNome,categoriaImagemURL) values(0,'".$categoria."','".$novoNome."');";
 mysqli_query($con,$sql);
-header("location:../Admin/categorias.php");
+header("location:categorias.php");
 ?>
