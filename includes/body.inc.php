@@ -339,7 +339,7 @@ function topoadmin($menu = GESTAO)
             <ul>
                 <li><a href="../index.php">Portugal</a></li>
                 <li><a href="../procurar.php">Procurar</a></li>
-                <li <?php if ($menu == GESTAO) echo "class=\"active\""; ?>><a href="backoffice.php">Gestão do Site </a>
+                <li <?php if ($menu == GESTAO) echo "class=\"active\""; ?>><a href="index.php">Gestão do Site </a>
                 </li>
             </ul>
         </nav>
@@ -488,7 +488,7 @@ function topAdmin($menu = GESTAO)
             <ul>
                 <li><a href="../index.php">Portugal</a></li>
                 <li><a href="../procurar.php">Procurar</a></li>
-                <li><a href="backoffice.php">Gestão do Site </a></li>
+                <li><a href="index.php">Gestão do Site </a></li>
             </ul>
         </nav>
     </div>
