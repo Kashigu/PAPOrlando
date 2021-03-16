@@ -145,6 +145,7 @@ top(PORTUGAL);
 
     <section class="categories-section spad">
         <div class="container-fluid">
+
             <div class="categories-left">
                 <div class="row">
 
@@ -154,10 +155,10 @@ top(PORTUGAL);
                     while ($dadosCategorias = mysqli_fetch_array($resultCategorias)) {
                         ?>
                         <div class="col-md-12">
-                            <div class="categories-item set-bg" <?php echo $dadosCategorias['categoriaId'] ?>>
+                            <div class="categories-item set-bg" <?php echo $dadosCategorias['categoriaId'] ?> data-setbg="<?php echo $dadosCategorias['categoriaImagemURL'] ?>">
 
 
-                                <a <?php echo $dadosCategorias['categoriaImagemURL'] ?> ></a>
+                                <a href="<?php echo $dadosCategorias['categoriaImagemURL'] ?>" class="img-hover pop-up"> <img src="img/zoom.png" alt=""></a>
                                 <div class="categories-text">
                                     <h4><?php echo $dadosCategorias['categoriaNome'] ?></h4>
                                     <p>2373 Listados</p>
