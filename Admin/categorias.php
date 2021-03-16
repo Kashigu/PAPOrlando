@@ -101,9 +101,9 @@ topAdmin();
 <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="editarlabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="editarCategorias.php" class="contact-form" method="post" enctype="multipart/form-data">
+            <form action="confirmaEditaCategoria.php" class="contact-form" method="post" enctype="multipart/form-data">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="editarlabel">Editar Distrito</h5>
+                    <h5 class="modal-title" id="editarlabel">Editar Categoria</h5>
 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -117,7 +117,7 @@ topAdmin();
                         <div class="col-lg-6 mt-3 meio">
                             <input type="file" id="categoriaImagem" name="categoriaImagem">
                         </div>
-                        <input type="hidden" id="categoriaId">
+                        <input type="hidden" id="categoriaId" name="categoriaId">
                     </div>
                 </div>
                 <div class="modal-footer mt-2">

@@ -1,4 +1,5 @@
 <?php
+
 include_once("config.inc.php");
 $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
 $con->set_charset("utf8");
@@ -912,6 +913,7 @@ All rights reserved | This template is made with <i class="fa fa-heart" aria-hid
 
 <script>
     $('document').ready(function () {
+
         <?php
         if ($menu == DISTRITOS){
         ?>

@@ -2,7 +2,7 @@
 
 function fillTableDistritos(txt = '') {
     $.ajax({
-        url: "AJAX/AJAXFillDistritos.php",
+        url: "../AJAX/AJAXFillDistritos.php",
         type: "post",
         data: {
             txt: txt
@@ -16,7 +16,7 @@ function fillTableDistritos(txt = '') {
 function addTableDistritos(txt = '') {
     $('#adicionar').modal('toggle');
     $.ajax({
-        url: "AJAX/AJAXAddDistritos.php",
+        url: "../AJAX/AJAXAddDistritos.php",
         type: "post",
         data: {
             distrito: $('#nomeDistrito').val()
@@ -31,7 +31,7 @@ function addTableDistritos(txt = '') {
 function eliminaDistrito(id) {  // abre o modal e injecta o ID
     $("#DistritoID").html(id);
     $.ajax({
-        url: "AJAX/AJAXGetNameDistritos.php",
+        url: "../AJAX/AJAXGetNameDistritos.php",
         type: "post",
         data: {
             idDistrito: id
@@ -49,7 +49,7 @@ function eliminaDistrito(id) {  // abre o modal e injecta o ID
 function DeleteTableDistritos() { // vai buscar o ID injectado e faz o DELETE
     $('#staticBackdropDele').modal('toggle');
     $.ajax({
-        url: "AJAX/AJAXDeleteDistrito.php",
+        url: "../AJAX/AJAXDeleteDistrito.php",
         type: "post",
         data: {
             distrito: parseInt($('#DistritoID').html())
@@ -65,7 +65,7 @@ function editaDistrito(id) {  // abre o modal e injecta o ID
 
     /* precisas de ir buscar os dados do distrito para poder escrever no modal*/
     $.ajax({
-        url: "AJAX/AJAXGetNameDistritos.php",
+        url: "../AJAX/AJAXGetNameDistritos.php",
         type: "post",
         data: {
             idDistrito: id
@@ -81,7 +81,7 @@ function editaDistrito(id) {  // abre o modal e injecta o ID
 function EditarTableDistritos() {
     $('#editar').modal('toggle');
     $.ajax({
-        url: "AJAX/AJAXEditDistritos.php",
+        url: "../AJAX/AJAXEditDistritos.php",
         type: "post",
         data: {
             distrito: $("#idDistrito").val(),
@@ -103,8 +103,9 @@ function mensagemTeste() {
 
 //--------------------------------------------------------------- FUNÇÕES PARA AS CATEGORIAS -------------------------------------------------------//
 function fillTableCategorias(txt = '') {
+
     $.ajax({
-        url: "AJAX/AJAXFillCategorias.php",
+        url: "../AJAX/AJAXFillCategorias.php",
         type: "post",
         data: {
             txt: txt
@@ -120,7 +121,7 @@ function fillTableCategorias(txt = '') {
 function addTableCategorias(txt = '') {
     $('#categoria').modal('toggle');
     $.ajax({
-        url: "AJAX/AJAXAddCategorias.php",
+        url: "../AJAX/AJAXAddCategorias.php",
         type: "post",
         data: {
             categoria: $('#nomeCategoria').val(),
@@ -138,7 +139,7 @@ function addTableCategorias(txt = '') {
 function eliminaCategorias(id) {  // abre o modal e injecta o ID
     $("#CategoriaID").html(id);
     $.ajax({
-        url: "AJAX/AJAXGetNameCategorias.php",
+        url: "../AJAX/AJAXGetNameCategorias.php",
         type: "post",
         data: {
             idCategoria: id
@@ -156,7 +157,7 @@ function eliminaCategorias(id) {  // abre o modal e injecta o ID
 function DeleteTableCategorias() {
     $('#staticBackdropDele').modal('toggle');
     $.ajax({
-        url: "AJAX/AJAXDeleteCategorias.php",
+        url: "../AJAX/AJAXDeleteCategorias.php",
         type: "post",
         data: {
             categoria: parseInt($('#CategoriaID').html())
@@ -174,24 +175,23 @@ function editaCategoria(id) {  // abre o modal e injecta o ID
 
     /* precisas de ir buscar os dados da categoria para poder escrever no modal*/
     $.ajax({
-        url: "AJAX/AJAXGetNameCategorias.php",
+        url: "../AJAX/AJAXGetNameCategorias.php",
         type: "post",
         data: {
             idCategoria: id
         },
         success: function (result) {
             $("#categoriaNome").val(result)
-            $("#categoriaImagem").val(result);
+            $("#categoriaId").val(id);
         }
     });
-    $("#categoriaId").val(id);
     $("#editar").modal("toggle");
 }
 
 function EditarTableCategorias() {
     $('#editar').modal('toggle');
     $.ajax({
-        url: "AJAX/AJAXEditCategorias.php",
+        url: "../AJAX/AJAXEditCategorias.php",
         type: "post",
         data: {
             categoriaNome: $('#categoriaNome').val(),
@@ -210,7 +210,7 @@ function EditarTableCategorias() {
 
 function fillTableEstabelecimentos(txt = '') {
     $.ajax({
-        url: "AJAX/AJAXFillEstabelecimentos.php",
+        url: "../AJAX/AJAXFillEstabelecimentos.php",
         type: "post",
         data: {
             txt: txt

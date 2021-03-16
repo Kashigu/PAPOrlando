@@ -142,16 +142,17 @@ top(PORTUGAL);
 
     <!-- Categories Section Begin -->
     <p></p>
-
+    <?php
+        $sql = "select * from categorias order by categoriaNome";
+        $resultCategorias = mysqli_query($con, $sql);
+    ?>
     <section class="categories-section spad">
         <div class="container-fluid">
 
             <div class="categories-left">
                 <div class="row">
+                <?php
 
-                    <?php
-                    $sql = "select * from categorias order by categoriaNome";
-                    $resultCategorias = mysqli_query($con, $sql);
                     while ($dadosCategorias = mysqli_fetch_array($resultCategorias)) {
                         ?>
                         <div class="col-md-12">
@@ -167,64 +168,35 @@ top(PORTUGAL);
                             </div>
                         </div>
                         <?php
+                        $dadosCategorias = mysqli_fetch_array($resultCategorias);
                     }
                     ?>
-                    <div class="col-md-12">
-                        <div class="categories-item set-bg" data-setbg="img/categories/cat-4.jpg">
-                            <a href="img/categories/cat-4.jpg" class="img-hover pop-up"><img src="img/zoom.png" alt=""></a>
-                            <div class="categories-text">
-                                <h4>Categorias</h4>
-                                <p>2373 Listados</p>
-                                <a href="procurar.php">Ver Todos</a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <div class="categories-right">
                 <div class="row">
-                    <!--<div class="col-md-6">
-                        <div class="categories-item set-bg" data-setbg="img/categories/cat-2.jpg">
-                            <a href="img/categories/cat-2.jpg" class="img-hover pop-up"><img src="img/zoom.png" alt=""></a>
-                            <div class="categories-text">
-                                <h4>Nightlife & Clubs</h4>
-                                <p>2373 Listings</p>
-                                <a href="#">View All</a>
-                            </div>
-                        </div>
-                    </div>-->
-                    <div class="col-md-12">
-                        <div class="categories-item set-bg" <?php echo $dadosCategorias['categoriaId'] ?>>
+                    <?php
+                    mysqli_data_seek($resultCategorias,1);
+                    while ($dadosCategorias = mysqli_fetch_array($resultCategorias)) {
+                        ?>
+                        <div class="col-md-12">
+                            <div class="categories-item set-bg" <?php echo $dadosCategorias['categoriaId'] ?> data-setbg="<?php echo $dadosCategorias['categoriaImagemURL'] ?>">
 
 
-                            <a <?php echo $dadosCategorias['categoriaImagemURL'] ?> ></a>
-                            <div class="categories-text">
-                                <h4><?php echo $dadosCategorias['categoriaNome'] ?></h4>
-                                <p>2373 Listados</p>
-                                <a href="procurar.php">Ver Todos</a>
+                                <a href="<?php echo $dadosCategorias['categoriaImagemURL'] ?>" class="img-hover pop-up"> <img src="img/zoom.png" alt=""></a>
+                                <div class="categories-text">
+                                    <h4><?php echo $dadosCategorias['categoriaNome'] ?></h4>
+                                    <p>2373 Listados</p>
+                                    <a href="procurar.php">Ver Todos</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="categories-item set-bg" data-setbg="img/categories/hoteis.jpg">
-                            <a href="img/categories/hoteis.jpg" class="img-hover pop-up"><img src="img/zoom.png" alt=""></a>
-                            <div class="categories-text">
-                                <h4>Hoteis</h4>
-                                <p>2373 Listados</p>
-                                <a href="procurar.php">Ver Todos</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="col-md-6">
-                         <div class="categories-item set-bg" data-setbg="img/categories/cat-5.jpg">
-                             <a href="img/categories/cat-5.jpg" class="img-hover pop-up"><img src="img/zoom.png" alt=""></a>
-                             <div class="categories-text">
-                                 <h4>Clubs & Pubs</h4>
-                                 <p>2373 Listings</p>
-                                 <a href="#">View All</a>
-                             </div>
-                         </div>
-                     </div>-->
+                        <?php
+                        $dadosCategorias = mysqli_fetch_array($resultCategorias);
+                    }
+                    ?>
+
                 </div>
             </div>
         </div>

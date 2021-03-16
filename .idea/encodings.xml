@@ -4,10 +4,10 @@
     <file url="file://$PROJECT_DIR$/AJAX/AJAXFillCategorias.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXFillDistritos.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXGetNameCategorias.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Admin/backoffice.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Admin/confirmaNovaCategoria.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Admin/distritos.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Admin/estabelecimentos.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/Admin/index.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Admin/utilizadores.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/DefPerfil.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/confirmaNovaCategoria.php" charset="UTF-8" />
@@ -25,7 +25,6 @@
     <file url="file://$PROJECT_DIR$/restaurante.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/segundo.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/single-listing.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/teste.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/teste.php" charset="UTF-8" />
     <file url="PROJECT" charset="ISO-8859-1" />
   </component>
