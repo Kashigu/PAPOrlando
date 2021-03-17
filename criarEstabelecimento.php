@@ -47,7 +47,9 @@ toputili();
                             <!-- <label for="cafe">Café
                              <input type="radio" name="gender" id="cafe" value="cafe"></label> -->
 
+                        <div class="col-lg-12">
 
+                        </div>
                         <div class="col-lg-6 mt-4">
                             <input type="text" name="nomeEsta"  id="nomeEsta" placeholder="Nome do Estabelecimento">
                         </div>
