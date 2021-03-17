@@ -5,7 +5,9 @@ toputili();
 ?>
 
 <?php
-$sql = "select * from perfis";
+
+$id=intval($_GET['id']);
+$sql = "select * from perfis where perfilId=".$id;
 $resultPerfis = mysqli_query($con, $sql);
 $dadosPerfis = mysqli_fetch_array($resultPerfis)
 ?>
@@ -15,7 +17,9 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form action="novoperfil.php" class="contact-form" <?php echo $dadosPerfis['perfilId'] ?>> <!-- (class importante ) falta poder clicar na imagem para trocar!-->
+                <form action="novoperfil.php" class="contact-form" method="post" enctype="multipart/form-data"> <!-- (class importante ) falta poder clicar na imagem para trocar!-->
+
+                    <input type="hidden" name="id" value="<?php echo $id?>">
                     <div>
                         <img src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="center">
                         <p></p>

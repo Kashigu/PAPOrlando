@@ -428,7 +428,7 @@ function toputili($menu = GESTAO)
     </div>
     <?php
     $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-    $sql = "select * from perfis";
+    $sql = "select * from perfis where perfilId=1";
     $resultPerfis = mysqli_query($con, $sql);
     $dadosPerfis = mysqli_fetch_array($resultPerfis)
     ?>

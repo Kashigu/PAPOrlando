@@ -223,18 +223,28 @@ function fillTableEstabelecimentos(txt = '') {
 
 }
 
-function editaPerfil(id) {  // abre o modal e injecta o ID
+
+
+
+
+//------------------------------------------------------------------------- FUNÇÕES PARA OS PERFIL -------------------------------------------------------------//
+
+
+
+function editaPerfil(id) {  // muda de pagina e injecta o ID
 
     /* precisas de ir buscar os dados da categoria para poder escrever no modal*/
     $.ajax({
-        url: "../AJAX/AJAXGetNameCategorias.php",
+        url: "../AJAX/AJAXGetNameUtilizador.php",
         type: "post",
         data: {
             idPerfil: id
         },
         success: function (result) {
-            $("#categoriaNome").val(result)
-            $("#categoriaId").val(id);
+            $("#perfilNome").val(result)
+            $("#perfilId").val(id);
+            $("#perfilAvatar").val(result);
+            $("#perfilLocalidade").val(result);
         }
     });
 }
