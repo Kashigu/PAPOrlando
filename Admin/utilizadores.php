@@ -38,7 +38,7 @@ topAdmin();
                 </div>
                 <div class="modal-body">
 
-                    <span id="idDistrito"></span>
+                    <span id="idPerfil"></span>
 
                 </div>
                 <div class="modal-footer">
@@ -46,13 +46,13 @@ topAdmin();
                         <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Fechar</button>
                     </div>
                     <div class="col-lg-5 meio">
-                        <button onclick="DeleteTableDistritos();" type="button" id="eliminar"
+                        <button onclick="DeleteTableUtilizador();" type="button" id="eliminar"
                                 class="btn btn-danger pull-right ">Eliminar
                         </button>
                     </div>
                 </div>
         </div>
-        <input type="hidden" id="DistritoID">
+        <input type="hidden" id="PerfilID">
         </form >
     </div>
 </div>

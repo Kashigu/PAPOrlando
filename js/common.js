@@ -259,19 +259,19 @@ function fillTableUtilizador(txt = '') {
 }
 
 function eliminaUtilizador(id) {  // abre o modal e injecta o ID
-    $("#DistritoID").html(id);
+    $("#PerfilID").html(id);
     $.ajax({
-        url: "../AJAX/AJAXGetNameDistritos.php",
+        url: "../AJAX/AJAXGetNameUtilizador.php",
         type: "post",
         data: {
-            idDistrito: id
+            idPerfil: id
         },
         success: function (result) {
 
-            $("#idDistrito").html('Confirma que deseja eliminar o Distrito: ' + result + '?');
+            $("#idPerfil").html('Confirma que deseja eliminar o Utilizador: ' + result + '?');
 
             $("#staticBackdropDele").modal("toggle");
-            fillTableDistritos();
+            fillTableUtilizador();
         }
     })
 }
@@ -279,13 +279,13 @@ function eliminaUtilizador(id) {  // abre o modal e injecta o ID
 function DeleteTableUtilizador() { // vai buscar o ID injectado e faz o DELETE
     $('#staticBackdropDele').modal('toggle');
     $.ajax({
-        url: "../AJAX/AJAXDeleteDistrito.php",
+        url: "../AJAX/AJAXDeleteUtilizador.php",
         type: "post",
         data: {
-            distrito: parseInt($('#DistritoID').html())
+            perfil: parseInt($('#PerfilID').html())
         },
         success: function (result) {
-            fillTableDistritos();
+                fillTableUtilizador();
         }
     });
 }
