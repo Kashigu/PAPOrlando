@@ -117,7 +117,7 @@ toputili();
                                 <div class="col-5" name="descanso" id="descanso">
                                     <label>Descanso Semanal</label>
                                 </div>
-                                <div class="col-7">
+                                <div class="col-5 arrange-select nice-select2">
                                     <select>
                                         <option>Sem descanso</option>
                                         <option>Segunda-Feira</option>
