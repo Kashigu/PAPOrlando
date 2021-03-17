@@ -3,25 +3,34 @@ include_once("includes/body.inc.php");
 toputili();
 
 ?>
+
+
 <div class="hero-listing set-bg" data-setbg="img/lisboa.jpg">
 </div>
 <!-- Hero Section End -->
-
+<?php
+$sql = "select * from perfis";
+$resultPerfis = mysqli_query($con, $sql);
+$dadosPerfis = mysqli_fetch_array($resultPerfis)
+?>
 <!-- About Secton Begin -->
 <section class="about-section">
     <div class="intro-item">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2">
-                    <div class="about-intro">
-                        <img src="img/perfilfoto.jpg" class="normal">
+                    <div class="about-intro" <?php echo $dadosPerfis['perfilId'] ?>>
+                        <img src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="normal">
                     </div>
                 </div>
                 <div class="about-intro col-lg-6">
                     <div class="intro-text ">
-                        <h2>Kashigu</h2>
-                        <h4>Marinha Grande</h4>
+                        <h2><?php echo $dadosPerfis['perfilNome'] ?></h2>
+                        <h4><?php echo $dadosPerfis['perfilLocalidade'] ?></h4>
                     </div>
+                    <?php
+
+                    ?>
                     <div class="intro-text mt-5">
                         <div class="closed mt-2">Favoritos</div>
                         <div class="closed mt-2">Gostos</div>
@@ -31,8 +40,8 @@ toputili();
                 <div class="col-lg-4 ">
                     <div class="intro-share">
                         <div class="share-btn">
-                            <a href="DefPerfil.php">Definições</a>
-                            <a  href="listaReserva.php">Ver Reservas</a>
+                            <a onclick="editaPerfil" href="DefPerfil.php">Definições</a>
+                            <a href="listaReserva.php">Ver Reservas</a>
                             <a class="mt-2" href="criarEstabelecimento.php">Criar Estabelecimento</a>
                         </div>
                         <!--<div class="share-icon">

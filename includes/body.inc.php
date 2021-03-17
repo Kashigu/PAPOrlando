@@ -426,12 +426,20 @@ function toputili($menu = GESTAO)
             </ul>
         </nav>
     </div>
+    <?php
+    $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+    $sql = "select * from perfis";
+    $resultPerfis = mysqli_query($con, $sql);
+    $dadosPerfis = mysqli_fetch_array($resultPerfis)
+    ?>
     <div class="header-right">
-        <div class="user-access">
-            <a href="novoperfil.php"><img src="img/perfilfoto.jpg" class="reduzido"></a>
+        <div class="user-access"<?php echo $dadosPerfis['perfilId'] ?>>
+            <a href="novoperfil.php"><img src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
             <div id="mobile-menu-wrap"></div>
         </div>
 </header>
+
+
 
 <?php
 }
@@ -939,8 +947,16 @@ All rights reserved | This template is made with <i class="fa fa-heart" aria-hid
         fillTableEstabelecimentos();
 
         <?php }
+        if($menu == UTILIZADOR){
+                ?>
+            $('#search').keyup(function () {
+                fillTableUtilizador(this.value);
+            });
+            fillTableUtilizador();
 
-        ?>
+            <?php }
+
+            ?>
 
 
 

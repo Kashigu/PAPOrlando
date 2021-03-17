@@ -222,3 +222,70 @@ function fillTableEstabelecimentos(txt = '') {
 
 
 }
+
+function editaPerfil(id) {  // abre o modal e injecta o ID
+
+    /* precisas de ir buscar os dados da categoria para poder escrever no modal*/
+    $.ajax({
+        url: "../AJAX/AJAXGetNameCategorias.php",
+        type: "post",
+        data: {
+            idPerfil: id
+        },
+        success: function (result) {
+            $("#categoriaNome").val(result)
+            $("#categoriaId").val(id);
+        }
+    });
+}
+
+
+
+
+//-------------------------------------------------------------- FUNÇÕES PARA OS UTILIZADORES------------------------------------------------------//
+function fillTableUtilizador(txt = '') {
+    $.ajax({
+        url: "../AJAX/AJAXFillUtilizador.php",
+        type: "post",
+        data: {
+            txt: txt
+        },
+        success: function (result) {
+            $('#tableContent').html(result);
+        }
+    });
+
+
+}
+
+function eliminaUtilizador(id) {  // abre o modal e injecta o ID
+    $("#DistritoID").html(id);
+    $.ajax({
+        url: "../AJAX/AJAXGetNameDistritos.php",
+        type: "post",
+        data: {
+            idDistrito: id
+        },
+        success: function (result) {
+
+            $("#idDistrito").html('Confirma que deseja eliminar o Distrito: ' + result + '?');
+
+            $("#staticBackdropDele").modal("toggle");
+            fillTableDistritos();
+        }
+    })
+}
+
+function DeleteTableUtilizador() { // vai buscar o ID injectado e faz o DELETE
+    $('#staticBackdropDele').modal('toggle');
+    $.ajax({
+        url: "../AJAX/AJAXDeleteDistrito.php",
+        type: "post",
+        data: {
+            distrito: parseInt($('#DistritoID').html())
+        },
+        success: function (result) {
+            fillTableDistritos();
+        }
+    });
+}

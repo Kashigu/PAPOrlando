@@ -13,87 +13,54 @@ topAdmin();
                         <h5>Nome do Utilizador</h5>
                         <input class="location-search1 nice-select1" type="text" id="search">
                     </div>
-                 <button type="submit">Voltar</button>
+                    <button type="submit">Voltar</button>
                 </form>
             </div>
         </div>
-        <div class="col-12 mt-4">
-            <table class="table table-striped table-hover">
-                <tr>
-                    <th width="3%">Nome</th>
-                    <th width="3%">Imagem</th>
-                    <th width="3%">Estabelecimentos Criados</th>
-                    <th colspan="3" class="centertext">Opções</th>
-
-                </tr>
-                <tr>
-                    <td>Kashigu</td>
-                    <td>imagem</td>
-                    <td>42</td>
-                    <td width="5%" class="centertext">Editar</td>
-                    <td width="5%" class="centertext">Eliminar</td>
-                </tr>
-            </table>
+        <div class="col-lg-12 mt-3" id="tableContent">
         </div>
-
-        <div class="col-12 mt-4">
-            <table class="table table-striped table-hover">
-                <tr>
-                    <th width="3%">Nome</th>
-                    <th width="3%">Imagem</th>
-                    <th width="3%">Estabelecimentos Criados</th>
-                    <th colspan="3" class="centertext">Opções</th>
-
-                </tr>
-                <tr>
-                    <td>Kashigu</td>
-                    <td>imagem</td>
-                    <td>42</td>
-                    <td width="5%" class="centertext">Editar</td>
-                    <td width="5%" class="centertext">Eliminar</td>
-                </tr>
-            </table>
-        </div>
-        <div class="col-12 mt-4">
-            <table class="table table-striped table-hover">
-                <tr>
-                    <th width="3%">Nome</th>
-                    <th width="3%">Imagem</th>
-                    <th width="3%">Estabelecimentos Criados</th>
-                    <th colspan="3" class="centertext">Opções</th>
-
-                </tr>
-                <tr>
-                    <td>Kashigu</td>
-                    <td>imagem</td>
-                    <td>42</td>
-                    <td width="5%" class="centertext">Editar</td>
-                    <td width="5%" class="centertext">Eliminar</td>
-                </tr>
-            </table>
-        </div>
-        <div class="col-12 mt-4">
-            <table class="table table-striped table-hover">
-                <tr>
-                    <th width="3%">Nome</th>
-                    <th width="3%">Imagem</th>
-                    <th width="3%">Estabelecimentos Criados</th>
-                    <th colspan="3" class="centertext">Opções</th>
-
-                </tr>
-                <tr>
-                    <td>Kashigu</td>
-                    <td>imagem</td>
-                    <td>42</td>
-                    <td width="5%" class="centertext">Editar</td>
-                    <td width="5%" class="centertext">Eliminar</td>
-                </tr>
-            </table>
-        </div>
-
     </div>
 </section>
 
+
+<!-- Modal do Eliminar -->
+<div class="modal fade" id="staticBackdropDele" data-backdrop="static" data-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class=contact-form method=post enctype=multipart/form-data>
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Eliminar Distrito</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <span id="idDistrito"></span>
+
+                </div>
+                <div class="modal-footer">
+                    <div class="col-lg-7 meio">
+                        <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Fechar</button>
+                    </div>
+                    <div class="col-lg-5 meio">
+                        <button onclick="DeleteTableDistritos();" type="button" id="eliminar"
+                                class="btn btn-danger pull-right ">Eliminar
+                        </button>
+                    </div>
+                </div>
+        </div>
+        <input type="hidden" id="DistritoID">
+        </form >
+    </div>
+</div>
+
+
+<!-- Modal do Editar-->
+
+
 <?php
-botAdmin();
+botAdmin(UTILIZADOR);
 ?>

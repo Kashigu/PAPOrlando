@@ -10,5 +10,6 @@ define("HOME",0);
 define("DISTRITOS",4);
 define("CATEGORIAS",5);
 define("ESTABELECIMENTOS",6);
+define("UTILIZADOR",7);
 
 ?>

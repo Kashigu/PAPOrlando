@@ -1,7 +1,13 @@
 <?php
 include_once("includes/body.inc.php");
-toponovo();
+toputili();
 
+?>
+
+<?php
+$sql = "select * from perfis";
+$resultPerfis = mysqli_query($con, $sql);
+$dadosPerfis = mysqli_fetch_array($resultPerfis)
 ?>
 
 <section class="contact-section spad">
@@ -9,17 +15,20 @@ toponovo();
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form action="novoperfil.php" class="contact-form"> <!-- (class importante ) falta poder clicar na imagem para trocar!-->
+                <form action="novoperfil.php" class="contact-form" <?php echo $dadosPerfis['perfilId'] ?>> <!-- (class importante ) falta poder clicar na imagem para trocar!-->
                     <div>
-                        <img src="img/perfilfoto.jpg" class="center">
+                        <img src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="center">
                         <p></p>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <input type="text" placeholder="Teu Username">
+                            <input type="text" placeholder="<?php echo $dadosPerfis['perfilNome'] ?>">
+                        </div>
+                        <div class="col-lg-12">
+                            <input type="email" placeholder="<?php echo $dadosPerfis['perfilEmail'] ?>">
                         </div>
                         <div class="col-lg-6">
-                            <input type="email" placeholder="Teu E-mail">
+                            <input type="text" placeholder="<?php echo $dadosPerfis['perfilLocalidade'] ?>">
                         </div>
                         <div class="col-lg-6">
                             <input type="password" placeholder="Atual Palavra-passe">

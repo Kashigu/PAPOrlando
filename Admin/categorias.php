@@ -8,7 +8,7 @@ topAdmin();
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form action="../backoffice.php" class="filter-search filter-search1 filter-search2">
+                <form action="index.php" class="filter-search filter-search1 filter-search2">
                     <div class="location-search1 col-lg-4 mt-3 ">
                         <h5>Nome das Categorias</h5>
                         <input class="location-search1 nice-select1" type="text" id="search">

@@ -27,6 +27,7 @@ topAdmin();
             <div class="col-lg-12 mt-3" id="tableContent">
             </div>
         </div>
+    </div>
 </section>
 
 
