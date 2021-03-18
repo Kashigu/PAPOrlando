@@ -33,7 +33,7 @@ $result = mysqli_query($con, $sql);
                     <td data-target="perfilEmail" ><?php echo $dados['perfilEmail'] ?></td>
                     <td><a href="../novoperfil.php?id= <?php echo $dados['perfilId'];?>"> <i
                                     class="fas fa-edit text-primary"></i></a></td>
-                    <td><a onclick="eliminaUtilizador(<?php echo $dados['perfilId'];?>)"> <i class="fas fa-trash  text-danger"></i></a></td>
+                    <td><a onclick="DeleteUtilizador(<?php echo $dados['perfilId'];?>)"> <i class="fas fa-trash  text-danger"></i></a></td>
                 </tr>
                     <?php
                 }

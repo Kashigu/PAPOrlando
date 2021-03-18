@@ -43,7 +43,7 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                         <div class="share-btn">
                             <a href="DefPerfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Definições</a>
                             <a href="listaReserva.php">Ver Reservas</a>
-                            <a class="mt-2" href="criarEstabelecimento.php">Criar Estabelecimento</a>
+                            <a class="mt-2" href="criarEstabelecimento.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Criar Estabelecimento</a>
                         </div>
                         <!--<div class="share-icon">
                             <a href="#"><i class="fa fa-map-marker"></i></a>
