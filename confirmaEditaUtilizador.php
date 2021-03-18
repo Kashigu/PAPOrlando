@@ -4,7 +4,7 @@
 include_once("includes/body.inc.php");
 $nome = addslashes($_POST['perfilNome']);
 $localidade = addslashes($_POST['perfilLocalidade']);
-$email = addslashes($_POST['perfilEmail']);
+$email = $_POST['perfilEmail'];
 $id = $_POST['id'];
 $imagem =$_FILES['perfilAvatar']['name'];
 $novoNome="../imagens/".$imagem;
@@ -31,7 +31,6 @@ $sql.=" where categoriaId=".$id;
 */
 
 $result = mysqli_query($con, $sql);
-mysqli_fetch_array($result);
 header("location:novoperfil.php?id={$id}");
 ?>
 

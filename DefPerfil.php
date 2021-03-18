@@ -72,7 +72,7 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
             <form class=contact-form method=post enctype=multipart/form-data>
 
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Eliminar Distrito</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Eliminar Conta</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
