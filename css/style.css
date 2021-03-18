@@ -259,6 +259,14 @@ p {
     height: 250px;
 }
 
+
+
+.ladocentro {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .meio{
 
     display: block;

@@ -9,7 +9,8 @@ toputili();
 </div>
 <!-- Hero Section End -->
 <?php
-$sql = "select * from perfis where perfilId=1";
+$id=intval($_GET['id']);
+$sql = "select * from perfis where perfilId=".$id;
 $resultPerfis = mysqli_query($con, $sql);
 $dadosPerfis = mysqli_fetch_array($resultPerfis)
 ?>

@@ -428,13 +428,13 @@ function toputili($menu = GESTAO)
     </div>
     <?php
     $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-    $sql = "select * from perfis where perfilId=1";
+    $sql = "select * from perfis where perfilId=3";
     $resultPerfis = mysqli_query($con, $sql);
     $dadosPerfis = mysqli_fetch_array($resultPerfis)
     ?>
     <div class="header-right">
         <div class="user-access"<?php echo $dadosPerfis['perfilId'] ?>>
-            <a href="novoperfil.php"><img src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
+            <a href="novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>"><img src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
             <div id="mobile-menu-wrap"></div>
         </div>
 </header>
