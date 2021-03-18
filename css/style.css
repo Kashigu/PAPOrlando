@@ -268,7 +268,6 @@ p {
 }
 
 .meio{
-
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -1917,6 +1916,17 @@ direita {
     background: #FF5581;
     padding: 7px 22px;
     margin-left: 14px;
+}
+
+.intro-share1 .share-btn1 a, button {
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    background: #FF5581;
+    padding: 7px 22px;
+    margin-left: 40px;
 }
 
 .intro-share .share-btn a.share {
