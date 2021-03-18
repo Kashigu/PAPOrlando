@@ -222,34 +222,6 @@ function fillTableEstabelecimentos(txt = '') {
 }
 
 
-
-
-
-//------------------------------------------------------------------------- FUNÇÕES PARA OS PERFIL -------------------------------------------------------------//
-
-
-
-function editaPerfil(id) {  // muda de pagina e injecta o ID
-
-    /* precisas de ir buscar os dados da categoria para poder escrever no modal*/
-    $.ajax({
-        url: "../AJAX/AJAXGetNameUtilizador.php",
-        type: "post",
-        data: {
-            idPerfil: id
-        },
-        success: function (result) {
-            $("#perfilNome").val(result)
-            $("#perfilId").val(id);
-            $("#perfilAvatar").val(result);
-            $("#perfilLocalidade").val(result);
-        }
-    });
-}
-
-
-
-
 //-------------------------------------------------------------- FUNÇÕES PARA OS UTILIZADORES------------------------------------------------------//
 function fillTableUtilizador(txt = '') {
     $.ajax({
