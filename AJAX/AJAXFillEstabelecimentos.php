@@ -15,37 +15,37 @@ $result = mysqli_query($con, $sql);
     <div class="container">
         <div class="col-12 mt-4">
             <table class="table table-striped table-hover">
-                <td colspan="5" align='right'>
+                <td colspan="6" align='right'>
                     <a href="../criarEstabelecimento.php"><i class='fas text-dark'> Adiciona</i></a>
                 </td>
                 <tr>
-                    <th width="3%">Nome</th>
-                    <th width="3%">Imagem</th>
-                    <th width="3%">Criador</th>
-                    <th width="10%">Tipo</th>
-                    <th colspan="3" class="centertext">Opções</th>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Imagem</th>
+                    <th>Criador</th>
+                    <th>Tipo</th>
+                    <th colspan="2" class="centertext">Opções</th>
 
                 </tr>
-                <tr>
+
                     <?php
-                    $sql = "Select from estabelecimentos estabelecimentoNome,estabelecimentoMiniaturaURl,";
-                    $result = mysqli_query($con, $sql);
-
-                    echo "<table>";
                     while ($dados = mysqli_fetch_array($result)) {
-
-                        echo "<td>".$dados['estabelecimentoNome']."</td>";
-                        echo "<td><img src=\"../".$dados['estabelecimentoImagemURL']."\"></td>";
-                        echo "<td>".$dados['']."</td>";
-                        echo "<td>".$dados['']."</td>";
-                        echo "<td width='5%' class='centertext'>Editar</td>";
-                        echo "<td width='5%' class='centertext'>Eliminar</td>";
-
-                        echo "</tr>";
-                    }
-                    echo "</table>";
                     ?>
 
+                <tr id="<?php echo $dados['estabelecimentoId']; ?>">
+                    <td><?php echo $dados['estabelecimentoId'] ?></td>
+                    <td><?php echo $dados['estabelecimentoNome'] ?></td>
+                    <td><img width='100' height="100" src="../<?php echo $dados['estabelecimentoMiniaturaURL'] ?>"></td>
+                    <td><?php echo $dados['perfilNome'] ?></td>
+                    <td><a href="../novoperfil.php?id= <?php echo $dados['estabelecimentoId'];?>"> <i
+                                    class="fas fa-edit text-primary"></i></a></td>
+                    <td><a onclick="DeleteUtilizador(<?php echo $dados['estabelecimentoId'];?>)"> <i class="fas fa-trash  text-danger"></i></a></td>
+
+                </tr>
+                <?php
+                }
+                ?>
+               </table>
         </div>
 
     </div>

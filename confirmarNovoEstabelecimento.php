@@ -33,5 +33,5 @@ $sql = "insert into estabelecimentos (estabelecimentoNome,estabelecimentoSlogan,
                                                                         '" . $estabelecimento . "');";
 
 mysqli_query($con, $sql);
-header("location:../PAPOrlando/estabelecimentos.php");
+header("location:criadoestabelecimentos.php?id={$id}");
 ?>

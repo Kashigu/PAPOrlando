@@ -218,7 +218,6 @@ function fillTableEstabelecimentos(txt = '') {
         }
     });
 
-
 }
 
 
