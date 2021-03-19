@@ -24,9 +24,9 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
 
                     <input type="hidden" name="id" value="<?php echo $id?>">
                     <div>
-                        <img src="<?php echo $dadosPerfis['perfilAvatar'] ?>"  class="center">
+                        <img src="<?php echo $dadosPerfis['perfilAvatar'] ?>"  class="center" id="output_image">
                         <div class="col-lg-3 ladocentro">
-                            <input type="file" id="perfilAvatar" name="perfilAvatar">
+                            <input type="file" id="perfilAvatar" name="perfilAvatar" accept="image/*" onchange="preview_image(event)" >
                         </div>
                         <p></p>
                     </div>

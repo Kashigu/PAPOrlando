@@ -38,7 +38,7 @@ $result = mysqli_query($con, $sql);
                     <td><img width='100' height="100" src="../<?php echo $dados['estabelecimentoMiniaturaURL'] ?>"></td>
                     <td><?php echo $dados['perfilNome'] ?></td>
                     <td><?php echo $dados['categoriaNome'] ?></td>
-                    <td><a href="../novoperfil.php?id= <?php echo $dados['estabelecimentoId'];?>"> <i
+                    <td><a href="../criarEstabelecimento.php?id=<?php echo $dados['estabelecimentoId'];?>"> <i
                                     class="fas fa-edit text-primary"></i></a></td>
                     <td><a onclick="DeleteUtilizador(<?php echo $dados['estabelecimentoId'];?>)"> <i class="fas fa-trash  text-danger"></i></a></td>
 
