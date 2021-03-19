@@ -219,7 +219,37 @@ function fillTableEstabelecimentos(txt = '') {
     });
 
 }
+function DeleteEstabelecimentos(id) {  // abre o modal e injecta o ID
+    $("#EstabelecimentoID").html(id);
+    $.ajax({
+        url: "../AJAX/AJAXGetNameEstabelecimentos.php",
+        type: "post",
+        data: {
+            idEstabelecimento: id
+        },
+        success: function (result) {
 
+            $("#idEstabelecimento").html('Confirma que deseja eliminar o Estabelecimento: ' + result + '?');
+
+            $("#staticBackdropDele").modal("toggle");
+            fillTableEstabelecimentos();
+        }
+    })
+}
+
+function DeleteTableEstabelecimentos() { // vai buscar o ID injectado e faz o DELETE
+    $('#staticBackdropDele').modal('toggle');
+    $.ajax({
+        url: "../AJAX/AJAXDeleteEstabelecimentos.php",
+        type: "post",
+        data: {
+            estabelecimento: parseInt($('#EstabelecimentoID').html())
+        },
+        success: function (result) {
+            fillTableEstabelecimentos();
+        }
+    });
+}
 
 //-------------------------------------------------------------- FUNÇÕES PARA OS UTILIZADORES------------------------------------------------------//
 function fillTableUtilizador(txt = '') {

@@ -40,7 +40,7 @@ $result = mysqli_query($con, $sql);
                     <td><?php echo $dados['categoriaNome'] ?></td>
                     <td><a href="../criarEstabelecimento.php?id=<?php echo $dados['estabelecimentoId'];?>"> <i
                                     class="fas fa-edit text-primary"></i></a></td>
-                    <td><a onclick="DeleteUtilizador(<?php echo $dados['estabelecimentoId'];?>)"> <i class="fas fa-trash  text-danger"></i></a></td>
+                    <td><a onclick="DeleteEstabelecimentos(<?php echo $dados['estabelecimentoId'];?>)"> <i class="fas fa-trash  text-danger"></i></a></td>
 
                 </tr>
                 <?php

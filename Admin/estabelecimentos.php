@@ -30,15 +30,13 @@ topAdmin();
             <form class=contact-form  method=post enctype=multipart/form-data>
 
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Eliminar Distrito</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Eliminar Estabelecimento</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-
-                    Tem a certeza que deseja eliminar:
-                    <div type="hidden" id="IdDistrito" name=IdDistrito></div>
+                    <span id="idEstabelecimento"></span>
 
                 </div>
                 <div class="modal-footer">
@@ -46,10 +44,11 @@ topAdmin();
                         <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Fechar</button>
                     </div>
                     <div class="col-lg-5 meio">
-                        <button onclick="DeleteTableDistritos();" type="button" id="eliminar" class="btn btn-danger pull-right ">Eliminar </button>
+                        <button onclick="DeleteTableEstabelecimentos();" type="button" id="eliminar" class="btn btn-danger pull-right ">Eliminar </button>
                     </div>
                 </div>
         </div>
+        <input type="hidden" id="EstabelecimentoID">
         </form >
     </div>
 </div>
