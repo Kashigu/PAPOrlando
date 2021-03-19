@@ -32,9 +32,9 @@ toputili();
                         <div class="col-lg-4 ">
 
                             <label name="categoria" class="check">
-                                <input type="radio" name="categoria" value="<?php echo $dadosCategorias['categoriaId']?>">
+                                <input type="radio" name="categoria" id="categoria" value="<?php echo $dadosCategorias['categoriaId']?>">
                                         <span class="checkmark"></span>
-                                <span type="radio" name="categoria" values= "<?php echo $dadosCategorias['categoriaId']?>">
+                                <span type="radio" name="categoria" id="categoria" values= "<?php echo $dadosCategorias['categoriaId']?>">
                                             <?php echo $dadosCategorias['categoriaNome']?>
                                 </span> </label>
                         </div>

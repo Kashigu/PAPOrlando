@@ -1,11 +1,11 @@
 <?php
 include_once("includes/body.inc.php");
 
-
+$id = $_POST['id'];
 $nome = addslashes($_POST['nomeEsta']);
 $nomeLoca = addslashes($_POST['nomeLoca']);
 $nomeDistrito = $_POST['distrito'];
-//$nomeCategoria =$_POST['categoria'];
+$nomeCategoria =$_POST['categoria'];
 $nomeSlogan = addslashes($_POST['nomeSlogan']);
 $sobre = $_POST['sobre'];
 $rua = $_POST['rua'];
@@ -16,7 +16,7 @@ $horas1 = $_POST['horas1'];
 $horas2 = $_POST['horas2'];
 $logo = $_FILES['logo'];
 $fundo = $_FILES['fundo'];
-$google = $_FILES['google'];
+//$google = $_FILES['google'];
 $estabelecimento = $_FILES['estabelecimento'];
 
 

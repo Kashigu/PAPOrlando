@@ -3,8 +3,11 @@
 include_once("../includes/body.inc.php");
 $txt = addslashes($_POST['txt']);
 
-$sql = "Select * from estabelecimentos inner join categorias inner join perfis where estabelecimentoNome LIKE '%$txt%'";
+/*$sql = "Select * from estabelecimentos inner join estabelecimentocategorias on estabelecimentoId = estabelecimentoCategoriaEstabelecimentoId
+        inner join perfis where estabelecimentoNome LIKE '%$txt%'";*/
 
+$sql = "Select * from estabelecimentos inner join categorias
+        inner join perfis where estabelecimentoNome LIKE '%$txt%'";
 
 $result = mysqli_query($con, $sql);
 
