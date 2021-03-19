@@ -20,6 +20,11 @@ $fundo = $_FILES['fundo'];
 $estabelecimento = $_FILES['estabelecimento'];
 
 
+copy($_FILES['imagem']['tmp_name'],"../".$logo);
+copy($_FILES['imagem']['tmp_name'],"../".$fundo);
+copy($_FILES['imagem']['tmp_name'],"../".$estabelecimento);
+
+
 $sql = "insert into estabelecimentos (estabelecimentoNome,estabelecimentoSlogan,
                                     estabelecimentoDescrição,
                                     estabelecimentoLocalidade,estabelecimentoMorada,
