@@ -34,7 +34,7 @@ toputili();
                             <label name="categoria" class="check">
                                 <input type="radio" name="categoria" value="<?php echo $dadosCategorias['categoriaId']?>">
                                         <span class="checkmark"></span>
-                                <span type="radio"  values= "<?php echo $dadosCategorias['categoriaId']?>">
+                                <span type="radio" name="categoria" values= "<?php echo $dadosCategorias['categoriaId']?>">
                                             <?php echo $dadosCategorias['categoriaNome']?>
                                 </span> </label>
                         </div>
