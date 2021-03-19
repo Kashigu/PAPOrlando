@@ -31,7 +31,7 @@ $result = mysqli_query($con, $sql);
                     <td data-target="perfilNome" ><?php echo $dados['perfilNome'] ?></td>
                     <td data-target="perfilImagem"><img width='100' height="100" src="../<?php echo $dados['perfilAvatar'] ?>"></td>
                     <td data-target="perfilEmail" ><?php echo $dados['perfilEmail'] ?></td>
-                    <td><a href="../novoperfil.php?id= <?php echo $dados['perfilId'];?>"> <i
+                    <td><a href="../novoperfil.php?id=<?php echo $dados['perfilId'];?>"> <i
                                     class="fas fa-edit text-primary"></i></a></td>
                     <td><a onclick="DeleteUtilizador(<?php echo $dados['perfilId'];?>)"> <i class="fas fa-trash  text-danger"></i></a></td>
                 </tr>
