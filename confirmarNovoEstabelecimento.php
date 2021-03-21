@@ -14,10 +14,10 @@ $email = $_POST['email'];
 $horas = $_POST['horas'];
 $horas1 = $_POST['horas1'];
 $horas2 = $_POST['horas2'];
-$logo = $_FILES['logo'];
-$fundo = $_FILES['fundo'];
+$logo = $_FILES['logo']['name'];
+$fundo = $_FILES['fundo']['name'];
 //$google = $_FILES['google'];
-$estabelecimento = $_FILES['estabelecimento'];
+$estabelecimento = $_FILES['estabelecimento']['name'];
 
 
 copy($_FILES['logo']['tmp_name'],"../".$logo);
@@ -25,8 +25,8 @@ copy($_FILES['fundo']['tmp_name'],"../".$fundo);
 copy($_FILES['estabelecimento']['tmp_name'],"../".$estabelecimento);
 
 
-$sql = "insert into estabelecimentos (estabelecimentoNome,estabelecimentoSlogan,
-                                    estabelecimentoDescrição,
+echo $sql = "insert into estabelecimentos (estabelecimentoNome,estabelecimentoSlogan,
+                                    estabelecimentoDescriÃ§Ã£o,
                                     estabelecimentoLocalidade,estabelecimentoMorada,
                                     estabelecimentoTelefone,estabelecimentoEmail,
                                     estabelecimentoFundoURL,estabelecimentoMiniaturaURL,
@@ -38,5 +38,5 @@ $sql = "insert into estabelecimentos (estabelecimentoNome,estabelecimentoSlogan,
                                                                         '" . $estabelecimento . "');";
 
 mysqli_query($con, $sql);
-header("location:criadoestabelecimentos.php?id={$id}");
+//header("location:criadoestabelecimentos.php?id={$id}");
 ?>
