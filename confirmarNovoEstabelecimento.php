@@ -1,7 +1,7 @@
 <?php
 include_once("includes/body.inc.php");
 
-$id = $_POST['id'];
+$id = $_GET['id'];
 $nome = addslashes($_POST['nomeEsta']);
 $nomeLoca = addslashes($_POST['nomeLoca']);
 $nomeDistrito = $_POST['distrito'];
@@ -20,9 +20,9 @@ $fundo = $_FILES['fundo'];
 $estabelecimento = $_FILES['estabelecimento'];
 
 
-copy($_FILES['imagem']['tmp_name'],"../".$logo);
-copy($_FILES['imagem']['tmp_name'],"../".$fundo);
-copy($_FILES['imagem']['tmp_name'],"../".$estabelecimento);
+copy($_FILES['logo']['tmp_name'],"../".$logo);
+copy($_FILES['fundo']['tmp_name'],"../".$fundo);
+copy($_FILES['estabelecimento']['tmp_name'],"../".$estabelecimento);
 
 
 $sql = "insert into estabelecimentos (estabelecimentoNome,estabelecimentoSlogan,

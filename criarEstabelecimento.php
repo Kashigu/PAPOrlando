@@ -21,8 +21,15 @@ toputili();
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <?php echo "<form action=\"confirmarNovoEstabelecimento.php\" class=\"contact-form\" method=\"post\" enctype=\"multipart/form-data\">"; ?>
+                    <?php  $sql="select * from perfis ";
+                            $resultPerfis=mysqli_query($con,$sql);
+                    while ($dadosPerfis=mysqli_fetch_array($resultPerfis)){
+
+
+                    ?>
+                   <form action="confirmarNovoEstabelecimento.php?id=<?php echo $dadosPerfis['perfilId'] ?>" class="contact-form" method="post" enctype="multipart/form-data">
                     <div class="row">
+                        <?php  } ?>
 
                                     <?php
                                     $sql="select * from categorias order by categoriaNome";
@@ -161,7 +168,7 @@ toputili();
                         <div class="col-lg-4 mt-3">
                         </div>
                         <div class="col-lg-8 mt-3">
-                            <button type="submit">Confirmar Estabelecimento</button>
+                            <button type="submit">Confirmar Estabelecimento </button>
                         </div>
                     </div>
                     </form>
