@@ -590,7 +590,7 @@ function bottomsingle()
     <?php
 }
 
-function bottom()
+function bottom($menu)
 {
     ?>
 
@@ -715,6 +715,23 @@ function bottom()
             $('#btnComentar').hide();
         }
     </script>
+<script>
+    $('document').ready(function () {
+    <?php
+    if($menu == ESTABELECIMENTOSP){
+        ?>
+        $('#search').keyup(function () {
+        fillTableEstabelecimentosProcurar(this.value);
+        });
+        fillTableEstabelecimentosProcurar();
+
+    <?php }
+
+    ?>
+    })
+</script>
+</body>
+</html>
     <?php
 }
 

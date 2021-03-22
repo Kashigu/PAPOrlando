@@ -1,14 +1,24 @@
 <?php
 include_once("includes/body.inc.php");
 top(PROCURAR);
+$txt = addslashes($_POST['txt']);
+
+/*$sql = "Select * from estabelecimentos inner join estabelecimentocategorias on estabelecimentoId = estabelecimentoCategoriaEstabelecimentoId
+        inner join perfis where estabelecimentoNome LIKE '%$txt%'";*/
+
+$sql = "Select * from estabelecimentos inner join categorias
+         where estabelecimentoNome LIKE '%$txt%'";
+
+$result = mysqli_query($con, $sql);
+
 
 ?>
 
 <!-- Map Section Begin -->
 <div class="map">
     <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d98134.94359898944!2d-9.024180455236154!3d39.76846225120994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd220e5ad762d557%3A0x3e2faced1b039ae2!2sM.nha%20Grande!5e0!3m2!1spt-PT!2spt!4v1614251067087!5m2!1spt-PT!2spt"
-        height="657" style="border:0;" allowfullscreen="">
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d98134.94359898944!2d-9.024180455236154!3d39.76846225120994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd220e5ad762d557%3A0x3e2faced1b039ae2!2sM.nha%20Grande!5e0!3m2!1spt-PT!2spt!4v1614251067087!5m2!1spt-PT!2spt"
+            height="657" style="border:0;" allowfullscreen="">
     </iframe>
     <!--<img src="img/pin.png" alt="">-->
 </div>
@@ -25,12 +35,12 @@ top(PROCURAR);
                         <select name="categoria" class="ca-search">
                             <option value="-1">Escolha a Categoria</option>
                             <?php
-                            $sql="select * from categorias order by categoriaNome";
-                            $resultCategorias=mysqli_query($con,$sql);
-                            while ($dadosCategorias=mysqli_fetch_array($resultCategorias)){
+                            $sql = "select * from categorias order by categoriaNome";
+                            $resultCategorias = mysqli_query($con, $sql);
+                            while ($dadosCategorias = mysqli_fetch_array($resultCategorias)) {
                                 ?>
-                                <option value="<?php echo $dadosCategorias['categoriaId']?>">
-                                    <?php echo $dadosCategorias['categoriaNome']?>
+                                <option value="<?php echo $dadosCategorias['categoriaId'] ?>">
+                                    <?php echo $dadosCategorias['categoriaNome'] ?>
                                 </option>
                                 <?php
                             }
@@ -43,12 +53,12 @@ top(PROCURAR);
                         <select name="distrito" class="lo-search">
                             <option value="-1">Escolha o Distrito</option>
                             <?php
-                            $sql="select * from distritos order by distritoNome";
-                            $resultDistritos=mysqli_query($con,$sql);
-                            while ($dadosDistritos=mysqli_fetch_array($resultDistritos)){
+                            $sql = "select * from distritos order by distritoNome";
+                            $resultDistritos = mysqli_query($con, $sql);
+                            while ($dadosDistritos = mysqli_fetch_array($resultDistritos)) {
                                 ?>
-                                <option value="<?php echo $dadosDistritos['distritoId']?>">
-                                    <?php echo $dadosDistritos['distritoNome']?>
+                                <option value="<?php echo $dadosDistritos['distritoId'] ?>">
+                                    <?php echo $dadosDistritos['distritoNome'] ?>
                                 </option>
                                 <?php
                             }
@@ -63,6 +73,7 @@ top(PROCURAR);
                 </form>
             </div>
         </div>
+    </div>
     </div>
 </section>
 <!-- Search Filter Section End -->
@@ -190,21 +201,24 @@ top(PROCURAR);
                         </form>
                     </div>
                     <?php
-                    $sql="select * from estabelecimentos inner join categorias ";
-                    $resultEstabelecimentos=mysqli_query($con,$sql);
-                    while ($dadosEstabelecimentos=mysqli_fetch_array($resultEstabelecimentos)){
+                    $sql = "select * from estabelecimentos inner join categorias ";
+                    $resultEstabelecimentos = mysqli_query($con, $sql);
+                    while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
                         ?>
                         <div class="col-lg-4 col-sm-6">
-                            <a class="arrange-items" href="single-listing.php?id<?php echo $dadosEstabelecimentos['estabelecimentoId']?>">
+                            <a class="arrange-items"
+                               href="single-listing.php?id<?php echo $dadosEstabelecimentos['estabelecimentoId'] ?>">
                                 <div class="arrange-pic">
-                                    <img class="centrinho" src="<?php echo $dadosEstabelecimentos['estabelecimentoMiniaturaURL']?>" alt="">
+                                    <img class="centrinho"
+                                         src="<?php echo $dadosEstabelecimentos['estabelecimentoMiniaturaURL'] ?>"
+                                         alt="">
                                     <div class="rating">4.9</div>
-                                    <div class="tic-text"><?php echo $dadosEstabelecimentos['categoriaNome']?></div>
+                                    <div class="tic-text"><?php echo $dadosEstabelecimentos['categoriaNome'] ?></div>
                                 </div>
                                 <div class="arrange-text">
-                                    <h5><?php echo $dadosEstabelecimentos['estabelecimentoNome']?></h5>
-                                    <span><?php echo $dadosEstabelecimentos['estabelecimentoMorada']?></span>
-                                    <p><?php echo $dadosEstabelecimentos['estabelecimentoSlogan']?></p>
+                                    <h5><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></h5>
+                                    <span><?php echo $dadosEstabelecimentos['estabelecimentoMorada'] ?></span>
+                                    <p><?php echo $dadosEstabelecimentos['estabelecimentoSlogan'] ?></p>
                                     <div class="open tomorrow">Abre amanhã às 10 da manhã</div>
                                 </div>
                             </a>
@@ -228,5 +242,5 @@ top(PROCURAR);
 
 
 <?php
-bottom();
+bottom(ESTABELECIMENTOSP);
 ?>

@@ -312,5 +312,19 @@ function preview_image(event)
     reader.readAsDataURL(event.target.files[0]);
 }
 
+//-----------------------------------------------------------FUNÇÕES PARA O PROCURAR.PHP----------------------------------------------//
 
+function fillTableEstabelecimentosProcurar(txt = '') {
+    $.ajax({
+        url: "procurar.php",
+        type: "post",
+        data: {
+            txt: txt
+        },
+        success: function (result) {
+            $('#tableContent').html(result);
+        }
+    });
+
+}
 
