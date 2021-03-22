@@ -6,17 +6,25 @@ $txt = addslashes($_POST['txt']);
 /*$sql = "Select * from estabelecimentos inner join estabelecimentocategorias on estabelecimentoId = estabelecimentoCategoriaEstabelecimentoId
         inner join perfis where estabelecimentoNome LIKE '%$txt%'";*/
 
-$sql = "Select * from estabelecimentos inner join categorias
-        inner join perfis where estabelecimentoNome LIKE '%$txt%'";
+$sql = " select *
+                            from distritos inner join estabelecimentos 
+                            on distritoId=estabelecimentoDistritoId
+                            INNER JOIN perfis 
+                            on perfilId=estabelecimentoPerfilId
+                            INNER JOIN estabelecimentocategorias
+                            on estabelecimentoId=estabelecimentoCategoriaEstabelecimentoId
+                            INNER JOIN categorias
+                            on categoriaId=estabelecimentoCategoriaCategoriaId
+                            where estabelecimentoNome LIKE '%$txt%'";
 
 $result = mysqli_query($con, $sql);
 
 
 ?>
 
-<section class="contact-section search-filter spad">
+
     <div class="container">
-        <div class="col-12 mt-4">
+
             <table class="table table-striped table-hover">
                 <td colspan="7" align='right'>
                     <a href="../criarEstabelecimento.php"><i class='fas text-dark'> Adiciona</i></a>
@@ -52,6 +60,6 @@ $result = mysqli_query($con, $sql);
                </table>
         </div>
 
-    </div>
-</section>
+
+
 

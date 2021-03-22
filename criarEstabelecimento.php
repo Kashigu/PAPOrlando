@@ -37,7 +37,7 @@ $id=intval($_GET['id']);
                             <label name="categoria" class="check">
                                 <input type="radio" name="categoria[]" id="categoria" value="<?php echo $dadosCategorias['categoriaId']?>">
                                         <span class="checkmark"></span>
-                                <span type="radio" name="categoria2[]" id="categoria">  <?php echo $dadosCategorias['categoriaNome']?>
+                                <span type="radio" name="categoria2[]" >  <?php echo $dadosCategorias['categoriaNome']?>
                                 </span> </label>
                         </div>
                                         <?php
