@@ -324,5 +324,5 @@ top(PORTUGAL);
     </section>
 
 <?php
-bottom();
+bottom(HOME);
 ?>
