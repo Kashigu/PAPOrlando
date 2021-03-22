@@ -1,7 +1,7 @@
 <?php
 include_once("includes/body.inc.php");
 toputili();
-$id=intval($_GET);
+$id=intval($_GET['id']);
 ?>
 
 

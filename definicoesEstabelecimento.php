@@ -1,7 +1,12 @@
 <?php
 include_once("includes/body.inc.php");
 topocriado();
+$id=intval($_GET['id']);
+$sql = "Select * from estabelecimentos inner join categorias
+        inner join perfis where estabelecimentoId=$id";
 
+$resultEstabelecimentos = mysqli_query($con, $sql);
+$dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 ?>
 
 <div class="hero-listing set-bg" data-setbg="img/maravilha.jpg">
@@ -20,133 +25,151 @@ topocriado();
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form action="criado.php" class="contact-form">
+
+                <form action="confirmarEditaEstabelecimento.php?id=<?php echo $id ?>" class="contact-form" method="post" enctype="multipart/form-data">
                     <div class="row">
-                        <div class="row">
+
+
+                        <?php
+                        $sql="select * from categorias order by categoriaNome";
+                        $resultCategorias=mysqli_query($con,$sql);
+                        while ($dadosCategorias=mysqli_fetch_array($resultCategorias)){
+                            ?>
                             <div class="col-lg-4 ">
 
-                                <label class="check">Café
-                                    <input type="radio" checked="checked" name="radio">
+                                <label name="categoria" class="check">
+                                    <input type="radio" name="categoria" id="categoria" value="<?php echo $dadosCategorias['categoriaId']?>">
                                     <span class="checkmark"></span>
-                                </label>
-
-
-                                <!-- <label for="cafe">Café
-                                 <input type="radio" name="gender" id="cafe" value="cafe"></label> -->
+                                    <span type="radio" name="categoria" id="categoria" values= "<?php echo $dadosCategorias['categoriaId']?>">
+                                            <?php echo $dadosCategorias['categoriaNome']?>
+                                </span> </label>
                             </div>
-                            <div class="col-lg-4 ">
-
-                                <label class="check">Restaurante
-                                    <input type="radio" name="radio">
-                                    <span class="checkmark"></span>
-                                </label>
-
-
-                                <!-- <label for="restaurante">Restaurante
-                                     <input type="radio" name="gender" id="restaurante" value="restaurante"></label> -->
-
-                            </div>
-                            <div class="col-lg-4 ">
-                                <label class="check">Hotel
-                                    <input type="radio" name="radio">
-                                    <span class="checkmark"></span>
-                                </label>
+                            <?php
+                        }
+                        ?>
 
 
 
-                                <!--<label for="hotel">Hotel
-                                    <input type="radio" name="gender" id="hotel" value="hotel"></label> -->
-                            </div>
-                            <div class="col-lg-6 mt-4">
-                                <input type="text" placeholder="Nome do Estabelecimento">
-                            </div>
-                            <div class="col-lg-3 mt-4">
-                                <input type="text" placeholder="Localidade">
-                            </div>
-                            <div class="col-lg-3 mt-4">
-                                <input type="text" placeholder="Distrito">
-                            </div>
-                            <div class="col-lg-12">
-                                <textarea placeholder="Sobre o Estabelecimento"></textarea>
-                            </div>
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="Rua">
-                                <input type="text" placeholder="Número">
-                                <input type="email" placeholder="Email do Estabelecimento">
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="row">
-                                    <div class="col-5">
-                                        <label>Segunda a sexta</label>
-                                    </div>
-                                    <div class="col-7">
-                                        <input type="text" placeholder="8:00 - 22:00">
-                                    </div>
+                        <!-- <label for="cafe">Café
+                         <input type="radio" name="gender" id="cafe" value="cafe"></label> -->
 
-                                </div>
-                                <div class="row">
-                                    <div class="col-5">
-                                        <label>Sábado</label>
-                                    </div>
-                                    <div class="col-7">
-                                        <input type="text" placeholder="8:00 - 22:00">
-                                    </div>
+                        <div class="col-lg-12">
 
-                                </div>
-                                <div class="row">
-                                    <div class="col-5">
-                                        <label>Domingo</label>
-                                    </div>
-                                    <div class="col-7">
-                                        <input type="text" placeholder="8:00 - 22:00">
-                                    </div>
-
-                                </div>
-                                <div class="row">
-                                    <div class="col-5">
-                                        <label>Descanso Semanal</label>
-                                    </div>
-                                    <div class="col-7">
-                                        <select>
-                                            <option>Sem descanso</option>
-                                            <option>Segunda-Feira</option>
-                                            <option>Terça-Feira</option>
-                                            <option>Quarta-Feira</option>
-                                            <option>Quinta-Feira</option>
-                                            <option>Sexta-Feira</option>
-                                            <option>Sábado</option>
-                                            <option>Domingo</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                                <hr>
-                            </div>
-                            <div class="col-lg-6">
-                                <label>Logótipo:    </label>
-                                <input type="file">
-
-                            </div>
-                            <div class="col-lg-6">
-                                <label>Imagem de Fundo:   </label>
-                                <input type="file">
-                            </div>
-                            <div class="col-lg-6">
-                                <label>Posição do Estabelecimento no Google Earth:   </label>
-                                <input type="file">
-
-                            </div>
-                            <div class="col-lg-6">
-                                <label>Imagens do Estabelecimento:   </label>
-                                <input type="file">
-
-                            </div>
-                            <div class="col-lg-4 mt-3">
-                            </div>
-                            <div class="col-lg-8 mt-3">
-                                <button type="submit">Confirmar Alterações </button>
-                            </div>
                         </div>
+                        <div class="col-lg-6 mt-4">
+                            <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?>" name="nomeEsta"  id="nomeEsta" placeholder="Nome do Estabelecimento" >
+                        </div>
+                        <div class="col-lg-3 mt-4">
+                            <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoLocalidade'] ?>" name="nomeLoca" id="nomeLoca" placeholder="Localidade">
+                        </div>
+                        <div class="col-lg-3 mt-4 arrange-select nice-select2">
+                            <span>Distritos</span>
+                            <select name="distrito" >
+                                <option value="-1">Escolha o Distrito</option>
+                                <?php
+                                $sql="select * from distritos order by distritoNome";
+                                $resultDistritos=mysqli_query($con,$sql);
+                                while ($dadosDistritos=mysqli_fetch_array($resultDistritos)){
+                                    ?>
+                                    <option id="distrito" value="<?php echo $dadosDistritos['distritoId']?>">
+                                        <?php echo $dadosDistritos['distritoNome']?>
+                                    </option>
+                                    <?php
+                                }
+                                ?>
+                            </select>
+
+
+
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoSlogan'] ?>" name="nomeSlogan" id="nomeSlogan" placeholder="Slogan">
+                        </div>
+                        <div class="col-lg-12">
+                            <textarea name="sobre" value="<?php echo $dadosEstabelecimentos['estabelecimentoDescrição'] ?>" id="sobre" placeholder="Sobre o Estabelecimento"></textarea>
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="text"value="<?php echo $dadosEstabelecimentos['estabelecimentoMorada'] ?>" name="rua" id="rua" placeholder="Rua">
+                            <input type="tel" value="<?php echo $dadosEstabelecimentos['estabelecimentoTelefone'] ?>" name="numero" id="numero" placeholder="Número">
+                            <input type="email" value="<?php echo $dadosEstabelecimentos['estabelecimentoEmail'] ?>" name="email" id="email" placeholder="Email do Estabelecimento">
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="col-5">
+                                    <label>Segunda a sexta</label>
+                                </div>
+                                <div class="col-7">
+                                    <input type="text" name="horas" id="horas" placeholder="8:00 - 22:00">
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-5">
+                                    <label>Sábado</label>
+                                </div>
+                                <div class="col-7">
+                                    <input type="text" name="horas1" id="horas1" placeholder="8:00 - 22:00">
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-5">
+                                    <label>Domingo</label>
+                                </div>
+                                <div class="col-7">
+                                    <input type="text" name="horas2" id="horas2" placeholder="8:00 - 22:00">
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-5" name="descanso" id="descanso">
+                                    <label>Descanso Semanal</label>
+                                </div>
+                                <div class="col-5 arrange-select nice-select2">
+                                    <select>
+                                        <option>Sem descanso</option>
+                                        <option>Segunda-Feira</option>
+                                        <option>Terça-Feira</option>
+                                        <option>Quarta-Feira</option>
+                                        <option>Quinta-Feira</option>
+                                        <option>Sexta-Feira</option>
+                                        <option>Sábado</option>
+                                        <option>Domingo</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+
+                            <hr>
+
+
+                        </div>
+                        <div class="col-lg-6">
+                            <label>Logótipo: </label>
+                            <input type="file" value="<?php echo $dadosEstabelecimentos['estabelecimentoMiniaturaURL'] ?>" name="logo" id="logo">
+
+                        </div>
+                        <div class="col-lg-6">
+                            <label>Imagem de Fundo: </label>
+                            <input type="file" value="<?php echo $dadosEstabelecimentos['estabelecimentoFundoURL'] ?>" name="fundo" id="fundo">
+                        </div>
+                        <div class="col-lg-6">
+                            <label>Posição do Estabelecimento no Google Earth: </label>
+                            <input type="file" name="google" id="google">
+
+                        </div>
+                        <div class="col-lg-6">
+                            <label>Imagens do Estabelecimento: </label>
+                            <input type="file" value="<?php echo $dadosEstabelecimentos['estabelecimentoInteriorURL'] ?>" name="estabelecimento" id="estabelecimento">
+
+                        </div>
+                        <div class="col-lg-4 mt-3">
+                        </div>
+                        <div class="col-lg-8 mt-3">
+                            <button type="submit">Confirmar Alteração </button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

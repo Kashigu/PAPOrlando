@@ -1,10 +1,15 @@
 <?php
 include_once("includes/body.inc.php");
 topocriado();
+$id=intval($_GET['id']);
+$sql = "Select * from estabelecimentos inner join categorias
+        inner join perfis where estabelecimentoId=$id";
 
+$resultEstabelecimentos = mysqli_query($con, $sql);
+$dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 ?>
 
-<div class="hero-listing set-bg" data-setbg="img/ratoeira1.jpg">
+<div class="hero-listing set-bg" data-setbg="<?php echo $dadosEstabelecimentos['estabelecimentoFundoURL'] ?>">
 </div>
 <!-- Hero Section End -->
 
@@ -17,9 +22,9 @@ topocriado();
                     <div class="about-intro">
                         <div class="rating">4.9</div>
                         <div class="intro-text">
-                            <h2>Ratoeira</h2>
-                            <h4>Marinha Grande</h4>
-                            <p>Encontre alguns dos melhores sitios do Mundo</p>
+                            <h2 ><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></h2>
+                            <h4 ><?php echo $dadosEstabelecimentos['estabelecimentoLocalidade'] ?></h4>
+                            <p ><?php echo $dadosEstabelecimentos['estabelecimentoSlogan'] ?></p>
                             <div class="open">Abre amanhã às 10 da manhã</div>
                             <div class="closed">Fechado agora</div>
                         </div>
@@ -28,7 +33,7 @@ topocriado();
                 <div class="col-lg-4 offset-lg-1">
                     <div class="intro-share">
                         <div class="share-btn">
-                            <a href="definicoesEstabelecimento.php">Definições</a>
+                            <a href="definicoesEstabelecimento.php?id=<?php echo $id ?>">Definições</a>
                         </div>
                         <div class="share-icon">
                             <!--<a href="#"><i class="fa fa-map-marker"></i></a> -->
@@ -67,9 +72,9 @@ topocriado();
                                 vehicula mauris, eget eleifend tortor magna luctus</p>
                         </div>
                         <div class="about-video">
-                            <img src="img/video-bg.jpg" alt="">
-                            <a href="https://www.youtube.com/watch?v=fySJrtzyMy4" class="pop-up"><i
-                                    class="fa fa-play"></i></a>
+                            <img class="tamanho1" src="<?php echo $dadosEstabelecimentos['estabelecimentoInteriorURL'] ?>" alt="">
+                            <a href="<?php echo $dadosEstabelecimentos['estabelecimentoInteriorURL'] ?>" class="img-hover pop-up"><img src="img/zoom.png" alt=""></a>
+
                         </div>
                         <div class="client-reviews">
                             <h3>Revisão</h3>
@@ -124,10 +129,10 @@ topocriado();
                             </div>
                             <div class="contact-text">
                                 <h4>Informação</h4>
-                                <span>Main Road , No 25/11</span>
+                                <span><?php echo $dadosEstabelecimentos['estabelecimentoMorada'] ?></span>
                                 <ul>
-                                    <li>+34 556788 3221</li>
-                                    <li>contact@pizzaplace.com</li>
+                                    <li><?php echo $dadosEstabelecimentos['estabelecimentoTelefone'] ?></li>
+                                    <li><?php echo $dadosEstabelecimentos['estabelecimentoEmail'] ?></li>
                                 </ul>
                             </div>
                         </div>
