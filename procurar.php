@@ -189,141 +189,30 @@ top(PROCURAR);
                             </select>
                         </form>
                     </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="arrange-items" href="single-listing.php">
-                            <div class="arrange-pic">
-                                <img src="img/arrange/ratoeira1.jpg" alt="">
-                                <div class="rating">4.9</div>
-                                <div class="tic-text">Restaurante</div>
-                            </div>
-                            <div class="arrange-text">
-                                <h5>Ratoeira</h5>
-                                <span>Marinha Grande , No 25/11</span>
-                                <p>Fusce urna quam, euismod sit</p>
-                                <div class="open tomorrow">Abre amanhã às 10 da manhã</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="arrange-items" href="segundo.php">
-                            <div class="arrange-pic">
-                                <img src="img/arrange/100.jpg" alt="">
-                                <div class="rating">4.9</div>
-                                <div class="tic-text">Restaurante</div>
-                            </div>
-                            <div class="arrange-text">
-                                <h5>Pizzaria 100 Nome</h5>
-                                <span>Marinha Grande , No 25/11</span>
-                                <p>Euismod sit amet mollis.</p>
-                                <div class="open">Aberto antes das 3 da Tarde</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="arrange-items" href="hotel.php">
-                            <div class="arrange-pic">
-                                <img src="img/arrange/arrange-3.jpg" alt="">
-                                <div class="rating">4.9</div>
-                                <div class="tic-text">Restaurants</div>
-                            </div>
-                            <div class="arrange-text">
-                                <h5>Pizza Oven</h5>
-                                <span>Main Road , No 25/11</span>
-                                <p>Euismod sit amet mollis.</p>
-                                <div class="open">Open Until 3am</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="arrange-items" href="restaurante.php">
-                            <div class="arrange-pic">
-                                <img src="img/arrange/arrange-4.jpg" alt="">
-                                <div class="rating">4.9</div>
-                                <div class="tic-text">Restaurants</div>
-                            </div>
-                            <div class="arrange-text">
-                                <h5>Petit Place Cafe</h5>
-                                <span>Main Road , No 25/11</span>
-                                <p>Fusce urna quam, euismod.</p>
-                                <div class="open tomorrow">Opens Tomorow at 10am</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="arrange-items" href="single-listing.html">
-                            <div class="arrange-pic">
-                                <img src="img/arrange/arrange-5.jpg" alt="">
-                                <div class="rating">4.9</div>
-                                <div class="tic-text">Restaurants</div>
-                            </div>
-                            <div class="arrange-text">
-                                <h5>Green Pub</h5>
-                                <span>Main Road , No 25/11</span>
-                                <p>Urna quam, euismod sit amet.</p>
-                                <div class="open">Open Until 3am</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="arrange-items" href="single-listing.html">
-                            <div class="arrange-pic">
-                                <img src="img/arrange/arrange-6.jpg" alt="">
-                                <div class="rating">4.9</div>
-                                <div class="tic-text">Restaurants</div>
-                            </div>
-                            <div class="arrange-text">
-                                <h5>Cosmo Pub</h5>
-                                <span>Main Road , No 25/11</span>
-                                <p>Urna quam, euismod sit amet.</p>
-                                <div class="open">Open Until 3am</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="arrange-items" href="single-listing.html">
-                            <div class="arrange-pic">
-                                <img src="img/arrange/arrange-7.jpg" alt="">
-                                <div class="rating">4.9</div>
-                                <div class="tic-text">Restaurants</div>
-                            </div>
-                            <div class="arrange-text">
-                                <h5>Trocadero Restaurant</h5>
-                                <span>Main Road , No 25/11</span>
-                                <p>Euismod sit amet mollis.</p>
-                                <div class="open closed">Closed Now</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="arrange-items" href="single-listing.html">
-                            <div class="arrange-pic">
-                                <img src="img/arrange/arrange-8.jpg" alt="">
-                                <div class="rating">4.9</div>
-                                <div class="tic-text">Restaurants</div>
-                            </div>
-                            <div class="arrange-text">
-                                <h5>Pizza Bistro</h5>
-                                <span>Main Road , No 25/11</span>
-                                <p>Fusce urna quam, euismod.</p>
-                                <div class="open">Open Until 3am</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="arrange-items" href="single-listing.html">
-                            <div class="arrange-pic">
-                                <img src="img/arrange/arrange-9.jpg" alt="">
-                                <div class="rating">4.9</div>
-                                <div class="tic-text">Restaurants</div>
-                            </div>
-                            <div class="arrange-text">
-                                <h5>Ciao Pub</h5>
-                                <span>Main Road , No 25/11</span>
-                                <p>Fusce urna quam, euismod.</p>
-                                <div class="open">Open Until 3am</div>
-                            </div>
-                        </a>
-                    </div>
+                    <?php
+                    $sql="select * from estabelecimentos inner join categorias ";
+                    $resultEstabelecimentos=mysqli_query($con,$sql);
+                    while ($dadosEstabelecimentos=mysqli_fetch_array($resultEstabelecimentos)){
+                        ?>
+                        <div class="col-lg-4 col-sm-6">
+                            <a class="arrange-items" href="single-listing.php?id<?php echo $dadosEstabelecimentos['estabelecimentoId']?>">
+                                <div class="arrange-pic">
+                                    <img class="centrinho" src="<?php echo $dadosEstabelecimentos['estabelecimentoMiniaturaURL']?>" alt="">
+                                    <div class="rating">4.9</div>
+                                    <div class="tic-text"><?php echo $dadosEstabelecimentos['categoriaNome']?></div>
+                                </div>
+                                <div class="arrange-text">
+                                    <h5><?php echo $dadosEstabelecimentos['estabelecimentoNome']?></h5>
+                                    <span><?php echo $dadosEstabelecimentos['estabelecimentoMorada']?></span>
+                                    <p><?php echo $dadosEstabelecimentos['estabelecimentoSlogan']?></p>
+                                    <div class="open tomorrow">Abre amanhã às 10 da manhã</div>
+                                </div>
+                            </a>
+                        </div>
+                        <?php
+                    }
+                    ?>
+
                     <div class="col-lg-12 text-right">
                         <div class="pagination-num">
                             <a href="#">01</a>
