@@ -2,8 +2,9 @@
 include_once("includes/body.inc.php");
 topocriado();
 $id=intval($_GET['id']);
-$sql = "Select * from estabelecimentos inner join categorias
-        inner join perfis where estabelecimentoId=$id";
+$sql = "Select * from estabelecimentos ";
+// inner join categorias
+ $sql.= " where estabelecimentoId=$id";
 
 $resultEstabelecimentos = mysqli_query($con, $sql);
 $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)

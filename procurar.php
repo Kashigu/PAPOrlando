@@ -3,13 +3,6 @@ include_once("includes/body.inc.php");
 top(PROCURAR);
 $txt = addslashes($_POST['txt']);
 
-/*$sql = "Select * from estabelecimentos inner join estabelecimentocategorias on estabelecimentoId = estabelecimentoCategoriaEstabelecimentoId
-        inner join perfis where estabelecimentoNome LIKE '%$txt%'";*/
-
-$sql = "Select * from estabelecimentos inner join categorias
-         where estabelecimentoNome LIKE '%$txt%'";
-
-$result = mysqli_query($con, $sql);
 
 
 ?>
@@ -201,7 +194,16 @@ $result = mysqli_query($con, $sql);
                         </form>
                     </div>
                     <?php
-                    $sql = "select * from estabelecimentos inner join categorias ";
+                    $sql="
+                            select *
+                            from distritos inner join estabelecimentos 
+                            on distritoId=estabelecimentoDistritoId
+                            INNER JOIN estabelecimentocategorias
+                            on estabelecimentoId=estabelecimentoCategoriaEstabelecimentoId
+                            INNER JOIN categorias
+                            on categoriaId=estabelecimentoCategoriaCategoriaId
+                            where estabelecimentoNome LIKE '%$txt%'";
+
                     $resultEstabelecimentos = mysqli_query($con, $sql);
                     while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
                         ?>

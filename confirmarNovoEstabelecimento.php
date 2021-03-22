@@ -1,11 +1,14 @@
 <?php
 include_once("includes/body.inc.php");
 
-$id = $_GET['id'];
+
+
+
+$idUtilizador = intval($_POST['id']);
 $nome = addslashes($_POST['nomeEsta']);
 $nomeLoca = addslashes($_POST['nomeLoca']);
 $nomeDistrito = $_POST['distrito'];
-$nomeCategoria =$_POST['categoria'];
+$idCategoria =intval($_POST['categoria']);
 $nomeSlogan = addslashes($_POST['nomeSlogan']);
 $sobre = $_POST['sobre'];
 $rua = $_POST['rua'];
@@ -31,12 +34,12 @@ copy($_FILES['fundo']['tmp_name'],"../".$fundo);
 copy($_FILES['estabelecimento']['tmp_name'],"../".$estabelecimento);
 
 
-echo $sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimentoNome,estabelecimentoSlogan,
+$sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimentoNome,estabelecimentoSlogan,
                                     estabelecimentoDescrição,
                                     estabelecimentoLocalidade,estabelecimentoDistritoId,estabelecimentoMorada,
                                     estabelecimentoTelefone,estabelecimentoEmail,
                                     estabelecimentoFundoURL,estabelecimentoMiniaturaURL,
-                                    estabelecimentoInteriorURL) values('" . $id . "','" . $nome . "','" . $nomeSlogan . "',
+                                    estabelecimentoInteriorURL) values('" . $idUtilizador . "','" . $nome . "','" . $nomeSlogan . "',
                                                                         '" . $sobre . "','" . $nomeLoca . "',
                                                                         '" . $nomeDistrito . "','" . $rua . "','" . $numero . "',
                                                                         '" . $email . "',
@@ -44,5 +47,10 @@ echo $sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimen
                                                                         '" . $novoNome2 . "');";
 
 mysqli_query($con, $sql);
-header("location:criado.php?id={$id}");
+$idEst=mysqli_insert_id($con); // último Id criado pelo Insert
+
+$sql="insert into estabelecimentocategorias values($idCategoria,$idEst,'')";
+mysqli_query($con, $sql);
+
+header("location:criado.php?id=$idEst");
 ?>

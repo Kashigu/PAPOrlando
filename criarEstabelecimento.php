@@ -22,8 +22,9 @@ $id=intval($_GET['id']);
             <div class="row">
                 <div class="col-lg-12">
 
-                   <form action="confirmarNovoEstabelecimento.php?id=<?php echo $id ?>" class="contact-form" method="post" enctype="multipart/form-data">
-                    <div class="row">
+                   <form action="confirmarNovoEstabelecimento.php" class="contact-form" method="post" enctype="multipart/form-data">
+                    <input type="hidden" value="<?php echo $id ?>" name="id">
+                       <div class="row">
 
 
                                     <?php
@@ -34,10 +35,9 @@ $id=intval($_GET['id']);
                         <div class="col-lg-4 ">
 
                             <label name="categoria" class="check">
-                                <input type="radio" name="categoria" id="categoria" value="<?php echo $dadosCategorias['categoriaId']?>">
+                                <input type="radio" name="categoria[]" id="categoria" value="<?php echo $dadosCategorias['categoriaId']?>">
                                         <span class="checkmark"></span>
-                                <span type="radio" name="categoria" id="categoria" values= "<?php echo $dadosCategorias['categoriaId']?>">
-                                            <?php echo $dadosCategorias['categoriaNome']?>
+                                <span type="radio" name="categoria2[]" id="categoria">  <?php echo $dadosCategorias['categoriaNome']?>
                                 </span> </label>
                         </div>
                                         <?php

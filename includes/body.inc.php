@@ -3,9 +3,7 @@
 include_once("config.inc.php");
 $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
 $con->set_charset("utf8");
-?>
 
-<?php
 function toposingle()
 {
 ?>
@@ -73,14 +71,10 @@ function toposingle()
 <?php
 }
 
-?>
-
-<?php
 function top($menu = PORTUGAL)
 {
 
 ?>
-
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -141,14 +135,10 @@ function top($menu = PORTUGAL)
 
 <?php
 }
-?>
 
-
-<?php
 function topocriado()
 {
 ?>
-
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -220,9 +210,8 @@ function topocriado()
 
 <?php
 }
-?>
 
-<?php
+
 function toponovo($menu = GESTAO)
 {
 
@@ -284,14 +273,7 @@ function toponovo($menu = GESTAO)
 
 <?php
 }
-?>
 
-
-
-
-
-
-<?php
 function topoadmin($menu = GESTAO)
 {
 
@@ -353,28 +335,7 @@ function topoadmin($menu = GESTAO)
 
 <?php
 }
-?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php
 function toputili($menu = GESTAO)
 {
 
@@ -443,12 +404,7 @@ function toputili($menu = GESTAO)
 
 <?php
 }
-?>
 
-
-
-
-<?php
 function topAdmin($menu = GESTAO)
 {
 
@@ -509,25 +465,7 @@ function topAdmin($menu = GESTAO)
 
 <?php
 }
-?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php
 function bottomsingle()
 {
     ?>
@@ -735,13 +673,7 @@ function bottom($menu)
     <?php
 }
 
-?>
 
-
-
-
-
-<?php
 function bottomadmin()
 {
     ?>
@@ -782,27 +714,7 @@ function bottomadmin()
     <?php
 }
 
-?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php
 function bot($menu = HOME)
 {
 ?>
@@ -881,23 +793,7 @@ All rights reserved | This template is made with <i class="fa fa-heart" aria-hid
 <?php
 
 }
-?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php
 function botAdmin($menu = HOME)
 {
 ?>
@@ -986,4 +882,3 @@ All rights reserved | This template is made with <i class="fa fa-heart" aria-hid
 
 }
 ?>
-

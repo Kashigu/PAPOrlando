@@ -7,7 +7,7 @@ $localidade = addslashes($_POST['perfilLocalidade']);
 $email = $_POST['perfilEmail'];
 $id = $_POST['id'];
 $imagem =$_FILES['perfilAvatar']['name'];
-$novoNome="../imagens/".$imagem;
+$novoNome="imagens/".$imagem;
 
 //$sql ="UPDATE perfis set perfilNome ='".$nome."'and perfilAvatar='".$novoNome."'and perfilLocalidade='".$localidade."' and perfilEmail='".$email."' where perfilId='$id'";
 
