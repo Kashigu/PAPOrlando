@@ -20,22 +20,28 @@ $fundo = $_FILES['fundo']['name'];
 $estabelecimento = $_FILES['estabelecimento']['name'];
 
 
+$novoNome="imagens/".$fundo;
+$novoNome1="imagens/".$logo;
+$novoNome2="imagens/".$estabelecimento;
+
+
+
 copy($_FILES['logo']['tmp_name'],"../".$logo);
 copy($_FILES['fundo']['tmp_name'],"../".$fundo);
 copy($_FILES['estabelecimento']['tmp_name'],"../".$estabelecimento);
 
 
-echo $sql = "insert into estabelecimentos (estabelecimentoNome,estabelecimentoSlogan,
+echo $sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimentoNome,estabelecimentoSlogan,
                                     estabelecimentoDescrição,
-                                    estabelecimentoLocalidade,estabelecimentoMorada,
+                                    estabelecimentoLocalidade,estabelecimentoDistritoId,estabelecimentoMorada,
                                     estabelecimentoTelefone,estabelecimentoEmail,
                                     estabelecimentoFundoURL,estabelecimentoMiniaturaURL,
-                                    estabelecimentoInteriorURL) values('" . $nome . "','" . $nomeSlogan . "',
+                                    estabelecimentoInteriorURL) values('" . $id . "','" . $nome . "','" . $nomeSlogan . "',
                                                                         '" . $sobre . "','" . $nomeLoca . "',
                                                                         '" . $nomeDistrito . "','" . $rua . "','" . $numero . "',
                                                                         '" . $email . "',
-                                                                        '" . $logo . "','" . $fundo . "',
-                                                                        '" . $estabelecimento . "');";
+                                                                        '" . $novoNome . "','" . $novoNome1 . "',
+                                                                        '" . $novoNome2 . "');";
 
 mysqli_query($con, $sql);
 //header("location:criadoestabelecimentos.php?id={$id}");

@@ -1,7 +1,7 @@
 <?php
 include_once("includes/body.inc.php");
 toputili();
-
+$id=intval($_GET);
 ?>
 
 
@@ -21,15 +21,10 @@ toputili();
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <?php  $sql="select * from perfis ";
-                            $resultPerfis=mysqli_query($con,$sql);
-                    while ($dadosPerfis=mysqli_fetch_array($resultPerfis)){
 
-
-                    ?>
-                   <form action="confirmarNovoEstabelecimento.php?id=<?php echo $dadosPerfis['perfilId'] ?>" class="contact-form" method="post" enctype="multipart/form-data">
+                   <form action="confirmarNovoEstabelecimento.php?id=<?php echo $id ?>" class="contact-form" method="post" enctype="multipart/form-data">
                     <div class="row">
-                        <?php  } ?>
+
 
                                     <?php
                                     $sql="select * from categorias order by categoriaNome";
