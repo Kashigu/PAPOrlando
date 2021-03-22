@@ -1,9 +1,10 @@
 <?php
 include_once("includes/body.inc.php");
 top(PROCURAR);
-$txt = addslashes($_POST['txt']);
+$txt=addslashes($_POST['txt']);
+$sql="Select * from estebelecimentos where estabelecimentoNome LIKE '%$txt%'";
 
-
+$result=mysqli_query($con,$sql);
 
 ?>
 
@@ -201,8 +202,7 @@ $txt = addslashes($_POST['txt']);
                             INNER JOIN estabelecimentocategorias
                             on estabelecimentoId=estabelecimentoCategoriaEstabelecimentoId
                             INNER JOIN categorias
-                            on categoriaId=estabelecimentoCategoriaCategoriaId
-                            where estabelecimentoNome LIKE '%$txt%'";
+                            on categoriaId=estabelecimentoCategoriaCategoriaId";
 
                     $resultEstabelecimentos = mysqli_query($con, $sql);
                     while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {

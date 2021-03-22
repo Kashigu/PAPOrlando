@@ -316,10 +316,10 @@ function preview_image(event)
 
 function fillTableEstabelecimentosProcurar(txt = '') {
     $.ajax({
-        url: "procurar.php",
+        url: "AJAX/AJAXFillEstabelecimentosProcurar.php",
         type: "post",
         data: {
-            txt: txt
+            txt:txt
         },
         success: function (result) {
             $('#tableContent').html(result);
