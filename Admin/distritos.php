@@ -118,7 +118,7 @@ topAdmin();
                         <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Fechar</button>
                     </div>
                     <div class="col-lg-5 meio">
-                        <button onclick="DeleteTableDistritos();" type="button" id="eliminar" class="btn btn-danger pull-right ">Eliminar </button>
+                        <button onclick="DeleteTableDistritos();" type="button"  class="btn btn-danger pull-right ">Eliminar </button>
                     </div>
                 </div>
         </div>
