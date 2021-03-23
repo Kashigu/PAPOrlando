@@ -55,22 +55,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                     <div class="about-left">
                         <div class="about-desc">
                             <h4>Sobre o Restaurante</h4>
-                            <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae massa.
-                                Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class aptent taciti
-                                sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse
-                                potenti. Ut gravida mattis magna, non varius lorem sodales nec. In libero orci, ornare
-                                non nisl a, auctor euismod purus. Morbi pretium interdum vestibulum. Fusce nec eleifend
-                                ipsum. Sed non blandit tellus.</p>
-                            <p>Fusce urna quam, euismod sit amet mollis quis, vestibulum quis velit. Vestibulum
-                                malesuada aliquet libero viverra cursus. Aliquam erat volutpat. Morbi id dictum quam, ut
-                                commodo lorem. In at nisi nec arcu porttitor aliquet vitae at dui. Sed sollicitudin
-                                nulla non leo viverra scelerisque. Phasellus facilisis lobortis metus, sit amet viverra
-                                lectus finibus ac. Aenean non felis dapibus, placerat libero auctor, ornare ante. Morbi
-                                quis ex eleifend, sodales nulla vitae, scelerisque ante. Nunc id vulputate dui.
-                                Suspendisse consectetur rutrum metus nec scelerisque.</p>
-                            <p>Donec bibendum, enim ut luctus dictum, nisl turpis scelerisque sem, in dapibus neque odio
-                                eu sapien. Morbi ac aliquet erat. Sed dapibus, augue et malesuada maximus, neque ligula
-                                vehicula mauris, eget eleifend tortor magna luctus</p>
+                            <p> <?php echo $dadosEstabelecimentos['estabelecimentoDescrição']?> </p>
                         </div>
                         <div class="about-video">
                             <img class="tamanho1" src="<?php echo $dadosEstabelecimentos['estabelecimentoInteriorURL'] ?>" alt="">
