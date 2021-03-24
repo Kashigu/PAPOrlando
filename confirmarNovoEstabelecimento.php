@@ -34,13 +34,13 @@ copy($_FILES['fundo']['tmp_name'],"../".$fundo);
 copy($_FILES['estabelecimento']['tmp_name'],"../".$estabelecimento);
 
 
-$sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimentoNome,estabelecimentoSlogan,
-                                    estabelecimentoDescrição,
+echo $sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimentoCategoriaId,estabelecimentoNome,estabelecimentoSlogan,
+                                    estabelecimentoDescricao,estabelecimentoDescricao2,
                                     estabelecimentoLocalidade,estabelecimentoDistritoId,estabelecimentoMorada,
                                     estabelecimentoTelefone,estabelecimentoEmail,
                                     estabelecimentoFundoURL,estabelecimentoMiniaturaURL,
-                                    estabelecimentoInteriorURL) values('" . $idUtilizador . "','" . $nome . "','" . $nomeSlogan . "',
-                                                                        '" . $sobre . "','" . $nomeLoca . "',
+                                    estabelecimentoInteriorURL) values('" . $idUtilizador . "','" . $idCategoria . "','" . $nome . "','" . $nomeSlogan . "',
+                                                                        '" . $sobre . "','" . $nomeLoca . "','" . $horas . "',
                                                                         '" . $nomeDistrito . "','" . $rua . "','" . $numero . "',
                                                                         '" . $email . "',
                                                                         '" . $novoNome . "','" . $novoNome1 . "',
@@ -49,8 +49,8 @@ $sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimentoNom
 mysqli_query($con, $sql);
 $idEst=mysqli_insert_id($con); // último Id criado pelo Insert
 
-$sql="insert into estabelecimentocategorias values($idCategoria,$idEst,'')";
-mysqli_query($con, $sql);
+/*$sql="insert into estabelecimentocategorias values($idCategoria,$idEst,'')";
+mysqli_query($con, $sql);*/
 
 header("location:criado.php?id=$idEst");
 ?>

@@ -199,17 +199,15 @@ $result=mysqli_query($con,$sql);
                             select *
                             from distritos inner join estabelecimentos 
                             on distritoId=estabelecimentoDistritoId
-                            INNER JOIN estabelecimentocategorias
-                            on estabelecimentoId=estabelecimentoCategoriaEstabelecimentoId
                             INNER JOIN categorias
-                            on categoriaId=estabelecimentoCategoriaCategoriaId";
+                            on categoriaId=estabelecimentoCategoriaId";
 
                     $resultEstabelecimentos = mysqli_query($con, $sql);
                     while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
                         ?>
                         <div class="col-lg-4 col-sm-6">
                             <a class="arrange-items"
-                               href="single-listing.php?id<?php echo $dadosEstabelecimentos['estabelecimentoId'] ?>">
+                               href="single-listing.php?id=<?php echo $dadosEstabelecimentos['estabelecimentoId'] ?>">
                                 <div class="arrange-pic">
                                     <img class="centrinho"
                                          src="<?php echo $dadosEstabelecimentos['estabelecimentoMiniaturaURL'] ?>"
