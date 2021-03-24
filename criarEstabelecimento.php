@@ -173,5 +173,5 @@ $id=intval($_GET['id']);
     </section>
 
 <?php
-bottom();
+bottom(HOME);
 ?>
