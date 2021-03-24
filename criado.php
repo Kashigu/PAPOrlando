@@ -123,7 +123,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                             </div>
                         </div>
                         <div class="working-hours">
-                            <h4>Descrição da categoria/estabelecimento</h4>
+                            <h4><?php echo $dadosEstabelecimentos['estabelecimentoDescricao2']?></h4>
                             <ul>
                                 <li>Segunda-Feira<span>08:00 - 22:00</span></li>
                                 <li>Terça-Feira<span>08:00 - 22:00</span></li>

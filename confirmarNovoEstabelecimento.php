@@ -40,7 +40,7 @@ $sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimentoCat
                                     estabelecimentoTelefone,estabelecimentoEmail,
                                     estabelecimentoMiniaturaURL,estabelecimentoFundoURL,
                                     estabelecimentoInteriorURL) values('" . $idUtilizador . "','" . $idCategoria . "','" . $nome . "','" . $nomeSlogan . "',
-                                                                        '" . $sobre . "','" . $nomeLoca . "','" . $horas . "',
+                                                                        '" . $sobre . "','" . $horas . "','" . $nomeLoca . "',
                                                                         '" . $nomeDistrito . "','" . $rua . "','" . $numero . "',
                                                                         '" . $email . "',
                                                                         '" . $novoNome . "','" . $novoNome1 . "',
