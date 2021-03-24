@@ -103,5 +103,5 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
 </section>
 
 <?php
-bottom();
+bottom(HOME);
 ?>
