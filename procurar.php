@@ -1,10 +1,7 @@
 <?php
 include_once("includes/body.inc.php");
 top(PROCURAR);
-$txt=addslashes($_POST['txt']);
-$sql="Select * from estebelecimentos where estabelecimentoNome LIKE '%$txt%'";
 
-$result=mysqli_query($con,$sql);
 
 ?>
 
@@ -61,6 +58,12 @@ $result=mysqli_query($con,$sql);
                     </div>
                     <div class="location-search1 col-lg-10 mt-3 ">
                         <h5>Nome do Estabelecimento</h5>
+                        <?php
+                        $txt=addslashes($_POST['txt']);
+                        $sql="Select * from estebelecimentos where estabelecimentoNome LIKE '%$txt%'";
+
+                        $result=mysqli_query($con,$sql);
+                        ?>
                         <input class="location-search1 nice-select1" type="text" id="search">
                     </div>
                     <button type="submit">Procurar Agora</button>
@@ -200,7 +203,8 @@ $result=mysqli_query($con,$sql);
                             from distritos inner join estabelecimentos 
                             on distritoId=estabelecimentoDistritoId
                             INNER JOIN categorias
-                            on categoriaId=estabelecimentoCategoriaId";
+                            on categoriaId=estabelecimentoCategoriaId
+                            where estabelecimentoNome LIKE '%$txt%'";
 
                     $resultEstabelecimentos = mysqli_query($con, $sql);
                     while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
@@ -217,7 +221,7 @@ $result=mysqli_query($con,$sql);
                                 </div>
                                 <div class="arrange-text">
                                     <h5><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></h5>
-                                    <span><?php echo $dadosEstabelecimentos['estabelecimentoMorada'] ?></span>
+                                    <span><?php echo $dadosEstabelecimentos['estabelecimentoLocalidade'] ?></span>
                                     <p><?php echo $dadosEstabelecimentos['estabelecimentoSlogan'] ?></p>
                                     <div class="open tomorrow">Abre amanhã às 10 da manhã</div>
                                 </div>
