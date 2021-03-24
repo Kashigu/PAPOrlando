@@ -29,9 +29,9 @@ $novoNome2="imagens/".$estabelecimento;
 
 
 
-copy($_FILES['logo']['tmp_name'],"../".$logo);
-copy($_FILES['fundo']['tmp_name'],"../".$fundo);
-copy($_FILES['estabelecimento']['tmp_name'],"../".$estabelecimento);
+copy($_FILES['logo']['tmp_name'],$novoNome);
+copy($_FILES['fundo']['tmp_name'],$novoNome1);
+copy($_FILES['estabelecimento']['tmp_name'],$novoNome2);
 
 
 echo $sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimentoCategoriaId,estabelecimentoNome,estabelecimentoSlogan,
