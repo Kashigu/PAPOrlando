@@ -60,5 +60,5 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
 
 
 <?php
-bottom();
+bottom(HOME);
 ?>

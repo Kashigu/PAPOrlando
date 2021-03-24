@@ -142,5 +142,5 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 </section>
 
 <?php
-bottom();
+bottom(HOME);
 ?>
