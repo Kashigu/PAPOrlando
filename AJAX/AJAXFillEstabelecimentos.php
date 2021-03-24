@@ -11,10 +11,8 @@ $sql = " select *
                             on distritoId=estabelecimentoDistritoId
                             INNER JOIN perfis 
                             on perfilId=estabelecimentoPerfilId
-                            INNER JOIN estabelecimentocategorias
-                            on estabelecimentoId=estabelecimentoCategoriaEstabelecimentoId
                             INNER JOIN categorias
-                            on categoriaId=estabelecimentoCategoriaCategoriaId
+                            on categoriaId=estabelecimentoCategoriaId
                             where estabelecimentoNome LIKE '%$txt%'";
 
 $result = mysqli_query($con, $sql);
