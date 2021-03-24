@@ -23,8 +23,8 @@ $fundo = $_FILES['fundo']['name'];
 $estabelecimento = $_FILES['estabelecimento']['name'];
 
 
-$novoNome="imagens/".$fundo;
-$novoNome1="imagens/".$logo;
+$novoNome="imagens/".$logo;
+$novoNome1="imagens/".$fundo;
 $novoNome2="imagens/".$estabelecimento;
 
 
@@ -34,11 +34,11 @@ copy($_FILES['fundo']['tmp_name'],$novoNome1);
 copy($_FILES['estabelecimento']['tmp_name'],$novoNome2);
 
 
-echo $sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimentoCategoriaId,estabelecimentoNome,estabelecimentoSlogan,
+$sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimentoCategoriaId,estabelecimentoNome,estabelecimentoSlogan,
                                     estabelecimentoDescricao,estabelecimentoDescricao2,
                                     estabelecimentoLocalidade,estabelecimentoDistritoId,estabelecimentoMorada,
                                     estabelecimentoTelefone,estabelecimentoEmail,
-                                    estabelecimentoFundoURL,estabelecimentoMiniaturaURL,
+                                    estabelecimentoMiniaturaURL,estabelecimentoFundoURL,
                                     estabelecimentoInteriorURL) values('" . $idUtilizador . "','" . $idCategoria . "','" . $nome . "','" . $nomeSlogan . "',
                                                                         '" . $sobre . "','" . $nomeLoca . "','" . $horas . "',
                                                                         '" . $nomeDistrito . "','" . $rua . "','" . $numero . "',

@@ -2,11 +2,7 @@
 include_once("includes/body.inc.php");
 topocriado();
 $id=intval($_GET['id']);
-$sql = "Select * from estabelecimentos inner join categorias
-        inner join perfis where estabelecimentoId=$id";
 
-$resultEstabelecimentos = mysqli_query($con, $sql);
-$dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 ?>
 
 <div class="hero-listing set-bg" data-setbg="img/maravilha.jpg">
@@ -26,7 +22,8 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
         <div class="row">
             <div class="col-lg-12">
 
-                <form action="confirmarEditaEstabelecimento.php?id=<?php echo $id ?>" class="contact-form" method="post" enctype="multipart/form-data">
+                <form action="confirmaEditaEstabelecimento.php?" class="contact-form" method="post" enctype="multipart/form-data">
+                    <input type="hidden" value="<?php echo $id ?>" name="id">
                     <div class="row">
 
 
@@ -40,8 +37,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                                 <label name="categoria" class="check">
                                     <input type="radio" name="categoria" id="categoria" value="<?php echo $dadosCategorias['categoriaId']?>">
                                     <span class="checkmark"></span>
-                                    <span type="radio" name="categoria" id="categoria" values= "<?php echo $dadosCategorias['categoriaId']?>">
-                                            <?php echo $dadosCategorias['categoriaNome']?>
+                                    <span type="radio" name="categoria2[]" >  <?php echo $dadosCategorias['categoriaNome']?>
                                 </span> </label>
                             </div>
                             <?php
@@ -56,6 +52,13 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                         <div class="col-lg-12">
 
                         </div>
+                        <?php
+                        $sql = "Select * from estabelecimentos inner join categorias
+                        inner join perfis where estabelecimentoId=$id";
+
+                        $resultEstabelecimentos = mysqli_query($con, $sql);
+                        $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
+                        ?>
                         <div class="col-lg-6 mt-4">
                             <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?>" name="nomeEsta"  id="nomeEsta" placeholder="Nome do Estabelecimento" >
                         </div>
@@ -86,7 +89,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                             <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoSlogan'] ?>" name="nomeSlogan" id="nomeSlogan" placeholder="Slogan">
                         </div>
                         <div class="col-lg-12">
-                            <textarea name="sobre" value="<?php echo $dadosEstabelecimentos['estabelecimentoDescrição'] ?>" id="sobre" placeholder="Sobre o Estabelecimento"></textarea>
+                            <textarea name="sobre" id="sobre" placeholder="Sobre o Estabelecimento"><?php echo $dadosEstabelecimentos['estabelecimentoDescricao']?></textarea>
                         </div>
                         <div class="col-lg-6">
                             <input type="text"value="<?php echo $dadosEstabelecimentos['estabelecimentoMorada'] ?>" name="rua" id="rua" placeholder="Rua">
@@ -99,7 +102,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                                     <label>Segunda a sexta</label>
                                 </div>
                                 <div class="col-7">
-                                    <input type="text" name="horas" id="horas" placeholder="8:00 - 22:00">
+                                    <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoDescricao2'] ?>"  name="horas" id="horas" placeholder="8:00 - 22:00">
                                 </div>
 
                             </div>
