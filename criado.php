@@ -55,7 +55,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                     <div class="about-left">
                         <div class="about-desc">
                             <h4>Sobre o Restaurante</h4>
-                            <p> <?php echo $dadosEstabelecimentos['estabelecimentoDescrição']?> </p>
+                            <p> <?php echo $dadosEstabelecimentos['estabelecimentoDescricao']?> </p>
                         </div>
                         <div class="about-video">
                             <img class="tamanho1" src="<?php echo $dadosEstabelecimentos['estabelecimentoInteriorURL'] ?>" alt="">
@@ -123,7 +123,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                             </div>
                         </div>
                         <div class="working-hours">
-                            <h4>Horas de Trabalho</h4>
+                            <h4>Descrição da categoria/estabelecimento</h4>
                             <ul>
                                 <li>Segunda-Feira<span>08:00 - 22:00</span></li>
                                 <li>Terça-Feira<span>08:00 - 22:00</span></li>
