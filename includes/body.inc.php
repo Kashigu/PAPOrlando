@@ -10,464 +10,471 @@ $con->set_charset("utf8");
 
 function toposingle()
 {
-?>
+    ?>
 
-<!DOCTYPE html>
-<html lang="zxx" xmlns="http://www.w3.org/1999/html">
+    <!DOCTYPE html>
+    <html lang="zxx" xmlns="http://www.w3.org/1999/html">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Yoga Studio Template">
-    <meta name="keywords" content="Yoga, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Local Directory | Template</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Yoga Studio Template">
+        <meta name="keywords" content="Yoga, unica, creative, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Local Directory | Template</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
 
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/flaticon.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="css/flaticon.css" type="text/css">
+        <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <style>
-        #comentar {
-            display: none;
-        }
+        <style>
+            #comentar {
+                display: none;
+            }
 
-    </style>
-</head>
+        </style>
+    </head>
 
-<body>
-<!-- Page Preloder -->
-<div id="preloder">
-    <div class="loader"></div>
-</div>
-
-<!-- Header Section Begin -->
-<header class="header-section listings">
-    <div class="container-fluid">
-        <div class="logo">
-            <a href="./index.php"><img src="img/logo.png" alt=""></a>
-        </div>
-        <nav class="main-menu mobile-menu">
-            <ul>
-                <li><a href="index.php">Portugal</a></li>
-                <li><a href="procurar.php">Procurar</a></li>
-            </ul>
-        </nav>
+    <body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
     </div>
-    <div class="header-right">
-        <div class="user-access">
-            <a href="novoperfil.php"><img src="img/perfilfoto.jpg" class="reduzido"></a>
-            <div id="mobile-menu-wrap"></div>
-        </div>
-</header>
 
-<?php
+    <!-- Header Section Begin -->
+    <header class="header-section listings">
+        <div class="container-fluid">
+            <div class="logo">
+                <a href="./index.php"><img src="img/logo.png" alt=""></a>
+            </div>
+            <nav class="main-menu mobile-menu">
+                <ul>
+                    <li><a href="index.php">Portugal</a></li>
+                    <li><a href="procurar.php">Procurar</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="user-access">
+                <a href="novoperfil.php"><img src="img/perfilfoto.jpg" class="reduzido"></a>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+    </header>
+
+    <?php
 }
 
 function top($menu = PORTUGAL)
 {
 
-?>
-<!DOCTYPE html>
+    ?>
+    <!DOCTYPE html>
 <html lang="zxx">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Yoga Studio Template">
-    <meta name="keywords" content="Yoga, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Portugal Local</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Yoga Studio Template">
+        <meta name="keywords" content="Yoga, unica, creative, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title> Portugal Local</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
 
-    <!-- Css Styles -->
-    <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> Sem ele tenho o modal com ele não tenho-->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/flaticon.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+        <!-- Css Styles -->
+        <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> Sem ele tenho o modal com ele não tenho-->
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="css/flaticon.css" type="text/css">
+        <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
 
 <body>
-<!-- Page Preloder -->
-<div id="preloder">
-    <div class="loader"></div>
-</div>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
 
-<!-- Header Section Begin -->
-<header class="header-section listings">
-    <div class="container-fluid">
-        <div class="logo">
-            <a href="./index.php"><img src="img/logo.png" alt=""></a>
-        </div>
-        <nav class="main-menu mobile-menu">
-            <ul>
-                <li <?php if ($menu == PORTUGAL) echo "class=\"active\""; ?>><a href="index.php">Portugal</a></li>
-                <li <?php if ($menu == PROCURAR) echo "class=\"active\""; ?>><a href="procurar.php">Procurar</a></li>
-                <!--<li><a href="cafe.html">Cafés</a></li>
-                <li><a href="hoteis.html">Hoteis</a></li>-->
-                <!--<li><a href="criarEstabelecimento.html">Contactos</a></li>-->
-            </ul>
-        </nav>
-        <div class="header-right">
-            <div class="user-access">
-                <a data-toggle="modal" data-target="#registar">Registar/</a>
-                <a data-toggle="modal" data-target="#login">Iniciar Sessão</a>
-                <div id="mobile-menu-wrap"></div>
+    <!-- Header Section Begin -->
+    <header class="header-section listings">
+        <div class="container-fluid">
+            <div class="logo">
+                <a href="./index.php"><img src="img/logo.png" alt=""></a>
             </div>
-</header>
-<!-- Header End -->
+            <nav class="main-menu mobile-menu">
+                <ul>
+                    <li <?php if ($menu == PORTUGAL) echo "class=\"active\""; ?>><a href="index.php">Portugal</a></li>
+                    <li <?php if ($menu == PROCURAR) echo "class=\"active\""; ?>><a href="procurar.php">Procurar</a>
+                    </li>
+                    <!--<li><a href="cafe.html">Cafés</a></li>
+                    <li><a href="hoteis.html">Hoteis</a></li>-->
+                    <!--<li><a href="criarEstabelecimento.html">Contactos</a></li>-->
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="user-access">
+                    <a data-toggle="modal" data-target="#registar">Registar/</a>
+                    <a data-toggle="modal" data-target="#login">Iniciar Sessão</a>
+                    <div id="mobile-menu-wrap"></div>
+                </div>
+    </header>
+    <!-- Header End -->
 
 
-<?php
+    <?php
 }
 
 function topocriado()
 {
-?>
-<!DOCTYPE html>
+    ?>
+    <!DOCTYPE html>
 <html lang="zxx">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Yoga Studio Template">
-    <meta name="keywords" content="Yoga, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Local Directory | Template</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Yoga Studio Template">
+        <meta name="keywords" content="Yoga, unica, creative, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Local Directory | Template</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
 
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/flaticon.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="css/flaticon.css" type="text/css">
+        <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-</head>
+    </head>
 
 <body>
-<!-- Page Preloder -->
-<div id="preloder">
-    <div class="loader"></div>
-</div>
-
-<!-- Header Section Begin -->
-<header class="header-section listings">
-    <div class="container-fluid">
-        <div class="logo">
-            <a href="./index.php"><img src="img/logo.png" alt=""></a>
-        </div>
-        <nav class="main-menu mobile-menu">
-            <ul>
-                <li><a href="index.php">Portugal</a></li>
-                <li><a href="procurar.php">Procurar</a></li>
-                <li><a href="backoffice.php">Gestão do Site </a></li>
-            </ul>
-        </nav>
-
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
     </div>
-    <div>
-        <nav class="arrange-select nice-select2 mobile-menu header-right">
-            <select name="estabe" id="estabe">
-                <optgroup label="Cafés">
-                </optgroup>
-                <optgroup label="Restaurantes">
-                    <option value="ratoeira">Ratoeira</option>
-                </optgroup>
-                <optgroup label="Hotéis">
-                </optgroup>
-            </select>
-        </nav>
-    </div>
-    <div class="header-right">
-        <div class="user-access">
-            <a href="novoperfil.php"><img src="img/perfilfoto.jpg" class="reduzido"></a>
-            <div id="mobile-menu-wrap"></div>
-        </div>
-</header>
 
-<?php
+    <!-- Header Section Begin -->
+    <header class="header-section listings">
+        <div class="container-fluid">
+            <div class="logo">
+                <a href="./index.php"><img src="img/logo.png" alt=""></a>
+            </div>
+            <nav class="main-menu mobile-menu">
+                <ul>
+                    <li><a href="index.php">Portugal</a></li>
+                    <li><a href="procurar.php">Procurar</a></li>
+                    <li><a href="backoffice.php">Gestão do Site </a></li>
+                </ul>
+            </nav>
+
+        </div>
+        <div>
+            <nav class="arrange-select nice-select2 mobile-menu header-right">
+                <select name="estabe" id="estabe">
+                    <optgroup label="Cafés">
+                    </optgroup>
+                    <optgroup label="Restaurantes">
+                        <option value="ratoeira">Ratoeira</option>
+                    </optgroup>
+                    <optgroup label="Hotéis">
+                    </optgroup>
+                </select>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="user-access">
+                <a href="novoperfil.php"><img src="img/perfilfoto.jpg" class="reduzido"></a>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+    </header>
+
+    <?php
 }
 
 
 function toponovo($menu = GESTAO)
 {
 
-?>
-<!DOCTYPE html>
+    ?>
+    <!DOCTYPE html>
 <html lang="zxx">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Yoga Studio Template">
-    <meta name="keywords" content="Yoga, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Local Directory | Template</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Yoga Studio Template">
+        <meta name="keywords" content="Yoga, unica, creative, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Local Directory | Template</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
 
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/flaticon.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="css/flaticon.css" type="text/css">
+        <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-</head>
+    </head>
 
 <body>
-<!-- Page Preloder -->
-<div id="preloder">
-    <div class="loader"></div>
-</div>
-
-<!-- Header Section Begin -->
-<header class="header-section listings">
-    <div class="container-fluid">
-        <div class="logo">
-            <a href="index.php"><img src="img/logo.png" alt=""></a>
-        </div>
-        <nav class="main-menu mobile-menu">
-            <ul>
-                <li><a href="index.php">Portugal</a></li>
-                <li><a href="procurar.php">Procurar</a></li>
-                <li <?php if ($menu == GESTAO) echo "class=\"active\""; ?>><a href="backoffice.php">Gestão do Site </a>
-                </li>
-            </ul>
-        </nav>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
     </div>
-    <div class="header-right">
-        <div class="user-access">
-            <a href="novoperfil.php"><img src="img/perfilfoto.jpg" class="reduzido"></a>
-            <div id="mobile-menu-wrap"></div>
-        </div>
-</header>
 
-<?php
+    <!-- Header Section Begin -->
+    <header class="header-section listings">
+        <div class="container-fluid">
+            <div class="logo">
+                <a href="index.php"><img src="img/logo.png" alt=""></a>
+            </div>
+            <nav class="main-menu mobile-menu">
+                <ul>
+                    <li><a href="index.php">Portugal</a></li>
+                    <li><a href="procurar.php">Procurar</a></li>
+                    <li <?php if ($menu == GESTAO) echo "class=\"active\""; ?>><a href="backoffice.php">Gestão do
+                            Site </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="user-access">
+                <a href="novoperfil.php"><img src="img/perfilfoto.jpg" class="reduzido"></a>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+    </header>
+
+    <?php
 }
 
 function topoadmin($menu = GESTAO)
 {
 
-?>
-<!DOCTYPE html>
+    ?>
+    <!DOCTYPE html>
 <html lang="zxx">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Yoga Studio Template">
-    <meta name="keywords" content="Yoga, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Local Directory | Template</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Yoga Studio Template">
+        <meta name="keywords" content="Yoga, unica, creative, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Local Directory | Template</title>
 
-    <!-- Google Font -->
-    <link href="../https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+        <!-- Google Font -->
+        <link href="../https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
 
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="../css/flaticon.css" type="text/css">
-    <link rel="stylesheet" href="../css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="../css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="../css/style.css" type="text/css">
-    <link rel="stylesheet" href="../https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="../css/flaticon.css" type="text/css">
+        <link rel="stylesheet" href="../css/nice-select.css" type="text/css">
+        <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
+        <link rel="stylesheet" href="../css/magnific-popup.css" type="text/css">
+        <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet"
+              href="../https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-</head>
+    </head>
 
 <body>
-<!-- Page Preloder -->
-<div id="preloder">
-    <div class="loader"></div>
-</div>
-
-<!-- Header Section Begin -->
-<header class="header-section listings">
-    <div class="container-fluid">
-        <div class="logo">
-            <a href="../index.php"><img src="../img/logo.png" alt=""></a>
-        </div>
-        <nav class="main-menu mobile-menu">
-            <ul>
-                <li><a href="../index.php">Portugal</a></li>
-                <li><a href="../procurar.php">Procurar</a></li>
-                <li <?php if ($menu == GESTAO) echo "class=\"active\""; ?>><a href="index.php">Gestão do Site </a>
-                </li>
-            </ul>
-        </nav>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
     </div>
-    <div class="header-right">
-        <div class="user-access">
-            <a href="novoperfil.php"><img src="../img/perfilfoto.jpg" class="reduzido"></a>
-            <div id="mobile-menu-wrap"></div>
-        </div>
-</header>
 
-<?php
+    <!-- Header Section Begin -->
+    <header class="header-section listings">
+        <div class="container-fluid">
+            <div class="logo">
+                <a href="../index.php"><img src="../img/logo.png" alt=""></a>
+            </div>
+            <nav class="main-menu mobile-menu">
+                <ul>
+                    <li><a href="../index.php">Portugal</a></li>
+                    <li><a href="../procurar.php">Procurar</a></li>
+                    <li <?php if ($menu == GESTAO) echo "class=\"active\""; ?>><a href="index.php">Gestão do Site </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="user-access">
+                <a href="novoperfil.php"><img src="../img/perfilfoto.jpg" class="reduzido"></a>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+    </header>
+
+    <?php
 }
 
 function toputili($menu = GESTAO)
 {
 
-?>
+    ?>
     <!DOCTYPE html>
 <html lang="zxx">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Yoga Studio Template">
-    <meta name="keywords" content="Yoga, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Local Directory | Template</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Yoga Studio Template">
+        <meta name="keywords" content="Yoga, unica, creative, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Local Directory | Template</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
 
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/flaticon.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="css/flaticon.css" type="text/css">
+        <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-</head>
+    </head>
 
 <body>
-<!-- Page Preloder -->
-<div id="preloder">
-    <div class="loader"></div>
-</div>
-
-<!-- Header Section Begin -->
-<header class="header-section listings">
-    <div class="container-fluid">
-        <div class="logo">
-            <a href="index.php"><img src="img/logo.png" alt=""></a>
-        </div>
-        <nav class="main-menu mobile-menu">
-            <ul>
-                <li><a href="index.php">Portugal</a></li>
-                <li><a href="procurar.php">Procurar</a></li>
-                <li><a href="backoffice.php">Gestão do Site </a></li>
-            </ul>
-        </nav>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
     </div>
-    <?php
-    $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-    $sql = "select * from perfis where perfilId=3";
-    $resultPerfis = mysqli_query($con, $sql);
-    $dadosPerfis = mysqli_fetch_array($resultPerfis)
-    ?>
-    <div class="header-right">
-        <div class="user-access"<?php echo $dadosPerfis['perfilId'] ?>>
-            <a href="novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>"><img src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
-            <div id="mobile-menu-wrap"></div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section listings">
+        <div class="container-fluid">
+            <div class="logo">
+                <a href="index.php"><img src="img/logo.png" alt=""></a>
+            </div>
+            <nav class="main-menu mobile-menu">
+                <ul>
+                    <li><a href="index.php">Portugal</a></li>
+                    <li><a href="procurar.php">Procurar</a></li>
+                    <li><a href="backoffice.php">Gestão do Site </a></li>
+                </ul>
+            </nav>
         </div>
-</header>
+        <?php
+        $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+        $sql = "select * from perfis where perfilId=3";
+        $resultPerfis = mysqli_query($con, $sql);
+        $dadosPerfis = mysqli_fetch_array($resultPerfis)
+        ?>
+        <div class="header-right">
+            <div class="user-access"<?php echo $dadosPerfis['perfilId'] ?>>
+                <a href="novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>"><img
+                            src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+    </header>
 
 
-
-<?php
+    <?php
 }
 
 function topAdmin($menu = GESTAO)
 {
 
-?>
+    ?>
     <!DOCTYPE html>
 <html lang="zxx">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Yoga Studio Template">
-    <meta name="keywords" content="Yoga, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Local Directory | Template</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Yoga Studio Template">
+        <meta name="keywords" content="Yoga, unica, creative, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Local Directory | Template</title>
 
-    <!-- Google Font -->
-    <link href="../https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+        <!-- Google Font -->
+        <link href="../https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
 
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="../css/flaticon.css" type="text/css">
-    <link rel="stylesheet" href="../css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="../css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="../css/style.css" type="text/css">
-    <link rel="stylesheet" href="../https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="../css/flaticon.css" type="text/css">
+        <link rel="stylesheet" href="../css/nice-select.css" type="text/css">
+        <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
+        <link rel="stylesheet" href="../css/magnific-popup.css" type="text/css">
+        <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet"
+              href="../https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-</head>
+    </head>
 
 <body>
-<!-- Page Preloder -->
-<div id="preloder">
-    <div class="loader"></div>
-</div>
-
-<!-- Header Section Begin -->
-<header class="header-section listings">
-    <div class="container-fluid">
-        <div class="logo">
-            <a href="../index.php"><img src="../img/logo.png" alt=""></a>
-        </div>
-        <nav class="main-menu mobile-menu">
-            <ul>
-                <li><a href="../index.php">Portugal</a></li>
-                <li><a href="../procurar.php">Procurar</a></li>
-                <li><a href="index.php">Gestão do Site </a></li>
-            </ul>
-        </nav>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
     </div>
-    <div class="header-right">
-        <div class="user-access">
-            <a href="../novoperfil.php"><img src="../img/perfilfoto.jpg" class="reduzido"></a>
-            <div id="mobile-menu-wrap"></div>
-        </div>
-</header>
 
-<?php
+    <!-- Header Section Begin -->
+    <header class="header-section listings">
+        <div class="container-fluid">
+            <div class="logo">
+                <a href="../index.php"><img src="../img/logo.png" alt=""></a>
+            </div>
+            <nav class="main-menu mobile-menu">
+                <ul>
+                    <li><a href="../index.php">Portugal</a></li>
+                    <li><a href="../procurar.php">Procurar</a></li>
+                    <li><a href="index.php">Gestão do Site </a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="user-access">
+                <a href="../novoperfil.php"><img src="../img/perfilfoto.jpg" class="reduzido"></a>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+    </header>
+
+    <?php
 }
 
 function bottomsingle()
@@ -657,23 +664,7 @@ function bottom($menu)
             $('#btnComentar').hide();
         }
     </script>
-<script>
-    $('document').ready(function () {
-    <?php
-    if($menu == ESTABELECIMENTOSP){
-        ?>
-        $('#search').keyup(function () {
-        fillTableEstabelecimentosProcurar(this.value);
-        });
-        fillTableEstabelecimentosProcurar();
 
-    <?php }
-
-    ?>
-    })
-</script>
-</body>
-</html>
     <?php
 }
 
@@ -721,151 +712,139 @@ function bottomadmin()
 
 function bot($menu = HOME)
 {
-?>
+    ?>
 
 
-Copyright &copy;
-<script>document.write(new Date().getFullYear());</script>
-All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a
+    Copyright &copy;
+    <script>document.write(new Date().getFullYear());</script>
+    All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a
         href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-<!--   </p></div>
-       </div>
-       <div class="col-lg-7 text-center text-lg-right order-1 order-lg-2">
-           <div class="footer-menu">
-               <a href="#">Home</a>
-               <a href="#">Explore</a>
-               <a href="#">More Cities</a>
-               <a href="#">News</a>
-               <a href="#">Contact</a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    <!--   </p></div>
+           </div>
+           <div class="col-lg-7 text-center text-lg-right order-1 order-lg-2">
+               <div class="footer-menu">
+                   <a href="#">Home</a>
+                   <a href="#">Explore</a>
+                   <a href="#">More Cities</a>
+                   <a href="#">News</a>
+                   <a href="#">Contact</a>
+               </div>
            </div>
        </div>
-   </div>
-</div>
-</footer> -->
-<!-- Footer Section End -->
+    </div>
+    </footer> -->
+    <!-- Footer Section End -->
 
 
-<!-- Js Plugins -->
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/jquery.slicknav.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.nice-select.min.js"></script>
-<script src="js/mixitup.min.js"></script>
-<script src="js/main.js"></script>
-<script src="js/common.js"></script>
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
 
-<script>
-    $('document').ready(function () {
-        <?php
-        if ($menu == DISTRITOS){
-        ?>
-        $('#search').keyup(function () {
-            fillTableDistritos(this.value);
-        });
-        fillTableDistritos();
-        <?php
-        }
-        if($menu == CATEGORIAS){
-        ?>
-        $('#search').keyup(function () {
-            fillTableCategorias(this.value);
-        });
-        fillTableCategorias();
-        <?php
-        }
-        if($menu == ESTABELECIMENTOS){
-        ?>
-        $('#search').keyup(function () {
-            fillTableEstabelecimentos(this.value);
-        });
-        fillTableEstabelecimentos();
+    <script>
+        $('document').ready(function () {
+            <?php
+            if($menu == ESTABELECIMENTOSP){
+            ?>
 
-        <?php }
+            $('#search').keyup(function () {
+                fillTableEstabelecimentosProcurar(this.value);
+            });
+            fillTableEstabelecimentosProcurar();
 
-        ?>
+            <?php }
+            if ($menu == GALERIA){
+            ?>
+            $('#search').keyup(function () {
+                fillTableImagens(this.value);
+            });
+            fillTableImagens();
+            <?php }
+            ?>
 
-
-
-
-    })
-</script>
+        })
+    </script>
 </body>
 </html>
-<?php
+    <?php
 
 }
 
 function botAdmin($menu = HOME)
 {
-?>
+    ?>
 
 
-Copyright &copy;
-<script>document.write(new Date().getFullYear());</script>
-All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a
+    Copyright &copy;
+    <script>document.write(new Date().getFullYear());</script>
+    All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a
         href="../https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-<!--   </p></div>
-       </div>
-       <div class="col-lg-7 text-center text-lg-right order-1 order-lg-2">
-           <div class="footer-menu">
-               <a href="#">Home</a>
-               <a href="#">Explore</a>
-               <a href="#">More Cities</a>
-               <a href="#">News</a>
-               <a href="#">Contact</a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    <!--   </p></div>
+           </div>
+           <div class="col-lg-7 text-center text-lg-right order-1 order-lg-2">
+               <div class="footer-menu">
+                   <a href="#">Home</a>
+                   <a href="#">Explore</a>
+                   <a href="#">More Cities</a>
+                   <a href="#">News</a>
+                   <a href="#">Contact</a>
+               </div>
            </div>
        </div>
-   </div>
-</div>
-</footer> -->
-<!-- Footer Section End -->
+    </div>
+    </footer> -->
+    <!-- Footer Section End -->
 
 
-<!-- Js Plugins -->
-<script src="../js/jquery-3.3.1.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/jquery.magnific-popup.min.js"></script>
-<script src="../js/jquery.slicknav.js"></script>
-<script src="../js/owl.carousel.min.js"></script>
-<script src="../js/jquery.nice-select.min.js"></script>
-<script src="../js/mixitup.min.js"></script>
-<script src="../js/main.js"></script>
-<script src="../js/common.js"></script>
+    <!-- Js Plugins -->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <script src="../js/mixitup.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/common.js"></script>
 
-<script>
-    $('document').ready(function () {
+    <script>
+        $('document').ready(function () {
 
-        <?php
-        if ($menu == DISTRITOS){
-        ?>
-        $('#search').keyup(function () {
-            fillTableDistritos(this.value);
-        });
-        fillTableDistritos();
-        <?php
-        }
-        if($menu == CATEGORIAS){
-        ?>
-        $('#search').keyup(function () {
-            fillTableCategorias(this.value);
-        });
-        fillTableCategorias();
-        <?php
-        }
-        if($menu == ESTABELECIMENTOS){
-        ?>
-        $('#search').keyup(function () {
-            fillTableEstabelecimentos(this.value);
-        });
-        fillTableEstabelecimentos();
+            <?php
+            if ($menu == DISTRITOS){
+            ?>
+            $('#search').keyup(function () {
+                fillTableDistritos(this.value);
+            });
+            fillTableDistritos();
+            <?php
+            }
+            if($menu == CATEGORIAS){
+            ?>
+            $('#search').keyup(function () {
+                fillTableCategorias(this.value);
+            });
+            fillTableCategorias();
+            <?php
+            }
+            if($menu == ESTABELECIMENTOS){
+            ?>
+            $('#search').keyup(function () {
+                fillTableEstabelecimentos(this.value);
+            });
+            fillTableEstabelecimentos();
 
-        <?php }
-        if($menu == UTILIZADOR){
-                ?>
+            <?php }
+            if($menu == UTILIZADOR){
+            ?>
             $('#search').keyup(function () {
                 fillTableUtilizador(this.value);
             });
@@ -878,11 +857,12 @@ All rights reserved | This template is made with <i class="fa fa-heart" aria-hid
 
 
 
-    })
-</script>
-</body>
-</html>
-<?php
+        })
+    </script>
+    </body>
+    </html>
+    <?php
 
 }
+
 ?>

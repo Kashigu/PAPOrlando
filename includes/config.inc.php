@@ -11,6 +11,7 @@ define("DISTRITOS",4);
 define("CATEGORIAS",5);
 define("ESTABELECIMENTOS",6);
 define("UTILIZADOR",7);
-define("ESTABELECIMENTOSP",7);
+define("ESTABELECIMENTOSP",8);
+define("GALERIA",9);
 
 ?>
