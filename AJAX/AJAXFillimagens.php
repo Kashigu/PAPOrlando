@@ -29,7 +29,7 @@ $result = mysqli_query($con, $sql);
         <tr id="<?php echo $dados['imagemId']; ?>">
             <td data-target="imagemId"><?php echo $dados['imagemId'] ?></td>
             <td data-target="imagemNome"><?php echo $dados['imagemNome'] ?></td>
-            <td data-target="imagemImagem"><img width='100' height="100" src="../<?php echo $dados['imagemURL'] ?>"></td>
+            <td data-target="imagemImagem"><img width='100' height="100" src="<?php echo $dados['imagemURL'] ?>"></td>
             <td><a onclick="editaImagem(<?php echo $dados['imagemId'];?>)" ><i
                         class="fas fa-edit text-primary"></i></a></td>
             <td><a onclick="eliminaImagem(<?php echo $dados['imagemId'];?>)"> <i class="fas fa-trash  text-danger"></i></a></td>
