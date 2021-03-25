@@ -196,22 +196,52 @@ top(PROCURAR);
                                 <option>Mais Recente</option>
                             </select>
                         </form>
-
-                        <div id="tableContent"
-
                     </div>
-                </div>
-                <div class="col-lg-12 text-right">
-                    <div class="pagination-num">
-                        <a href="#">01</a>
-                        <a href="#">02</a>
-                        <a href="#">03</a>
+                        <?php
+                        $sql = "
+                        select *
+                        from distritos inner join estabelecimentos
+                        on distritoId=estabelecimentoDistritoId
+                        INNER JOIN categorias
+                        on categoriaId=estabelecimentoCategoriaId
+                        where estabelecimentoNome LIKE '%$txt%'";
+
+                        $resultEstabelecimentos = mysqli_query($con, $sql);
+                        while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
+                            ?>
+                            <div class="col-lg-4 col-sm-6">
+                                <a class="arrange-items"
+                                   href="single-listing.php?id=<?php echo $dadosEstabelecimentos['estabelecimentoId'] ?>">
+                                    <div class="arrange-pic">
+                                        <img class="centrinho"
+                                             src="<?php echo $dadosEstabelecimentos['estabelecimentoMiniaturaURL'] ?>"
+                                             alt="">
+                                        <div class="rating">4.9</div>
+                                        <div class="tic-text"><?php echo $dadosEstabelecimentos['categoriaNome'] ?></div>
+                                    </div>
+                                    <div class="arrange-text">
+                                        <h5><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></h5>
+                                        <span><?php echo $dadosEstabelecimentos['estabelecimentoLocalidade'] ?></span>
+                                        <p><?php echo $dadosEstabelecimentos['estabelecimentoSlogan'] ?></p>
+                                        <div class="open tomorrow">Abre amanhã às 10 da manhã</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <?php
+                        }
+                        ?>
+
+                        <div class="col-lg-12 text-right">
+                            <div class="pagination-num">
+                                <a href="#">01</a>
+                                <a href="#">02</a>
+                                <a href="#">03</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
 </section>
 
 
