@@ -118,23 +118,6 @@ function fillTableCategorias(txt = '') {
 
 }
 
-function addTableCategorias(txt = '') {
-    $('#categoria').modal('toggle');
-    $.ajax({
-        url: "../AJAX/AJAXAddCategorias.php",
-        type: "post",
-        data: {
-            categoria: $('#nomeCategoria').val(),
-            imagem: $('#imagem').val()
-        },
-        success: function (result) {
-            fillTableCategorias();
-        }
-    });
-
-
-}
-
 
 function eliminaCategorias(id) {  // abre o modal e injecta o ID
     $("#CategoriaID").html(id);
@@ -343,26 +326,7 @@ function fillTableImagens(txt = '') {
         }
     });
 
-
 }
-
-function addTableImagens(txt = '') {
-    $('#adicionar').modal('toggle');
-    $.ajax({
-        url: "AJAX/AJAXAddImagens.php",
-        type: "post",
-        data: {
-            imagemNome: $('#nomeImagem').val(),
-            imagem: $('#imagem').val()
-        },
-        success: function (result) {
-            fillTableImagens();
-        }
-    });
-
-
-}
-
 
 function eliminaImagem(id) {  // abre o modal e injecta o ID
     $("#ImagemID").html(id);
