@@ -9,7 +9,7 @@ $novoNome="imagens/".$imagem;
 copy($_FILES['imagem']['tmp_name'],"../".$novoNome);
 
 
-// A imagem s√≥ aparece porque est√° na pasta imagens/ mas se n√£o tiver n√£o aparece //
+// A imagem sÛ aparece porque est· na pasta imagens/ mas se n„o tiver n„o aparece //
 
 
 
