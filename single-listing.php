@@ -1,10 +1,16 @@
 <?php
 include_once("includes/body.inc.php");
 toposingle();
+$id=intval($_GET['id']);
+$sql = "Select * from estabelecimentos ";
+// inner join categorias
+$sql.= " where estabelecimentoId=$id";
 
+$resultEstabelecimentos = mysqli_query($con, $sql);
+$dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 ?>
 <!--                                                 ESTÁ COM PROBLEMAS ESTA PÁGINA                                                      -->
-<div class="hero-listing set-bg" data-setbg="img/ratoeira1.jpg">
+<div class="hero-listing set-bg" data-setbg="<?php echo $dadosEstabelecimentos['estabelecimentoFundoURL'] ?>">
 </div>
 <!-- Hero Section End -->
 
@@ -17,9 +23,9 @@ toposingle();
                     <div class="about-intro">
                         <div class="rating">4.9</div>
                         <div class="intro-text">
-                            <h2>Ratoeira</h2>
-                            <h4>Marinha Grande</h4>
-                            <p>Encontre alguns dos melhores sitios do Mundo</p>
+                            <h2><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></h2>
+                            <h4><?php echo $dadosEstabelecimentos['estabelecimentoLocalidade'] ?></h4>
+                            <p><?php echo $dadosEstabelecimentos['estabelecimentoSlogan'] ?></p>
                             <div class="open">Abre amanhã às 10 da manhã</div>
                             <div class="closed">Fechado agora</div>
                         </div>
@@ -49,26 +55,11 @@ toposingle();
                     <div class="about-left">
                         <div class="about-desc">
                             <h4>Sobre o Café</h4>
-                            <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae massa.
-                                Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class aptent taciti
-                                sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse
-                                potenti. Ut gravida mattis magna, non varius lorem sodales nec. In libero orci, ornare
-                                non nisl a, auctor euismod purus. Morbi pretium interdum vestibulum. Fusce nec eleifend
-                                ipsum. Sed non blandit tellus.</p>
-                            <p>Fusce urna quam, euismod sit amet mollis quis, vestibulum quis velit. Vestibulum
-                                malesuada aliquet libero viverra cursus. Aliquam erat volutpat. Morbi id dictum quam, ut
-                                commodo lorem. In at nisi nec arcu porttitor aliquet vitae at dui. Sed sollicitudin
-                                nulla non leo viverra scelerisque. Phasellus facilisis lobortis metus, sit amet viverra
-                                lectus finibus ac. Aenean non felis dapibus, placerat libero auctor, ornare ante. Morbi
-                                quis ex eleifend, sodales nulla vitae, scelerisque ante. Nunc id vulputate dui.
-                                Suspendisse consectetur rutrum metus nec scelerisque.</p>
-                            <p>Donec bibendum, enim ut luctus dictum, nisl turpis scelerisque sem, in dapibus neque odio
-                                eu sapien. Morbi ac aliquet erat. Sed dapibus, augue et malesuada maximus, neque ligula
-                                vehicula mauris, eget eleifend tortor magna luctus</p>
+                            <p><?php echo $dadosEstabelecimentos['estabelecimentoDescricao']?></p>
                         </div>
                         <div class="about-video">
-                            <img class="tamanho1" src="img/categories/hoteis.jpg" alt="">
-                            <a href="img/categories/hoteis.jpg" class="img-hover pop-up"><img src="img/zoom.png" alt=""></a>
+                            <img class="tamanho1" src="<?php  echo $dadosEstabelecimentos['estabelecimentoInteriorURL'] ?>" alt="">
+                            <a href="<?php  echo $dadosEstabelecimentos['estabelecimentoInteriorURL'] ?>" class="img-hover pop-up"><img src="img/zoom.png" alt=""></a>
                         </div>
                         <div class="client-reviews">
                             <h3>Revisão</h3>
@@ -123,15 +114,15 @@ toposingle();
                             </div>
                             <div class="contact-text">
                                 <h4>Informação</h4>
-                                <span>Main Road , No 25/11</span>
+                                <span><?php echo $dadosEstabelecimentos['estabelecimentoMorada'] ?></span>
                                 <ul>
-                                    <li>+34 556788 3221</li>
-                                    <li>contact@pizzaplace.com</li>
+                                    <li><?php echo $dadosEstabelecimentos['estabelecimentoTelefone'] ?></li>
+                                    <li><?php echo $dadosEstabelecimentos['estabelecimentoEmail'] ?></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="working-hours">
-                            <h4>Horas de Trabalho</h4>
+                            <h4><?php echo $dadosEstabelecimentos['estabelecimentoDescricao2']?></h4>
                             <ul>
                                 <li>Segunda-Feira<span>08:00 - 22:00</span></li>
                                 <li>Terça-Feira<span>08:00 - 22:00</span></li>
@@ -203,5 +194,5 @@ toposingle();
 
 <?php
 
-bottom();
+bottom(HOME);
 ?>
