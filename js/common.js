@@ -333,7 +333,7 @@ function fillTableEstabelecimentosProcurar(txt = '') {
 function fillTableImagens(txt = '') {
 
     $.ajax({
-        url: "../AJAX/AJAXFillimagens.php",
+        url: "AJAX/AJAXFillimagens.php",
         type: "post",
         data: {
             txt: txt
@@ -349,7 +349,7 @@ function fillTableImagens(txt = '') {
 function addTableImagens(txt = '') {
     $('#adicionar').modal('toggle');
     $.ajax({
-        url: "../AJAX/AJAXAddImagens.php",
+        url: "AJAX/AJAXAddImagens.php",
         type: "post",
         data: {
             imagemNome: $('#nomeImagem').val(),
@@ -367,7 +367,7 @@ function addTableImagens(txt = '') {
 function eliminaImagem(id) {  // abre o modal e injecta o ID
     $("#ImagemID").html(id);
     $.ajax({
-        url: "../AJAX/AJAXGetNameImagens.php",
+        url: "AJAX/AJAXGetNameImagens.php",
         type: "post",
         data: {
             idImagem: id
@@ -385,7 +385,7 @@ function eliminaImagem(id) {  // abre o modal e injecta o ID
 function DeleteTableImagem() {
     $('#staticBackdropDele').modal('toggle');
     $.ajax({
-        url: "../AJAX/AJAXDeleteImagens.php",
+        url: "AJAX/AJAXDeleteImagens.php",
         type: "post",
         data: {
             imagem: parseInt($('#ImagemID').html())
@@ -403,7 +403,7 @@ function editaImagem(id) {  // abre o modal e injecta o ID
 
     /* precisas de ir buscar os dados da categoria para poder escrever no modal*/
     $.ajax({
-        url: "../AJAX/AJAXGetNameImagens.php",
+        url: "AJAX/AJAXGetNameImagens.php",
         type: "post",
         data: {
             idImagem: id
@@ -419,7 +419,7 @@ function editaImagem(id) {  // abre o modal e injecta o ID
 function EditarTableImagem() {
     $('#editar').modal('toggle');
     $.ajax({
-        url: "../AJAX/AJAXEditImagens.php",
+        url: "AJAX/AJAXEditImagens.php",
         type: "post",
         data: {
             categoriaNome: $('#imagemNome').val(),

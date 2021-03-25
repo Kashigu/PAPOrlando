@@ -1,6 +1,5 @@
 <?php
 include_once("../includes/body.inc.php");
-top(PROCURAR);
 $txt=addslashes($_POST['txt']);
 
 $sql="
