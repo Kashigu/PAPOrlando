@@ -34,14 +34,15 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                 <div class="col-lg-4 offset-lg-1">
                     <div class="intro-share">
                         <div class="share-btn">
-                            <a href="definicoesEstabelecimento.php?id=<?php echo $id ?>">Definições</a>
+                            <a href="galeria.php?id=<?php echo $id ?>">Adicionar Galeria de Fotos</a>
+                            <a class="mt-1" href="definicoesEstabelecimento.php?id=<?php echo $id ?>">Definições</a>
                         </div>
                         <div class="share-icon">
                             <!--<a href="#"><i class="fa fa-map-marker"></i></a> -->
                             <!--<a href="#"><i class="fa fa-book"></i></a> -->
                             <!--<a href="#"><i class="fa fa-user-o"></i></a>-->
-                            <a href="#"><i class="fa fa-thumbs-up"></i></a>
-                            <a href="#"><i class="fa fa-star-o"></i></a>
+                            <!-- <a href="#"><i class="fa fa-thumbs-up"></i></a>-->
+                            <!--<a href="#"><i class="fa fa-star-o"></i></a>-->
                         </div>
                     </div>
                 </div>
@@ -181,5 +182,5 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 </section>
 
 <?php
-bottom(HOME);
+bot(HOME);
 ?>
