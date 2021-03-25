@@ -299,7 +299,7 @@ function preview_image(event)
 
 function fillTableEstabelecimentosProcurar(txt = '') {
     $.ajax({
-        url: "../AJAX/AJAXFillEstabelecimentosProcurar.php",
+        url: "AJAX/AJAXFillEstabelecimentosProcurar.php",
         type: "post",
         data: {
             txt:txt

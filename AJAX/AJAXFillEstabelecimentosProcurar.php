@@ -27,7 +27,7 @@ while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
                 <h5><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></h5>
                 <span><?php echo $dadosEstabelecimentos['estabelecimentoLocalidade'] ?></span>
                 <p><?php echo $dadosEstabelecimentos['estabelecimentoSlogan'] ?></p>
-                <div class="open tomorrow">Abre amanh„ ‡s 10 da manh„</div>
+                <div class="open tomorrow">Abre amanh√£ √†s 10 da manh√£</div>
             </div>
         </a>
     </div>
