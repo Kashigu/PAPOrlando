@@ -2,6 +2,10 @@
 include_once("includes/body.inc.php");
 topocriado();
 $id=intval($_GET['id']);
+$sql = "Select * from imagens ";
+// inner join categorias
+$sql.= " where imagemEstabelecimentoId=$id";
+
 ?>
 
 <section class="contact-section search-filter spad">
