@@ -17,7 +17,7 @@ copy($_FILES['imagem']['tmp_name'],"../".$novoNome);
 
 //$sql="insert into empresas(empresaNome,empresaLogoURL) values('".$nome."','imagens/".$imagem."');";
 
-$sql="insert into imagens(imagemId,imagemNome,imagemURL) values(0,'".$nome."','".$novoNome."',.$idE);";
+echo $sql="insert into imagens(imagemId,imagemNome,imagemURL, imagemEstabelecimentoId) values(0,'".$nome."','".$novoNome."',.$idE);";
 mysqli_query($con,$sql);
-header("location:galeria.php?id={$idE}");
+//header("location:galeria.php?id={$idE}");
 ?>
