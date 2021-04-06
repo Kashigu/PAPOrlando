@@ -382,18 +382,3 @@ function editaImagem(id) {  // abre o modal e injecta o ID
     $("#editar").modal("toggle");
 }
 
-function EditarTableImagem() {
-    $('#editar').modal('toggle');
-    $.ajax({
-        url: "AJAX/AJAXEditImagens.php",
-        type: "post",
-        data: {
-            categoriaNome: $('#imagemNome').val(),
-            categoriaId: $('#imagemId').val(),
-            categoriaImagem: $('#imagemImagem').val()
-        },
-        success: function (result) {
-            fillTableImagens();
-        }
-    });
-}

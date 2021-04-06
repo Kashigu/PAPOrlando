@@ -72,6 +72,7 @@ $sql = "Select * from imagens where imagemEstabelecimentoId=".$id;
     <div class="modal-dialog">
         <div class="modal-content">
             <form method="post" enctype="multipart/form-data" class="contact-form">
+                <input type="hidden" value="<?php echo $id ?>" name="id" id="id">
 
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Eliminar Imagem</h5>
@@ -90,7 +91,6 @@ $sql = "Select * from imagens where imagemEstabelecimentoId=".$id;
                         <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Fechar</button>
                     </div>
                     <div class="col-lg-5 meio">
-                        <button
                         <button onclick="DeleteTableImagem();" type="button" class="btn btn-danger mt-2">Eliminar</button>
                     </div>
                 </div>
