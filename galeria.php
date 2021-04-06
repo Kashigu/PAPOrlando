@@ -106,6 +106,7 @@ $sql = "Select * from imagens where imagemEstabelecimentoId=".$id;
     <div class="modal-dialog">
         <div class="modal-content">
             <form action="confirmaEditaImagem.php" class="contact-form" method="post" enctype="multipart/form-data">
+                <input type="hidden" value="<?php echo $id ?>" name="id" id="id">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editarlabel">Editar Imagem</h5>
 

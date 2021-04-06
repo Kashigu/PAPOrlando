@@ -47,10 +47,11 @@ header("location:categorias.php");
 //------------------------------------------------------------- Não consegui -------------------------------------//
 
 include_once("includes/body.inc.php");
+$idE = $_POST['id'];
 $categoria = addslashes($_POST['imagemNome']);
 $id=intval($_POST['imagemId']);
 $imagem =$_FILES['imagemImagem']['name'];
-$novoNome="../imagens/".$imagem;
+$novoNome="imagens/".$imagem;
 
  // $sql ="UPDATE categorias set categoriaNome ='".$categoria."'and categoriaImagemURL='".$novoNome."' where categoriaId='$id'";
 
@@ -65,5 +66,5 @@ if($imagem!=''){
 
 $result = mysqli_query($con, $sql);
 mysqli_query($con,$sql);
-header("location:galeria.php");
+header("location:galeria.php?id={$idE}");
 ?>
