@@ -1,7 +1,13 @@
 <?php
 include_once("includes/body.inc.php");
 topocriado();
-$id=intval($_GET['id']);
+$id = intval($_GET['id']);
+
+$sql = "Select * from estabelecimentos inner join categorias
+                        inner join perfis where estabelecimentoId=$id";
+
+$resultEstabelecimentos = mysqli_query($con, $sql);
+$dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 
 ?>
 
@@ -22,28 +28,32 @@ $id=intval($_GET['id']);
         <div class="row">
             <div class="col-lg-12">
 
-                <form action="confirmaEditaEstabelecimento.php?" class="contact-form" method="post" enctype="multipart/form-data">
+                <form action="confirmaEditaEstabelecimento.php?" class="contact-form" method="post"
+                      enctype="multipart/form-data">
                     <input type="hidden" value="<?php echo $id ?>" name="id">
                     <div class="row">
 
 
                         <?php
-                        $sql="select * from categorias order by categoriaNome";
-                        $resultCategorias=mysqli_query($con,$sql);
-                        while ($dadosCategorias=mysqli_fetch_array($resultCategorias)){
+                        $sql = "select * from categorias order by categoriaNome";
+                        $resultCategorias = mysqli_query($con, $sql);
+                        while ($dadosCategorias = mysqli_fetch_array($resultCategorias)) {
                             ?>
                             <div class="col-lg-4 ">
 
                                 <label name="categoria" class="check">
-                                    <input type="radio" name="categoria" id="categoria" value="<?php echo $dadosCategorias['categoriaId']?>">
+                                    <input type="radio" name="categoria" id="categoria"
+                                        <?php if ($dadosEstabelecimentos['estabelecimentoCategoriaId'] == $dadosCategorias['categoriaId'])
+                                            echo " checked " ?>
+                                           value="<?php echo $dadosCategorias['categoriaId'] ?>">
                                     <span class="checkmark"></span>
-                                    <span type="radio" name="categoria2[]" >  <?php echo $dadosCategorias['categoriaNome']?>
+                                    <span type="radio"
+                                          name="categoria2[]">  <?php echo $dadosCategorias['categoriaNome'] ?>
                                 </span> </label>
                             </div>
                             <?php
                         }
                         ?>
-
 
 
                         <!-- <label for="cafe">Café
@@ -52,30 +62,29 @@ $id=intval($_GET['id']);
                         <div class="col-lg-12">
 
                         </div>
-                        <?php
-                        $sql = "Select * from estabelecimentos inner join categorias
-                        inner join perfis where estabelecimentoId=$id";
 
-                        $resultEstabelecimentos = mysqli_query($con, $sql);
-                        $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
-                        ?>
                         <div class="col-lg-6 mt-4">
-                            <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?>" name="nomeEsta"  id="nomeEsta" placeholder="Nome do Estabelecimento" >
+                            <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?>"
+                                   name="nomeEsta" id="nomeEsta" placeholder="Nome do Estabelecimento">
                         </div>
                         <div class="col-lg-3 mt-4">
-                            <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoLocalidade'] ?>" name="nomeLoca" id="nomeLoca" placeholder="Localidade">
+                            <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoLocalidade'] ?>"
+                                   name="nomeLoca" id="nomeLoca" placeholder="Localidade">
                         </div>
                         <div class="col-lg-3 mt-4 arrange-select nice-select2">
                             <span>Distritos</span>
-                            <select name="distrito" >
+                            <select name="distrito">
                                 <option value="-1">Escolha o Distrito</option>
                                 <?php
-                                $sql="select * from distritos order by distritoNome";
-                                $resultDistritos=mysqli_query($con,$sql);
-                                while ($dadosDistritos=mysqli_fetch_array($resultDistritos)){
+                                $sql = "select * from distritos order by distritoNome";
+                                $resultDistritos = mysqli_query($con, $sql);
+                                while ($dadosDistritos = mysqli_fetch_array($resultDistritos)) {
                                     ?>
-                                    <option id="distrito" value="<?php echo $dadosDistritos['distritoId']?>">
-                                        <?php echo $dadosDistritos['distritoNome']?>
+                                    <option id="distrito"
+                                        <?php if ($dadosEstabelecimentos['estabelecimentoDistritoId'] == $dadosDistritos['distritoId'])
+                                            echo " selected " ?>
+                                            value="<?php echo $dadosDistritos['distritoId'] ?>">
+                                        <?php echo $dadosDistritos['distritoNome'] ?>
                                     </option>
                                     <?php
                                 }
@@ -83,18 +92,22 @@ $id=intval($_GET['id']);
                             </select>
 
 
-
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoSlogan'] ?>" name="nomeSlogan" id="nomeSlogan" placeholder="Slogan">
+                            <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoSlogan'] ?>"
+                                   name="nomeSlogan" id="nomeSlogan" placeholder="Slogan">
                         </div>
                         <div class="col-lg-12">
-                            <textarea name="sobre" id="sobre" placeholder="Sobre o Estabelecimento"><?php echo $dadosEstabelecimentos['estabelecimentoDescricao']?></textarea>
+                            <textarea name="sobre" id="sobre"
+                                      placeholder="Sobre o Estabelecimento"><?php echo $dadosEstabelecimentos['estabelecimentoDescricao'] ?></textarea>
                         </div>
                         <div class="col-lg-6">
-                            <input type="text"value="<?php echo $dadosEstabelecimentos['estabelecimentoMorada'] ?>" name="rua" id="rua" placeholder="Rua">
-                            <input type="tel" value="<?php echo $dadosEstabelecimentos['estabelecimentoTelefone'] ?>" name="numero" id="numero" placeholder="Número">
-                            <input type="email" value="<?php echo $dadosEstabelecimentos['estabelecimentoEmail'] ?>" name="email" id="email" placeholder="Email do Estabelecimento">
+                            <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoMorada'] ?>"
+                                   name="rua" id="rua" placeholder="Rua">
+                            <input type="tel" value="<?php echo $dadosEstabelecimentos['estabelecimentoTelefone'] ?>"
+                                   name="numero" id="numero" placeholder="Número">
+                            <input type="email" value="<?php echo $dadosEstabelecimentos['estabelecimentoEmail'] ?>"
+                                   name="email" id="email" placeholder="Email do Estabelecimento">
                         </div>
                         <div class="col-lg-6">
                             <div class="row">
@@ -102,7 +115,9 @@ $id=intval($_GET['id']);
                                     <label>Segunda a sexta</label>
                                 </div>
                                 <div class="col-7">
-                                    <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoDescricao2'] ?>"  name="horas" id="horas" placeholder="8:00 - 22:00">
+                                    <input type="text"
+                                           value="<?php echo $dadosEstabelecimentos['estabelecimentoDescricao2'] ?>"
+                                           name="horas" id="horas" placeholder="8:00 - 22:00">
                                 </div>
 
                             </div>
@@ -150,12 +165,15 @@ $id=intval($_GET['id']);
                         </div>
                         <div class="col-lg-6">
                             <label>Logótipo: </label>
-                            <input type="file" value="<?php echo $dadosEstabelecimentos['estabelecimentoMiniaturaURL'] ?>" name="logo" id="logo">
+                            <input type="file"
+                                   value="<?php echo $dadosEstabelecimentos['estabelecimentoMiniaturaURL'] ?>"
+                                   name="logo" id="logo">
 
                         </div>
                         <div class="col-lg-6">
                             <label>Imagem de Fundo: </label>
-                            <input type="file" value="<?php echo $dadosEstabelecimentos['estabelecimentoFundoURL'] ?>" name="fundo" id="fundo">
+                            <input type="file" value="<?php echo $dadosEstabelecimentos['estabelecimentoFundoURL'] ?>"
+                                   name="fundo" id="fundo">
                         </div>
                         <div class="col-lg-6">
                             <label>Posição do Estabelecimento no Google Earth: </label>
@@ -164,13 +182,15 @@ $id=intval($_GET['id']);
                         </div>
                         <div class="col-lg-6">
                             <label>Imagens do Estabelecimento: </label>
-                            <input type="file" value="<?php echo $dadosEstabelecimentos['estabelecimentoInteriorURL'] ?>" name="estabelecimento" id="estabelecimento">
+                            <input type="file"
+                                   value="<?php echo $dadosEstabelecimentos['estabelecimentoInteriorURL'] ?>"
+                                   name="estabelecimento" id="estabelecimento">
 
                         </div>
                         <div class="col-lg-4 mt-3">
                         </div>
                         <div class="col-lg-8 mt-3">
-                            <button type="submit">Confirmar Alteração </button>
+                            <button type="submit">Confirmar Alteração</button>
                         </div>
                     </div>
                 </form>
