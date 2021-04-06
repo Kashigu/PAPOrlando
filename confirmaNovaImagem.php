@@ -1,12 +1,12 @@
 <?php
 include_once ("includes/body.inc.php");
-$idE=intval($_GET['id']);
+$idE = $_POST['id'];
 
 $nome=$_POST['nomeImagem'];
 $imagem=$_FILES['imagem']['name'];
 $novoNome="imagens/".$imagem;
 
-copy($_FILES['imagem']['tmp_name'],"../".$novoNome);
+copy($_FILES['imagem']['tmp_name'],$novoNome);
 
 
 // A imagem só aparece porque está na pasta imagens/ mas se não tiver não aparece //
@@ -17,7 +17,7 @@ copy($_FILES['imagem']['tmp_name'],"../".$novoNome);
 
 //$sql="insert into empresas(empresaNome,empresaLogoURL) values('".$nome."','imagens/".$imagem."');";
 
-echo $sql="insert into imagens(imagemId,imagemNome,imagemURL, imagemEstabelecimentoId) values(0,'".$nome."','".$novoNome."',.$idE);";
+$sql="insert into imagens(imagemId,imagemNome,imagemURL, imagemEstabelecimentoId) values(0,'".$nome."','".$novoNome."','".$idE."');";
 mysqli_query($con,$sql);
-//header("location:galeria.php?id={$idE}");
+header("location:galeria.php?id={$idE}");
 ?>

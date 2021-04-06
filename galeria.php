@@ -32,7 +32,7 @@ $sql = "Select * from imagens where imagemEstabelecimentoId=".$id;
     <div class="modal-dialog">
         <div class="modal-content">
            <form action="confirmaNovaImagem.php" class=contact-form method=post enctype=multipart/form-data>
-            <input type="hidden" value="<?php echo $id ?>" name="id">
+            <input type="hidden" value="<?php echo $id ?>" name="id" id="id">
             <div class="modal-header">
                 <h5 class="modal-title" id="adicionarlabel">Adicionar Nova Imagem</h5>
 
