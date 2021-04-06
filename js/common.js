@@ -313,13 +313,14 @@ function fillTableEstabelecimentosProcurar(txt = '') {
 
 
 //---------------------------------------------------FUNÇÕES PARA AS IMAGENS DE UM ESTABELECIMENTO---------------------------------------//
-function fillTableImagens(txt = '') {
+function fillTableImagens(txt = '',id) {
 
     $.ajax({
         url: "AJAX/AJAXFillimagens.php",
         type: "post",
         data: {
-            txt: txt
+            txt: txt,
+            id:id
         },
         success: function (result) {
             $('#tableContent').html(result);

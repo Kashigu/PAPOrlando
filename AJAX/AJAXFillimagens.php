@@ -1,8 +1,9 @@
 <?php
 // dados na base de dados
 include_once("../includes/body.inc.php");
+$id=intval($_POST['id']);
 $txt = addslashes($_POST['txt']);
-$sql = "Select * from imagens where imagemNome LIKE '%$txt%'";
+$sql = "Select * from imagens where imagemEstabelecimentoId='$id' and imagemNome LIKE '%$txt%'";
 
 $result = mysqli_query($con, $sql);
 

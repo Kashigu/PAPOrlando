@@ -710,7 +710,7 @@ function bottomadmin()
 }
 
 
-function bot($menu = HOME)
+function bot($menu = HOME, $id = 0)
 {
     ?>
 
@@ -763,9 +763,9 @@ function bot($menu = HOME)
             if ($menu == GALERIA){
             ?>
             $('#search').keyup(function () {
-                fillTableImagens(this.value);
+                fillTableImagens(this.value,<?php echo $id ?>);
             });
-            fillTableImagens();
+            fillTableImagens('',<?php echo $id ?>);
             <?php }
             ?>
 

@@ -2,7 +2,7 @@
 include_once("includes/body.inc.php");
 topocriado();
 $id=intval($_GET['id']);
-$sql = "Select * from imagens where imagemEstabelecimentoId=$id";
+$sql = "Select * from imagens where imagemEstabelecimentoId=".$id;
 // inner join categorias
 
 
@@ -12,13 +12,13 @@ $sql = "Select * from imagens where imagemEstabelecimentoId=$id";
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form action="criado.php?id=<?php echo $id ?>" class="filter-search filter-search1 filter-search2">
+                <form  class="filter-search filter-search1 filter-search2">
                     <div class="location-search1 col-lg-4 mt-3 ">
                         <h5>Nome das Imagens</h5>
                         <input class="location-search1 nice-select1" type="text" id="search">
                     </div>
 
-                    <button type="submit">Voltar</button>
+                    <button onclick="location.href='criado.php?id=<?php echo $id ?>'" type="button">Voltar</button>
                 </form>
             </div>
             <div class="col-lg-12 mt-3" id="tableContent">
@@ -141,5 +141,5 @@ $sql = "Select * from imagens where imagemEstabelecimentoId=$id";
 </div>
 
 <?php
-bot(GALERIA);
+bot(GALERIA,$id);
 ?>
