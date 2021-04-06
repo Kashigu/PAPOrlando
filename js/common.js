@@ -343,6 +343,7 @@ function eliminaImagem(id) {  // abre o modal e injecta o ID
 
             $("#staticBackdropDele").modal("toggle");
             fillTableImagens();
+
         }
     })
 }
