@@ -130,7 +130,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                         </div>
                         <div class="col-lg-3 mt-4">
                             <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoLocalidade'] ?>"
-                                   name="nomeLoca" id="nomeLoca" placeholder="Localidade">
+                                   name="nomeLoca" id="nomeLoca" placeholder="Concelho">
                         </div>
                         <div class="col-lg-3 mt-4 arrange-select nice-select2">
                             <span>Distritos</span>

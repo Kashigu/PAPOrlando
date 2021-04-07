@@ -116,7 +116,7 @@ $id=intval($_GET['id']);
                             <input type="text" name="nomeEsta"  id="nomeEsta" placeholder="Nome do Estabelecimento">
                         </div>
                         <div class="col-lg-3 mt-4">
-                            <input type="text" name="nomeLoca" id="nomeLoca" placeholder="Localidade">
+                            <input type="text" name="nomeLoca" id="nomeLoca" placeholder="Concelho">
                         </div>
                         <div class="col-lg-3 mt-4 arrange-select nice-select2">
                             <span>Distritos</span>
