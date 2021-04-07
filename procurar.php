@@ -2,6 +2,8 @@
 include_once("includes/body.inc.php");
 top(PROCURAR);
 
+$distrito = intval($_GET['distrito']);
+$categoria =intval($_GET['categoria'])
 
 ?>
 
@@ -30,9 +32,12 @@ top(PROCURAR);
                             $resultCategorias = mysqli_query($con, $sql);
                             while ($dadosCategorias = mysqli_fetch_array($resultCategorias)) {
                                 ?>
+                                <?php if ($categoria == $dadosCategorias['distritoId'])
+                                    echo " selected " ?>
                                 <option value="<?php echo $dadosCategorias['categoriaId'] ?>">
                                     <?php echo $dadosCategorias['categoriaNome'] ?>
                                 </option>
+
                                 <?php
                             }
                             ?>
@@ -48,6 +53,8 @@ top(PROCURAR);
                             $resultDistritos = mysqli_query($con, $sql);
                             while ($dadosDistritos = mysqli_fetch_array($resultDistritos)) {
                                 ?>
+                                <?php if ($distrito == $dadosDistritos['distritoId'])
+                                    echo " selected " ?>
                                 <option value="<?php echo $dadosDistritos['distritoId'] ?>">
                                     <?php echo $dadosDistritos['distritoNome'] ?>
                                 </option>
