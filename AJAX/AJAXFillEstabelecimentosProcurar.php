@@ -32,7 +32,7 @@ while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
         </a>
     </div>
     <?php
-    $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos);
+
 }
 ?>
 
