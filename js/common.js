@@ -41,7 +41,7 @@ function eliminaDistrito(id) {  // abre o modal e injecta o ID
             $("#idDistrito").html('Confirma que deseja eliminar o Distrito: ' + result + '?');
 
             $("#staticBackdropDele").modal("toggle");
-            fillTableDistritos();
+            //fillTableDistritos();
         }
     })
 }
@@ -132,7 +132,7 @@ function eliminaCategorias(id) {  // abre o modal e injecta o ID
             $("#idCategoria").html('Confirma que deseja eliminar o Distrito: ' + result + '?');
 
             $("#staticBackdropDele").modal("toggle");
-            fillTableCategorias();
+            //fillTableCategorias();
         }
     })
 }
@@ -215,7 +215,7 @@ function DeleteEstabelecimentos(id) {  // abre o modal e injecta o ID
             $("#idEstabelecimento").html('Confirma que deseja eliminar o Estabelecimento: ' + result + '?');
 
             $("#staticBackdropDele").modal("toggle");
-            fillTableEstabelecimentos();
+            //fillTableEstabelecimentos();
         }
     })
 }
@@ -263,7 +263,7 @@ function DeleteUtilizador(id) {  // abre o modal e injecta o ID
             $("#idPerfil").html('Confirma que deseja eliminar o Utilizador: ' + result + '?');
 
             $("#staticBackdropDele").modal("toggle");
-            fillTableUtilizador();
+            //fillTableUtilizador();
         }
     })
 }
@@ -313,7 +313,7 @@ function fillTableEstabelecimentosProcurar(txt = '') {
 
 
 //---------------------------------------------------FUNÇÕES PARA AS IMAGENS DE UM ESTABELECIMENTO---------------------------------------//
-function fillTableImagens(txt = '',id) {
+function fillTableImagens(txt = '',id =-1) {
 
     $.ajax({
         url: "AJAX/AJAXFillimagens.php",
@@ -342,7 +342,7 @@ function eliminaImagem(id) {  // abre o modal e injecta o ID
             $("#idImagem").html('Confirma que deseja eliminar a Imagem: ' + result + '?');
 
             $("#staticBackdropDele").modal("toggle");
-            fillTableImagens();
+            //fillTableImagens();
 
         }
     })
@@ -357,7 +357,7 @@ function DeleteTableImagem() {
             imagem: parseInt($('#ImagemID').html())
         },
         success: function (result) {
-            fillTableImagens();
+            fillTableImagens('',result);
         }
     });
 
