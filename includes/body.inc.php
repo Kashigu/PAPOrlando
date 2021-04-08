@@ -710,7 +710,7 @@ function bottomadmin()
 }
 
 
-function bot($menu = HOME, $id = 0)
+function bot($menu = HOME, $id = 0, $categoria=0, $distrito =0)
 {
     ?>
 
@@ -755,9 +755,9 @@ function bot($menu = HOME, $id = 0)
             ?>
 
             $('#search').keyup(function () {
-                fillTableEstabelecimentosProcurar(this.value);
+                fillTableEstabelecimentosProcurar(this.value, <?php echo $categoria; ?>,<?php echo $distrito; ?>);
             });
-            fillTableEstabelecimentosProcurar();
+            fillTableEstabelecimentosProcurar('',<?php echo $categoria; ?>,<?php echo $distrito; ?>);
 
             <?php }
             if ($menu == GALERIA){

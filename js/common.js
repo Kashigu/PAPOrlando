@@ -297,12 +297,14 @@ function preview_image(event)
 
 //-----------------------------------------------------------FUNÇÕES PARA O PROCURAR.PHP----------------------------------------------//
 
-function fillTableEstabelecimentosProcurar(txt = '') {
+function fillTableEstabelecimentosProcurar(txt = '',categoria=-1,distrito=-1) {
     $.ajax({
         url: "AJAX/AJAXFillEstabelecimentosProcurar.php",
         type: "post",
         data: {
-            txt:txt
+            txt:txt ,
+            categoria:categoria,
+            distrito:distrito
         },
         success: function (result) {
             $('#tableContent').html(result);

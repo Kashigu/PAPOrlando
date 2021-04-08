@@ -20,8 +20,8 @@ top(PROCURAR);
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form action="procurar.php" class="filter-search filter-search1">
-                    <div class="category-search col-lg-5">
+                <form class="filter-search filter-search1">
+                    <div class="category-search col-lg-6">
                         <h5>Procurar Categoria</h5>
                         <select name="categoria" class="ca-search">
                             <option value="-1">Escolha a Categoria</option>
@@ -30,16 +30,18 @@ top(PROCURAR);
                             $resultCategorias = mysqli_query($con, $sql);
                             while ($dadosCategorias = mysqli_fetch_array($resultCategorias)) {
                                 ?>
-                                <option value="<?php echo $dadosCategorias['categoriaId'] ?>">
+                                <option id="search" value="<?php echo $dadosCategorias['categoriaId'] ?>">
                                     <?php echo $dadosCategorias['categoriaNome'] ?>
                                 </option>
                                 <?php
-                            }
+                            }$categoria=intval($_POST['categoria']);
+
+
                             ?>
 
                         </select>
                     </div>
-                    <div class="location-search col-lg-5">
+                    <div class="location-search col-lg-6">
                         <h5>Tua Localização</h5>
                         <select name="distrito" class="lo-search">
                             <option value="-1">Escolha o Distrito</option>
@@ -48,20 +50,21 @@ top(PROCURAR);
                             $resultDistritos = mysqli_query($con, $sql);
                             while ($dadosDistritos = mysqli_fetch_array($resultDistritos)) {
                                 ?>
-                                <option value="<?php echo $dadosDistritos['distritoId'] ?>">
+                                <option id="search" value="<?php echo $dadosDistritos['distritoId'] ?>">
                                     <?php echo $dadosDistritos['distritoNome'] ?>
                                 </option>
                                 <?php
-                            }
+                            }$distrito=intval($_POST['distrito']);
+                            $distrito=84;
+
                             ?>
                         </select>
                     </div>
-                    <div class="location-search1 col-lg-10 mt-3 ">
+                    <div class="location-search1 col-lg-12 mt-3 ">
                         <h5>Nome do Estabelecimento</h5>
 
                         <input class="location-search1 nice-select1" type="text" id="search">
                     </div>
-                    <button type="submit">Procurar Agora</button>
                 </form>
             </div>
         </div>
@@ -210,5 +213,5 @@ top(PROCURAR);
 
 
 <?php
-bot(ESTABELECIMENTOSP);
+bot(ESTABELECIMENTOSP,$categoria,$distrito);
 ?>
