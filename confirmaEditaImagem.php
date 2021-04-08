@@ -48,7 +48,7 @@ header("location:categorias.php");
 
 include_once("includes/body.inc.php");
 $idE = $_POST['id'];
-$categoria = addslashes($_POST['imagemNome']);
+$nome = addslashes($_POST['imagemNome']);
 $id=intval($_POST['imagemId']);
 $imagem =$_FILES['imagemImagem']['name'];
 $novoNome="imagens/".$imagem;
@@ -56,7 +56,7 @@ $novoNome="imagens/".$imagem;
  // $sql ="UPDATE categorias set categoriaNome ='".$categoria."'and categoriaImagemURL='".$novoNome."' where categoriaId='$id'";
 
 
-$sql="Update imagens set imagemNome='".$categoria."'";
+$sql="Update imagens set imagemNome='".$nome."'";
 if($imagem!=''){
     $sql.=", imagemURL='imagens/".$imagem."'";
     copy($_FILES['imagemImagem']['tmp_name'],$novoNome);
