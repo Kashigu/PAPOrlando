@@ -55,7 +55,7 @@ top(PROCURAR);
                                 </option>
                                 <?php
                             }$distrito=intval($_POST['distrito']);
-                            $distrito=84;
+
 
                             ?>
                         </select>
