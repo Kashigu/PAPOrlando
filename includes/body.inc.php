@@ -65,11 +65,36 @@ function toposingle()
                 </ul>
             </nav>
         </div>
+        <?php
+        session_start();
+        if (!isset($_SESSION['id'])){
+
+        ?>
         <div class="header-right">
             <div class="user-access">
-                <a href="novoperfil.php"><img src="img/perfilfoto.jpg" class="reduzido"></a>
+                <a data-toggle="modal" data-target="#registar">Registar/</a>
+                <a data-toggle="modal" data-target="#login">Iniciar Sessão</a>
                 <div id="mobile-menu-wrap"></div>
             </div>
+            <?php
+            }else{
+            ?>
+            <?php
+            $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+            $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
+            $resultPerfis = mysqli_query($con, $sql);
+            $dadosPerfis = mysqli_fetch_array($resultPerfis)
+            ?>
+            <div class="header-right">
+                <div class="user-access">
+                    <a data-toggle="modal" data-target="#sair">Desconectar</a>
+                    <a href="novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">
+                        <img src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
+                    <div id="mobile-menu-wrap"></div>
+                </div>
+                <?php
+                }
+                ?>
     </header>
 
     <?php
@@ -78,7 +103,7 @@ function toposingle()
 function top($menu = PORTUGAL)
 {
 
-   ?>
+    ?>
 
     <!DOCTYPE html>
 <html lang="zxx">
@@ -132,21 +157,21 @@ function top($menu = PORTUGAL)
             </nav>
             <?php
             session_start();
-            if(!isset($_SESSION['id'])){
+            if (!isset($_SESSION['id'])){
 
-                ?>
+            ?>
             <div class="header-right">
                 <div class="user-access">
                     <a data-toggle="modal" data-target="#registar">Registar/</a>
                     <a data-toggle="modal" data-target="#login">Iniciar Sessão</a>
                     <div id="mobile-menu-wrap"></div>
                 </div>
-            <?php
-            }else{
-            ?>
+                <?php
+                }else{
+                ?>
                 <?php
                 $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-                $sql = "select * from perfis where perfilId=".$_SESSION['id'];
+                $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
                 $resultPerfis = mysqli_query($con, $sql);
                 $dadosPerfis = mysqli_fetch_array($resultPerfis)
                 ?>
@@ -157,15 +182,14 @@ function top($menu = PORTUGAL)
                             <img src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
                         <div id="mobile-menu-wrap"></div>
                     </div>
-                <?php
-                }
-                ?>
+                    <?php
+                    }
+                    ?>
     </header>
     <!-- Header End -->
 
 
-
-<?php
+    <?php
 }
 
 function topocriado()
@@ -361,11 +385,36 @@ function topoadmin($menu = GESTAO)
                 </ul>
             </nav>
         </div>
+        <?php
+        session_start();
+        if (!isset($_SESSION['id'])){
+
+        ?>
         <div class="header-right">
             <div class="user-access">
-                <a href="novoperfil.php"><img src="../img/perfilfoto.jpg" class="reduzido"></a>
+                <a data-toggle="modal" data-target="#registar">Registar/</a>
+                <a data-toggle="modal" data-target="#login">Iniciar Sessão</a>
                 <div id="mobile-menu-wrap"></div>
             </div>
+            <?php
+            }else{
+            ?>
+            <?php
+            $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+            $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
+            $resultPerfis = mysqli_query($con, $sql);
+            $dadosPerfis = mysqli_fetch_array($resultPerfis)
+            ?>
+            <div class="header-right">
+                <div class="user-access">
+                    <a data-toggle="modal" data-target="#sair">Desconectar</a>
+                    <a href="../novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">
+                        <img src="../<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
+                    <div id="mobile-menu-wrap"></div>
+                </div>
+                <?php
+                }
+                ?>
     </header>
 
     <?php
@@ -425,7 +474,7 @@ function toputili($menu = GESTAO)
         </div>
         <?php
         session_start();
-        if(!isset($_SESSION['id'])){
+        if (!isset($_SESSION['id'])){
 
         ?>
         <div class="header-right">
@@ -439,7 +488,7 @@ function toputili($menu = GESTAO)
             ?>
             <?php
             $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-            $sql = "select * from perfis where perfilId=".$_SESSION['id'];
+            $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
             $resultPerfis = mysqli_query($con, $sql);
             $dadosPerfis = mysqli_fetch_array($resultPerfis)
             ?>
@@ -510,11 +559,36 @@ function topAdmin($menu = GESTAO)
                 </ul>
             </nav>
         </div>
+        <?php
+        session_start();
+        if (!isset($_SESSION['id'])){
+
+        ?>
         <div class="header-right">
             <div class="user-access">
-                <a href="../novoperfil.php"><img src="../img/perfilfoto.jpg" class="reduzido"></a>
+                <a data-toggle="modal" data-target="#registar">Registar/</a>
+                <a data-toggle="modal" data-target="#login">Iniciar Sessão</a>
                 <div id="mobile-menu-wrap"></div>
             </div>
+            <?php
+            }else{
+            ?>
+            <?php
+            $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+            $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
+            $resultPerfis = mysqli_query($con, $sql);
+            $dadosPerfis = mysqli_fetch_array($resultPerfis)
+            ?>
+            <div class="header-right">
+                <div class="user-access">
+                    <a data-toggle="modal" data-target="#sair">Desconectar</a>
+                    <a href="../novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">
+                        <img src="../<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
+                    <div id="mobile-menu-wrap"></div>
+                </div>
+                <?php
+                }
+                ?>
     </header>
 
     <?php
@@ -635,10 +709,11 @@ function bottom($menu)
                         <div class="row">
                             <div class="modal-body">
                                 <div class="col-lg-6 mt-3 meio">
-                                    <input type="text" id="utilizador" name="utilizador" placeholder="Nome de Utilizador">
+                                    <input type="text" id="utilizador" name="utilizador"
+                                           placeholder="Nome de Utilizador">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
-                                    <input type="password" id="id"  name="id" placeholder="Palavra-Passe">
+                                    <input type="password" id="id" name="id" placeholder="Palavra-Passe">
                                 </div>
                             </div>
                         </div>
@@ -707,7 +782,7 @@ function bottom($menu)
         <div class="modal fade" id="sair" tabindex="-1" aria-labelledby="sair" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="Logout.php"  method="post" class="contact-form">
+                    <form action="Logout.php" method="post" class="contact-form">
                         <div class="modal-header">
                             <h5 class="modal-title" id="sair">Desconectar</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -842,10 +917,11 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
                         <div class="row">
                             <div class="modal-body">
                                 <div class="col-lg-6 mt-3 meio">
-                                    <input type="text" id="utilizador" name="utilizador" placeholder="Nome de Utilizador">
+                                    <input type="text" id="utilizador" name="utilizador"
+                                           placeholder="Nome de Utilizador">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
-                                    <input type="password" id="id"  name="id" placeholder="Palavra-Passe">
+                                    <input type="password" id="id" name="id" placeholder="Palavra-Passe">
                                 </div>
                             </div>
                         </div>
@@ -914,7 +990,7 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
         <div class="modal fade" id="sair" tabindex="-1" aria-labelledby="sair" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="Logout.php"  method="post" class="contact-form">
+                    <form action="Logout.php" method="post" class="contact-form">
                         <div class="modal-header">
                             <h5 class="modal-title" id="sair">Desconectar</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -934,7 +1010,7 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
                             </div>
                             <div class="col-lg-5 meio">
                                 <button type="submit" class="btn btn-primary mt-2">Sair</button>
-                            <input type="hidden" name="id">
+                                <input type="hidden" name="id">
                             </div>
                         </div>
                     </form>
