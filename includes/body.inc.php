@@ -78,7 +78,8 @@ function toposingle()
 function top($menu = PORTUGAL)
 {
 
-    ?>
+   ?>
+
     <!DOCTYPE html>
 <html lang="zxx">
 
@@ -129,17 +130,42 @@ function top($menu = PORTUGAL)
                     <!--<li><a href="criarEstabelecimento.html">Contactos</a></li>-->
                 </ul>
             </nav>
+            <?php
+            session_start();
+            if(!isset($_SESSION['id'])){
+
+                ?>
             <div class="header-right">
                 <div class="user-access">
                     <a data-toggle="modal" data-target="#registar">Registar/</a>
                     <a data-toggle="modal" data-target="#login">Iniciar Sessão</a>
                     <div id="mobile-menu-wrap"></div>
                 </div>
+            <?php
+            }else{
+            ?>
+                <?php
+                $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+                $sql = "select * from perfis where perfilId=".$_SESSION['id'];
+                $resultPerfis = mysqli_query($con, $sql);
+                $dadosPerfis = mysqli_fetch_array($resultPerfis)
+                ?>
+                <div class="header-right">
+                    <div class="user-access">
+                        <a data-toggle="modal" data-target="#sair">Desconectar</a>
+                        <a href="novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">
+                            <img src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
+                        <div id="mobile-menu-wrap"></div>
+                    </div>
+                <?php
+                }
+                ?>
     </header>
     <!-- Header End -->
 
 
-    <?php
+
+<?php
 }
 
 function topocriado()
@@ -398,19 +424,36 @@ function toputili($menu = GESTAO)
             </nav>
         </div>
         <?php
-        $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-        $sql = "select * from perfis where perfilId=3";
-        $resultPerfis = mysqli_query($con, $sql);
-        $dadosPerfis = mysqli_fetch_array($resultPerfis)
+        session_start();
+        if(!isset($_SESSION['id'])){
+
         ?>
         <div class="header-right">
-            <div class="user-access"<?php echo $dadosPerfis['perfilId'] ?>>
-                <a href="novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>"><img
-                            src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
+            <div class="user-access">
+                <a data-toggle="modal" data-target="#registar">Registar/</a>
+                <a data-toggle="modal" data-target="#login">Iniciar Sessão</a>
                 <div id="mobile-menu-wrap"></div>
             </div>
+            <?php
+            }else{
+            ?>
+            <?php
+            $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+            $sql = "select * from perfis where perfilId=".$_SESSION['id'];
+            $resultPerfis = mysqli_query($con, $sql);
+            $dadosPerfis = mysqli_fetch_array($resultPerfis)
+            ?>
+            <div class="header-right">
+                <div class="user-access">
+                    <a data-toggle="modal" data-target="#sair">Desconectar</a>
+                    <a href="novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">
+                        <img src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
+                    <div id="mobile-menu-wrap"></div>
+                </div>
+                <?php
+                }
+                ?>
     </header>
-
 
     <?php
 }
@@ -582,7 +625,7 @@ function bottom($menu)
         <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="novoperfil.php" class="contact-form">
+                    <form action="confirmaLogin.php" method="post" class="contact-form">
                         <div class="modal-header">
                             <h5 class="modal-title" id="login">Iniciar Sessão</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -592,10 +635,10 @@ function bottom($menu)
                         <div class="row">
                             <div class="modal-body">
                                 <div class="col-lg-6 mt-3 meio">
-                                    <input type="text" placeholder="Nome de Utilizador">
+                                    <input type="text" id="utilizador" name="utilizador" placeholder="Nome de Utilizador">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
-                                    <input type="password" placeholder="Palavra-Passe">
+                                    <input type="password" id="id"  name="id" placeholder="Palavra-Passe">
                                 </div>
                             </div>
                         </div>
@@ -604,7 +647,7 @@ function bottom($menu)
                                 <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
                             </div>
                             <div class="col-lg-5 meio">
-                                <button type="button" class="btn btn-primary mt-2">Entrar</button>
+                                <button type="submit" class="btn btn-primary mt-2">Entrar</button>
 
                             </div>
                         </div>
@@ -618,7 +661,7 @@ function bottom($menu)
         <div class="modal fade" id="registar" tabindex="-1" aria-labelledby="registar" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="novoperfil.php" class="contact-form">
+                    <form action="novoperfil.php" method="post" class="contact-form">
                         <div class="modal-header">
                             <h5 class="modal-title" id="registar">Registar</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -649,8 +692,42 @@ function bottom($menu)
                                 <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
                             </div>
                             <div class="col-lg-5 meio">
-                                <button type="button" class="btn btn-primary mt-2">Registar</button>
+                                <button type="submit" class="btn btn-primary mt-2">Registar</button>
 
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+        <!-- Modal Logout-->
+        <div class="modal fade" id="sair" tabindex="-1" aria-labelledby="sair" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="Logout.php"  method="post" class="contact-form">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="sair">Desconectar</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <div class="modal-body">
+                                <div class="col-lg-6 mt-3 meio">
+                                    Tem a certeza que deseja Sair ?
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer mt-2">
+                            <div class="col-lg-7 meio">
+                                <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
+                            </div>
+                            <div class="col-lg-5 meio">
+                                <button type="submit" class="btn btn-primary mt-2">Sair</button>
+                                <input type="hidden" name="id">
                             </div>
                         </div>
                     </form>
@@ -710,7 +787,7 @@ function bottomadmin()
 }
 
 
-function bot($menu = HOME, $id = 0, $categoria=0, $distrito =0)
+function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
 {
     ?>
 
@@ -747,6 +824,124 @@ function bot($menu = HOME, $id = 0, $categoria=0, $distrito =0)
     <script src="js/mixitup.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/common.js"></script>
+
+
+    <div class="container">
+
+        <!-- Modal Login-->
+        <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="confirmaLogin.php" method="post" class="contact-form">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="login">Iniciar Sessão</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <div class="modal-body">
+                                <div class="col-lg-6 mt-3 meio">
+                                    <input type="text" id="utilizador" name="utilizador" placeholder="Nome de Utilizador">
+                                </div>
+                                <div class="col-lg-6 mt-3 meio">
+                                    <input type="password" id="id"  name="id" placeholder="Palavra-Passe">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer mt-2">
+                            <div class="col-lg-7 meio">
+                                <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
+                            </div>
+                            <div class="col-lg-5 meio">
+                                <button type="submit" class="btn btn-primary mt-2">Entrar</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Modal Registar-->
+        <div class="modal fade" id="registar" tabindex="-1" aria-labelledby="registar" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="novoperfil.php" method="post" class="contact-form">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="registar">Registar</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <div class="modal-body">
+                                <div class="col-lg-6 mt-3 meio">
+                                    <input type="text" placeholder="Nome de Utilizador">
+                                </div>
+                                <div class="col-lg-6 mt-3 meio">
+                                    <input type="email" placeholder="Email">
+                                </div>
+                                <div class="col-lg-6 mt-3 meio">
+                                    <input type="text" placeholder="Localidade">
+                                </div>
+                                <div class="col-lg-6 mt-3 meio">
+                                    <input type="password" placeholder="Palavra-Passe">
+                                </div>
+                                <div class="col-lg-6 mt-3 meio">
+                                    <input type="password" placeholder="Confirmar Palavra-Passe">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer mt-2">
+                            <div class="col-lg-7 meio">
+                                <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
+                            </div>
+                            <div class="col-lg-5 meio">
+                                <button type="submit" class="btn btn-primary mt-2">Registar</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+        <!-- Modal Logout-->
+        <div class="modal fade" id="sair" tabindex="-1" aria-labelledby="sair" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="Logout.php"  method="post" class="contact-form">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="sair">Desconectar</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <div class="modal-body">
+                                <div class="col-lg-6 mt-3 meio">
+                                    Tem a certeza que deseja Sair ?
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer mt-2">
+                            <div class="col-lg-7 meio">
+                                <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
+                            </div>
+                            <div class="col-lg-5 meio">
+                                <button type="submit" class="btn btn-primary mt-2">Sair</button>
+                            <input type="hidden" name="id">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         $('document').ready(function () {

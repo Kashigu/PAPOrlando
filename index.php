@@ -2,6 +2,7 @@
 include_once("includes/body.inc.php");
 top(PORTUGAL);
 
+
 ?>
     <section class="hero-section set-bg" data-setbg="img/lisboa.jpg">
         <div class="container">
