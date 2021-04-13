@@ -59,47 +59,6 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                             <p> <?php echo $dadosEstabelecimentos['estabelecimentoDescricao'] ?> </p>
                         </div>
                         <div class="about-video1">
-                            <!--<img class="tamanho1" src="<?php // echo $dadosEstabelecimentos['estabelecimentoInteriorURL'] ?>" alt="">-->
-                            <!--<a href="<?php // echo $dadosEstabelecimentos['estabelecimentoInteriorURL'] ?>" class="img-hover pop-up"><img src="img/zoom.png" alt=""></a>-->
-                           <!-- <div id="carouselExampleIndicators" class="tamanho carousel slide"
-                                 data-ride="carousel">
-                                <ol class=" carousel-indicators">
-                                    <li data-target="#carouselExampleIndicators"
-                                        data-slide-to="1"></li>
-                                    <li data-target="#carouselExampleIndicators"
-                                        data-slide-to="2"></li>
-                                    <li data-target="#carouselExampleIndicators"
-                                        data-slide-to="3"></li>
-
-                                </ol>
-                                <div class="carousel-inner">
-                                    <?php/*
-                                    $sql = "Select * from imagens where imagemEstabelecimentoId=" . $id;
-                                    $resultImagens = mysqli_query($con, $sql);
-                                    while ($dadosImagens = mysqli_fetch_array($resultImagens)) {
-                                        */?>
-                                        <div class="carousel-item active" >
-                                            <img class=" tamanho"
-                                                 src="<?php // echo $dadosImagens['imagemURL'] ?>">
-
-                                        </div>
-                                        <?php/*
-                                    }
-                                    */?>
-                                </div>
-                                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                                       data-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="carousel-control-next direita" href="#carouselExampleIndicators"
-                                       role="button"
-                                       data-slide="next">
-                                        <span class="carousel-control-next-icon direita" aria-hidden="true"></span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-
-                            </div>-->
                             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 
                                 <div class="carousel-inner">
@@ -203,7 +162,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                         </div>
                         <div class="working-hours">
                             <h4>Horas de Trabalho:</h4>
-                            <?php echo $dadosEstabelecimentos['estabelecimentoDescricao2'] ?>
+                            <p> <?php echo $dadosEstabelecimentos['estabelecimentoDescricao2'] ?> </p>
                         </div>
                     </div>
                 </div>

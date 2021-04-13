@@ -202,10 +202,13 @@ $id=intval($_GET['id']);
                         <div class="col-lg-12">
                             <textarea name="reviewTexto" id="myTextarea" placeholder="Sobre o Estabelecimento"></textarea>
                         </div>
-                        <div class="col-lg-6 mt-5">
-                            <input type="text" name="rua" id="rua" placeholder="Rua">
-                            <input type="tel" name="numero" id="numero" placeholder="Número">
-                            <input type="email" name="email" id="email" placeholder="Email do Estabelecimento">
+                        <div class="col-lg-6 mt-3">
+                           <label>Rua: </label>
+                           <input type="text" name="rua" id="rua" placeholder="Rua"   class="mt-3">
+                           <label>Número: </label>
+                           <input type="tel" name="numero" id="numero" placeholder="Número"   class="mt-3">
+                           <label>Email: </label>
+                           <input type="email" name="email" id="email" placeholder="Email do Estabelecimento"   class="mt-3">
                         </div>
                         <div class="col-lg-6 mt-3">
                             <div class="row">

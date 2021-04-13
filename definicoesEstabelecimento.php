@@ -220,14 +220,14 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                         <div class="col-lg-12">
                             <textarea name="reviewTexto" id="myTextarea" placeholder="Sobre o Estabelecimento"><?php echo $dadosEstabelecimentos['estabelecimentoDescricao'] ?></textarea>
                         </div>
-                        <div class="col-lg-6 mt-5">
-                            <label class="mt-3">Rua: </label>
+                        <div class="col-lg-6 mt-3">
+                            <label >Rua: </label>
                             <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoMorada'] ?>"
                                    name="rua" id="rua" placeholder="Rua" class="mt-3">
-                            <label class="mt-3">Número: </label>
+                            <label >Número: </label>
                             <input type="tel" value="<?php echo $dadosEstabelecimentos['estabelecimentoTelefone'] ?>"
                                    name="numero" id="numero" placeholder="Número" class="mt-3">
-                            <label class="mt-3">Email: </label>
+                            <label >Email: </label>
                             <input type="email" value="<?php echo $dadosEstabelecimentos['estabelecimentoEmail'] ?>"
                                    name="email" id="email" placeholder="Email do Estabelecimento"  class="mt-3">
                         </div>
