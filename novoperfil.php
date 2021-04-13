@@ -9,8 +9,8 @@ toputili();
 </div>
 <!-- Hero Section End -->
 <?php
-$id=intval($_GET['id']);
-$sql = "select * from perfis where perfilId=".$id;
+$id = intval($_GET['id']);
+$sql = "select * from perfis where perfilId=" . $id;
 $resultPerfis = mysqli_query($con, $sql);
 $dadosPerfis = mysqli_fetch_array($resultPerfis)
 ?>
@@ -29,21 +29,66 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                         <h2><?php echo $dadosPerfis['perfilNome'] ?></h2>
                         <h4><?php echo $dadosPerfis['perfilLocalidade'] ?></h4>
                     </div>
-                    <?php
 
+                    <?php
                     ?>
-                    <div class="intro-text mt-5">
-                        <div class="closed mt-2">Favoritos</div>
-                        <div class="closed mt-2">Gostos</div>
-                        <div class="closed mt-2">Estabelecimentos</div>
+
+                    <div class="intro-text mt-5 ">
+                        <button id="btnFavoritos" onclick="mostrarFavoritos()" ;>Favoritos</button>
+                        <div class="container" id="Favoritos">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <?php
+                                    echo $sql = "select * from redes inner join perfis on perfilId=redePerfilId
+                                                            inner join estabelecimentos on estabelecimentoId=redeEstabelecimentoId
+                                                            where perfilId=$id and redeTipo=$";
+                                    $resultRedes = mysqli_query($con, $sql);
+                                    $dadosRedes = mysqli_fetch_array($resultRedes)
+
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="btnGostos" onclick="mostrarGostos()" ;>Gostos</button>
+                        <button id="btnEstabelecimentos" onclick="mostrar()" ;>Estabelecimentos</button>
+                        <div class="container" id="Estabelecimento">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <table class='table table-striped table-hover' width="100%">
+                                        </tr>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Nome</th>
+                                        </tr>
+                                    <?php
+                                   $sql = "select * from estabelecimentos inner join perfis on perfilId=estabelecimentoPerfilId
+                                                            where perfilId=".$id;
+                                    $resultEstabelecimentos = mysqli_query($con, $sql);
+                                    ?>
+
+                                    <?php
+                                     while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
+                                         ?>
+                                         <tr>
+                                             <td><?php echo $dadosEstabelecimentos['estabelecimentoId'] ?></td>
+                                             <td><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></td>
+                                         </tr>
+                                         <?php
+                                     }
+                                    ?>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 ">
                     <div class="intro-share">
                         <div class="share-btn">
                             <a href="DefPerfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Definições</a>
-                            <a href="listaReserva.php">Ver Reservas</a>
-                            <a class="mt-2" href="criarEstabelecimento.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Criar Estabelecimento</a>
+                            <a href="listaReserva.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Ver Reservas</a>
+                            <a class="mt-2" href="criarEstabelecimento.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Criar
+                                Estabelecimento</a>
                         </div>
                         <!--<div class="share-icon">
                             <a href="#"><i class="fa fa-map-marker"></i></a>
@@ -101,7 +146,6 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
         </div>
     </div>
 </section>
-
 <?php
 bottom(HOME);
 ?>

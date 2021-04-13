@@ -451,7 +451,18 @@ function toputili($menu = GESTAO)
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     </head>
+    <style>
+        #Favoritos {
+            display: none;
+        }
+        #Gostos {
+            display: none;
+        }
+        #Estabelecimentos {
+            display: none;
+        }
 
+    </style>
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
@@ -814,6 +825,24 @@ function bottom($menu)
         function mostra() {
             $('#comentar').toggle();
             $('#btnComentar').hide();
+        }
+    </script>
+    <script>
+        function mostrar() {
+            $('#Estabelecimento').toggle();
+            $('#btnEstabelecimentos').toggle();
+        }
+    </script>
+    <script>
+        function mostrarGostos() {
+            $('#Gostos').toggle();
+            $('#btnGostos').toggle();
+        }
+    </script>
+    <script>
+        function mostrarFavoritos() {
+            $('#Favoritos').toggle();
+            $('#btnFavoritos').toggle();
         }
     </script>
 
