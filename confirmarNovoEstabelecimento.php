@@ -14,9 +14,7 @@ $sobre = $_POST['reviewTexto'];
 $rua = $_POST['rua'];
 $numero = $_POST['numero'];
 $email = $_POST['email'];
-$horas = $_POST['horas'];
-$horas1 = $_POST['horas1'];
-$horas2 = $_POST['horas2'];
+$sobre1 = $_POST['reviewTexto1'];
 $logo = $_FILES['logo']['name'];
 $fundo = $_FILES['fundo']['name'];
 //$google = $_FILES['google'];
@@ -40,7 +38,7 @@ $sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimentoCat
                                     estabelecimentoTelefone,estabelecimentoEmail,
                                     estabelecimentoMiniaturaURL,estabelecimentoFundoURL,
                                     estabelecimentoInteriorURL) values('" . $idUtilizador . "','" . $idCategoria . "','" . $nome . "','" . $nomeSlogan . "',
-                                                                        '" . $sobre . "','" . $horas . "','" . $nomeLoca . "',
+                                                                        '" . $sobre . "','" . $sobre1 . "','" . $nomeLoca . "',
                                                                         '" . $nomeDistrito . "','" . $rua . "','" . $numero . "',
                                                                         '" . $email . "',
                                                                         '" . $novoNome . "','" . $novoNome1 . "',
