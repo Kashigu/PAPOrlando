@@ -1,7 +1,13 @@
 <?php
 include_once("includes/body.inc.php");
-toponovo();
+toposingle();
+$id=intval($_GET['id']);
+$sql = "Select * from estabelecimentos ";
+// inner join categorias
+$sql.= " where estabelecimentoId=$id";
 
+$resultEstabelecimentos = mysqli_query($con, $sql);
+$dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 ?>
 
 <section class="contact-section spad">
@@ -9,11 +15,11 @@ toponovo();
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form action="listaReserva.php" class="contact-form"> <!-- (class importante ) falta poder clicar na imagem para trocar!-->
+                <form action="listaReserva.php?id=<?php $_SESSION['id'] ?>" class="contact-form"> <!-- (class importante ) falta poder clicar na imagem para trocar!-->
                     <div>
-                        <h2 class="centertext"> Ratoeira </h2>
+                        <h2 class="centertext"> <?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?> </h2>
                         <p></p>
-                        <img src="img/arrange/ratoeira1.jpg" class="center">
+                        <img src="<?php echo $dadosEstabelecimentos['estabelecimentoMiniaturaURL'] ?>" class="center">
                         <p></p>
                     </div>
                     <div class="row">
@@ -33,5 +39,5 @@ toponovo();
 </section>
 
 <?php
-bottom();
+bot();
 ?>

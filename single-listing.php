@@ -31,20 +31,37 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 offset-lg-1">
-                    <div class="intro-share">
-                        <div class="share-btn">
-                            <a href="reserva.php">Fazer Reserva</a>
-                        </div>
-                        <div class="share-icon">
-                            <!--<a href="#"><i class="fa fa-map-marker"></i></a> -->
-                            <!--<a href="#"><i class="fa fa-book"></i></a> -->
-                            <!--<a href="#"><i class="fa fa-user-o"></i></a>-->
-                            <a href="#"><i class="fa fa-thumbs-up"></i></a>
-                            <a href="#"><i class="fa fa-star-o"></i></a>
+
+                <?php
+
+                if (!isset($_SESSION['id'])){
+
+                ?>
+
+                    <?php
+                    }else{
+                    ?>
+                    <?php
+                    $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+                    $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
+                    $resultPerfis = mysqli_query($con, $sql);
+                    $dadosPerfis = mysqli_fetch_array($resultPerfis);
+
+                    ?>
+                    <div class="col-lg-4 offset-lg-1">
+                        <div class="intro-share">
+                            <div class="share-btn">
+                                <a href="reserva.php?id=<?php echo $id?>">Fazer Reserva</a>
+                            </div>
+                            <div class="share-icon">
+                                <a href="#"><i class="fa fa-thumbs-up"></i></a>
+                                <a href="#"><i class="fa fa-star-o"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                        <?php
+                        }
+                        ?>
             </div>
         </div>
     </div>
@@ -58,47 +75,6 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                             <p><?php echo $dadosEstabelecimentos['estabelecimentoDescricao']?></p>
                         </div>
                         <div class="about-video1">
-                            <!--<img class="tamanho1" src="<?php // echo $dadosEstabelecimentos['estabelecimentoInteriorURL'] ?>" alt="">-->
-                            <!--<a href="<?php // echo $dadosEstabelecimentos['estabelecimentoInteriorURL'] ?>" class="img-hover pop-up"><img src="img/zoom.png" alt=""></a>-->
-                            <!-- <div id="carouselExampleIndicators" class="tamanho carousel slide"
-                                 data-ride="carousel">
-                                <ol class=" carousel-indicators">
-                                    <li data-target="#carouselExampleIndicators"
-                                        data-slide-to="1"></li>
-                                    <li data-target="#carouselExampleIndicators"
-                                        data-slide-to="2"></li>
-                                    <li data-target="#carouselExampleIndicators"
-                                        data-slide-to="3"></li>
-
-                                </ol>
-                                <div class="carousel-inner">
-                                    <?php/*
-                                    $sql = "Select * from imagens where imagemEstabelecimentoId=" . $id;
-                                    $resultImagens = mysqli_query($con, $sql);
-                                    while ($dadosImagens = mysqli_fetch_array($resultImagens)) {
-                                        */?>
-                                        <div class="carousel-item active" >
-                                            <img class=" tamanho"
-                                                 src="<?php // echo $dadosImagens['imagemURL'] ?>">
-
-                                        </div>
-                                        <?php/*
-                                    }
-                                    */?>
-                                </div>
-                                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                                       data-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="carousel-control-next direita" href="#carouselExampleIndicators"
-                                       role="button"
-                                       data-slide="next">
-                                        <span class="carousel-control-next-icon direita" aria-hidden="true"></span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-
-                            </div>-->
                             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 
                                 <div class="carousel-inner">
@@ -140,7 +116,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                             </div>
                         </div>
 
-                        <div class="client-reviews">
+                        <div class="client-reviews mt-3">
                             <h3>Revisão</h3>
                             <div class="reviews-item">
                                 <div class="rating">
@@ -218,55 +194,75 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
         </div>
     </div>
 </section>
-<div class="container" id="comentar">
-    <div class="row">
-        <div class="col-lg-12">
+<?php
 
-            <form action="single-listing.html" class="contact-form" id="ratingForm">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <input type="text" placeholder="Titulo do Comentário">
-                    </div>
-                    <div id="status"></div>
-                    <fieldset class="ratings ">
-                        <legend>Rating:</legend>
-                        <input type="radio" id="star5" name="ratings" value="5"/><label for="star5" title="Muito Bom">5
-                            stars</label> <input type="radio" id="star4" name="ratings" value="4"/><label for="star4"
-                                                                                                          title="Bom">4
-                            stars</label> <input type="radio" id="star3" name="ratings" value="3"/><label for="star3"
-                                                                                                          title="Normal">3
-                            stars</label> <input type="radio" id="star2" name="ratings" value="2"/><label for="star2"
-                                                                                                          title="Mau">2
-                            stars</label> <input type="radio" id="star1" name="ratings" value="1"/><label for="star1"
-                                                                                                          title="Horrivel">1
-                            star</label></fieldset>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <textarea placeholder="Comentário"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 mt-3 centrinho">
-                        <button type="submit">Fazer Comentário</button>
-                    </div>
-                </div>
-            </form>
+if (!isset($_SESSION['id'])){
 
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="col-lg-4 offset-lg-1">
-        <div class="intro-share">
-            <div class="share-btn">
-                <button id="btnComentar" onclick="mostra();">Fazer Comentário</button>
+    ?>
+
+    <?php
+}else{
+    ?>
+    <?php
+    $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+    $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
+    $resultPerfis = mysqli_query($con, $sql);
+    $dadosPerfis = mysqli_fetch_array($resultPerfis);
+
+    ?>
+    <div class="container" id="comentar">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <form action="single-listing.html" method="post" class="contact-form" id="ratingForm">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input type="text" placeholder="Titulo do Comentário">
+                        </div>
+                        <div id="status"></div>
+                        <fieldset class="ratings ">
+                            <legend>Rating:</legend>
+                            <input type="radio" id="star5" name="ratings" value="5"/><label for="star5" title="Muito Bom">5
+                                stars</label> <input type="radio" id="star4" name="ratings" value="4"/><label for="star4"
+                                                                                                              title="Bom">4
+                                stars</label> <input type="radio" id="star3" name="ratings" value="3"/><label for="star3"
+                                                                                                              title="Normal">3
+                                stars</label> <input type="radio" id="star2" name="ratings" value="2"/><label for="star2"
+                                                                                                              title="Mau">2
+                                stars</label> <input type="radio" id="star1" name="ratings" value="1"/><label for="star1"
+                                                                                                              title="Horrivel">1
+                                star</label></fieldset>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <textarea placeholder="Comentário"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 mt-3 centrinho">
+                            <button type="submit">Fazer Comentário</button>
+                        </div>
+                    </div>
+                    <input type="hidden" <?php  ?> >
+                </form>
+
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="col-lg-4 offset-lg-1">
+            <div class="intro-share">
+                <div class="share-btn">
+                    <button id="btnComentar" onclick="mostra();">Fazer Comentário</button>
+                </div>
+            </div>
+        </div>
 
-</div>
+    </div>
+    <?php
+}
+?>
 
 
 

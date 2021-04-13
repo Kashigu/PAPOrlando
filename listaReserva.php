@@ -1,7 +1,13 @@
 <?php
 include_once("includes/body.inc.php");
 toputili();
+$id=intval($_GET['id']);
+$sql = "Select * from estabelecimentos ";
+// inner join categorias
+$sql.= " where estabelecimentoId=$id";
 
+$resultEstabelecimentos = mysqli_query($con, $sql);
+$dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 ?>
 
 <section class="contact-section spad">
@@ -56,9 +62,8 @@ toputili();
             </div>
         </div>
     </div>
-    </div>
 </section>
 
 <?php
-bottom();
+bot();
 ?>
