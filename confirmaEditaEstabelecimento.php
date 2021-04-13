@@ -9,12 +9,10 @@ $nomeDistrito = $_POST['distrito'];
 $idCategoria =intval($_POST['categoria']);
 $nomeSlogan = addslashes($_POST['nomeSlogan']);
 $sobre = $_POST["reviewTexto"];
+$sobre1 = $_POST['reviewTexto1'];
 $rua = $_POST['rua'];
 $numero = $_POST['numero'];
 $email = $_POST['email'];
-$horas = $_POST['horas'];
-$horas1 = $_POST['horas1'];
-$horas2 = $_POST['horas2'];
 $logo = $_FILES['logo']['name'];
 $fundo = $_FILES['fundo']['name'];
 //$google = $_FILES['google'];
@@ -29,15 +27,14 @@ $novoNome2="imagens/".$estabelecimento;
 
 
 $sql="Update estabelecimentos set estabelecimentoNome='".$nome."', estabelecimentoLocalidade='".$nomeLoca."', estabelecimentoEmail='".$email."'
-, estabelecimentoSlogan='".$nomeSlogan."'
-, estabelecimentoDescricao='".$sobre."'
-, estabelecimentoDescricao2='".$horas."'
-, estabelecimentoDistritoId='".$nomeDistrito."'
-, estabelecimentoMorada='".$rua."'
-, estabelecimentoTelefone='".$numero."'
-, estabelecimentoCategoriaId='".$idCategoria."'
-, estabelecimentoDescricao2='".$horas."'
-";
+                                    , estabelecimentoSlogan='".$nomeSlogan."'
+                                    , estabelecimentoDescricao='".$sobre."'
+                                    , estabelecimentoDescricao2='".$sobre1."'
+                                    , estabelecimentoDistritoId='".$nomeDistrito."'
+                                    , estabelecimentoMorada='".$rua."'
+                                    , estabelecimentoTelefone='".$numero."'
+                                    , estabelecimentoCategoriaId='".$idCategoria."'";
+
 
 if($logo!=''){
     $sql.=", estabelecimentoMiniaturaURL='imagens/".$logo."'";
@@ -54,16 +51,6 @@ if($estabelecimento!=''){
 }
 
  $sql.=" where estabelecimentoId=".$id;
-
-/*$sql="Update categorias set categoriaNome='".$categoria."'";
-if($imagem!=''){
-    $sql.=", categoriaImagemURL='imagens/".$imagem."'";
-    copy($_FILES['categoriaImagem']['tmp_name'],$novoNome);
-}
-
-$sql.=" where categoriaId=".$id;
-
-*/
 
 $result = mysqli_query($con, $sql);
 header("location:criado.php?id={$id}");

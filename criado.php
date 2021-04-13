@@ -203,7 +203,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                         </div>
                         <div class="working-hours">
                             <h4>Horas de Trabalho:</h4>
-                                <?php echo $dadosEstabelecimentos['estabelecimentoDescricao2'] ?>
+                            <?php echo $dadosEstabelecimentos['estabelecimentoDescricao2'] ?>
                         </div>
                     </div>
                 </div>
