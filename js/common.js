@@ -406,7 +406,7 @@ function mostrarFavoritos() {
 //------------------------------------------------------------Funcoes para ListaReserva ------------------------------------//
 function fillTableReservas(txt = '') {
     $.ajax({
-        url: "../AJAX/AJAXFillUtilizador.php",
+        url: "AJAX/AJAXFillReservas.php",
         type: "post",
         data: {
             txt: txt

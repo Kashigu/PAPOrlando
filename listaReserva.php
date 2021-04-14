@@ -8,11 +8,10 @@ toputili();
             <div class="row">
                 <div class="col-lg-12">
                     <form action="index.php" class="filter-search filter-search1 filter-search2">
-                        <div class="location-search1 col-lg-4 mt-3 ">
+                        <div class="location-search1 col-lg-12 mt-3 ">
                             <h5>Nome dos Estabelecimentos</h5>
                             <input class="location-search1 nice-select1" type="text" id="search">
                         </div>
-                        <button type="submit">Voltar</button>
                     </form>
                 </div>
                 <div class="col-lg-12 mt-3" id="tableContent">

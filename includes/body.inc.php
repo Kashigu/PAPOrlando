@@ -895,6 +895,9 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
         </div>
     </div>
 
+
+
+
     <script>
         $('document').ready(function () {
             <?php
