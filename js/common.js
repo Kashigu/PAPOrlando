@@ -403,3 +403,63 @@ function mostrarFavoritos() {
     $('#Favoritos').toggle();
     $('#btnFavoritos').toggle();
 }
+//------------------------------------------------------------Funcoes para ListaReserva ------------------------------------//
+function fillTableReservas(txt = '') {
+    $.ajax({
+        url: "../AJAX/AJAXFillUtilizador.php",
+        type: "post",
+        data: {
+            txt: txt
+        },
+        success: function (result) {
+            $('#tableContent').html(result);
+        }
+    });
+
+
+}
+function DeleteTableReserva() {
+    $('#staticBackdropDele').modal('toggle');
+    $.ajax({
+        url: "AJAX/AJAXDeleteReservas.php",
+        type: "post",
+        data: {
+            categoria: parseInt($('#ReservaID').html())
+        },
+        success: function (result) {
+            fillTableReservas();
+        }
+    });
+}
+
+function editaReserva(id) {  // abre o modal e injecta o ID
+
+    /* precisas de ir buscar os dados da categoria para poder escrever no modal*/
+    $.ajax({
+        url: "AJAX/AJAXGetNameReservas.php",
+        type: "post",
+        data: {
+            idReserva: id
+        },
+        success: function (result) {
+            $("#reservaDescricao").val(result)
+            $("#reservaId").val(id);
+        }
+    });
+    $("#editar").modal("toggle");
+}
+
+function EditarTableReservas() {
+    $('#editar').modal('toggle');
+    $.ajax({
+        url: "AJAX/AJAXEditReservas.php",
+        type: "post",
+        data: {
+            categoriaNome: $('#reservaDescricao').val(),
+            categoriaId: $('#reservaId').val()
+        },
+        success: function (result) {
+            fillTableReservas();
+        }
+    });
+}

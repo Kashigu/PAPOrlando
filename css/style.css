@@ -273,7 +273,11 @@ p {
     margin-right: auto;
 }
 
-
+.quadradinho{
+    display: inline;
+    width: 264px;
+    height: 223px;
+}
 
 .normal{
     display: inline;

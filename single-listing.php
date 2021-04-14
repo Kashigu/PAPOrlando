@@ -177,16 +177,8 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                             </div>
                         </div>
                         <div class="working-hours">
-                            <h4><?php echo $dadosEstabelecimentos['estabelecimentoDescricao2']?></h4>
-                            <ul>
-                                <li>Segunda-Feira<span>08:00 - 22:00</span></li>
-                                <li>Terça-Feira<span>08:00 - 22:00</span></li>
-                                <li>Quarta-Feira<span>08:00 - 22:00</span></li>
-                                <li>Quinta-Feira<span>08:00 - 22:00</span></li>
-                                <li>Sexta-Feira <span>08:00 - 22:00</span></li>
-                                <li>Sábado<span>08:00 - 22:00</span></li>
-                                <li>Domingo<span>Closed</span></li>
-                            </ul>
+                            <h4>Horas de Trabalho:</h4>
+                            <p><?php echo $dadosEstabelecimentos['estabelecimentoDescricao2']?></p>
                         </div>
                     </div>
                 </div>
@@ -205,7 +197,7 @@ if (!isset($_SESSION['id'])){
     ?>
     <?php
     $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-    $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
+    $sql = "select * from perfis where perfilId=".$_SESSION['id'];
     $resultPerfis = mysqli_query($con, $sql);
     $dadosPerfis = mysqli_fetch_array($resultPerfis);
 

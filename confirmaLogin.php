@@ -1,7 +1,7 @@
 <?php
 include_once("includes/body.inc.php");
 
-$nome=addslashes($_POST['utilizador']);
+//$nome=addslashes($_POST['utilizador']);
 $id=intval($_POST['id']);
 $sql="select * from perfis where perfilId=$id";
 $result=mysqli_query($con,$sql);

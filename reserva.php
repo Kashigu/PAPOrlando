@@ -15,7 +15,8 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form action="listaReserva.php?id=<?php $_SESSION['id'] ?>" class="contact-form"> <!-- (class importante ) falta poder clicar na imagem para trocar!-->
+                <form action="confirmaListaReserva.php" class="contact-form" method="post"> <!-- (class importante ) falta poder clicar na imagem para trocar!-->
+                    <input type="hidden" value="<?php echo $id ?>" name="id" >
                     <div>
                         <h2 class="centertext"> <?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?> </h2>
                         <p></p>
@@ -23,11 +24,11 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                         <p></p>
                     </div>
                     <div class="row">
-                        <div class="col-lg-6">
-                            <input type="date" placeholder="Data">
+                        <div class="col-lg-12">
+                            <input type="datetime-local" placeholder="Data" name="data">
                         </div>
-                        <div class="col-lg-6">
-                            <input type="time" placeholder="Hora">
+                        <div class="col-lg-12">
+                            <textarea placeholder="Descrição da Sua Reserva" name="descricao"></textarea>
                         </div>
                         <div class="col-lg-6">
                             <button type="submit">Confirmar Reserva </button>

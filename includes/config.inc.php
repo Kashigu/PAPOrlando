@@ -13,5 +13,6 @@ define("ESTABELECIMENTOS",6);
 define("UTILIZADOR",7);
 define("ESTABELECIMENTOSP",8);
 define("GALERIA",9);
+define("RESERVAS",10);
 
 ?>

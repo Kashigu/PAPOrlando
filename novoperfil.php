@@ -57,48 +57,56 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                     <table class='table table-striped table-hover' width="100%">
                                         </tr>
                                         <tr>
-                                            <th>Id</th>
                                             <th>Nome</th>
+                                            <th>Ver</th>
                                         </tr>
-                                    <?php
-                                   $sql = "select * from estabelecimentos inner join perfis on perfilId=estabelecimentoPerfilId
+                                        <?php
+                                        $sql = "select * from estabelecimentos inner join perfis on perfilId=estabelecimentoPerfilId
                                                             where perfilId=".$id;
-                                    $resultEstabelecimentos = mysqli_query($con, $sql);
-                                    ?>
+                                        $resultEstabelecimentos = mysqli_query($con, $sql);
+                                        ?>
 
-                                    <?php
-                                     while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
-                                         ?>
-                                         <tr>
-                                             <td><?php echo $dadosEstabelecimentos['estabelecimentoId'] ?></td>
-                                             <td><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></td>
-                                         </tr>
-                                         <?php
-                                     }
-                                    ?>
+                                        <?php
+                                        while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></td>
+                                                <td><a href="criado.php?id=<?php echo $dadosEstabelecimentos['estabelecimentoId'] ?>">Ver</td></a>
+                                            </tr>
+                                            <?php
+                                        }
+                                        ?>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 ">
-                    <div class="intro-share">
-                        <div class="share-btn">
-                            <a href="DefPerfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Definições</a>
-                            <a href="listaReserva.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Ver Reservas</a>
-                            <a class="mt-2" href="criarEstabelecimento.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Criar
-                                Estabelecimento</a>
+                <?php
+
+                if (isset($_SESSION['id']) == $id){
+
+                    $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+                    $sql = "select * from perfis where perfilId=".$_SESSION['id'];
+                    $resultPerfis = mysqli_query($con, $sql);
+                    $dadosPerfis = mysqli_fetch_array($resultPerfis)
+
+                    ?> <div class="col-lg-4 ">
+                        <div class="intro-share">
+                            <div class="share-btn">
+                                <a href="DefPerfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Definições</a>
+                                <a href="listaReserva.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Ver Reservas</a>
+                                <a class="mt-2" href="criarEstabelecimento.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Criar
+                                    Estabelecimento</a>
+                            </div>
                         </div>
-                        <!--<div class="share-icon">
-                            <a href="#"><i class="fa fa-map-marker"></i></a>
-                            <a href="#"><i class="fa fa-book"></i></a>
-                            <a href="#"><i class="fa fa-user-o"></i></a>
-                            <a href="#"><i class="fa fa-thumbs-up"></i></a>
-                            <a href="#"><i class="fa fa-star-o"></i></a>
-                        </div>-->
                     </div>
-                </div>
+                    <?php
+                }else{
+                    ?>
+                    <?php
+                }
+                ?>
             </div>
         </div>
     </div>

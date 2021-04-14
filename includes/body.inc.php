@@ -267,71 +267,6 @@ function topocriado()
     <?php
 }
 
-
-function toponovo($menu = GESTAO)
-{
-
-    ?>
-    <!DOCTYPE html>
-<html lang="zxx">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Yoga Studio Template">
-        <meta name="keywords" content="Yoga, unica, creative, html">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Local Directory | Template</title>
-
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
-
-        <!-- Css Styles -->
-        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="css/flaticon.css" type="text/css">
-        <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    </head>
-
-<body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Header Section Begin -->
-    <header class="header-section listings">
-        <div class="container-fluid">
-            <div class="logo">
-                <a href="index.php"><img src="img/logo.png" alt=""></a>
-            </div>
-            <nav class="main-menu mobile-menu">
-                <ul>
-                    <li><a href="index.php">Portugal</a></li>
-                    <li><a href="procurar.php">Procurar</a></li>
-                    <li <?php if ($menu == GESTAO) echo "class=\"active\""; ?>><a href="backoffice.php">Gestão do
-                            Site </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="header-right">
-            <div class="user-access">
-                <a href="novoperfil.php"><img src="img/perfilfoto.jpg" class="reduzido"></a>
-                <div id="mobile-menu-wrap"></div>
-            </div>
-    </header>
-
-    <?php
-}
-
 function topoadmin($menu = GESTAO)
 {
 
@@ -425,7 +360,7 @@ function toputili($menu = GESTAO)
 
     ?>
     <!DOCTYPE html>
-<html lang="zxx">
+    <html lang="zxx" xmlns="http://www.w3.org/1999/html">
 
     <head>
         <meta charset="UTF-8">
@@ -447,8 +382,7 @@ function toputili($menu = GESTAO)
         <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
         <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
         <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     </head>
     <style>
@@ -461,7 +395,6 @@ function toputili($menu = GESTAO)
         #Estabelecimentos {
             display: none;
         }
-
     </style>
 <body>
     <!-- Page Preloder -->
@@ -601,68 +534,6 @@ function topAdmin($menu = GESTAO)
                 }
                 ?>
     </header>
-
-    <?php
-}
-
-function bottomsingle()
-{
-    ?>
-    <div class="container" id="comentar">
-        <div class="row">
-            <div class="col-lg-12">
-
-                <form action="single-listing.php" class="contact-form" id="ratingForm">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <input type="text" placeholder="Titulo do Comentário">
-                        </div>
-                        <div id="status"></div>
-                        <fieldset class="ratings ">
-                            <legend>Rating:</legend>
-                            <input type="radio" id="star5" name="ratings" value="5"/><label for="star5"
-                                                                                            title="Muito Bom">5
-                                stars</label> <input type="radio" id="star4" name="ratings" value="4"/><label
-                                    for="star4"
-                                    title="Bom">4
-                                stars</label> <input type="radio" id="star3" name="ratings" value="3"/><label
-                                    for="star3"
-                                    title="Normal">3
-                                stars</label> <input type="radio" id="star2" name="ratings" value="2"/><label
-                                    for="star2"
-                                    title="Mau">2
-                                stars</label> <input type="radio" id="star1" name="ratings" value="1"/><label
-                                    for="star1"
-                                    title="Horrivel">1
-                                star</label></fieldset>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <textarea placeholder="Comentário"></textarea>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 mt-3 centrinho">
-                            <button type="submit">Fazer Comentário</button>
-                        </div>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="col-lg-4 offset-lg-1">
-            <div class="intro-share">
-                <div class="share-btn">
-                    <button id="btnComentar" onclick="mostra();">Fazer Comentário</button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
 
     <?php
 }
@@ -821,30 +692,6 @@ function bottom($menu)
             </div>
         </div>
     </div>
-    <script>
-        function mostra() {
-            $('#comentar').toggle();
-            $('#btnComentar').hide();
-        }
-    </script>
-    <script>
-        function mostrar() {
-            $('#Estabelecimento').toggle();
-            $('#btnEstabelecimentos').toggle();
-        }
-    </script>
-    <script>
-        function mostrarGostos() {
-            $('#Gostos').toggle();
-            $('#btnGostos').toggle();
-        }
-    </script>
-    <script>
-        function mostrarFavoritos() {
-            $('#Favoritos').toggle();
-            $('#btnFavoritos').toggle();
-        }
-    </script>
 
     <?php
 }
@@ -1066,6 +913,15 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
                 fillTableImagens(this.value,<?php echo $id ?>);
             });
             fillTableImagens('',<?php echo $id ?>);
+            <?php }
+            ?>
+            <?php
+            if ($menu == RESERVAS){
+                ?>
+                $('#search').keyup(function () {
+                    fillTableReservas(this.value);
+                });
+                fillTableReservas();
             <?php }
             ?>
 
