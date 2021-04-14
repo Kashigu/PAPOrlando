@@ -383,4 +383,23 @@ function editaImagem(id) {  // abre o modal e injecta o ID
     });
     $("#editar").modal("toggle");
 }
+//-------------------------------------------------------------Funçoes Para Comentarios ------------------------------------------------//
 
+function mostra() {
+    $('#comentar').toggle();
+    $('#btnComentar').hide();
+}
+
+//-------------------------------------------------------------Funcoes no Perfil ------------------------------------------//
+function mostrar() {
+    $('#Estabelecimento').toggle();
+    $('#btnEstabelecimentos').toggle();
+}
+function mostrarGostos() {
+    $('#Gostos').toggle();
+    $('#btnGostos').toggle();
+}
+function mostrarFavoritos() {
+    $('#Favoritos').toggle();
+    $('#btnFavoritos').toggle();
+}
