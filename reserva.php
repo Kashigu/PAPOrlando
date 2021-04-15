@@ -24,8 +24,11 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                         <p></p>
                     </div>
                     <div class="row">
-                        <div class="col-lg-12">
-                            <input type="datetime-local" placeholder="Data" name="data">
+                        <div class="col-lg-6">
+                            <input type="date" placeholder="Data" name="data">
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="time" placeholder="Data" name="hora">
                         </div>
                         <div class="col-lg-12">
                             <textarea placeholder="Descrição da Sua Reserva" name="descricao"></textarea>
