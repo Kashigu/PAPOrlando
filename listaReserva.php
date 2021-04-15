@@ -1,6 +1,6 @@
 <?php
 include_once("includes/body.inc.php");
-toputili();
+toposingle();
 ?>
 
 <section class="contact-section search-filter spad">

@@ -1,6 +1,6 @@
 <?php
 include_once("../includes/body.inc.php");
-toputili();
+toposingle();
 $txt = addslashes($_POST['txt']);
 $sql = "Select * from reservas inner join estabelecimentos on reservaEstabelecimentoId=estabelecimentoId
                                inner join perfis on reservaPerfilId=perfilId
