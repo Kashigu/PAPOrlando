@@ -39,17 +39,69 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                             <div class="row">
                                 <div class="col-lg-12">
                                     <?php
-                                    echo $sql = "select * from redes inner join perfis on perfilId=redePerfilId
+                                    $sql = "select * from redes inner join perfis on perfilId=redePerfilId
                                                             inner join estabelecimentos on estabelecimentoId=redeEstabelecimentoId
-                                                            where perfilId=$id and redeTipo=$";
+                                                            where perfilId=$id and redeTipo='favorito'";
                                     $resultRedes = mysqli_query($con, $sql);
-                                    $dadosRedes = mysqli_fetch_array($resultRedes)
-
                                     ?>
+                                    <table class='table table-striped table-hover' width="100%">
+                                        </tr>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>Ver</th>
+                                        </tr>
+                                        <?php
+                                        while ($dadosRedes = mysqli_fetch_array($resultRedes)) {
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $dadosRedes['estabelecimentoNome'] ?></td>
+                                                <td>
+                                                    <a href="criado.php?id=<?php echo $dadosRedes['estabelecimentoId'] ?>">Ver
+                                                </td>
+                                                </a>
+                                            </tr>
+                                            <?php
+                                        }
+                                        ?>
+                                    </table>
+
                                 </div>
                             </div>
                         </div>
                         <button id="btnGostos" onclick="mostrarGostos()" ;>Gostos</button>
+                        <div class="container" id="Gostos">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <?php
+                                    $sql = "select * from redes inner join perfis on perfilId=redePerfilId
+                                                            inner join estabelecimentos on estabelecimentoId=redeEstabelecimentoId
+                                                            where perfilId=$id and redeTipo='gosto'";
+                                    $resultRedes = mysqli_query($con, $sql);
+                                    ?>
+                                    <table class='table table-striped table-hover' width="100%">
+                                        </tr>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>Ver</th>
+                                        </tr>
+                                        <?php
+                                        while ($dadosRedes = mysqli_fetch_array($resultRedes)) {
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $dadosRedes['estabelecimentoNome'] ?></td>
+                                                <td>
+                                                    <a href="criado.php?id=<?php echo $dadosRedes['estabelecimentoId'] ?>">Ver
+                                                </td>
+                                                </a>
+                                            </tr>
+                                            <?php
+                                        }
+                                        ?>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
                         <button id="btnEstabelecimentos" onclick="mostrar()" ;>Estabelecimentos</button>
                         <div class="container" id="Estabelecimento">
                             <div class="row">
@@ -62,7 +114,7 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                         </tr>
                                         <?php
                                         $sql = "select * from estabelecimentos inner join perfis on perfilId=estabelecimentoPerfilId
-                                                            where perfilId=".$id;
+                                                            where perfilId=" . $id;
                                         $resultEstabelecimentos = mysqli_query($con, $sql);
                                         ?>
 
@@ -71,7 +123,10 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                             ?>
                                             <tr>
                                                 <td><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></td>
-                                                <td><a href="criado.php?id=<?php echo $dadosEstabelecimentos['estabelecimentoId'] ?>">Ver</td></a>
+                                                <td>
+                                                    <a href="criado.php?id=<?php echo $dadosEstabelecimentos['estabelecimentoId'] ?>">Ver
+                                                </td>
+                                                </a>
                                             </tr>
                                             <?php
                                         }
@@ -84,25 +139,29 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                 </div>
                 <?php
 
-                if (isset($_SESSION['id']) == $id){
+                if (isset($_SESSION['id']) == $id) {
 
                     $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-                    $sql = "select * from perfis where perfilId=".$_SESSION['id'];
+                    $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
                     $resultPerfis = mysqli_query($con, $sql);
                     $dadosPerfis = mysqli_fetch_array($resultPerfis)
 
-                    ?> <div class="col-lg-4 ">
+                    ?>
+                    <div class="col-lg-4 ">
                         <div class="intro-share">
                             <div class="share-btn">
                                 <a href="DefPerfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Definições</a>
-                                <a href="listaReserva.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Ver Reservas</a>
-                                <a class="mt-2" href="criarEstabelecimento.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Criar
+                                <a href="listaReserva.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Ver
+                                    Reservas</a>
+                                <a class="mt-2"
+                                   href="criarEstabelecimento.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Criar
                                     Estabelecimento</a>
+
                             </div>
                         </div>
                     </div>
                     <?php
-                }else{
+                } else {
                     ?>
                     <?php
                 }
@@ -126,8 +185,10 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <a href="single-listing.php"><h5>?A Great Place?</h5></a>
-                                <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae
-                                    massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class
+                                <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id
+                                    vitae
+                                    massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus.
+                                    Class
                                     aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
                                     himenaeos. </p>
                             </div>
@@ -140,8 +201,10 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                     <i class="fa fa-star"></i>
                                 </div>
                                 <a href="single-listing.php"><h5>?A Great Place?</h5></a>
-                                <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae
-                                    massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class
+                                <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id
+                                    vitae
+                                    massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus.
+                                    Class
                                     aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
                                     himenaeos. </p>
                             </div>
