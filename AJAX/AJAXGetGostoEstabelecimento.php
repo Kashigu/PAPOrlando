@@ -5,7 +5,7 @@ toposingle();
 $id=intval($_POST['idEstabelecimento']);
 $sql="Select count(*) as n
         from redes 
-        where redeEstabelecimentoId=$id";
+        where redeEstabelecimentoId=$id and redeTipo='gosto'";
 
 $result = mysqli_query($con, $sql);
 $dados = mysqli_fetch_array($result);
@@ -26,5 +26,5 @@ if(mysqli_affected_rows($con)>0){
 
 </span>
  <?php
-
+bot();
 ?>

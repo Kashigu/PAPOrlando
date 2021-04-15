@@ -53,15 +53,16 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                             <div class="share-btn">
                                 <a href="reserva.php?id=<?php echo $id ?>">Fazer Reserva</a>
                             </div>
+
                             <div class="share-icon">
                                 <a id="gosto" onclick="gosto(<?php echo $id ?>)" align="left">
                                     <?php
                                     // verifica se o utilizador gosta da foto
-                                    $sql = "select * from redes where redePerfilId=" . $_SESSION['id'] . " and redeEstabelecimentoId=" . $id;
+                                    $sql = "select * from redes where redePerfilId=" . $_SESSION['id'] . " and redeEstabelecimentoId=" . $id ." and redeTipo='gosto'";
                                     mysqli_query($con, $sql);
                                     if (mysqli_affected_rows($con) > 0) {
                                         ?>
-                                        <i class="fa fa-thumbs-up" style="color:red"></i>
+                                        <i class="fa fa-thumbs-up" style="color:blue"></i>
                                         <?php
                                     } else {
                                         ?>
@@ -73,15 +74,15 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                                 <a id="favorito" onclick="favorito(<?php echo $id ?>)" align="left">
                                     <?php
                                     // verifica se o utilizador gosta da foto
-                                    $sql = "select * from redes where redePerfilId=" . $_SESSION['id'] . " and redeEstabelecimentoId=" . $id;
+                                    $sql = "select * from redes where redePerfilId=" . $_SESSION['id'] . " and redeEstabelecimentoId=" . $id." and redeTipo='favorito'";
                                     mysqli_query($con, $sql);
                                     if (mysqli_affected_rows($con) > 0){
                                     ?>
-                                    <a<i class="fa fa-star-o" style="color:red"></i></a>
+                                    <i class="fa fa-star-o" style="color:deeppink"></i>
                                 <?php
                                 } else {
                                     ?>
-                                    <a<i class="fa fa-star-o"></i></a>
+                                    <i class="fa fa-star-o"></i>
                                     <?php
                                 }
                                 ?>

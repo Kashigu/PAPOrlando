@@ -481,8 +481,6 @@ function EditarTableReservas() {
 //--------------------------------------------------------------------Funçoes para REDES estabelecimentos -------------------------------//
 
 function gosto(id) {
-
-
     $.ajax({
         url:"AJAX/AJAXPutLikeEstabelecimento.php",
         type:"post",

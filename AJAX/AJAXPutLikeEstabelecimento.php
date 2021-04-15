@@ -12,7 +12,7 @@ if(mysqli_affected_rows($con)>0) {
     $sql = "delete from redes where redePerfilId=" . $_SESSION['id'] . " and redeEstabelecimentoId=" . $id . " and redeTipo='gosto'";
 
 }else{
-    $sql = "insert into redes values(".$_SESSION['id']. "," . $id.",'gosto')";
+    $sql = "insert into redes (redeId, redePerfilId, redeEstabelecimentoId, redeTipo) values(0,".$_SESSION['id']. "," . $id.",'gosto')";
 }
 mysqli_query($con,$sql);
 

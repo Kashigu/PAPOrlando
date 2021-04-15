@@ -5,7 +5,7 @@ toposingle();
 $id=intval($_POST['idEstabelecimento']);
 $sql="Select count(*) as n
         from redes 
-        where redeEstabelecimentoId=$id";
+        where redeEstabelecimentoId=$id and redeTipo='favorito'";
 
 $result = mysqli_query($con, $sql);
 $dados = mysqli_fetch_array($result);
