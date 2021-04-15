@@ -765,18 +765,6 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
     <!-- Footer Section End -->
 
 
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/common.js"></script>
-
-
     <div class="container">
 
         <!-- Modal Login-->
@@ -895,6 +883,18 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
         </div>
     </div>
 
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
+
+
 
 
 
@@ -904,10 +904,16 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
             if($menu == ESTABELECIMENTOSP){
             ?>
 
-            $('#search').keyup(function () {
-                fillTableEstabelecimentosProcurar(this.value, <?php echo $categoria; ?>,<?php echo $distrito; ?>);
+            $('#searchEstabelecimento').keyup(function () {
+                fillTableEstabelecimentosProcurar(this.value,$('#searchCategoria').val(),$('#searchDistrito').val());
             });
-            fillTableEstabelecimentosProcurar('',<?php echo $categoria; ?>,<?php echo $distrito; ?>);
+            $('#searchCategoria').change(function () {
+                fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(),this.value,$('#searchDistrito').val());
+            });
+            $('#searchDistrito').change(function () {
+                fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(),$('#searchCategoria').val(),this.value);
+            });
+            fillTableEstabelecimentosProcurar();
 
             <?php }
             if ($menu == GALERIA){

@@ -23,7 +23,7 @@ top(PROCURAR);
                 <form class="filter-search filter-search1">
                     <div class="category-search col-lg-6">
                         <h5>Procurar Categoria</h5>
-                        <select name="categoria" class="ca-search">
+                        <select name="categoria" class="ca-search" id="searchCategoria">
                             <option value="-1">Escolha a Categoria</option>
                             <?php
                             $sql = "select * from categorias order by categoriaNome";
@@ -43,7 +43,7 @@ top(PROCURAR);
                     </div>
                     <div class="location-search col-lg-6">
                         <h5>Tua Localização</h5>
-                        <select name="distrito" class="lo-search">
+                        <select name="distrito" class="lo-search" id="searchDistrito">
                             <option value="-1">Escolha o Distrito</option>
                             <?php
                             $sql = "select * from distritos order by distritoNome";
@@ -63,7 +63,7 @@ top(PROCURAR);
                     <div class="location-search1 col-lg-12 mt-3 ">
                         <h5>Nome do Estabelecimento</h5>
 
-                        <input class="location-search1 nice-select1" type="text" id="search">
+                        <input class="location-search1 nice-select1" type="text" id="searchEstabelecimento">
                     </div>
                 </form>
             </div>

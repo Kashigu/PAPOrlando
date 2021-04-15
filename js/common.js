@@ -96,10 +96,6 @@ function EditarTableDistritos() {
 }
 
 
-function mensagemTeste() {
-    alert('aaa');
-}
-
 
 //--------------------------------------------------------------- FUNÇÕES PARA AS CATEGORIAS -------------------------------------------------------//
 function fillTableCategorias(txt = '') {
@@ -298,6 +294,7 @@ function preview_image(event)
 //-----------------------------------------------------------FUNÇÕES PARA O PROCURAR.PHP----------------------------------------------//
 
 function fillTableEstabelecimentosProcurar(txt = '',categoria=-1,distrito=-1) {
+    //alert(txt + ' ' + categoria+' '+distrito);/*
     $.ajax({
         url: "AJAX/AJAXFillEstabelecimentosProcurar.php",
         type: "post",
@@ -308,6 +305,7 @@ function fillTableEstabelecimentosProcurar(txt = '',categoria=-1,distrito=-1) {
         },
         success: function (result) {
             $('#tableContent').html(result);
+            //alert('filtra');
         }
     });
 

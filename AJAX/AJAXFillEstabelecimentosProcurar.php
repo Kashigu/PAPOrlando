@@ -4,13 +4,20 @@ $txt=addslashes($_POST['txt']);
 $categoria=intval($_POST['categoria']);
 $distrito=intval($_POST['distrito']);
 
-echo $sql="
+    $sql="
                     select *
                     from distritos inner join estabelecimentos 
                     on distritoId=estabelecimentoDistritoId
                     INNER JOIN categorias
-                    on categoriaId=estabelecimentoCategoriaId
-                    where estabelecimentoNome LIKE '%$txt%' and categoriaId='$categoria' and distritoId='$distrito'";
+                    on categoriaId=estabelecimentoCategoriaId where 1 ";
+    if($txt!='')
+        $sql.=" and estabelecimentoNome LIKE '%$txt%'";
+    if($categoria!=-1)
+        $sql.=" and categoriaId=$categoria";
+    if($distrito!=-1)
+        $sql.=" and distritoId =$distrito";
+
+echo $sql;
 
 $resultEstabelecimentos = mysqli_query($con, $sql);
 while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {

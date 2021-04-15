@@ -2,6 +2,7 @@
 include_once("includes/body.inc.php");
 toposingle();
 
+$hora="21:00";
 
 $idPer=$_SESSION['id'];
 $idEst=intval($_POST['id']); //vem escondido no formulário
