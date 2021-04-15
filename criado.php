@@ -1,6 +1,6 @@
 <?php
 include_once("includes/body.inc.php");
-topocriado();
+toposingle();
 $id = intval($_GET['id']);
 $sql = "Select * from estabelecimentos ";
 // inner join categorias

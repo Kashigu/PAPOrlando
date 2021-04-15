@@ -8,7 +8,7 @@ include_once("config.inc.php");
 $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
 $con->set_charset("utf8");
 
-function toposingle()
+function toposingle($menu=PORTUGAL)
 {
     ?>
 
@@ -56,28 +56,28 @@ function toposingle()
     <header class="header-section listings">
         <div class="container-fluid">
             <div class="logo">
-                <a href="./index.php"><img src="img/logo.png" alt=""></a>
+                <a href="index.php"><img src="img/logo.png" alt=""></a>
             </div>
             <nav class="main-menu mobile-menu">
                 <ul>
-                    <li><a href="index.php">Portugal</a></li>
-                    <li><a href="procurar.php">Procurar</a></li>
+                    <li <?php if ($menu == PORTUGAL) echo "class=\"active\""; ?>><a href="index.php">Portugal</a></li>
+                    <li <?php if ($menu == PROCURAR) echo "class=\"active\""; ?>><a href="procurar.php">Procurar</a>
                 </ul>
             </nav>
         </div>
         <?php
         session_start();
-        if (!isset($_SESSION['id'])){
+        if (!isset($_SESSION['id'])) {
 
-        ?>
-        <div class="header-right">
+            ?>
+            <div class="header-right">
             <div class="user-access">
                 <a data-toggle="modal" data-target="#registar">Registar/</a>
                 <a data-toggle="modal" data-target="#login">Iniciar Sessão</a>
                 <div id="mobile-menu-wrap"></div>
             </div>
             <?php
-            }else{
+        } else {
             ?>
             <?php
             $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
@@ -86,182 +86,43 @@ function toposingle()
             $dadosPerfis = mysqli_fetch_array($resultPerfis)
             ?>
             <div class="header-right">
-                <div class="user-access">
-                    <a data-toggle="modal" data-target="#sair">Desconectar</a>
-                    <a href="novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">
-                        <img src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
-                    <div id="mobile-menu-wrap"></div>
-                </div>
-                <?php
-                }
-                ?>
-    </header>
-
-    <?php
-}
-
-function top($menu = PORTUGAL)
-{
-
-    ?>
-
-    <!DOCTYPE html>
-<html lang="zxx">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Yoga Studio Template">
-        <meta name="keywords" content="Yoga, unica, creative, html">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title> Portugal Local</title>
-
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
-
-        <!-- Css Styles -->
-        <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> Sem ele tenho o modal com ele não tenho-->
-        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="css/flaticon.css" type="text/css">
-        <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-
-<body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Header Section Begin -->
-    <header class="header-section listings">
-        <div class="container-fluid">
-            <div class="logo">
-                <a href="./index.php"><img src="img/logo.png" alt=""></a>
-            </div>
-            <nav class="main-menu mobile-menu">
-                <ul>
-                    <li <?php if ($menu == PORTUGAL) echo "class=\"active\""; ?>><a href="index.php">Portugal</a></li>
-                    <li <?php if ($menu == PROCURAR) echo "class=\"active\""; ?>><a href="procurar.php">Procurar</a>
-                    </li>
-                    <!--<li><a href="cafe.html">Cafés</a></li>
-                    <li><a href="hoteis.html">Hoteis</a></li>-->
-                    <!--<li><a href="criarEstabelecimento.html">Contactos</a></li>-->
-                </ul>
-            </nav>
-            <?php
-            session_start();
-            if (!isset($_SESSION['id'])){
-
-            ?>
-            <div class="header-right">
-                <div class="user-access">
-                    <a data-toggle="modal" data-target="#registar">Registar/</a>
-                    <a data-toggle="modal" data-target="#login">Iniciar Sessão</a>
-                    <div id="mobile-menu-wrap"></div>
-                </div>
-                <?php
-                }else{
-                ?>
-                <?php
-                $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-                $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
-                $resultPerfis = mysqli_query($con, $sql);
-                $dadosPerfis = mysqli_fetch_array($resultPerfis)
-                ?>
-                <div class="header-right">
-                    <div class="user-access">
-                        <a data-toggle="modal" data-target="#sair">Desconectar</a>
-                        <a href="novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">
-                            <img src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
-                        <div id="mobile-menu-wrap"></div>
-                    </div>
-                    <?php
-                    }
-                    ?>
-    </header>
-    <!-- Header End -->
-
-
-    <?php
-}
-
-function topocriado()
-{
-    ?>
-    <!DOCTYPE html>
-<html lang="zxx">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Yoga Studio Template">
-        <meta name="keywords" content="Yoga, unica, creative, html">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Local Directory | Template</title>
-
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
-
-        <!-- Css Styles -->
-        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="css/flaticon.css" type="text/css">
-        <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    </head>
-
-<body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Header Section Begin -->
-    <header class="header-section listings">
-        <div class="container-fluid">
-            <div class="logo">
-                <a href="./index.php"><img src="img/logo.png" alt=""></a>
-            </div>
-            <nav class="main-menu mobile-menu">
-                <ul>
-                    <li><a href="index.php">Portugal</a></li>
-                    <li><a href="procurar.php">Procurar</a></li>
-                    <li><a href="backoffice.php">Gestão do Site </a></li>
-                </ul>
-            </nav>
-
-        </div>
-        <div>
-            <nav class="arrange-select nice-select2 mobile-menu header-right">
-                <select name="estabe" id="estabe">
-                    <optgroup label="Cafés">
-                    </optgroup>
-                    <optgroup label="Restaurantes">
-                        <option value="ratoeira">Ratoeira</option>
-                    </optgroup>
-                    <optgroup label="Hotéis">
-                    </optgroup>
-                </select>
-            </nav>
-        </div>
-        <div class="header-right">
             <div class="user-access">
-                <a href="novoperfil.php"><img src="img/perfilfoto.jpg" class="reduzido"></a>
+                <a  data-toggle="modal" data-target="#sair">Desconectar</a>
+
+                <a href="novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">
+                    <img src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
                 <div id="mobile-menu-wrap"></div>
             </div>
+            <?php
+            $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+            $sqlEst = "select * from estabelecimentos inner join perfis on estabelecimentoPerfilId=perfilId inner join categorias on estabelecimentoCategoriaId=categoriaId where perfilId=" . $_SESSION['id']." order by estabelecimentoNome";
+            $resultEstab = mysqli_query($con, $sqlEst);
+            $sql="select * from estabelecimentos inner join perfis on estabelecimentoPerfilId=perfilId where perfilId=" . $_SESSION['id'];
+            $result= mysqli_query($con, $sql);
+            $dadosEstab= mysqli_fetch_array($result);
+            if ($_SESSION['id'] == $dadosEstab['estabelecimentoPerfilId']) { ?>
+
+                    <nav class="arrange-select nice-select2 mobile-menu header-right">
+                        <select name="estabe" id="estabe">
+                            <?php
+                            while ($dadosEstab = mysqli_fetch_array($resultEstab)) {
+                                ?>
+                                <option value="<?php echo $dadosEstab['estabelecimentoId'] ?> "> <?php echo $dadosEstab['estabelecimentoNome'] ?></option>
+                                <?php
+                            }
+                            ?>
+                        </select>
+                    </nav>
+                </div>
+
+                <?php
+            } else {
+                ?>
+
+                <?php
+            }
+        }
+        ?>
     </header>
 
     <?php
@@ -360,7 +221,7 @@ function toputili($menu = GESTAO)
 
     ?>
     <!DOCTYPE html>
-    <html lang="zxx" xmlns="http://www.w3.org/1999/html">
+<html lang="zxx" xmlns="http://www.w3.org/1999/html">
 
     <head>
         <meta charset="UTF-8">
@@ -382,16 +243,19 @@ function toputili($menu = GESTAO)
         <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
         <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
         <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     </head>
     <style>
         #Favoritos {
             display: none;
         }
+
         #Gostos {
             display: none;
         }
+
         #Estabelecimentos {
             display: none;
         }
@@ -416,9 +280,10 @@ function toputili($menu = GESTAO)
                 </ul>
             </nav>
         </div>
+
         <?php
         session_start();
-        if (!isset($_SESSION['id'])){
+        if (!isset($_SESSION['id'])) {
 
         ?>
         <div class="header-right">
@@ -428,15 +293,15 @@ function toputili($menu = GESTAO)
                 <div id="mobile-menu-wrap"></div>
             </div>
             <?php
-            }else{
-            ?>
-            <?php
-            $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-            $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
-            $resultPerfis = mysqli_query($con, $sql);
-            $dadosPerfis = mysqli_fetch_array($resultPerfis)
-            ?>
-            <div class="header-right">
+            } else {
+                ?>
+                <?php
+                $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+                $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
+                $resultPerfis = mysqli_query($con, $sql);
+                $dadosPerfis = mysqli_fetch_array($resultPerfis)
+                ?>
+                <div class="header-right">
                 <div class="user-access">
                     <a data-toggle="modal" data-target="#sair">Desconectar</a>
                     <a href="novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">
@@ -444,8 +309,36 @@ function toputili($menu = GESTAO)
                     <div id="mobile-menu-wrap"></div>
                 </div>
                 <?php
+                $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+                $sqlEst = "select * from estabelecimentos inner join perfis on estabelecimentoPerfilId=perfilId inner join categorias on estabelecimentoCategoriaId=categoriaId where perfilId=" . $_SESSION['id']." order by estabelecimentoNome";
+                $resultEstab = mysqli_query($con, $sqlEst);
+                $sql="select * from estabelecimentos inner join perfis on estabelecimentoPerfilId=perfilId where perfilId=" . $_SESSION['id'];
+                $result= mysqli_query($con, $sql);
+                $dadosEstab= mysqli_fetch_array($result);
+                if ($_SESSION['id'] == $dadosEstab['estabelecimentoPerfilId']) { ?>
+                    <div>
+                        <nav class="arrange-select nice-select2 mobile-menu header-right">
+                            <select name="estabe" id="estabe">
+                                <option value="-1">Escolha o Estabelecimento</option>
+                                <?php
+                                while ($dadosEstab = mysqli_fetch_array($resultEstab)) {
+                                    ?>
+                                    <option value="<?php echo $dadosEstab['estabelecimentoId'] ?> "> <?php echo $dadosEstab['estabelecimentoNome'] ?></option>
+                                    <?php
+                                }
+                                ?>
+                            </select>
+                        </nav>
+                    </div>
+                    </div>
+                    <?php
+                } else {
+                    ?>
+
+                    <?php
                 }
-                ?>
+            }
+            ?>
     </header>
 
     <?php
@@ -895,9 +788,6 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
     <script src="js/common.js"></script>
 
 
-
-
-
     <script>
         $('document').ready(function () {
             <?php
@@ -905,13 +795,13 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
             ?>
 
             $('#searchEstabelecimento').keyup(function () {
-                fillTableEstabelecimentosProcurar(this.value,$('#searchCategoria').val(),$('#searchDistrito').val());
+                fillTableEstabelecimentosProcurar(this.value, $('#searchCategoria').val(), $('#searchDistrito').val());
             });
             $('#searchCategoria').change(function () {
-                fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(),this.value,$('#searchDistrito').val());
+                fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), this.value, $('#searchDistrito').val());
             });
             $('#searchDistrito').change(function () {
-                fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(),$('#searchCategoria').val(),this.value);
+                fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), $('#searchCategoria').val(), this.value);
             });
             fillTableEstabelecimentosProcurar();
 
@@ -926,11 +816,11 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
             ?>
             <?php
             if ($menu == RESERVAS){
-                ?>
-                $('#search').keyup(function () {
-                    fillTableReservas(this.value);
-                });
-                fillTableReservas();
+            ?>
+            $('#search').keyup(function () {
+                fillTableReservas(this.value);
+            });
+            fillTableReservas();
             <?php }
             ?>
 

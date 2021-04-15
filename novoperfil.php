@@ -57,7 +57,7 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                             <tr>
                                                 <td><?php echo $dadosRedes['estabelecimentoNome'] ?></td>
                                                 <td>
-                                                    <a href="criado.php?id=<?php echo $dadosRedes['estabelecimentoId'] ?>">Ver
+                                                    <a href="single-listing.php?id=<?php echo $dadosRedes['estabelecimentoId'] ?>">Ver
                                                 </td>
                                                 </a>
                                             </tr>
@@ -92,7 +92,7 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                             <tr>
                                                 <td><?php echo $dadosRedes['estabelecimentoNome'] ?></td>
                                                 <td>
-                                                    <a href="criado.php?id=<?php echo $dadosRedes['estabelecimentoId'] ?>">Ver
+                                                    <a href="single-listing.php?id=<?php echo $dadosRedes['estabelecimentoId'] ?>">Ver
                                                 </td>
                                                 </a>
                                             </tr>
