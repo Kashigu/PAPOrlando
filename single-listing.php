@@ -53,9 +53,48 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                             <div class="share-btn">
                                 <a href="reserva.php?id=<?php echo $id?>">Fazer Reserva</a>
                             </div>
+                            <?php
+                            $sql="Select * ,count(*) as n
+                                    from estabelecimentos inner join redes on estabelecimentoId=redeEstabelecimentoId
+                                    inner join perfis on redePerfilId=perfilId   
+                                    where estabelecimentoId=$id";
+
+                            $result = mysqli_query($con, $sql);
+                            $dados = mysqli_fetch_array($result);
+                            ?>
                             <div class="share-icon">
-                                <a href="#"><i class="fa fa-thumbs-up"></i></a>
-                                <a href="#"><i class="fa fa-star-o"></i></a>
+                                <a id="gosto" onclick="gosto(<?php echo $id?>)" align="left">
+                                <?php
+                                // verifica se o utilizador gosta da foto
+                                $sql="select * from redes where redePerfilId=".$_SESSION['id']." and redeEstabelecimentoId=".$id;
+                                mysqli_query($con,$sql);
+                                if(mysqli_affected_rows($con)>0){
+                                    ?>
+                                    <i class="fa fa-thumbs-up" style="color:red" ></i>
+                                    <?php
+                                }else{
+                                    ?>
+                                    <i class="fa fa-thumbs-up" ></i>
+                                    <?php
+                                }
+                                ?>
+                                </a>
+                                <a id="favorito" onclick="favorito(<?php echo $id?>)" align="left">
+                                <?php
+                                // verifica se o utilizador gosta da foto
+                                $sql="select * from redes where redePerfilId=".$_SESSION['id']." and redeEstabelecimentoId=".$id;
+                                mysqli_query($con,$sql);
+                                if(mysqli_affected_rows($con)>0){
+                                    ?>
+                                    <a<i class="fa fa-star-o" style="color:red" ></i></a>
+                                    <?php
+                                }else{
+                                    ?>
+                                    <a<i class="fa fa-star-o" ></i></a>
+                                    <?php
+                                }
+                                ?>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -71,7 +110,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                 <div class="col-lg-8">
                     <div class="about-left">
                         <div class="about-desc">
-                            <h4>Sobre o Café</h4>
+                            <h4>Sobre o Estabelecimento</h4>
                             <p><?php echo $dadosEstabelecimentos['estabelecimentoDescricao']?></p>
                         </div>
                         <div class="about-video1">

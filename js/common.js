@@ -478,3 +478,58 @@ function EditarTableReservas() {
         }
     });
 }
+//--------------------------------------------------------------------Funçoes para REDES estabelecimentos -------------------------------//
+
+function gosto(id) {
+
+
+    $.ajax({
+        url:"AJAX/AJAXPutLikeEstabelecimento.php",
+        type:"post",
+        data:{
+            idEstabelecimento:id
+        },
+        success:function (result){
+            $.ajax({
+                url:"AJAX/AJAXGetGostoEstabelecimento.php",
+                type:"post",
+                data:{
+                    idEstabelecimento:id
+                },
+                success:function (result){
+                    $('#gosto').html(result);
+
+                }
+            });
+
+        }
+    });
+
+}
+
+
+function favorito(id) {
+
+    $.ajax({
+        url:"AJAX/AJAXPutFavoritoEstabelecimento.php",
+        type:"post",
+        data:{
+            idEstabelecimento:id
+        },
+        success:function (result){
+            $.ajax({
+                url:"AJAX/AJAXGetFavoritoEstabelecimento.php",
+                type:"post",
+                data:{
+                    idEstabelecimento:id
+                },
+                success:function (result){
+                    $('#favorito').html(result);
+
+                }
+            });
+
+        }
+    });
+
+}
