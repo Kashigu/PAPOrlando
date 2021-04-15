@@ -34,22 +34,23 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                     ?>
 
                     <div class="intro-text mt-5 ">
-                        <button id="btnFavoritos" onclick="mostrarFavoritos()" ;>Favoritos</button>
-                        <div class="container" id="Favoritos">
+                        <button  onclick="mostrarFavoritos()" ;>Favoritos</button>
+                        <div class="container" id="Favorito">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <?php
-                                    $sql = "select * from redes inner join perfis on perfilId=redePerfilId
+                                    <table class='table table-striped table-hover' width="100%">
+
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>Ver</th>
+                                        </tr>
+                                        <?php
+                                        $sql = "select * from redes inner join perfis on perfilId=redePerfilId
                                                             inner join estabelecimentos on estabelecimentoId=redeEstabelecimentoId
                                                             where perfilId=$id and redeTipo='favorito'";
-                                    $resultRedes = mysqli_query($con, $sql);
-                                    ?>
-                                    <table class='table table-striped table-hover' width="100%">
-                                        </tr>
-                                        <tr>
-                                            <th>Nome</th>
-                                            <th>Ver</th>
-                                        </tr>
+                                        $resultRedes = mysqli_query($con, $sql);
+                                        ?>
+
                                         <?php
                                         while ($dadosRedes = mysqli_fetch_array($resultRedes)) {
                                             ?>
@@ -68,22 +69,23 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                 </div>
                             </div>
                         </div>
-                        <button id="btnGostos" onclick="mostrarGostos()" ;>Gostos</button>
-                        <div class="container" id="Gostos">
+                        <button  onclick="mostrarGostos()" ;>Gostos</button>
+                        <div class="container" id="Gosto">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <?php
-                                    $sql = "select * from redes inner join perfis on perfilId=redePerfilId
-                                                            inner join estabelecimentos on estabelecimentoId=redeEstabelecimentoId
-                                                            where perfilId=$id and redeTipo='gosto'";
-                                    $resultRedes = mysqli_query($con, $sql);
-                                    ?>
                                     <table class='table table-striped table-hover' width="100%">
-                                        </tr>
+
                                         <tr>
                                             <th>Nome</th>
                                             <th>Ver</th>
                                         </tr>
+                                        <?php
+                                        $sql = "select * from redes inner join perfis on perfilId=redePerfilId
+                                                            inner join estabelecimentos on estabelecimentoId=redeEstabelecimentoId
+                                                            where perfilId=$id and redeTipo='gosto'";
+                                        $resultRedes = mysqli_query($con, $sql);
+                                        ?>
+
                                         <?php
                                         while ($dadosRedes = mysqli_fetch_array($resultRedes)) {
                                             ?>
@@ -98,16 +100,15 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                         }
                                         ?>
                                     </table>
-
                                 </div>
                             </div>
                         </div>
-                        <button id="btnEstabelecimentos" onclick="mostrar()" ;>Estabelecimentos</button>
+                        <button onclick="mostrar()" ;>Estabelecimentos</button>
                         <div class="container" id="Estabelecimento">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <table class='table table-striped table-hover' width="100%">
-                                        </tr>
+
                                         <tr>
                                             <th>Nome</th>
                                             <th>Ver</th>

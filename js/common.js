@@ -390,16 +390,16 @@ function mostra() {
 
 //-------------------------------------------------------------Funcoes no Perfil ------------------------------------------//
 function mostrar() {
+    //$('#btnEstabelecimento').toggle();
     $('#Estabelecimento').toggle();
-    $('#btnEstabelecimentos').toggle();
 }
 function mostrarGostos() {
-    $('#Gostos').toggle();
-    $('#btnGostos').toggle();
+    //$('#btnGosto').toggle();
+    $('#Gosto').toggle();
 }
 function mostrarFavoritos() {
-    $('#Favoritos').toggle();
-    $('#btnFavoritos').toggle();
+    //$('#btnFavorito').toggle();
+    $('#Favorito').toggle();
 }
 //------------------------------------------------------------Funcoes para ListaReserva ------------------------------------//
 function fillTableReservas(txt = '') {
