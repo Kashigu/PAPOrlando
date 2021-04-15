@@ -1,10 +1,10 @@
 <?php
 include_once("includes/body.inc.php");
 toposingle();
-$id=intval($_GET['id']);
+$id = intval($_GET['id']);
 $sql = "Select * from estabelecimentos ";
 // inner join categorias
-$sql.= " where estabelecimentoId=$id";
+$sql .= " where estabelecimentoId=$id";
 
 $resultEstabelecimentos = mysqli_query($con, $sql);
 $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
@@ -34,12 +34,12 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 
                 <?php
 
-                if (!isset($_SESSION['id'])){
+                if (!isset($_SESSION['id'])) {
 
-                ?>
+                    ?>
 
                     <?php
-                    }else{
+                } else {
                     ?>
                     <?php
                     $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
@@ -51,46 +51,37 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                     <div class="col-lg-4 offset-lg-1">
                         <div class="intro-share">
                             <div class="share-btn">
-                                <a href="reserva.php?id=<?php echo $id?>">Fazer Reserva</a>
+                                <a href="reserva.php?id=<?php echo $id ?>">Fazer Reserva</a>
                             </div>
-                            <?php
-                            $sql="Select * ,count(*) as n
-                                    from estabelecimentos inner join redes on estabelecimentoId=redeEstabelecimentoId
-                                    inner join perfis on redePerfilId=perfilId   
-                                    where estabelecimentoId=$id";
-
-                            $result = mysqli_query($con, $sql);
-                            $dados = mysqli_fetch_array($result);
-                            ?>
                             <div class="share-icon">
-                                <a id="gosto" onclick="gosto(<?php echo $id?>)" align="left">
-                                <?php
-                                // verifica se o utilizador gosta da foto
-                                $sql="select * from redes where redePerfilId=".$_SESSION['id']." and redeEstabelecimentoId=".$id;
-                                mysqli_query($con,$sql);
-                                if(mysqli_affected_rows($con)>0){
-                                    ?>
-                                    <i class="fa fa-thumbs-up" style="color:red" ></i>
+                                <a id="gosto" onclick="gosto(<?php echo $id ?>)" align="left">
                                     <?php
-                                }else{
+                                    // verifica se o utilizador gosta da foto
+                                    $sql = "select * from redes where redePerfilId=" . $_SESSION['id'] . " and redeEstabelecimentoId=" . $id;
+                                    mysqli_query($con, $sql);
+                                    if (mysqli_affected_rows($con) > 0) {
+                                        ?>
+                                        <i class="fa fa-thumbs-up" style="color:red"></i>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <i class="fa fa-thumbs-up"></i>
+                                        <?php
+                                    }
                                     ?>
-                                    <i class="fa fa-thumbs-up" ></i>
-                                    <?php
-                                }
-                                ?>
                                 </a>
-                                <a id="favorito" onclick="favorito(<?php echo $id?>)" align="left">
-                                <?php
-                                // verifica se o utilizador gosta da foto
-                                $sql="select * from redes where redePerfilId=".$_SESSION['id']." and redeEstabelecimentoId=".$id;
-                                mysqli_query($con,$sql);
-                                if(mysqli_affected_rows($con)>0){
-                                    ?>
-                                    <a<i class="fa fa-star-o" style="color:red" ></i></a>
+                                <a id="favorito" onclick="favorito(<?php echo $id ?>)" align="left">
                                     <?php
-                                }else{
+                                    // verifica se o utilizador gosta da foto
+                                    $sql = "select * from redes where redePerfilId=" . $_SESSION['id'] . " and redeEstabelecimentoId=" . $id;
+                                    mysqli_query($con, $sql);
+                                    if (mysqli_affected_rows($con) > 0){
                                     ?>
-                                    <a<i class="fa fa-star-o" ></i></a>
+                                    <a<i class="fa fa-star-o" style="color:red"></i></a>
+                                <?php
+                                } else {
+                                    ?>
+                                    <a<i class="fa fa-star-o"></i></a>
                                     <?php
                                 }
                                 ?>
@@ -98,9 +89,9 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                             </div>
                         </div>
                     </div>
-                        <?php
-                        }
-                        ?>
+                    <?php
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -111,7 +102,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                     <div class="about-left">
                         <div class="about-desc">
                             <h4>Sobre o Estabelecimento</h4>
-                            <p><?php echo $dadosEstabelecimentos['estabelecimentoDescricao']?></p>
+                            <p><?php echo $dadosEstabelecimentos['estabelecimentoDescricao'] ?></p>
                         </div>
                         <div class="about-video1">
                             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -121,7 +112,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                                     $controle_ativo = 2;
                                     $sql = "Select * from imagens where imagemEstabelecimentoId=" . $id;
                                     $resultImagens = mysqli_query($con, $sql);
-                                    while ($dadosImagens = mysqli_fetch_array($resultImagens)){ ?>
+                                    while ($dadosImagens = mysqli_fetch_array($resultImagens)) { ?>
                                         <?php
                                         if ($controle_ativo == 2) { ?>
                                             <div class="carousel-item active ">
@@ -201,8 +192,8 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                         <div class="contact-info">
                             <div class="map">
                                 <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49862.023915177015!2d-8.931703043416729!3d38.64022258033498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19409858c24d63%3A0x500ebbde4910920!2sPinhal%20Novo!5e0!3m2!1spt-PT!2spt!4v1615487503795!5m2!1spt-PT!2spt"
-                                    height="385" style="border:0;" allowfullscreen="">
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49862.023915177015!2d-8.931703043416729!3d38.64022258033498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19409858c24d63%3A0x500ebbde4910920!2sPinhal%20Novo!5e0!3m2!1spt-PT!2spt!4v1615487503795!5m2!1spt-PT!2spt"
+                                        height="385" style="border:0;" allowfullscreen="">
                                 </iframe>
                                 <img src="img/pin.png" alt="">
                             </div>
@@ -217,7 +208,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                         </div>
                         <div class="working-hours">
                             <h4>Horas de Trabalho:</h4>
-                            <p><?php echo $dadosEstabelecimentos['estabelecimentoDescricao2']?></p>
+                            <p><?php echo $dadosEstabelecimentos['estabelecimentoDescricao2'] ?></p>
                         </div>
                     </div>
                 </div>
@@ -227,16 +218,16 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 </section>
 <?php
 
-if (!isset($_SESSION['id'])){
+if (!isset($_SESSION['id'])) {
 
     ?>
 
     <?php
-}else{
+} else {
     ?>
     <?php
     $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-    $sql = "select * from perfis where perfilId=".$_SESSION['id'];
+    $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
     $resultPerfis = mysqli_query($con, $sql);
     $dadosPerfis = mysqli_fetch_array($resultPerfis);
 
@@ -253,15 +244,20 @@ if (!isset($_SESSION['id'])){
                         <div id="status"></div>
                         <fieldset class="ratings ">
                             <legend>Rating:</legend>
-                            <input type="radio" id="star5" name="ratings" value="5"/><label for="star5" title="Muito Bom">5
-                                stars</label> <input type="radio" id="star4" name="ratings" value="4"/><label for="star4"
-                                                                                                              title="Bom">4
-                                stars</label> <input type="radio" id="star3" name="ratings" value="3"/><label for="star3"
-                                                                                                              title="Normal">3
-                                stars</label> <input type="radio" id="star2" name="ratings" value="2"/><label for="star2"
-                                                                                                              title="Mau">2
-                                stars</label> <input type="radio" id="star1" name="ratings" value="1"/><label for="star1"
-                                                                                                              title="Horrivel">1
+                            <input type="radio" id="star5" name="ratings" value="5"/><label for="star5"
+                                                                                            title="Muito Bom">5
+                                stars</label> <input type="radio" id="star4" name="ratings" value="4"/><label
+                                    for="star4"
+                                    title="Bom">4
+                                stars</label> <input type="radio" id="star3" name="ratings" value="3"/><label
+                                    for="star3"
+                                    title="Normal">3
+                                stars</label> <input type="radio" id="star2" name="ratings" value="2"/><label
+                                    for="star2"
+                                    title="Mau">2
+                                stars</label> <input type="radio" id="star1" name="ratings" value="1"/><label
+                                    for="star1"
+                                    title="Horrivel">1
                                 star</label></fieldset>
                         <div class="clearfix"></div>
                     </div>
@@ -275,7 +271,7 @@ if (!isset($_SESSION['id'])){
                             <button type="submit">Fazer Comentário</button>
                         </div>
                     </div>
-                    <input type="hidden" <?php  ?> >
+                    <input type="hidden" <?php ?> >
                 </form>
 
             </div>
