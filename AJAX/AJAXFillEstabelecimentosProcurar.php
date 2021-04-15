@@ -17,7 +17,7 @@ $distrito=intval($_POST['distrito']);
     if($distrito!=-1)
         $sql.=" and distritoId =$distrito";
 
-echo $sql;
+$sql;
 
 $resultEstabelecimentos = mysqli_query($con, $sql);
 while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
