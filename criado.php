@@ -55,7 +55,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                 <div class="col-lg-8">
                     <div class="about-left">
                         <div class="about-desc">
-                            <h4>Sobre o Restaurante</h4>
+                            <h4>Sobre o Estabelecimento</h4>
                             <p> <?php echo $dadosEstabelecimentos['estabelecimentoDescricao'] ?> </p>
                         </div>
                         <div class="about-video1">
