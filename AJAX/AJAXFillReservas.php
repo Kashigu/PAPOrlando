@@ -1,6 +1,6 @@
 <?php
 include_once("../includes/body.inc.php");
-toposingle();
+session_start();
 $txt = addslashes($_POST['txt']);
 $sql = "Select * from reservas inner join estabelecimentos on reservaEstabelecimentoId=estabelecimentoId
                                inner join perfis on reservaPerfilId=perfilId
@@ -12,7 +12,7 @@ $resultEstabelecimentos = mysqli_query($con, $sql);
 <?php
 while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
     ?>
-    <div class="container">
+    <div class="container mt-3">
         <h3 class="mt-2"><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></h3>
         <div class="row mt-2">
 
@@ -43,5 +43,4 @@ while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
 ?>
 </table>
 <?php
-bot();
 ?>

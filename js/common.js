@@ -426,7 +426,7 @@ function eliminaReserva(id) {  // abre o modal e injecta o ID
         },
         success: function (result) {
 
-            $("#idReserva").html('Confirma que deseja eliminar a Reserva: ' + result + '?');
+            $("#idReserva").html('Confirma que deseja eliminar a Reserva ?');
 
             $("#staticBackdropDele").modal("toggle");
             //fillTableCategorias();
@@ -470,8 +470,8 @@ function EditarTableReservas() {
         url: "AJAX/AJAXEditReservas.php",
         type: "post",
         data: {
-            categoriaNome: $('#reservaDescricao').val(),
-            categoriaId: $('#reservaId').val()
+            reservaDescricao: $('#reservaDescricao').val(),
+            reservaId: $('#reservaId').val()
         },
         success: function (result) {
             fillTableReservas();
