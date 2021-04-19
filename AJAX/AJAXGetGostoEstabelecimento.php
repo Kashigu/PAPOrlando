@@ -1,7 +1,7 @@
 <?php
 // dados na base de dados
 include_once("../includes/body.inc.php");
-toposingle();
+session_start();
 $id=intval($_POST['idEstabelecimento']);
 $sql="Select count(*) as n
         from redes 
@@ -15,7 +15,7 @@ $sql="select * from redes where redePerfilId=".$_SESSION['id']." and redeEstabel
 mysqli_query($con,$sql);
 if(mysqli_affected_rows($con)>0){
     ?>
-    <i class="fa fa-thumbs-up" style="color: red" aria-hidden="true"></i>
+    <i class="fa fa-thumbs-up" style="color:blue" aria-hidden="true"></i>
     <?php
 }else{
     ?>
@@ -26,5 +26,5 @@ if(mysqli_affected_rows($con)>0){
 
 </span>
  <?php
-bot();
+
 ?>

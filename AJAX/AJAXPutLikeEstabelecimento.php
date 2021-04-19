@@ -2,7 +2,7 @@
 // dados na base de dados
 include_once("../includes/body.inc.php");
 
-toposingle();
+session_start();
 $id=intval($_POST['idEstabelecimento']);
 
  $sql="select * from redes where redePerfilId=".$_SESSION['id']." and redeEstabelecimentoId=". $id . " and redeTipo='gosto'";
