@@ -296,5 +296,5 @@ if (!isset($_SESSION['id'])) {
 
 <?php
 
-bottom(HOME);
+bot();
 ?>

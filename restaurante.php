@@ -153,5 +153,5 @@ toposingle();
 
 <?php
 
-bottom();
+bot();
 ?>

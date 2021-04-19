@@ -219,5 +219,5 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
     </div>
 </section>
 <?php
-bottom(HOME);
+bot(HOME);
 ?>

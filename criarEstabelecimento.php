@@ -248,5 +248,5 @@ $id=intval($_GET['id']);
     </section>
 
 <?php
-bottom(HOME);
+bot();
 ?>

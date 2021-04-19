@@ -325,5 +325,5 @@ toposingle(PORTUGAL);
     </section>
 
 <?php
-bottom(HOME);
+bot(HOME);
 ?>

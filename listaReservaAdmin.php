@@ -98,6 +98,6 @@ toposingle();
 </section>
 
 <?php
-bottom();
+bot();
 ?>
 
