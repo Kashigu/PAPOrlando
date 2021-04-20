@@ -211,9 +211,10 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                 <div class="rating">
 
                                     <?php
-                                    while ($dadosRating = mysqli_fetch_array($resultRating)) {
+                                    $dadosRating = mysqli_fetch_array($resultRating);
+                                    for ($i=1;$i<=$dadosRating['ratingValor'];$i++) {
                                         ?>
-                                            <i  class="fa fa-star"> <?php echo  $dadosRating['ratingValor']?> </i>
+                                            <i class="fa fa-star">  </i>
 
                                         <?php
                                     }
