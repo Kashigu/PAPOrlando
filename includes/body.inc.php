@@ -35,6 +35,7 @@ function toposingle($menu=PORTUGAL)
         <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
         <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
         <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="css/common.css" type="text/css">
         <link rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -46,7 +47,7 @@ function toposingle($menu=PORTUGAL)
         </style>
     </head>
 
-    <body onload="mostrar(); mostrarGostos(); mostrarFavoritos()">
+    <body >
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>

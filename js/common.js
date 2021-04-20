@@ -386,14 +386,21 @@ function editaImagem(id) {  // abre o modal e injecta o ID
 function mostrar() {
     //$('#btnEstabelecimento').toggle();
     $('#Estabelecimento').toggle();
+    $('#Favorito').hide();
+    $('#Gosto').hide();
 }
 function mostrarGostos() {
     //$('#btnGosto').toggle();
     $('#Gosto').toggle();
+    $('#Estabelecimento').hide();
+    $('#Favorito').hide();
 }
 function mostrarFavoritos() {
     //$('#btnFavorito').toggle();
     $('#Favorito').toggle();
+    $('#Estabelecimento').hide();
+    $('#Gosto').hide();
+
 }
 //------------------------------------------------------------Funcoes para ListaReserva ------------------------------------//
 function fillTableReservas(txt = '') {
