@@ -119,7 +119,7 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                         </tr>
                                         <?php
 
-                                       echo $sql = "select * from estabelecimentos inner join perfis on perfilId=estabelecimentoPerfilId
+                                       $sql = "select * from estabelecimentos inner join perfis on perfilId=estabelecimentoPerfilId
                                                             where perfilId=" . $id;
                                         $resultEstabelecimentos = mysqli_query($con, $sql);
                                         if (isset($_SESSION['id'])==$id){
@@ -156,13 +156,14 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                     </div>
                 </div>
                 <?php
+                if(isset ($_SESSION['id'] )){
+                    if ($_SESSION['id'] == $id) {
+                        $idUti=$_SESSION['id'];
+                        $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+                        $sql = "select * from perfis where perfilId=" . $idUti;
+                        $resultPerfis = mysqli_query($con, $sql);
+                        $dadosPerfis = mysqli_fetch_array($resultPerfis);
 
-                if (isset($_SESSION['id']) == $id) {
-
-                    $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-                    $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
-                    $resultPerfis = mysqli_query($con, $sql);
-                    $dadosPerfis = mysqli_fetch_array($resultPerfis)
 
                     ?>
                     <div class="col-lg-4 ">
@@ -179,9 +180,10 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                         </div>
                     </div>
                     <?php
-                } else {
+                    } else {
                     ?>
                     <?php
+                    }
                 }
                 ?>
             </div>
