@@ -122,7 +122,7 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                        $sql = "select * from estabelecimentos inner join perfis on perfilId=estabelecimentoPerfilId
                                                             where perfilId=" . $id;
                                         $resultEstabelecimentos = mysqli_query($con, $sql);
-                                        if (isset($_SESSION['id'])==$id){
+                                        if ($_SESSION['id']==$id){
 
                                         ?>
                                         <?php
