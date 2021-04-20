@@ -107,7 +107,7 @@ function toposingle($menu=PORTUGAL)
                             <?php
                             while ($dadosEstab = mysqli_fetch_array($resultEstab)) {
                                 ?>
-                                <option value="<?php echo $dadosEstab['estabelecimentoId'] ?> "><a href="criado.php?id=<?php echo $dadosEstab['estabelecimentoId'] ?>"> <?php echo $dadosEstab['estabelecimentoNome'] ?></a></option>
+                                <option value="<?php echo $dadosEstab['estabelecimentoId'] ?> "> <a href="criado.php?id=<?php echo $dadosEstab['estabelecimentoId'] ?>"> <?php echo $dadosEstab['estabelecimentoNome'] ?></option></a>
                                 <?php
                             }
                             ?>

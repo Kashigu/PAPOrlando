@@ -118,11 +118,13 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                             <th>Ver</th>
                                         </tr>
                                         <?php
-                                        $sql = "select * from estabelecimentos inner join perfis on perfilId=estabelecimentoPerfilId
+
+                                       echo $sql = "select * from estabelecimentos inner join perfis on perfilId=estabelecimentoPerfilId
                                                             where perfilId=" . $id;
                                         $resultEstabelecimentos = mysqli_query($con, $sql);
-                                        ?>
+                                        if (isset($_SESSION['id'])==$id){
 
+                                        ?>
                                         <?php
                                         while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
                                             ?>
@@ -134,7 +136,18 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                                 </a>
                                             </tr>
                                             <?php
-                                        }
+                                        }}else{
+                                        while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></td>
+                                                <td>
+                                                    <a href="single-listing.php?id=<?php echo $dadosEstabelecimentos['estabelecimentoId'] ?>">Ver
+                                                </td>
+                                                </a>
+                                            </tr>
+                                            <?php
+                                        }}
                                         ?>
                                     </table>
                                 </div>
@@ -181,37 +194,39 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                     <div class="about-left">
                         <div class="client-reviews">
                             <h3>Comentários Feitos</h3>
+                            <?php
+                            $sql = "select * from redes inner join comentarios on redeId=comentarioRedeId
+                                                             inner join perfis on perfilId=redePerfilId 
+                                                             inner join estabelecimentos on estabelecimentoId=redeEstabelecimentoId 
+                                                            where perfilId=$id and redeTipo='comentario'";
+                            $resultRedes = mysqli_query($con, $sql);
+
+                           $sqlRating = "select * from redes inner join ratings on redeId=ratingRedeId
+                                                             inner join perfis on perfilId=redePerfilId 
+                                                             inner join estabelecimentos on estabelecimentoId=redeEstabelecimentoId 
+                                                            where perfilId=$id and redeTipo='rating'";
+                            $resultRating = mysqli_query($con, $sqlRating);
+                            ?>
                             <div class="reviews-item">
                                 <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+
+                                    <?php
+                                    while ($dadosRating = mysqli_fetch_array($resultRating)) {
+                                        ?>
+                                            <i  class="fa fa-star"> <?php echo  $dadosRating['ratingValor']?> </i>
+
+                                        <?php
+                                    }
+                                    ?>
                                 </div>
-                                <a href="single-listing.php"><h5>?A Great Place?</h5></a>
-                                <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id
-                                    vitae
-                                    massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus.
-                                    Class
-                                    aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                                    himenaeos. </p>
-                            </div>
-                            <div class="reviews-item">
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <a href="single-listing.php"><h5>?A Great Place?</h5></a>
-                                <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id
-                                    vitae
-                                    massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus.
-                                    Class
-                                    aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                                    himenaeos. </p>
+                                <?php
+                                while ($dadosRedes = mysqli_fetch_array($resultRedes)) {
+                                    ?>
+                                <a href="single-listing.php?id=<?php echo $dadosRedes['estabelecimentoId'] ?>">
+                                                <p><?php echo $dadosRedes['comentarioTexto'] ?> </p></a>
+                                    <?php
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
