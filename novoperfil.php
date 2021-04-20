@@ -34,7 +34,12 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                     ?>
 
                     <div class="intro-text mt-5 ">
-                        <button  onclick="mostrarFavoritos()" ;>Favoritos</button>
+                        <button  onclick="mostrarFavoritos()">Favoritos</button>
+
+                        <button  onclick="mostrarGostos()">Gostos</button>
+
+                        <button onclick="mostrar()">Estabelecimentos</button>
+
                         <div class="container" id="Favorito">
                             <div class="row">
                                 <div class="col-lg-12">
@@ -69,7 +74,7 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                 </div>
                             </div>
                         </div>
-                        <button  onclick="mostrarGostos()" ;>Gostos</button>
+
                         <div class="container" id="Gosto">
                             <div class="row">
                                 <div class="col-lg-12">
@@ -103,7 +108,6 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                 </div>
                             </div>
                         </div>
-                        <button onclick="mostrar()" ;>Estabelecimentos</button>
                         <div class="container" id="Estabelecimento">
                             <div class="row">
                                 <div class="col-lg-12">

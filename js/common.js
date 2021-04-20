@@ -381,12 +381,6 @@ function editaImagem(id) {  // abre o modal e injecta o ID
     });
     $("#editar").modal("toggle");
 }
-//-------------------------------------------------------------Funçoes Para Comentarios ------------------------------------------------//
-
-function mostra() {
-    $('#comentar').toggle();
-    $('#btnComentar').hide();
-}
 
 //-------------------------------------------------------------Funcoes no Perfil ------------------------------------------//
 function mostrar() {
@@ -530,4 +524,32 @@ function favorito(id) {
         }
     });
 
+}
+
+function mostra(id) {
+    $('#comentar').toggle();
+
+    $.ajax({
+        url:"AJAX/AJAXPutComentarioEstabelecimento.php",
+        type:"post",
+        data:{
+            idEstabelecimento:id
+        },
+        success:function (result){
+            $.ajax({
+                url:"AJAX/AJAXGetComentarioEstabelecimento.php",
+                type:"post",
+                data:{
+                    idEstabelecimento:id
+                },
+                success:function (result){
+                    $('#comentar').html(result);
+
+                }
+            });
+
+        }
+    });
+
+    $('#btnComentar').hide();
 }

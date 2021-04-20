@@ -157,14 +157,15 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                 </div>
-                                <h5>?A Great Place?</h5>
-                                <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae
+                                <div class="client-text">
+                                    <h5>Michael Smith</h5>
+                                </div>
+                                <p class="mt-3">Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae
                                     massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class
                                     aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
                                     himenaeos. </p>
                                 <div class="client-text">
-                                    <h5>Michael Smith</h5>
-                                    <span>March 03, 2019</span>
+                                <span>March 03, 2019</span>
                                 </div>
                             </div>
                             <div class="reviews-item">
@@ -175,7 +176,6 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                 </div>
-                                <h5>?The best food in town?</h5>
                                 <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae
                                     massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class
                                     aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
@@ -238,27 +238,20 @@ if (!isset($_SESSION['id'])) {
 
                 <form action="single-listing.html" method="post" class="contact-form" id="ratingForm">
                     <div class="row">
-                        <div class="col-lg-12">
-                            <input type="text" placeholder="Titulo do Comentário">
-                        </div>
                         <div id="status"></div>
-                        <fieldset class="ratings ">
+                        <fieldset class="ratings">
                             <legend>Rating:</legend>
-                            <input type="radio" id="star5" name="ratings" value="5"/><label for="star5"
-                                                                                            title="Muito Bom">5
-                                stars</label> <input type="radio" id="star4" name="ratings" value="4"/><label
-                                    for="star4"
-                                    title="Bom">4
-                                stars</label> <input type="radio" id="star3" name="ratings" value="3"/><label
-                                    for="star3"
-                                    title="Normal">3
-                                stars</label> <input type="radio" id="star2" name="ratings" value="2"/><label
-                                    for="star2"
-                                    title="Mau">2
-                                stars</label> <input type="radio" id="star1" name="ratings" value="1"/><label
-                                    for="star1"
-                                    title="Horrivel">1
-                                star</label></fieldset>
+                            <input type="radio" id="star5" name="ratings" value="5">
+                            <label for="star5" title="Muito Bom">5 stars</label>
+                            <input type="radio" id="star4" name="ratings" value="4">
+                            <label for="star4" title="Bom">4 stars</label>
+                            <input type="radio" id="star3" name="ratings" value="3">
+                            <label for="star3" title="Normal">3 stars</label>
+                            <input type="radio" id="star2" name="ratings" value="2">
+                            <label for="star2" title="Mau">2 stars</label>
+                            <input type="radio" id="star1" name="ratings" value="1">
+                            <label for="star1" title="Horrivel">1 star</label>
+                        </fieldset>
                         <div class="clearfix"></div>
                     </div>
                     <div class="row">
