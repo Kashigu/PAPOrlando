@@ -35,7 +35,9 @@ if(isset ($_GET['distrito'] )) {
                             $resultCategorias = mysqli_query($con, $sql);
                             while ($dadosCategorias = mysqli_fetch_array($resultCategorias)) {
                                 ?>
-                                <option id="search" value="<?php echo $dadosCategorias['categoriaId'] ?>">
+                                <option id="search"
+                                        <?php if ($dadosCategorias['categoriaId'] == $categoria)
+                                            echo " selected " ?> value="<?php echo $dadosCategorias['categoriaId'] ?>">
                                     <?php echo $dadosCategorias['categoriaNome'] ?>
                                 </option>
                                 <?php
@@ -56,7 +58,7 @@ if(isset ($_GET['distrito'] )) {
                             while ($dadosDistritos = mysqli_fetch_array($resultDistritos)) {
                                 ?>
                                 <option id="search"
-                                        <?php if ($dadosDistritos['distritoId'] == $categoria)
+                                        <?php if ($dadosDistritos['distritoId'] == $distrito)
                                             echo " selected " ?>
                                         value="<?php echo $dadosDistritos['distritoId'] ?>">
                                     <?php echo $dadosDistritos['distritoNome'] ?>
