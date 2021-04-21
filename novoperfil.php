@@ -197,10 +197,10 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                         <div class="client-reviews">
                             <h3>Comentários Feitos</h3>
                             <?php
-                            $sql = "select * from redes inner join comentarios on redeId=comentarioRedeId
-                                                             inner join perfis on perfilId=redePerfilId 
-                                                             inner join estabelecimentos on estabelecimentoId=redeEstabelecimentoId 
-                                                            where perfilId=$id and redeTipo='comentario'";
+                             $sql = "select * from comentarios inner join perfis on perfilId=comentarioPerfilId 
+                                                             inner join estabelecimentos on estabelecimentoId=comentarioEstabelecimentoId 
+                                                            where perfilId=$id";
+
                             $resultRedes = mysqli_query($con, $sql);
 
                            $sqlRating = "select * from redes inner join ratings on redeId=ratingRedeId
