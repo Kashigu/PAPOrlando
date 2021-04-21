@@ -230,7 +230,7 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                         <div class="client-reviews">
                             <h3>Ratings Feitos</h3>
                             <?php
-                           echo $sql = "select * from comentarios inner join perfis on perfilId=comentarioPerfilId 
+                            $sql = "select * from comentarios inner join perfis on perfilId=comentarioPerfilId 
                                                              inner join estabelecimentos on estabelecimentoId=comentarioEstabelecimentoId 
                                                             where perfilId=$id";
 
