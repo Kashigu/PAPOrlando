@@ -223,5 +223,5 @@ if(isset ($_GET['distrito'] )) {
 
 
 <?php
-bot(ESTABELECIMENTOSP,$categoria,$distrito);
+bot(ESTABELECIMENTOSP);
 ?>
