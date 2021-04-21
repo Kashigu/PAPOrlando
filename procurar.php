@@ -2,7 +2,12 @@
 include_once("includes/body.inc.php");
 toposingle(PROCURAR);
 
-
+if(isset ($_GET['categoria'] )) {
+    $categoria = intval($_GET['categoria']);
+}
+if(isset ($_GET['distrito'] )) {
+    $distrito = intval($_GET['distrito']);
+}
 ?>
 
 <!-- Map Section Begin -->
@@ -34,7 +39,7 @@ toposingle(PROCURAR);
                                     <?php echo $dadosCategorias['categoriaNome'] ?>
                                 </option>
                                 <?php
-                            }$categoria=intval($_POST['categoria']);
+                            }
 
 
                             ?>
@@ -50,11 +55,14 @@ toposingle(PROCURAR);
                             $resultDistritos = mysqli_query($con, $sql);
                             while ($dadosDistritos = mysqli_fetch_array($resultDistritos)) {
                                 ?>
-                                <option id="search" value="<?php echo $dadosDistritos['distritoId'] ?>">
+                                <option id="search"
+                                        <?php if ($dadosDistritos['distritoId'] == $categoria)
+                                            echo " selected " ?>
+                                        value="<?php echo $dadosDistritos['distritoId'] ?>">
                                     <?php echo $dadosDistritos['distritoNome'] ?>
                                 </option>
                                 <?php
-                            }$distrito=intval($_POST['distrito']);
+                            }
 
 
                             ?>
