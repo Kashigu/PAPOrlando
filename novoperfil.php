@@ -192,12 +192,12 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
     <div class="about-item">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-6">
                     <div class="about-left">
                         <div class="client-reviews">
                             <h3>Comentários Feitos</h3>
                             <?php
-                             $sql = "select * from comentarios inner join perfis on perfilId=comentarioPerfilId 
+                            $sql = "select * from comentarios inner join perfis on perfilId=comentarioPerfilId 
                                                              inner join estabelecimentos on estabelecimentoId=comentarioEstabelecimentoId 
                                                             where perfilId=$id";
 
@@ -208,34 +208,62 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                                              inner join estabelecimentos on estabelecimentoId=redeEstabelecimentoId 
                                                             where perfilId=$id and redeTipo='rating'";
                             $resultRating = mysqli_query($con, $sqlRating);
+
                             ?>
                             <div class="reviews-item">
                                 <div class="rating">
-
                                     <?php
-                                    $dadosRating = mysqli_fetch_array($resultRating);
-                                    for ($i=1;$i<=$dadosRating['ratingValor'];$i++) {
-                                        ?>
-                                            <i class="fa fa-star">  </i>
-
-                                        <?php
-                                    }
+                                    while ($dadosRedes = mysqli_fetch_array($resultRedes)) {
                                     ?>
-                                </div>
-                                <?php
-                                while ($dadosRedes = mysqli_fetch_array($resultRedes)) {
-                                    ?>
-                                <a href="single-listing.php?id=<?php echo $dadosRedes['estabelecimentoId'] ?>">
-                                                <p><?php echo $dadosRedes['comentarioTexto'] ?> </p></a>
+                                    <h5><a href="single-listing.php?id=<?php echo $dadosRedes['estabelecimentoId'] ?> " > <?php echo $dadosRedes['estabelecimentoNome'] ?></h5>
+                                        <p><?php echo $dadosRedes['comentarioTexto']?></p></a>
                                     <?php
                                 }
                                 ?>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                </div>
+                <div class="col-lg-6">
+                    <div class="about-left">
+                        <div class="client-reviews">
+                            <h3>Ratings Feitos</h3>
+                            <?php
+                           echo $sql = "select * from comentarios inner join perfis on perfilId=comentarioPerfilId 
+                                                             inner join estabelecimentos on estabelecimentoId=comentarioEstabelecimentoId 
+                                                            where perfilId=$id";
+
+                            $resultRedes = mysqli_query($con, $sql);
+
+                            $sqlRating = "select * from redes inner join ratings on redeId=ratingRedeId
+                                                             inner join perfis on perfilId=redePerfilId 
+                                                             inner join estabelecimentos on estabelecimentoId=redeEstabelecimentoId 
+                                                            where perfilId=$id and redeTipo='rating'";
+                            $resultRating = mysqli_query($con, $sqlRating);
+
+                            ?>
+                            <div class="reviews-item">
+                                <div class="rating">
+                                    <?php
+                                    while ($dadosRedes = mysqli_fetch_array($resultRedes)) {
+                                        ?>
+                                        <h5 class="mt-2"><a href="single-listing.php?id=<?php echo $dadosRedes['estabelecimentoId'] ?> " > <?php echo $dadosRedes['estabelecimentoNome'] ?></a></h5>
+                                        <?php
+                                        $dadosRating = mysqli_fetch_array($resultRating);
+                                        for ($i=1;$i<=$dadosRating['ratingValor'];$i++) {
+                                            ?>
+                                            <i class="fa fa-star">  </i>
+                                            <?php
+                                        }
+                                        ?>
+                                        <?php
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
