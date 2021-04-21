@@ -533,14 +533,19 @@ function favorito(id) {
 
 }
 
-function mostra(id) {
+function mostra() {
     $('#comentar').toggle();
+    $('#btnComentar').hide();
+}
+
+function comentario(id,idCom,){
 
     $.ajax({
         url:"AJAX/AJAXPutComentarioEstabelecimento.php",
         type:"post",
         data:{
-            idEstabelecimento:id
+            idEstabelecimento:id,
+            idComentar:idCom
         },
         success:function (result){
             $.ajax({
@@ -558,5 +563,4 @@ function mostra(id) {
         }
     });
 
-    $('#btnComentar').hide();
 }

@@ -3,16 +3,16 @@
 include_once("../includes/body.inc.php");
 session_start();
 $id=intval($_POST['idEstabelecimento']);
-$sql="Select count(*) as n
-        from redes 
-        where redeEstabelecimentoId=$id and redeTipo='comentario'";
+echo $sql="Select count(*) as n
+        from comentarios
+        where comentarioEstabelecimentoId=$id and comentarioPerfilId=".$_SESSION['id'];
 
 $result = mysqli_query($con, $sql);
 $dados = mysqli_fetch_array($result);
 
 // verifica se o utilizador gosta da foto
-$sql="select * from redes inner join comentarios on redeId=comentarioRedeId
-                          where redePerfilId=".$_SESSION['id']." and redeEstabelecimentoId=".$id." and redeTipo='comentario'";
+ECHO $sql="select * from comentarios 
+                          where comentarioPerfilId=".$_SESSION['id']." and comentarioEstabelecimentoId=".$id;
 mysqli_query($con,$sql);
 if(mysqli_affected_rows($con)>0){
     ?>
@@ -20,7 +20,7 @@ if(mysqli_affected_rows($con)>0){
     <?php
 }else{
     ?>
-    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+    <i class="fa fa-thumbs-up" style="color:red" aria-hidden="true"></i>
     <?php
 }
 ?>
