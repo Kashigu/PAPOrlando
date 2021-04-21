@@ -58,7 +58,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                                 <a id="gosto" onclick="gosto(<?php echo $id ?>)" align="left">
                                     <?php
                                     // verifica se o utilizador gosta da foto
-                                    $sql = "select * from redes where redePerfilId=" . $_SESSION['id'] . " and redeEstabelecimentoId=" . $id ." and redeTipo='gosto'";
+                                    $sql = "select * from redes where redePerfilId=" . $_SESSION['id'] . " and redeEstabelecimentoId=" . $id . " and redeTipo='gosto'";
                                     mysqli_query($con, $sql);
                                     if (mysqli_affected_rows($con) > 0) {
                                         ?>
@@ -74,18 +74,18 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                                 <a id="favorito" onclick="favorito(<?php echo $id ?>)" align="left">
                                     <?php
                                     // verifica se o utilizador gosta da foto
-                                    $sql = "select * from redes where redePerfilId=" . $_SESSION['id'] . " and redeEstabelecimentoId=" . $id." and redeTipo='favorito'";
+                                    $sql = "select * from redes where redePerfilId=" . $_SESSION['id'] . " and redeEstabelecimentoId=" . $id . " and redeTipo='favorito'";
                                     mysqli_query($con, $sql);
-                                    if (mysqli_affected_rows($con) > 0){
+                                    if (mysqli_affected_rows($con) > 0) {
+                                        ?>
+                                        <i class="fa fa-star-o" style="color:deeppink"></i>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <i class="fa fa-star-o"></i>
+                                        <?php
+                                    }
                                     ?>
-                                    <i class="fa fa-star-o" style="color:deeppink"></i>
-                                <?php
-                                } else {
-                                    ?>
-                                    <i class="fa fa-star-o"></i>
-                                    <?php
-                                }
-                                ?>
                                 </a>
                             </div>
                         </div>
@@ -150,40 +150,39 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                         <div class="client-reviews mt-3">
                             <h3>Revisão</h3>
                             <div class="reviews-item">
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="client-text">
-                                    <h5>Michael Smith</h5>
-                                </div>
-                                <p class="mt-3">Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae
-                                    massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class
-                                    aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                                    himenaeos. </p>
-                                <div class="client-text">
-                                <span>March 03, 2019</span>
-                                </div>
-                            </div>
-                            <div class="reviews-item">
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae
-                                    massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class
-                                    aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                                    himenaeos. </p>
-                                <div class="client-text">
-                                    <h5>Michael Smith</h5>
-                                    <span>March 03, 2019</span>
-                                </div>
+
+                                <?php
+                                $sqlRating = "Select * from ratings inner join redes on redeId=ratingRedeId
+                                                                  inner join estabelecimentos on estabelecimentoId=redeEstabelecimentoId
+                                                                  inner join perfis on perfilId=redePerfilId
+                                                                  where estabelecimentoId=" . $id;
+                                $resultRatings = mysqli_query($con, $sqlRating);
+
+                                $sql = "Select * from comentarios inner join estabelecimentos on estabelecimentoId=comentarioEstabelecimentoId
+                                    inner join perfis on perfilId=comentarioPerfilId where estabelecimentoId=" . $id;
+
+                                $resultComentarios = mysqli_query($con, $sql);
+
+                                while ($dadosComentarios = mysqli_fetch_array($resultComentarios)) {
+                                    ?>
+                                    <div class="rating">
+                                        <?php
+                                        $dadosRatings = mysqli_fetch_array($resultRatings);
+                                        for ($i = 1; $i <= $dadosRatings['ratingValor']; $i++) {
+                                            ?>
+                                            <i class="fa fa-star"> </i>
+                                            <?php
+                                        }
+                                        ?>
+                                    </div>
+                                    <div class="client-text mt-2">
+                                        <h5><?php echo $dadosComentarios['perfilNome'] ?></h5>
+                                    </div>
+                                    <p class="mt-3"><?php echo $dadosComentarios['comentarioTexto'] ?></p>
+                                    <hr>
+                                    <?php
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -236,7 +235,7 @@ if (!isset($_SESSION['id'])) {
         <div class="row">
             <div class="col-lg-12">
 
-                <form action="single-listing.html" method="post" class="contact-form" id="ratingForm">
+                <form method="post" class="contact-form" id="ratingForm">
                     <div class="row">
                         <div id="status"></div>
                         <fieldset class="ratings">
@@ -256,12 +255,12 @@ if (!isset($_SESSION['id'])) {
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <textarea placeholder="Comentário"></textarea>
+                            <textarea name="reviewTexto" placeholder="Comentário"></textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12 mt-3 centrinho">
-                            <button type="submit">Fazer Comentário</button>
+                            <button type="button" onclick="comentario(<?php echo $id ?>)">Fazer Comentário</button>
                         </div>
                     </div>
                     <input type="hidden" <?php ?> >
