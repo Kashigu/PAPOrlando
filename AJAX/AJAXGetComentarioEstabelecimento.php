@@ -3,7 +3,7 @@
 include_once("../includes/body.inc.php");
 session_start();
 $id=intval($_POST['idEstabelecimento']);
-echo $sql="Select count(*) as n
+ $sql="Select count(*) as n
         from comentarios
         where comentarioEstabelecimentoId=$id and comentarioPerfilId=".$_SESSION['id'];
 
@@ -14,16 +14,19 @@ $dados = mysqli_fetch_array($result);
 ECHO $sql="select * from comentarios 
                           where comentarioPerfilId=".$_SESSION['id']." and comentarioEstabelecimentoId=".$id;
 mysqli_query($con,$sql);
-if(mysqli_affected_rows($con)>0){
-    ?>
-    <i class="fa fa-thumbs-up" style="color:blue" aria-hidden="true"></i>
-    <?php
-}else{
-    ?>
-    <i class="fa fa-thumbs-up" style="color:red" aria-hidden="true"></i>
-    <?php
-}
+
+   echo  $sql1="select * from comentarios inner join estabelecimentos on estabelecimentoId=comentarioEstabelecimentoId
+                                    inner join perfis on perfilId=comentarioPerfilId
+                                    where estabelecimentoId=".$id;
+    $resultDados =mysqli_query($con,$sql1);
+    $dadosResult =mysqli_fetch_array($resultDados)
 ?>
+
+    <div class="client-text mt-2">
+        <h5><?php echo $dadosResult['perfilNome'] ?></h5>
+    </div>
+    <p class="mt-3"><?php echo $dadosResult['comentarioTexto'] ?></p>
+    <hr>
 
 </span>
  <?php

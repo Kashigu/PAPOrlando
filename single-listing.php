@@ -233,9 +233,9 @@ if (!isset($_SESSION['id'])) {
     ?>
     <div class="container" id="comentar">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 contact-form">
 
-                <form method="post" class="contact-form" id="ratingForm">
+                <!--<form method="post" class="" id="ratingForm">-->
                     <div class="row">
                         <div id="status"></div>
                         <fieldset class="ratings">
@@ -255,7 +255,7 @@ if (!isset($_SESSION['id'])) {
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <textarea name="reviewTexto" placeholder="Comentário"></textarea>
+                            <textarea id="comentarioTexto" name="reviewTexto" placeholder="Comentário"></textarea>
                         </div>
                     </div>
                     <div class="row">
@@ -263,9 +263,7 @@ if (!isset($_SESSION['id'])) {
                             <button type="button" onclick="comentario(<?php echo $id ?>)">Fazer Comentário</button>
                         </div>
                     </div>
-                    <input type="hidden" <?php ?> >
-                </form>
-
+                <!--</form>-->
             </div>
         </div>
     </div>

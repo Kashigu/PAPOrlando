@@ -3,22 +3,14 @@
 include_once("../includes/body.inc.php");
 
 session_start();
-$idCom=intval($_POST['idComentar']);
 $id=intval($_POST['idEstabelecimento']);
-$sobre = $_POST['reviewTexto'];
+$txt=addslashes($_POST['txt']);
 
-  echo $sql="select * from comentarios inner join estabelecimentos on estabelecimentoId=comentarioEstabelecimentoId
-                                  inner join perfis on perfilId=comentarioPerfilId where comentarioPerfilId=".$_SESSION['id']." and comentarioEstabelecimentoId=". $id;
-mysqli_query($con,$sql);
 
-if(mysqli_affected_rows($con)>0) {
-   echo $sql = "delete from comentarios where comentarioPerfilId=" . $_SESSION['id'] . " and comentarioEstabelecimentoId=".$id." and comentarioId=".$idCom;
+ echo $sql = "insert into comentarios (comentarioId, comentarioPerfilId, comentarioEstabelecimentoId, comentarioTexto) values(0,'".$_SESSION['id']. "','" . $id."','".$txt."')";
+ mysqli_query($con,$sql);
 
-}else{
-   echo  $sql = "insert into comentarios (comentarioId, comentarioEstabelecimentoId, comentarioPerfilId, comentarioTexto) values(0,'" . $id . "','".$_SESSION['id']. "','" . $sobre . "')";
-
-}
-mysqli_query($con,$sql);
+echo $idCom=mysqli_insert_id($con);
 
 bot();
 ?>

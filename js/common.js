@@ -538,23 +538,26 @@ function mostra() {
     $('#btnComentar').hide();
 }
 
-function comentario(id,idCom,){
+function comentario(id,idCom){
 
     $.ajax({
         url:"AJAX/AJAXPutComentarioEstabelecimento.php",
         type:"post",
         data:{
             idEstabelecimento:id,
-            idComentar:idCom
+            txt: $('#comentarioTexto').val()
         },
         success:function (result){
+
             $.ajax({
                 url:"AJAX/AJAXGetComentarioEstabelecimento.php",
                 type:"post",
                 data:{
-                    idEstabelecimento:id
+                    idEstabelecimento:id,
+                    idCom:idCom
                 },
                 success:function (result){
+
                     $('#comentar').html(result);
 
                 }
