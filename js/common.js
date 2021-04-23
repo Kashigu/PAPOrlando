@@ -570,3 +570,31 @@ function comentario(id) {
             });
 
         }
+
+function rating(id) {
+
+  alert("aqui")
+
+   /* $.ajax({
+        url: "AJAX/AJAXPutLikeEstabelecimento.php",
+        type: "post",
+        data: {
+            idEstabelecimento: id
+        },
+        success: function (result) {
+            $.ajax({
+                url: "AJAX/AJAXGetGostoEstabelecimento.php",
+                type: "post",
+                data: {
+                    idEstabelecimento: id
+                },
+                success: function (result) {
+                    $('#gosto').html(result);
+
+                }
+            });
+
+        }
+    });*/
+
+}

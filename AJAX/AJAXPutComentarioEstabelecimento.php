@@ -10,7 +10,7 @@ $txt=addslashes($_POST['txt']);
  echo $sql = "insert into comentarios (comentarioId, comentarioPerfilId, comentarioEstabelecimentoId, comentarioTexto) values(0,'".$_SESSION['id']. "','" . $id."','".$txt."')";
  mysqli_query($con,$sql);
 
-echo $idCom=mysqli_insert_id($con);
+
 
 bot();
 ?>

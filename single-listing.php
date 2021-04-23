@@ -40,61 +40,76 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 
                     <?php
                 } else {
-                    ?>
-                    <?php
-                    $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-                    $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
-                    $resultPerfis = mysqli_query($con, $sql);
-                    $dadosPerfis = mysqli_fetch_array($resultPerfis);
-
-                    ?>
-                    <div class="col-lg-4 offset-lg-1">
-                        <div class="intro-share">
-                            <div class="share-btn">
-                                <a href="reserva.php?id=<?php echo $id ?>">Fazer Reserva</a>
-                            </div>
-
-                            <div class="share-icon">
-                                <a id="gosto" onclick="gosto(<?php echo $id ?>)" align="left">
-                                    <?php
-                                    // verifica se o utilizador gosta da foto
-                                    $sql = "select * from redes where redePerfilId=" . $_SESSION['id'] . " and redeEstabelecimentoId=" . $id . " and redeTipo='gosto'";
-                                    mysqli_query($con, $sql);
-                                    if (mysqli_affected_rows($con) > 0) {
-                                        ?>
-                                        <i class="fa fa-thumbs-up" style="color:blue"></i>
-                                        <?php
-                                    } else {
-                                        ?>
-                                        <i class="fa fa-thumbs-up"></i>
-                                        <?php
-                                    }
-                                    ?>
-                                </a>
-                                <a id="favorito" onclick="favorito(<?php echo $id ?>)" align="left">
-                                    <?php
-                                    // verifica se o utilizador gosta da foto
-                                    $sql = "select * from redes where redePerfilId=" . $_SESSION['id'] . " and redeEstabelecimentoId=" . $id . " and redeTipo='favorito'";
-                                    mysqli_query($con, $sql);
-                                    if (mysqli_affected_rows($con) > 0) {
-                                        ?>
-                                        <i class="fa fa-star-o" style="color:deeppink"></i>
-                                        <?php
-                                    } else {
-                                        ?>
-                                        <i class="fa fa-star-o"></i>
-                                        <?php
-                                    }
-                                    ?>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <?php
-                }
                 ?>
+                <?php
+                $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+                $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
+                $resultPerfis = mysqli_query($con, $sql);
+                $dadosPerfis = mysqli_fetch_array($resultPerfis);
+
+                ?>
+                <div class="col-lg-4 offset-lg-1">
+                    <div class="intro-share">
+                        <div class="share-btn">
+                            <a href="reserva.php?id=<?php echo $id ?>">Fazer Reserva</a>
+                        </div>
+                        <div class="share-icon">
+                            <a id="gosto" onclick="gosto(<?php echo $id ?>)" align="left">
+                                <?php
+                                // verifica se o utilizador gosta da foto
+                                $sql = "select * from redes where redePerfilId=" . $_SESSION['id'] . " and redeEstabelecimentoId=" . $id . " and redeTipo='gosto'";
+                                mysqli_query($con, $sql);
+                                if (mysqli_affected_rows($con) > 0) {
+                                    ?>
+                                    <i class="fa fa-thumbs-up" style="color:blue"></i>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <i class="fa fa-thumbs-up"></i>
+                                    <?php
+                                }
+                                ?>
+                            </a>
+                            <a id="favorito" onclick="favorito(<?php echo $id ?>)" align="left">
+                                <?php
+                                // verifica se o utilizador gosta da foto
+                                $sql = "select * from redes where redePerfilId=" . $_SESSION['id'] . " and redeEstabelecimentoId=" . $id . " and redeTipo='favorito'";
+                                mysqli_query($con, $sql);
+                                if (mysqli_affected_rows($con) > 0) {
+                                    ?>
+                                    <i class="fa fa-star-o" style="color:deeppink"></i>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <i class="fa fa-star-o"></i>
+                                    <?php
+                                }
+                                ?>
+                            </a>
+                        </div>
+                        <div id="status"></div>
+                        <fieldset class="ratings">
+                            <legend>Rating:</legend>
+                            <input type="radio" id="star5" name="ratings" value="5" onclick="rating(<?php echo $id ?>) ">
+                            <label for="star5" title="Muito Bom">5 stars</label>
+                            <input type="radio" id="star4" name="ratings" value="4" onclick="rating(<?php echo $id ?>) ">
+                            <label for="star4" title="Bom">4 stars</label>
+                            <input type="radio" id="star3" name="ratings" value="3" onclick="rating(<?php echo $id ?>) ">
+                            <label for="star3" title="Normal">3 stars</label>
+                            <input type="radio" id="star2" name="ratings" value="2" onclick="rating(<?php echo $id ?>) ">
+                            <label for="star2" title="Mau">2 stars</label>
+                            <input type="radio" id="star1" name="ratings" value="1" onclick="rating(<?php echo $id ?>) ">
+                            <label for="star1" title="Horrivel">1 star</label>
+                        </fieldset>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
             </div>
+            <?php
+            }
+            ?>
         </div>
+    </div>
     </div>
     <div class="about-item">
         <div class="container">
@@ -150,7 +165,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                         <div class="client-reviews mt-3">
                             <h3>Revisão</h3>
                             <div class="reviews-item">
-                            <div class="col-lg-12" id="tableContent" ></div>
+                                <div class="col-lg-12" id="tableContent"></div>
                             </div>
                         </div>
                     </div>
@@ -204,33 +219,18 @@ if (!isset($_SESSION['id'])) {
             <div class="col-lg-12 contact-form">
 
                 <!--<form method="post" class="" id="ratingForm">-->
-                    <div class="row">
-                        <div id="status"></div>
-                        <fieldset class="ratings">
-                            <legend>Rating:</legend>
-                            <input type="radio" id="star5" name="ratings" value="5">
-                            <label for="star5" title="Muito Bom">5 stars</label>
-                            <input type="radio" id="star4" name="ratings" value="4">
-                            <label for="star4" title="Bom">4 stars</label>
-                            <input type="radio" id="star3" name="ratings" value="3">
-                            <label for="star3" title="Normal">3 stars</label>
-                            <input type="radio" id="star2" name="ratings" value="2">
-                            <label for="star2" title="Mau">2 stars</label>
-                            <input type="radio" id="star1" name="ratings" value="1">
-                            <label for="star1" title="Horrivel">1 star</label>
-                        </fieldset>
-                        <div class="clearfix"></div>
+
+                <legend>Comentário:</legend>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <textarea id="comentarioTexto" name="reviewTexto" placeholder="Comentário"></textarea>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <textarea id="comentarioTexto" name="reviewTexto" placeholder="Comentário"></textarea>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 mt-3 centrinho">
+                        <button type="button" onclick="comentario(<?php echo $id ?>)">Fazer Comentário</button>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12 mt-3 centrinho">
-                            <button type="button" onclick="comentario(<?php echo $id ?>)">Fazer Comentário</button>
-                        </div>
-                    </div>
+                </div>
                 <!--</form>-->
             </div>
         </div>
@@ -254,5 +254,5 @@ if (!isset($_SESSION['id'])) {
 
 <?php
 
-bot(SINGLE,$id);
+bot(SINGLE, $id);
 ?>
