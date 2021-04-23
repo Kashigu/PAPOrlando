@@ -535,7 +535,14 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
                 fillTableReservas(this.value);
             });
             fillTableReservas();
-            <?php }
+            <?php
+            }if($menu==SINGLE){
+                ?>
+                comentario(this.value,<?php echo $id ?>);
+            });
+            comentario(<?php echo $id ?>);
+                <?php
+            }
             ?>
 
         })

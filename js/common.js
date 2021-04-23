@@ -96,7 +96,6 @@ function EditarTableDistritos() {
 }
 
 
-
 //--------------------------------------------------------------- FUNÇÕES PARA AS CATEGORIAS -------------------------------------------------------//
 function fillTableCategorias(txt = '') {
 
@@ -198,6 +197,7 @@ function fillTableEstabelecimentos(txt = '') {
     });
 
 }
+
 function DeleteEstabelecimentos(id) {  // abre o modal e injecta o ID
     $("#EstabelecimentoID").html(id);
     $.ajax({
@@ -273,18 +273,16 @@ function DeleteTableUtilizador() { // vai buscar o ID injectado e faz o DELETE
             perfil: parseInt($('#PerfilID').html())
         },
         success: function (result) {
-                fillTableUtilizador();
+            fillTableUtilizador();
         }
     });
 }
 
 
 //-----------Função para ver imagem--------//
-function preview_image(event)
-{
+function preview_image(event) {
     var reader = new FileReader();
-    reader.onload = function()
-    {
+    reader.onload = function () {
         var output = document.getElementById('output_image');
         output.src = reader.result;
     }
@@ -293,15 +291,15 @@ function preview_image(event)
 
 //-----------------------------------------------------------FUNÇÕES PARA O PROCURAR.PHP----------------------------------------------//
 
-function fillTableEstabelecimentosProcurar(txt = '',categoria=-1,distrito=-1) {
+function fillTableEstabelecimentosProcurar(txt = '', categoria = -1, distrito = -1) {
     //alert(txt + ' ' + categoria+' '+distrito);/*
     $.ajax({
         url: "AJAX/AJAXFillEstabelecimentosProcurar.php",
         type: "post",
         data: {
-            txt:txt ,
-            categoria:categoria,
-            distrito:distrito
+            txt: txt,
+            categoria: categoria,
+            distrito: distrito
         },
         success: function (result) {
             $('#tableContent').html(result);
@@ -313,14 +311,14 @@ function fillTableEstabelecimentosProcurar(txt = '',categoria=-1,distrito=-1) {
 
 
 //---------------------------------------------------FUNÇÕES PARA AS IMAGENS DE UM ESTABELECIMENTO---------------------------------------//
-function fillTableImagens(txt = '',id =-1) {
+function fillTableImagens(txt = '', id = -1) {
 
     $.ajax({
         url: "AJAX/AJAXFillimagens.php",
         type: "post",
         data: {
             txt: txt,
-            id:id
+            id: id
         },
         success: function (result) {
             $('#tableContent').html(result);
@@ -357,7 +355,7 @@ function DeleteTableImagem() {
             imagem: parseInt($('#ImagemID').html())
         },
         success: function (result) {
-            fillTableImagens('',result);
+            fillTableImagens('', result);
         }
     });
 
@@ -389,12 +387,14 @@ function mostrar() {
     $('#Favorito').hide();
     $('#Gosto').hide();
 }
+
 function mostrarGostos() {
     //$('#btnGosto').toggle();
     $('#Gosto').toggle();
     $('#Estabelecimento').hide();
     $('#Favorito').hide();
 }
+
 function mostrarFavoritos() {
     //$('#btnFavorito').toggle();
     $('#Favorito').toggle();
@@ -402,6 +402,7 @@ function mostrarFavoritos() {
     $('#Gosto').hide();
 
 }
+
 //------------------------------------------------------------Funcoes para ListaReserva ------------------------------------//
 function fillTableReservas(txt = '') {
     $.ajax({
@@ -417,6 +418,7 @@ function fillTableReservas(txt = '') {
 
 
 }
+
 function eliminaReserva(id) {  // abre o modal e injecta o ID
     $("#ReservaID").html(id);
     $.ajax({
@@ -434,6 +436,7 @@ function eliminaReserva(id) {  // abre o modal e injecta o ID
         }
     })
 }
+
 function DeleteTableReserva() {
     $('#staticBackdropDele').modal('toggle');
     $.ajax({
@@ -479,23 +482,24 @@ function EditarTableReservas() {
         }
     });
 }
+
 //--------------------------------------------------------------------Funçoes para REDES estabelecimentos -------------------------------//
 
 function gosto(id) {
     $.ajax({
-        url:"AJAX/AJAXPutLikeEstabelecimento.php",
-        type:"post",
-        data:{
-            idEstabelecimento:id
+        url: "AJAX/AJAXPutLikeEstabelecimento.php",
+        type: "post",
+        data: {
+            idEstabelecimento: id
         },
-        success:function (result){
+        success: function (result) {
             $.ajax({
-                url:"AJAX/AJAXGetGostoEstabelecimento.php",
-                type:"post",
-                data:{
-                    idEstabelecimento:id
+                url: "AJAX/AJAXGetGostoEstabelecimento.php",
+                type: "post",
+                data: {
+                    idEstabelecimento: id
                 },
-                success:function (result){
+                success: function (result) {
                     $('#gosto').html(result);
 
                 }
@@ -510,19 +514,19 @@ function gosto(id) {
 function favorito(id) {
 
     $.ajax({
-        url:"AJAX/AJAXPutFavoritoEstabelecimento.php",
-        type:"post",
-        data:{
-            idEstabelecimento:id
+        url: "AJAX/AJAXPutFavoritoEstabelecimento.php",
+        type: "post",
+        data: {
+            idEstabelecimento: id
         },
-        success:function (result){
+        success: function (result) {
             $.ajax({
-                url:"AJAX/AJAXGetFavoritoEstabelecimento.php",
-                type:"post",
-                data:{
-                    idEstabelecimento:id
+                url: "AJAX/AJAXGetFavoritoEstabelecimento.php",
+                type: "post",
+                data: {
+                    idEstabelecimento: id
                 },
-                success:function (result){
+                success: function (result) {
                     $('#favorito').html(result);
 
                 }
@@ -538,32 +542,31 @@ function mostra() {
     $('#btnComentar').hide();
 }
 
-function comentario(id,idCom){
-
-    $.ajax({
-        url:"AJAX/AJAXPutComentarioEstabelecimento.php",
-        type:"post",
-        data:{
-            idEstabelecimento:id,
-            txt: $('#comentarioTexto').val()
-        },
-        success:function (result){
+function comentario(id) {
 
             $.ajax({
-                url:"AJAX/AJAXGetComentarioEstabelecimento.php",
-                type:"post",
-                data:{
-                    idEstabelecimento:id,
-                    idCom:idCom
+                url: "AJAX/AJAXPutComentarioEstabelecimento.php",
+                type: "post",
+                data: {
+                    idEstabelecimento: id,
+                    txt: $('#comentarioTexto').val()
                 },
-                success:function (result){
+                success: function (result) {
 
-                    $('#comentar').html(result);
+                    $.ajax({
+                        url: "AJAX/AJAXFillComentarios.php",
+                        type: "post",
+                        data: {
+                            idEstabelecimento: id,
+                        },
+                        success: function (result) {
+
+                            $('#tableContent').html(result);
+
+                        }
+                    });
 
                 }
             });
 
         }
-    });
-
-}
