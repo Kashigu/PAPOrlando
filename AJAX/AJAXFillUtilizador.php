@@ -13,7 +13,7 @@ $result = mysqli_query($con, $sql);
 
 
 
-    <div class="container">
+    <div class="container about-section about-item client-reviews">
 
             <table class='table table-striped table-hover' width="100%">
                 <tr>
@@ -29,11 +29,11 @@ $result = mysqli_query($con, $sql);
                 ?>
                 <tr id="<?php echo $dados['perfilId']; ?>">
                     <td data-target="perfilId"><?php echo $dados['perfilId'] ?></td>
-                    <td data-target="perfilNome" ><?php echo $dados['perfilNome'] ?></td>
+                    <td ><a href="../novoperfil.php?id= <?php echo $dados['perfilId'] ?>"> <?php echo $dados['perfilNome'] ?></td></a>
                     <td data-target="perfilImagem"><img width='100' height="100" src="../<?php echo $dados['perfilAvatar'] ?>"></td>
                     <td data-target="perfilEmail" ><?php echo $dados['perfilEmail'] ?></td>
                     <td data-target="perfilEstado" ><?php echo $dados['perfilEstado'] ?></td>
-                    <td><a href="../novoperfil.php?id=<?php echo $dados['perfilId'];?>"> <i
+                    <td><a href="../DefPerfil.php?id=<?php echo $dados['perfilId'];?>"> <i
                                     class="fa fa-edit text-primary"></i></a></td>
 
                     <td><a href="ativarUtilizador.php?id=<?php echo $dados['perfilId'];?>"> Ativar </a></td>
