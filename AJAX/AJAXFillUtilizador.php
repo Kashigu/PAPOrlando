@@ -21,6 +21,7 @@ $result = mysqli_query($con, $sql);
                     <th>Nome</th>
                     <th>Imagem</th>
                     <th>Email</th>
+                    <th>Estado</th>
                     <th colspan="4" class="centertext">Opções</th>
                 </tr>
                 <?php
@@ -31,6 +32,7 @@ $result = mysqli_query($con, $sql);
                     <td data-target="perfilNome" ><?php echo $dados['perfilNome'] ?></td>
                     <td data-target="perfilImagem"><img width='100' height="100" src="../<?php echo $dados['perfilAvatar'] ?>"></td>
                     <td data-target="perfilEmail" ><?php echo $dados['perfilEmail'] ?></td>
+                    <td data-target="perfilEstado" ><?php echo $dados['perfilEstado'] ?></td>
                     <td><a href="../novoperfil.php?id=<?php echo $dados['perfilId'];?>"> <i
                                     class="fa fa-edit text-primary"></i></a></td>
 
