@@ -48,8 +48,8 @@ $result = mysqli_query($con, $sql);
                     <td><?php echo $dados['perfilNome'] ?></td>
                     <td><?php echo $dados['categoriaNome'] ?></td>
                     <td><a href="../definicoesEstabelecimento.php?id=<?php echo $dados['estabelecimentoId'];?>"> <i
-                                    class="fas fa-edit text-primary"></i></a></td>
-                    <td><a onclick="DeleteEstabelecimentos(<?php echo $dados['estabelecimentoId'];?>)"> <i class="fas fa-trash  text-danger"></i></a></td>
+                                    class="fa fa-edit text-primary"></i></a></td>
+                    <td><a onclick="DeleteEstabelecimentos(<?php echo $dados['estabelecimentoId'];?>)"> <i class="fa fa-trash  text-danger"></i></a></td>
 
                 </tr>
                 <?php

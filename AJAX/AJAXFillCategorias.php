@@ -31,8 +31,8 @@ $result = mysqli_query($con, $sql);
             <td data-target="categoriaNome"><?php echo $dados['categoriaNome'] ?></td>
             <td data-target="categoriaImagem"><img width='100' height="100" src="../<?php echo $dados['categoriaImagemURL'] ?>"></td>
             <td><a onclick="editaCategoria(<?php echo $dados['categoriaId'];?>)" ><i
-                        class="fas fa-edit text-primary"></i></a></td>
-            <td><a onclick="eliminaCategorias(<?php echo $dados['categoriaId'];?>)"> <i class="fas fa-trash  text-danger"></i></a></td>
+                        class="fa fa-edit text-primary"></i></a></td>
+            <td><a onclick="eliminaCategorias(<?php echo $dados['categoriaId'];?>)"> <i class="fa fa-trash  text-danger"></i></a></td>
         </tr>
         <?php
     }

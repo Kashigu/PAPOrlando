@@ -32,8 +32,8 @@ $result = mysqli_query($con, $sql);
                     <td data-target="distritoId"><?php echo $dados['distritoId'] ?></td>
                     <td data-target="distritoNome" ><?php echo $dados['distritoNome'] ?></td>
                     <td><a  onclick="editaDistrito(<?php echo $dados['distritoId'];?>)"> <i
-                                    class="fas fa-edit text-primary"></i></a></td>
-                    <td><a  onclick="eliminaDistrito(<?php echo $dados['distritoId'];?>)"> <i class="fas fa-trash  text-danger"></i></a></td>
+                                    class="fa fa-edit text-primary"></i></a></td>
+                    <td><a  onclick="eliminaDistrito(<?php echo $dados['distritoId'];?>)"> <i class="fa fa-trash  text-danger"></i></a></td>
                 </tr>
                     <?php
                 }

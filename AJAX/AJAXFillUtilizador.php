@@ -21,7 +21,7 @@ $result = mysqli_query($con, $sql);
                     <th>Nome</th>
                     <th>Imagem</th>
                     <th>Email</th>
-                    <th colspan="2" class="centertext">Opções</th>
+                    <th colspan="4" class="centertext">Opções</th>
                 </tr>
                 <?php
                 while ($dados = mysqli_fetch_array($result)) {
@@ -32,8 +32,11 @@ $result = mysqli_query($con, $sql);
                     <td data-target="perfilImagem"><img width='100' height="100" src="../<?php echo $dados['perfilAvatar'] ?>"></td>
                     <td data-target="perfilEmail" ><?php echo $dados['perfilEmail'] ?></td>
                     <td><a href="../novoperfil.php?id=<?php echo $dados['perfilId'];?>"> <i
-                                    class="fas fa-edit text-primary"></i></a></td>
-                    <td><a onclick="DeleteUtilizador(<?php echo $dados['perfilId'];?>)"> <i class="fas fa-trash  text-danger"></i></a></td>
+                                    class="fa fa-edit text-primary"></i></a></td>
+
+                    <td><a href="ativarUtilizador.php?id=<?php echo $dados['perfilId'];?>"> Ativar </a></td>
+                    <td><a href="desativarUtilizador.php?id=<?php echo $dados['perfilId'];?>"> Desativar</a></td>
+                    <td><a onclick="DeleteUtilizador(<?php echo $dados['perfilId'];?>)"> <i class="fa fa-trash  text-danger"></i></a></td>
                 </tr>
                     <?php
                 }

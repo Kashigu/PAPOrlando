@@ -31,8 +31,8 @@ while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
                         <td><?php echo $dadosEstabelecimentos['reservaData'] ?></td>
                         <td><?php echo $dadosEstabelecimentos['reservaDescricao'] ?></td>
                         <td class="centertext"><a onclick="editaReserva(<?php echo $dadosEstabelecimentos['reservaId'];?>)" ><i
-                                        class="fas fa-edit text-primary"></i></a></td>
-                        <td class="centertext"><a onclick="eliminaReserva(<?php echo $dadosEstabelecimentos['reservaId'];?>)"> <i class="fas fa-trash  text-danger"></i></a></td>
+                                        class="fa fa-edit text-primary"></i></a></td>
+                        <td class="centertext"><a onclick="eliminaReserva(<?php echo $dadosEstabelecimentos['reservaId'];?>)"> <i class="fa fa-trash  text-danger"></i></a></td>
                     </tr>
                 </table>
             </div>
