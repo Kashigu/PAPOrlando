@@ -7,6 +7,7 @@
     <file url="file://$PROJECT_DIR$/AJAX/AJAXFillDistritos.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXFillEstabelecimentosProcurar.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXFillReservas.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AJAX/AJAXFillReservasAdmin.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXFillUtilizador.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXFillimagens.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXGetComentarioEstabelecimento.php" charset="UTF-8" />
@@ -16,6 +17,7 @@
     <file url="file://$PROJECT_DIR$/AJAX/AJAXGetNameEstabelecimentos.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXGetNameImagens.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXGetNameReservas.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AJAX/AJAXGetRatingEstabelecimento.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXPutComentarioEstabelecimento.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXPutFavoritoEstabelecimento.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXPutLikeEstabelecimento.php" charset="UTF-8" />

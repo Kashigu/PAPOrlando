@@ -1,103 +1,32 @@
 <?php
 include_once("includes/body.inc.php");
 toposingle();
+$id = intval($_GET['id']);
 
+$sql="select * from estabelecimentos where estabelecimentoId=".$id;
+
+$resultEstabelecimentos = mysqli_query($con, $sql);
+$dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 ?>
 
 <section class="contact-section spad">
 
     <div class="container">
-        <h3 class="mt-2">Ratoeira</h3>
+        <h3 class="mt-2"><?php echo $dadosEstabelecimentos['estabelecimentoNome']  ?></h3>
         <div class="row mt-2">
 
             <div class="col-3 mt-2">
 
-                <a href="single-listing.php"><img src="img/arrange/ratoeira1.jpg" ></a>
+                <a href="criado.php?id=<?php echo $dadosEstabelecimentos['estabelecimentoId'] ?>"><img src="<?php echo $dadosEstabelecimentos['estabelecimentoMiniaturaURL'] ?>" ></a>
             </div>
-            <div class="col-9 mt-2">
-                <table class="table table-striped table-hover">
-                    <tr>
-                        <th width="15%">Data</th>
-                        <th width="10%">Hora</th>
-                        <th colspan="3">Observações</th>
-                    </tr>
-                    <tr>
-                        <td>12-02-2021</td>
-                        <td>13:00</td>
-                        <td>Mesa para quatro</td>
-                        <td width="5%">Aceitar</td>
-                        <td width="5%">Eliminar</td>
-                    </tr>
-                    <tr>
-                        <td>12-02-2021</td>
-                        <td>13:00</td>
-                        <td>Mesa para quatro</td>
-                        <td width="5%">Aceitar</td>
-                        <td width="5%">Eliminar</td>
-                    </tr>
-                    <tr>
-                        <td>12-02-2021</td>
-                        <td>13:00</td>
-                        <td>Mesa para quatro</td>
-                        <td width="5%">Aceitar</td>
-                        <td width="5%">Eliminar</td>
-                    </tr>
-                    <tr>
-                        <td>12-02-2021</td>
-                        <td>13:00</td>
-                        <td>Mesa para quatro</td>
-                        <td width="5%">Aceitar</td>
-                        <td width="5%">Eliminar</td>
-                    </tr>
-                    <tr>
-                        <td>12-02-2021</td>
-                        <td>13:00</td>
-                        <td>Mesa para quatro</td>
-                        <td width="5%">Aceitar</td>
-                        <td width="5%">Eliminar</td>
-                    </tr>
-                    <tr>
-                        <td>12-02-2021</td>
-                        <td>13:00</td>
-                        <td>Mesa para quatro</td>
-                        <td width="5%">Aceitar</td>
-                        <td width="5%">Eliminar</td>
-                    </tr>
-                    <tr>
-                        <td>12-02-2021</td>
-                        <td>13:00</td>
-                        <td>Mesa para quatro</td>
-                        <td width="5%">Aceitar</td>
-                        <td width="5%">Eliminar</td>
-                    </tr>
-                    <tr>
-                        <td>12-02-2021</td>
-                        <td>13:00</td>
-                        <td>Mesa para quatro</td>
-                        <td width="5%">Aceitar</td>
-                        <td width="5%">Eliminar</td>
-                    </tr>
-                    <tr>
-                        <td>12-02-2021</td>
-                        <td>13:00</td>
-                        <td>Mesa para quatro</td>
-                        <td width="5%">Aceitar</td>
-                        <td width="5%">Eliminar</td>
-                    </tr>
-                    <tr>
-                        <td>12-02-2021</td>
-                        <td>13:00</td>
-                        <td>Mesa para quatro</td>
-                        <td width="5%">Aceitar</td>
-                        <td width="5%">Eliminar</td>
-                    </tr>
-                </table>
+            <div class="col-9 mt-2" id="tableContent">
+
             </div>
         </div>
     </div>
 </section>
 
 <?php
-bot();
+bot(RESERVASADMIN,$id);
 ?>
 

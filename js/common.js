@@ -482,6 +482,23 @@ function EditarTableReservas() {
         }
     });
 }
+//------------------------------------------------------------Funcoes para ListaReservaAdmin ------------------------------------//
+function fillTableReservasAdmin(id = -1) {
+    $.ajax({
+        url: "AJAX/AJAXFillReservasAdmin.php",
+        type: "post",
+        data: {
+            id:id
+        },
+        success: function (result) {
+            $('#tableContent').html(result);
+        }
+    });
+
+
+}
+
+
 
 //--------------------------------------------------------------------Funçoes para REDES estabelecimentos -------------------------------//
 
@@ -542,7 +559,7 @@ function mostra() {
     $('#btnComentar').hide();
 }
 
-function comentario(id) {
+function comentario(id=-1) {
 
             $.ajax({
                 url: "AJAX/AJAXPutComentarioEstabelecimento.php",
@@ -572,29 +589,28 @@ function comentario(id) {
         }
 
 function rating(id) {
-
-  alert("aqui")
-
-   /* $.ajax({
-        url: "AJAX/AJAXPutLikeEstabelecimento.php",
+    $.ajax({
+        url: "AJAX/AJAXPutRatingEstabelecimento.php",
         type: "post",
         data: {
-            idEstabelecimento: id
+            idRede: id
         },
         success: function (result) {
             $.ajax({
-                url: "AJAX/AJAXGetGostoEstabelecimento.php",
+                url: "AJAX/AJAXGetRatingEstabelecimento.php",
                 type: "post",
                 data: {
-                    idEstabelecimento: id
+                    idRede: id,
+                    valor: $('#star5').val()
                 },
                 success: function (result) {
-                    $('#gosto').html(result);
+                    $('#star5').html(result);
 
                 }
             });
 
+
         }
-    });*/
+    });
 
 }

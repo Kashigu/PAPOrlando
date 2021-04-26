@@ -544,9 +544,16 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
             });
             comentario(<?php echo $id ?>);
                 <?php
+            }if($menu==RESERVASADMIN){
+            ?>
+            $('#tableContent').keyup(function () {
+                fillTableReservasAdmin(this.value,<?php echo $id ?>);
+
+            });
+            fillTableReservasAdmin(<?php echo $id ?>);
+            <?php
             }
             ?>
-
         })
     </script>
 </body>

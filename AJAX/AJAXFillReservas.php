@@ -42,5 +42,3 @@ while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
 }
 ?>
 </table>
-<?php
-?>
