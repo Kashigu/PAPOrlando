@@ -16,18 +16,8 @@ $resultComentarios = mysqli_query($con, $sql);
 
 while ($dadosComentarios = mysqli_fetch_array($resultComentarios)) {
     ?>
-    <div class="rating">
-        <?php
-        $dadosRatings = mysqli_fetch_array($resultRatings);
-        for ($i = 1; $i <= $dadosRatings['ratingValor']; $i++) {
-            ?>
-            <i class="fa fa-star"> </i>
-            <?php
-        }
-        ?>
-    </div>
     <div class="client-text mt-2">
-        <h5><?php echo $dadosComentarios['perfilNome'] ?></h5>
+        <a href="novoperfil.php?id=<?php echo $dadosComentarios['perfilId'] ?>" <h5><?php echo $dadosComentarios['perfilNome'] ?></h5></a>
     </div>
     <p class="mt-3"><?php echo $dadosComentarios['comentarioTexto'] ?></p>
     <hr>
