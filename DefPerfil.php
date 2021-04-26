@@ -41,13 +41,13 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                             <input type="text" value="<?php echo $dadosPerfis['perfilLocalidade'] ?>" placeholder="Localidade" id="perfilLocalidade" name="perfilLocalidade">
                         </div>
                         <div class="col-lg-6">
-                            <input type="password" placeholder="Atual Palavra-passe">
+                            <input type="password"  name="perfilOld" placeholder="Atual Palavra-passe">
                         </div>
                         <div class="col-lg-6">
-                            <input type="password" placeholder="Nova Palavra-passe">
+                            <input type="password" name="perfilPalavra" placeholder="Nova Palavra-passe">
                         </div>
                         <div class="col-lg-6">
-                            <input type="password" placeholder="Comfirmação Nova Palavra-passe">
+                            <input type="password" name="ComfirmaperfilPalavra" placeholder="Comfirmação Nova Palavra-passe">
                         </div>
                         <div class="col-lg-4 meio">
                             <button type="submit">Confirmar alterações </button>
