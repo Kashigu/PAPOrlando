@@ -8,8 +8,30 @@ include_once("config.inc.php");
 $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
 $con->set_charset("utf8");
 
-function toposingle($menu=PORTUGAL)
+if (isset($_GET['msg'])) {
+
+    alert("Nome de utilizador ou palavra-passe errada, tente de novo.");
+}
+if (isset($_GET['message'])) {
+
+    alertinativo("Esta conta foi desativada.");
+}
+function alert($msg)
 {
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+}
+
+function alertinativo($message)
+{
+    echo "<script type='text/javascript'>alert('$message');</script>";
+}
+
+function toposingle($menu=PORTUGAL)
+
+{
+
+
+
     ?>
 
     <!DOCTYPE html>
@@ -388,11 +410,11 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
                         <div class="row">
                             <div class="modal-body">
                                 <div class="col-lg-6 mt-3 meio">
-                                    <input type="text" id="utilizador" name="utilizador"
+                                    <input type="text" id="utilizador" name="nome"
                                            placeholder="Nome de Utilizador">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
-                                    <input type="password" id="id" name="id" placeholder="Palavra-Passe">
+                                    <input type="password" id="id" name="password" placeholder="Palavra-Passe">
                                 </div>
                             </div>
                         </div>

@@ -1,15 +1,29 @@
 <?php
 include_once("includes/body.inc.php");
 
-//$nome=addslashes($_POST['utilizador']);
-$id=intval($_POST['id']);
-$sql="select * from perfis where perfilId=$id";
+
+$sql="select * from perfis where perfilId";
 $result=mysqli_query($con,$sql);
-$dados=mysqli_fetch_array($result);
-session_start();
-$_SESSION['id']=$dados['perfilId'];
-$_SESSION['nome']=$dados['perfilNome'];
-
-
-header("location:index.php");
+$nome=addslashes($_POST['nome']);
+$password=addslashes($_POST['password']);
+if ($nome === 'admin' AND $password ==='admin'){
+    header("location:admin/index.php");
+}else{
+    while ($dados=mysqli_fetch_array($result)){
+        if ($nome === $dados['perfilNome'] AND $password === $dados['perfilPassword'] AND $dados['perfilEstado'] == 'ativo') {
+            session_start();
+            $_SESSION['id'] = $dados['perfilId'];
+            $_SESSION['nome'] = $dados['perfilNome'];
+            header("location:index.php");
+        }else if($nome === $dados['perfilNome'] AND $password === $dados['perfilPassword'] AND $dados['perfilEstado'] == 'inativo'){{
+            $verificacao='sim';
+            header("location:index.php?message");
+        }
+        }
+        else if(!isset($_SESSION['id']) AND !isset($verificacao)){{
+            header("location:index.php?msg");
+        }
+        }
+    }}
+bot();
 ?>
