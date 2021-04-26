@@ -95,7 +95,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                             <input type="radio" id="star4" name="ratings" value="4" onclick="rating(<?php echo $id ?>) ">
                             <label for="star4" title="Bom">4 stars</label>
                             <input type="radio" id="star3" name="ratings" value="3" onclick="rating(<?php echo $id ?>) ">
-                            <label for="star3" title="Normal">3 stars</label>
+                            <label for="star3" title="Neutro">3 stars</label>
                             <input type="radio" id="star2" name="ratings" value="2" onclick="rating(<?php echo $id ?>) ">
                             <label for="star2" title="Mau">2 stars</label>
                             <input type="radio" id="star1" name="ratings" value="1" onclick="rating(<?php echo $id ?>) ">
