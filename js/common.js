@@ -559,6 +559,21 @@ function mostra() {
     $('#btnComentar').hide();
 }
 
+
+function listaComentarios(id){
+    $.ajax({
+        url: "AJAX/AJAXFillComentarios.php",
+        type: "post",
+        data: {
+            idEstabelecimento: id,
+        },
+        success: function (result) {
+
+            $('#tableContent').html(result);
+
+        }
+    });
+}
 function comentario(id=-1) {
 
             $.ajax({
@@ -570,18 +585,7 @@ function comentario(id=-1) {
                 },
                 success: function (result) {
 
-                    $.ajax({
-                        url: "AJAX/AJAXFillComentarios.php",
-                        type: "post",
-                        data: {
-                            idEstabelecimento: id,
-                        },
-                        success: function (result) {
-
-                            $('#tableContent').html(result);
-
-                        }
-                    });
+                   listaComentarios(id);
 
                 }
             });

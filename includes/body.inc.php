@@ -560,11 +560,7 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
             <?php
             }if($menu==SINGLE){
                 ?>
-            $('#tableContent').(function () {
-                comentario(this.value,<?php echo $id ?>);
-
-            });
-            comentario(<?php echo $id ?>);
+                listaComentarios(<?php echo $id ?>);
                 <?php
             }if($menu==RESERVASADMIN){
             ?>
