@@ -36,10 +36,26 @@ $result = mysqli_query($con, $sql);
                     <td data-target="perfilEstado" ><?php echo $dados['perfilAdmin'] ?></td>
                     <td><a href="../DefPerfil.php?id=<?php echo $dados['perfilId'];?>"> <i
                                     class="fa fa-edit text-primary"></i></a></td>
+                    <?php
+                    if ($dados['perfilEstado'] == 'inativo'){
+                    ?>
                     <td><a href="ativarUtilizador.php?id=<?php echo $dados['perfilId'];?>"> Ativar </a></td>
+                    <?php
+                    } else if ($dados['perfilEstado'] == 'ativo') {
+                    ?>
                     <td><a href="desativarUtilizador.php?id=<?php echo $dados['perfilId'];?>"> Desativar</a></td>
-                    <td><a href="ativarAdmin.php?id=<?php echo $dados['perfilId'];?>"> Admin </a></td>
-                    <td><a href="desativarAdmin.php?id=<?php echo $dados['perfilId'];?>"> Utilizador</a></td>
+                    <?php
+                    }
+                    if ($dados['perfilAdmin'] == 'admin'){
+                    ?>
+                    <td><a href="ativarAdmin.php?id=<?php echo $dados['perfilId'];?>"> Tornar Administrador </a></td>
+                    <?php
+                    } else if ($dados['perfilAdmin'] == 'utilizador') {
+                    ?>
+                    <td><a href="desativarAdmin.php?id=<?php echo $dados['perfilId'];?>"> Tornar Utilizador</a></td>
+                    <?php
+                    }
+                    ?>
                     <td><a onclick="DeleteUtilizador(<?php echo $dados['perfilId'];?>)"> <i class="fa fa-trash  text-danger"></i></a></td>
 
                 </tr>
