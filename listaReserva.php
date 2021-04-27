@@ -1,6 +1,7 @@
 <?php
 include_once("includes/body.inc.php");
 toposingle();
+$id = intval($_GET['id']);
 ?>
 
 <section class="contact-section search-filter spad">
@@ -89,5 +90,5 @@ toposingle();
 </div>
 </div>
 <?php
-bot(RESERVAS);
+bot(RESERVAS,$id);
 ?>

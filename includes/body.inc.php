@@ -622,9 +622,9 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
             if ($menu == RESERVAS){
             ?>
             $('#search').keyup(function () {
-                fillTableReservas(this.value);
+                fillTableReservas(this.value,<?php echo $id ?>);
             });
-            fillTableReservas();
+            fillTableReservas('',<?php echo $id ?>);
             <?php
             }if($menu == SINGLE){
             ?>

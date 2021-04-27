@@ -404,12 +404,13 @@ function mostrarFavoritos() {
 }
 
 //------------------------------------------------------------Funcoes para ListaReserva ------------------------------------//
-function fillTableReservas(txt = '') {
+function fillTableReservas(txt = '',id) {
     $.ajax({
         url: "AJAX/AJAXFillReservas.php",
         type: "post",
         data: {
-            txt: txt
+            txt: txt,
+            id:id
         },
         success: function (result) {
             $('#tableContent').html(result);
@@ -437,7 +438,7 @@ function eliminaReserva(id) {  // abre o modal e injecta o ID
     })
 }
 
-function DeleteTableReserva() {
+function DeleteTableReserva(id) {                                           // Problemas com o id quando confirmo o delete //
     $('#staticBackdropDele').modal('toggle');
     $.ajax({
         url: "AJAX/AJAXDeleteReservas.php",
@@ -446,7 +447,7 @@ function DeleteTableReserva() {
             categoria: parseInt($('#ReservaID').html())
         },
         success: function (result) {
-            fillTableReservas();
+            fillTableReservas(id);
         }
     });
 }

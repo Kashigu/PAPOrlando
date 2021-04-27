@@ -159,25 +159,36 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                 </div>
                 <?php
                 if (isset ($_SESSION['id'])) {
-                    if ($_SESSION['id'] == $id) {
-                        $idUti = $_SESSION['id'];
-                        $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-                        $sql = "select * from perfis where perfilId=" . $idUti;
-                        $resultPerfis = mysqli_query($con, $sql);
-                        $dadosPerfis = mysqli_fetch_array($resultPerfis);
+                    $idUti = $_SESSION['id'];
+                    $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+                    $sql = "select * from perfis where perfilId=" . $idUti;
+                    $resultPerfis = mysqli_query($con, $sql);
+                    $dadosPerfis = mysqli_fetch_array($resultPerfis);
+                    if ($_SESSION['id'] == $id or $dadosPerfis['perfilAdmin'] == "admin") {
 
 
                         ?>
                         <div class="col-lg-4 ">
                             <div class="intro-share">
                                 <div class="share-btn">
-                                    <a href="DefPerfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Definições</a>
-                                    <a href="listaReserva.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Ver
+                                    <?php
+                                    if ($_SESSION['id'] == $id) {
+                                        ?>
+                                        <a href="DefPerfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Definições</a>
+                                        <?php
+                                    }
+                                    ?>
+                                    <a href="listaReserva.php?id=<?php echo $id ?>">Ver
                                         Reservas</a>
-                                    <a class="mt-2"
-                                       href="criarEstabelecimento.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Criar
-                                        Estabelecimento</a>
-
+                                    <?php
+                                    if ($_SESSION['id'] == $id) {
+                                        ?>
+                                        <a class="mt-2"
+                                           href="criarEstabelecimento.php?id=<?php echo $dadosPerfis['perfilId'] ?>">Criar
+                                            Estabelecimento</a>
+                                        <?php
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div>

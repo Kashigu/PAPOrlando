@@ -58,5 +58,5 @@ echo $sql="Update reservas set reservaDescricao='$reserva' where reservaId=$id";
 
 $result = mysqli_query($con, $sql);
 mysqli_query($con,$sql);
-header("location:listaReserva.php?id=$_SESSION");
+header("location:listaReserva.php?id={$id}");
 ?>

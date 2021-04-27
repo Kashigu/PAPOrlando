@@ -2,9 +2,10 @@
 include_once("../includes/body.inc.php");
 session_start();
 $txt = addslashes($_POST['txt']);
+$id = intval($_POST['id']);
 $sql = "Select * from reservas inner join estabelecimentos on reservaEstabelecimentoId=estabelecimentoId
                                inner join perfis on reservaPerfilId=perfilId
-                               where perfilId=".$_SESSION['id']." and estabelecimentoNome LIKE '%$txt%'";
+                               where perfilId=".$id." and estabelecimentoNome LIKE '%$txt%'";
 
 $resultEstabelecimentos = mysqli_query($con, $sql);
 
