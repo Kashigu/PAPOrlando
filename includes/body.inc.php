@@ -109,8 +109,8 @@ function toposingle($menu = PORTUGAL)
                         <li <?php if ($menu == PROCURAR) echo "class=\"active\""; ?>><a href="procurar.php">Procurar</a>
                     </ul>
                     <?php
-                    */if ($_SESSION['id'] and $dadosPerfis['perfilAdmin'] == 'admin') ;                     // Precisa saber a diferença entre admin e utilizador //
-                    {
+                    */if ($_SESSION['id'] and $dadosPerfis['perfilAdmin'] == 'admin') {
+
                         ?>
                         <ul>
                             <li <?php if ($menu == PORTUGAL) echo "class=\"active\""; ?>><a
@@ -121,7 +121,7 @@ function toposingle($menu = PORTUGAL)
                             <li><a href="admin/index.php">Gestão do Site</a>
                         </ul>
                         <?php
-                    } if (($_SESSION['id']) and $dadosPerfis['perfilAdmin'] == 'utilizador') {
+                    } else if (($_SESSION['id']) and $dadosPerfis['perfilAdmin'] == 'utilizador') {
 
                         ?>
                         <ul>
@@ -130,7 +130,8 @@ function toposingle($menu = PORTUGAL)
                             <li <?php if ($menu == PROCURAR) echo "class=\"active\""; ?>><a href="procurar.php">Procurar</a>
                         </ul>
                             <?php
-                    }
+
+                }
                 }
                 ?>
             </nav>
