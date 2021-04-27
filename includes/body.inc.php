@@ -26,10 +26,9 @@ function alertinativo($message)
     echo "<script type='text/javascript'>alert('$message');</script>";
 }
 
-function toposingle($menu=PORTUGAL)
+function toposingle($menu = PORTUGAL)
 
 {
-
 
 
     ?>
@@ -69,7 +68,7 @@ function toposingle($menu=PORTUGAL)
         </style>
     </head>
 
-    <body >
+    <body>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -82,70 +81,120 @@ function toposingle($menu=PORTUGAL)
                 <a href="index.php"><img src="img/logo.png" alt=""></a>
             </div>
             <nav class="main-menu mobile-menu">
-                <ul>
-                    <li <?php if ($menu == PORTUGAL) echo "class=\"active\""; ?>><a href="index.php">Portugal</a></li>
-                    <li <?php if ($menu == PROCURAR) echo "class=\"active\""; ?>><a href="procurar.php">Procurar</a>
-                </ul>
+                <?php
+                session_start();
+                if (!isset($_SESSION['id'])) {
+
+                    ?>
+                    <ul>
+                        <li <?php if ($menu == PORTUGAL) echo "class=\"active\""; ?>><a href="index.php">Portugal</a>
+                        </li>
+                        <li <?php if ($menu == PROCURAR) echo "class=\"active\""; ?>><a href="procurar.php">Procurar</a>
+                    </ul>
+
+                    <?php
+
+                } else {
+
+                    $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+                    $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
+                    $resultPerfis = mysqli_query($con, $sql);
+                    $dadosPerfis = mysqli_fetch_array($resultPerfis);
+                    /*($_SESSION['id']) and $dadosPerfis['perfilAdmin'] == 'utilizador';
+
+                    ?>
+                    <ul>
+                        <li <?php if ($menu == PORTUGAL) echo "class=\"active\""; ?>><a href="index.php">Portugal</a>
+                        </li>
+                        <li <?php if ($menu == PROCURAR) echo "class=\"active\""; ?>><a href="procurar.php">Procurar</a>
+                    </ul>
+                    <?php
+                    */if ($_SESSION['id'] and $dadosPerfis['perfilAdmin'] == 'admin') ;                     // Precisa saber a diferença entre admin e utilizador //
+                    {
+                        ?>
+                        <ul>
+                            <li <?php if ($menu == PORTUGAL) echo "class=\"active\""; ?>><a
+                                        href="index.php">Portugal</a>
+                            </li>
+                            <li <?php if ($menu == PROCURAR) echo "class=\"active\""; ?>><a
+                                        href="procurar.php">Procurar</a>
+                            <li><a href="admin/index.php">Gestão do Site</a>
+                        </ul>
+                        <?php
+                    } if (($_SESSION['id']) and $dadosPerfis['perfilAdmin'] == 'utilizador') {
+
+                        ?>
+                        <ul>
+                            <li <?php if ($menu == PORTUGAL) echo "class=\"active\""; ?>><a href="index.php">Portugal</a>
+                            </li>
+                            <li <?php if ($menu == PROCURAR) echo "class=\"active\""; ?>><a href="procurar.php">Procurar</a>
+                        </ul>
+                            <?php
+                    }
+                }
+                ?>
             </nav>
         </div>
         <?php
-        session_start();
+
         if (!isset($_SESSION['id'])) {
 
-            ?>
-            <div class="header-right">
+        ?>
+        <div class="header-right">
             <div class="user-access">
                 <a data-toggle="modal" data-target="#registar">Registar/</a>
                 <a data-toggle="modal" data-target="#login">Iniciar Sessão</a>
                 <div id="mobile-menu-wrap"></div>
             </div>
             <?php
-        } else {
-            ?>
-            <?php
-            $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-            $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
-            $resultPerfis = mysqli_query($con, $sql);
-            $dadosPerfis = mysqli_fetch_array($resultPerfis)
-            ?>
-            <div class="header-right">
-            <div class="user-access">
-                <a  data-toggle="modal" data-target="#sair">Desconectar</a>
+            } else {
+                ?>
+                <?php
+                $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+                $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
+                $resultPerfis = mysqli_query($con, $sql);
+                $dadosPerfis = mysqli_fetch_array($resultPerfis)
+                ?>
+                <div class="header-right">
+                <div class="user-access">
+                    <a data-toggle="modal" data-target="#sair">Desconectar</a>
 
-                <a href="novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">
-                    <img src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
-                <div id="mobile-menu-wrap"></div>
-            </div>
-            <?php
-            $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-            $sqlEst = "select * from estabelecimentos inner join perfis on estabelecimentoPerfilId=perfilId inner join categorias on estabelecimentoCategoriaId=categoriaId where perfilId=" . $_SESSION['id']." order by estabelecimentoNome";
-            $resultEstab = mysqli_query($con, $sqlEst);
-            $sql="select * from estabelecimentos inner join perfis on estabelecimentoPerfilId=perfilId where perfilId=" . $_SESSION['id'];
-            $result= mysqli_query($con, $sql);
-            $dadosEstab= mysqli_fetch_array($result);
-            if ($_SESSION['id'] == $dadosEstab['estabelecimentoPerfilId']) { ?>
+                    <a href="novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">
+                        <img src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
+                    <div id="mobile-menu-wrap"></div>
+                </div>
+                <?php
+                $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+                $sqlEst = "select * from estabelecimentos inner join perfis on estabelecimentoPerfilId=perfilId inner join categorias on estabelecimentoCategoriaId=categoriaId where perfilId=" . $_SESSION['id'] . " order by estabelecimentoNome";
+                $resultEstab = mysqli_query($con, $sqlEst);
+                $sql = "select * from estabelecimentos inner join perfis on estabelecimentoPerfilId=perfilId where perfilId=" . $_SESSION['id'];
+                $result = mysqli_query($con, $sql);
+                $dadosEstab = mysqli_fetch_array($result);
+                if ($_SESSION['id'] == $dadosEstab['estabelecimentoPerfilId']) { ?>
 
                     <nav class="arrange-select nice-select2 mobile-menu header-right">
                         <select name="estabe" id="estabe">
                             <?php
                             while ($dadosEstab = mysqli_fetch_array($resultEstab)) {
                                 ?>
-                                <option value="<?php echo $dadosEstab['estabelecimentoId'] ?> "> <a href="criado.php?id=<?php echo $dadosEstab['estabelecimentoId'] ?>"> <?php echo $dadosEstab['estabelecimentoNome'] ?></option></a>
+                                <option value="<?php echo $dadosEstab['estabelecimentoId'] ?> "><a
+                                            href="criado.php?id=<?php echo $dadosEstab['estabelecimentoId'] ?>"> <?php echo $dadosEstab['estabelecimentoNome'] ?>
+                                </option></a>
                                 <?php
                             }
                             ?>
                         </select>
                     </nav>
-                </div>
+                    </div>
 
-                <?php
-            } else {
-                ?>
+                    <?php
+                } else {
+                    ?>
 
-                <?php
+                    <?php
+                }
             }
-        }
-        ?>
+            ?>
     </header>
 
     <?php
@@ -203,35 +252,64 @@ function topoadmin($menu = GESTAO)
                     </li>
                 </ul>
             </nav>
-        </div>
-        <?php
-        session_start();
-        if (!isset($_SESSION['id'])){
+            <?php
+            session_start();
+            if (!isset($_SESSION['id'])) {
 
-        ?>
-        <div class="header-right">
-            <div class="user-access">
-                <a data-toggle="modal" data-target="#registar">Registar/</a>
-                <a data-toggle="modal" data-target="#login">Iniciar Sessão</a>
-                <div id="mobile-menu-wrap"></div>
-            </div>
-            <?php
-            }else{
-            ?>
-            <?php
-            $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-            $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
-            $resultPerfis = mysqli_query($con, $sql);
-            $dadosPerfis = mysqli_fetch_array($resultPerfis)
             ?>
             <div class="header-right">
                 <div class="user-access">
-                    <a data-toggle="modal" data-target="#sair">Desconectar</a>
-                    <a href="../novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">
-                        <img src="../<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
+                    <a data-toggle="modal" data-target="#registar">Registar/</a>
+                    <a data-toggle="modal" data-target="#login">Iniciar Sessão</a>
                     <div id="mobile-menu-wrap"></div>
                 </div>
                 <?php
+                } else {
+                    ?>
+                    <?php
+                    $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+                    $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
+                    $resultPerfis = mysqli_query($con, $sql);
+                    $dadosPerfis = mysqli_fetch_array($resultPerfis)
+                    ?>
+                    <div class="header-right">
+                    <div class="user-access">
+                        <a data-toggle="modal" data-target="#sair">Desconectar</a>
+
+                        <a href="../novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">
+                            <img src="../<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
+                        <div id="mobile-menu-wrap"></div>
+                    </div>
+                    <?php
+                    $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+                    $sqlEst = "select * from estabelecimentos inner join perfis on estabelecimentoPerfilId=perfilId inner join categorias on estabelecimentoCategoriaId=categoriaId where perfilId=" . $_SESSION['id'] . " order by estabelecimentoNome";
+                    $resultEstab = mysqli_query($con, $sqlEst);
+                    $sql = "select * from estabelecimentos inner join perfis on estabelecimentoPerfilId=perfilId where perfilId=" . $_SESSION['id'];
+                    $result = mysqli_query($con, $sql);
+                    $dadosEstab = mysqli_fetch_array($result);
+                    if ($_SESSION['id'] == $dadosEstab['estabelecimentoPerfilId']) { ?>
+
+                        <nav class="arrange-select nice-select2 mobile-menu header-right">
+                            <select name="estabe" id="estabe">
+                                <?php
+                                while ($dadosEstab = mysqli_fetch_array($resultEstab)) {
+                                    ?>
+                                    <option value="<?php echo $dadosEstab['estabelecimentoId'] ?> "><a
+                                                href="criado.php?id=<?php echo $dadosEstab['estabelecimentoId'] ?>"> <?php echo $dadosEstab['estabelecimentoNome'] ?>
+                                    </option></a>
+                                    <?php
+                                }
+                                ?>
+                            </select>
+                        </nav>
+                        </div>
+
+                        <?php
+                    } else {
+                        ?>
+
+                        <?php
+                    }
                 }
                 ?>
     </header>
@@ -294,7 +372,7 @@ function topAdmin($menu = GESTAO)
         </div>
         <?php
         session_start();
-        if (!isset($_SESSION['id'])){
+        if (!isset($_SESSION['id'])) {
 
         ?>
         <div class="header-right">
@@ -304,24 +382,54 @@ function topAdmin($menu = GESTAO)
                 <div id="mobile-menu-wrap"></div>
             </div>
             <?php
-            }else{
-            ?>
-            <?php
-            $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-            $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
-            $resultPerfis = mysqli_query($con, $sql);
-            $dadosPerfis = mysqli_fetch_array($resultPerfis)
-            ?>
-            <div class="header-right">
+            } else {
+                ?>
+                <?php
+                $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+                $sql = "select * from perfis where perfilId=" . $_SESSION['id'];
+                $resultPerfis = mysqli_query($con, $sql);
+                $dadosPerfis = mysqli_fetch_array($resultPerfis)
+                ?>
+                <div class="header-right">
                 <div class="user-access">
                     <a data-toggle="modal" data-target="#sair">Desconectar</a>
+
                     <a href="../novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">
                         <img src="../<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
                     <div id="mobile-menu-wrap"></div>
                 </div>
                 <?php
+                $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
+                $sqlEst = "select * from estabelecimentos inner join perfis on estabelecimentoPerfilId=perfilId inner join categorias on estabelecimentoCategoriaId=categoriaId where perfilId=" . $_SESSION['id'] . " order by estabelecimentoNome";
+                $resultEstab = mysqli_query($con, $sqlEst);
+                $sql = "select * from estabelecimentos inner join perfis on estabelecimentoPerfilId=perfilId where perfilId=" . $_SESSION['id'];
+                $result = mysqli_query($con, $sql);
+                $dadosEstab = mysqli_fetch_array($result);
+                if ($_SESSION['id'] == $dadosEstab['estabelecimentoPerfilId']) { ?>
+
+                    <nav class="arrange-select nice-select2 mobile-menu header-right">
+                        <select name="estabe" id="estabe">
+                            <?php
+                            while ($dadosEstab = mysqli_fetch_array($resultEstab)) {
+                                ?>
+                                <option value="<?php echo $dadosEstab['estabelecimentoId'] ?> "><a
+                                            href="criado.php?id=<?php echo $dadosEstab['estabelecimentoId'] ?>"> <?php echo $dadosEstab['estabelecimentoNome'] ?>
+                                </option></a>
+                                <?php
+                            }
+                            ?>
+                        </select>
+                    </nav>
+                    </div>
+
+                    <?php
+                } else {
+                    ?>
+
+                    <?php
                 }
-                ?>
+            }
+            ?>
     </header>
 
     <?php
@@ -452,7 +560,7 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
                         <div class="row">
                             <div class="modal-body">
                                 <div class="col-lg-6 mt-3 meio">
-                                    Tem a certeza que deseja Sair ?
+                                    Tem a certeza que quer Sair ?
                                 </div>
                             </div>
                         </div>
@@ -517,11 +625,11 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
             });
             fillTableReservas();
             <?php
-            }if($menu==SINGLE){
-                ?>
-                listaComentarios(<?php echo $id ?>);
-                <?php
-            }if($menu==RESERVASADMIN){
+            }if($menu == SINGLE){
+            ?>
+            listaComentarios(<?php echo $id ?>);
+            <?php
+            }if($menu == RESERVASADMIN){
             ?>
             $('#tableContent').keyup(function () {
                 fillTableReservasAdmin(this.value,<?php echo $id ?>);
@@ -564,6 +672,124 @@ function botAdmin($menu = HOME)
     </div>
     </footer> -->
     <!-- Footer Section End -->
+
+    <div class="container">
+
+        <!-- Modal Login-->
+        <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="confirmaLogin.php" method="post" class="contact-form">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="login">Iniciar Sessão</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <div class="modal-body">
+                                <div class="col-lg-6 mt-3 meio">
+                                    <input type="text" id="utilizador" name="nome"
+                                           placeholder="Nome de Utilizador">
+                                </div>
+                                <div class="col-lg-6 mt-3 meio">
+                                    <input type="password" id="id" name="password" placeholder="Palavra-Passe">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer mt-2">
+                            <div class="col-lg-7 meio">
+                                <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
+                            </div>
+                            <div class="col-lg-5 meio">
+                                <button type="submit" class="btn btn-primary mt-2">Entrar</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Modal Registar-->
+        <div class="modal fade" id="registar" tabindex="-1" aria-labelledby="registar" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="novoperfil.php" method="post" class="contact-form">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="registar">Registar</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <div class="modal-body">
+                                <div class="col-lg-6 mt-3 meio">
+                                    <input type="text" placeholder="Nome de Utilizador">
+                                </div>
+                                <div class="col-lg-6 mt-3 meio">
+                                    <input type="email" placeholder="Email">
+                                </div>
+                                <div class="col-lg-6 mt-3 meio">
+                                    <input type="text" placeholder="Localidade">
+                                </div>
+                                <div class="col-lg-6 mt-3 meio">
+                                    <input type="password" placeholder="Palavra-Passe">
+                                </div>
+                                <div class="col-lg-6 mt-3 meio">
+                                    <input type="password" placeholder="Confirmar Palavra-Passe">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer mt-2">
+                            <div class="col-lg-7 meio">
+                                <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
+                            </div>
+                            <div class="col-lg-5 meio">
+                                <button type="submit" class="btn btn-primary mt-2">Registar</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+        <!-- Modal Logout-->
+        <div class="modal fade" id="sair" tabindex="-1" aria-labelledby="sair" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="Logout.php" method="post" class="contact-form">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="sair">Desconectar</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <div class="modal-body">
+                                <div class="col-lg-6 mt-3 meio">
+                                    Tem a certeza que quer Sair ?
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer mt-2">
+                            <div class="col-lg-7 meio">
+                                <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
+                            </div>
+                            <div class="col-lg-5 meio">
+                                <button type="submit" class="btn btn-primary mt-2">Sair</button>
+                                <input type="hidden" name="id">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Js Plugins -->
