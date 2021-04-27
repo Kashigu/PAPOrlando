@@ -36,7 +36,6 @@ $result = mysqli_query($con, $sql);
                     <td data-target="perfilEstado" ><?php echo $dados['perfilAdmin'] ?></td>
                     <td><a href="../DefPerfil.php?id=<?php echo $dados['perfilId'];?>"> <i
                                     class="fa fa-edit text-primary"></i></a></td>
-
                     <td><a href="ativarUtilizador.php?id=<?php echo $dados['perfilId'];?>"> Ativar </a></td>
                     <td><a href="desativarUtilizador.php?id=<?php echo $dados['perfilId'];?>"> Desativar</a></td>
                     <td><a href="ativarAdmin.php?id=<?php echo $dados['perfilId'];?>"> Admin </a></td>
