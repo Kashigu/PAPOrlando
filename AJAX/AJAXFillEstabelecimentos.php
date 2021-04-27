@@ -21,7 +21,7 @@ $result = mysqli_query($con, $sql);
 ?>
 
 
-    <div class="container">
+    <div class="container about-section about-item client-reviews">
 
             <table class="table table-striped table-hover">
                 <td colspan="7" align='right'>
@@ -43,7 +43,7 @@ $result = mysqli_query($con, $sql);
 
                 <tr id="<?php echo $dados['estabelecimentoId']; ?>">
                     <td><?php echo $dados['estabelecimentoId'] ?></td>
-                    <td><?php echo $dados['estabelecimentoNome'] ?></td>
+                    <td><a href="../criado.php?id= <?php echo $dados['estabelecimentoId'] ?>"> <?php echo $dados['estabelecimentoNome'] ?></td></a>
                     <td><img width='100' height="100" src="../<?php echo $dados['estabelecimentoMiniaturaURL'] ?>"></td>
                     <td><?php echo $dados['perfilNome'] ?></td>
                     <td><?php echo $dados['categoriaNome'] ?></td>

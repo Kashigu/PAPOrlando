@@ -29,7 +29,7 @@ $result = mysqli_query($con, $sql);
                 ?>
                 <tr id="<?php echo $dados['perfilId']; ?>">
                     <td data-target="perfilId"><?php echo $dados['perfilId'] ?></td>
-                    <td ><a href="../novoperfil.php?id= <?php echo $dados['perfilId'] ?>"> <?php echo $dados['perfilNome'] ?></td></a>
+                    <td><a href="../novoperfil.php?id= <?php echo $dados['perfilId'] ?>"> <?php echo $dados['perfilNome'] ?></td></a>
                     <td data-target="perfilImagem"><img width='100' height="100" src="../<?php echo $dados['perfilAvatar'] ?>"></td>
                     <td data-target="perfilEmail" ><?php echo $dados['perfilEmail'] ?></td>
                     <td data-target="perfilEstado" ><?php echo $dados['perfilEstado'] ?></td>
