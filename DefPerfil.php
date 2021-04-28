@@ -5,14 +5,18 @@ toposingle();
 ?>
 
 <?php
-
+if(isset($_GET['erro'])){
+$erro = intval($_GET['erro']);
+}
 $id=intval($_GET['id']);
 $sql = "select * from perfis where perfilId=".$id;
 $resultPerfis = mysqli_query($con, $sql);
-$dadosPerfis = mysqli_fetch_array($resultPerfis)
-
-
-
+$dadosPerfis = mysqli_fetch_array($resultPerfis);
+if (isset($erro)){
+if ($erro = 1){
+    alert("Nova palavra passe errada ou dados insuficientes");
+}
+}
 ?>
 
 <section class="contact-section spad">
@@ -47,7 +51,7 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                             <input type="password" name="perfilPalavra" placeholder="Nova Palavra-passe">
                         </div>
                         <div class="col-lg-6">
-                            <input type="password" name="ComfirmaperfilPalavra" placeholder="Comfirmação Nova Palavra-passe">
+                            <input type="password" name="ConfirmaperfilPalavra" placeholder="Confirmação Nova Palavra-passe">
                         </div>
                         <div class="col-lg-4 meio">
                             <button type="submit">Confirmar alterações </button>

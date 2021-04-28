@@ -505,7 +505,7 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
         <div class="modal fade" id="registar" tabindex="-1" aria-labelledby="registar" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="novoperfil.php" method="post" class="contact-form">
+                    <form action="Register.php" method="post" class="contact-form">
                         <div class="modal-header">
                             <h5 class="modal-title" id="registar">Registar</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -515,19 +515,19 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
                         <div class="row">
                             <div class="modal-body">
                                 <div class="col-lg-6 mt-3 meio">
-                                    <input type="text" placeholder="Nome de Utilizador">
+                                    <input type="text" name="nome" placeholder="Nome de Utilizador">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
-                                    <input type="email" placeholder="Email">
+                                    <input type="email" name="email" placeholder="Email">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
-                                    <input type="text" placeholder="Localidade">
+                                    <input type="text" name="localidade" placeholder="Localidade">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
-                                    <input type="password" placeholder="Palavra-Passe">
+                                    <input type="password" name="pass" placeholder="Palavra-Passe">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
-                                    <input type="password" placeholder="Confirmar Palavra-Passe">
+                                    <input type="password" name="Spass" placeholder="Confirmar Palavra-Passe">
                                 </div>
                             </div>
                         </div>
@@ -673,91 +673,6 @@ function botAdmin($menu = HOME)
     </div>
     </footer> -->
     <!-- Footer Section End -->
-
-    <div class="container">
-
-        <!-- Modal Login-->
-        <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form action="confirmaLogin.php" method="post" class="contact-form">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="login">Iniciar Sessão</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="row">
-                            <div class="modal-body">
-                                <div class="col-lg-6 mt-3 meio">
-                                    <input type="text" id="utilizador" name="nome"
-                                           placeholder="Nome de Utilizador">
-                                </div>
-                                <div class="col-lg-6 mt-3 meio">
-                                    <input type="password" id="id" name="password" placeholder="Palavra-Passe">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer mt-2">
-                            <div class="col-lg-7 meio">
-                                <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
-                            </div>
-                            <div class="col-lg-5 meio">
-                                <button type="submit" class="btn btn-primary mt-2">Entrar</button>
-
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <!-- Modal Registar-->
-        <div class="modal fade" id="registar" tabindex="-1" aria-labelledby="registar" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form action="novoperfil.php" method="post" class="contact-form">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="registar">Registar</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="row">
-                            <div class="modal-body">
-                                <div class="col-lg-6 mt-3 meio">
-                                    <input type="text" placeholder="Nome de Utilizador">
-                                </div>
-                                <div class="col-lg-6 mt-3 meio">
-                                    <input type="email" placeholder="Email">
-                                </div>
-                                <div class="col-lg-6 mt-3 meio">
-                                    <input type="text" placeholder="Localidade">
-                                </div>
-                                <div class="col-lg-6 mt-3 meio">
-                                    <input type="password" placeholder="Palavra-Passe">
-                                </div>
-                                <div class="col-lg-6 mt-3 meio">
-                                    <input type="password" placeholder="Confirmar Palavra-Passe">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer mt-2">
-                            <div class="col-lg-7 meio">
-                                <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
-                            </div>
-                            <div class="col-lg-5 meio">
-                                <button type="submit" class="btn btn-primary mt-2">Registar</button>
-
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
 
         <!-- Modal Logout-->
         <div class="modal fade" id="sair" tabindex="-1" aria-labelledby="sair" aria-hidden="true">
