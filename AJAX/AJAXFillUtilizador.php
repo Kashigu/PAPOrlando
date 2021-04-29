@@ -44,11 +44,11 @@ $result = mysqli_query($con, $sql);
                     <td><a href="desativarUtilizador.php?id=<?php echo $dados['perfilId'];?>"> Desativar</a></td>
                     <?php
                     }
-                    if ($dados['perfilAdmin'] == 'admin'){
+                    if ($dados['perfilAdmin'] == 'utilizador'){
                     ?>
                     <td><a href="ativarAdmin.php?id=<?php echo $dados['perfilId'];?>"> Tornar Administrador </a></td>
                     <?php
-                    } else if ($dados['perfilAdmin'] == 'utilizador') {
+                    } else if ($dados['perfilAdmin'] == 'admin') {
                     ?>
                     <td><a href="desativarAdmin.php?id=<?php echo $dados['perfilId'];?>"> Tornar Utilizador</a></td>
                     <?php
