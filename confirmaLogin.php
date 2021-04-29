@@ -1,12 +1,12 @@
 <?php
 include_once("includes/body.inc.php");
 
-
-$sql="select * from perfis where perfilId";
-$result=mysqli_query($con,$sql);
 $nome=addslashes($_POST['nome']);
 $email=$_POST['email'];
 $password=addslashes($_POST['password']);
+$sql="select * from perfis where perfilId";
+$result=mysqli_query($con,$sql);
+
 if ($nome === 'admin' AND $password ==='admin'){
     header("location:admin/index.php");
 }else{

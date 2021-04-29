@@ -8,7 +8,7 @@ include_once("config.inc.php");
 $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
 $con->set_charset("utf8");
 
-if (isset($_GET['pass'])) {
+if (isset($_GET['msg'])) {
 
     alert("Palavra-passe está errada, tente de novo.");
 }
