@@ -1,4 +1,29 @@
-//------------------------------------------------------------ FUNÇÕES PARA O DISTRITO ----------------------------------------------------------------------//
+//------------------------------------------------------------- FunÃ§Ãµes para confirmaÃ§oes -------------------------------------------------------//
+
+function validarEmail(email){
+    $.post('AJAX/AJAXVerifyEmail.php', {email:email }, function (data){
+        $('#emailV').text(data);
+    });
+}
+
+$('#email').focusin(function () {
+    if ($('#email').val() ===''){
+        $('#emailV').text('Meta um Email VÃ¡lido');
+    } else  {
+        validarEmail($('#email').val());
+    }
+}).blur(function (){
+    $('#emailV').text('');
+}).keyup(function (){
+    validarEmail($('#email').val());
+});
+
+
+//------------------------------------------------------------ FunÃ§Ãµes para o Registar ----------------------------------------------------------------------//
+
+
+
+//------------------------------------------------------------ FUNÃ‡Ã•ES PARA O DISTRITO ----------------------------------------------------------------------//
 
 function fillTableDistritos(txt = '') {
     $.ajax({
@@ -96,7 +121,7 @@ function EditarTableDistritos() {
 }
 
 
-//--------------------------------------------------------------- FUNÇÕES PARA AS CATEGORIAS -------------------------------------------------------//
+//--------------------------------------------------------------- FUNÃ‡Ã•ES PARA AS CATEGORIAS -------------------------------------------------------//
 function fillTableCategorias(txt = '') {
 
     $.ajax({
@@ -182,7 +207,7 @@ function EditarTableCategorias() {
     });
 }
 
-//----------------------------------------------------------------FUNÇÕES PARA OS ESTABELECIMENTOS ---------------------------------------------------------//
+//----------------------------------------------------------------FUNÃ‡Ã•ES PARA OS ESTABELECIMENTOS ---------------------------------------------------------//
 
 function fillTableEstabelecimentos(txt = '') {
     $.ajax({
@@ -230,7 +255,7 @@ function DeleteTableEstabelecimentos() { // vai buscar o ID injectado e faz o DE
     });
 }
 
-//-------------------------------------------------------------- FUNÇÕES PARA OS UTILIZADORES------------------------------------------------------//
+//-------------------------------------------------------------- FUNÃ‡Ã•ES PARA OS UTILIZADORES------------------------------------------------------//
 function fillTableUtilizador(txt = '') {
     $.ajax({
         url: "../AJAX/AJAXFillUtilizador.php",
@@ -279,7 +304,7 @@ function DeleteTableUtilizador() { // vai buscar o ID injectado e faz o DELETE
 }
 
 
-//-----------Função para ver imagem--------//
+//-----------FunÃ§Ã£o para ver imagem--------//
 function preview_image(event) {
     var reader = new FileReader();
     reader.onload = function () {
@@ -289,7 +314,7 @@ function preview_image(event) {
     reader.readAsDataURL(event.target.files[0]);
 }
 
-//-----------------------------------------------------------FUNÇÕES PARA O PROCURAR.PHP----------------------------------------------//
+//-----------------------------------------------------------FUNÃ‡Ã•ES PARA O PROCURAR.PHP----------------------------------------------//
 
 function fillTableEstabelecimentosProcurar(txt = '', categoria = -1, distrito = -1) {
     //alert(txt + ' ' + categoria+' '+distrito);/*
@@ -310,7 +335,7 @@ function fillTableEstabelecimentosProcurar(txt = '', categoria = -1, distrito = 
 }
 
 
-//---------------------------------------------------FUNÇÕES PARA AS IMAGENS DE UM ESTABELECIMENTO---------------------------------------//
+//---------------------------------------------------FUNÃ‡Ã•ES PARA AS IMAGENS DE UM ESTABELECIMENTO---------------------------------------//
 function fillTableImagens(txt = '', id = -1) {
 
     $.ajax({
@@ -501,7 +526,7 @@ function fillTableReservasAdmin(id = -1) {
 
 
 
-//--------------------------------------------------------------------Funçoes para REDES estabelecimentos -------------------------------//
+//--------------------------------------------------------------------FunÃ§oes para REDES estabelecimentos -------------------------------//
 
 function gosto(id) {
     $.ajax({
