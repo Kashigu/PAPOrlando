@@ -547,8 +547,8 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
                                            placeholder="Nome de Utilizador">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
-                                    <span id="emailV"></span>
-                                    <input type="email" id="email" name="email" placeholder="Email">
+                                    <span id="emailVs"></span>
+                                    <input type="email" id="emails" name="email" placeholder="Email">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
                                     <input type="password" id="id" name="password" placeholder="Palavra-Passe">

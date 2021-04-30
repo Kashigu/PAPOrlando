@@ -18,6 +18,36 @@ $('#email').focusin(function () {
     validarEmail($('#email').val());
 });
 
+function validarEmails(email){
+    $.post('AJAX/AJAXVerifyEmails.php', {email:email }, function (data){
+        $('#emailVs').text(data);
+    });
+}
+
+$('#emails').focusin(function () {
+    if ($('#emails').val() ===''){
+        validarEmails($('#emails').val());
+    }
+}).blur(function (){
+    $('#emailVs').text('');
+}).keyup(function (){
+    validarEmails($('#emails').val());
+});
+
+function valido(){
+    $.ajax({
+        url:"AJAX/AJAXVerifyEmail.php",
+        type:"post",
+        data:{
+            txt: txt
+        },
+        success: function (result){
+            $('#tableContent').html(result);
+        }
+        }
+    )
+}
+
 
 //------------------------------------------------------------ Funções para o Registar ----------------------------------------------------------------------//
 
