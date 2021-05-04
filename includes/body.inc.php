@@ -455,7 +455,7 @@ function topAdmin($menu = GESTAO)
 
     <?php
 }
-function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
+function bot($menu = HOME, $id = 0)
 {
     ?>
 
@@ -499,7 +499,7 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
                                     <input type="text" name="nome" placeholder="Nome de Utilizador">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
-                                    <span id="emailV"></span>
+                                    <span id="tableContent"></span>
                                     <input type="email" id="email" name="email" placeholder="Email">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
@@ -518,7 +518,7 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
                                 <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
                             </div>
                             <div class="col-lg-5 meio">
-                                <button type="submit" class="btn btn-primary mt-2">Registar</button>
+                                <button onclick="valido()" type="submit" class="btn btn-primary mt-2">Registar</button>
 
                             </div>
                         </div>
@@ -663,6 +663,14 @@ function bot($menu = HOME, $id = 0, $categoria = 0, $distrito = 0)
             });
             fillTableReservasAdmin(<?php echo $id ?>);
             <?php
+            if($menu == HOME ){
+            ?>
+            $('#tableContent').keyup(function () {
+                valido(this.value);
+            });
+            valido();
+            <?php
+            }
             }
             ?>
         })

@@ -1,14 +1,17 @@
 <?php
 include_once("../includes/config.inc.php");
 
-if (isset($_POST['email'])){
-    $email= addslashes($_POST['email']);
-    if (!empty($email)){
-        if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-            echo 'Não é um Email válido';
-        }else{
-            echo 'Email válido';
-        }
-    }
+$email = addslashes($_POST['email']);
+$sql = "select perfilEmail from perfis";
+$resultado = mysqli_query($con, $sql);
+$dados = mysqli_fetch_array($resultado);
+
+
+if ($email === $dados['perfilEmail']) {
+    echo 'Email já existente';
+} else {
+    echo 'Email válido';
 }
 ?>
+
+ddddddd
