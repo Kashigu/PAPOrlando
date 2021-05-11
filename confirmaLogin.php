@@ -4,7 +4,7 @@ include_once("includes/body.inc.php");
 $nome=addslashes($_POST['nome']);
 $email=$_POST['email'];
 $password=addslashes($_POST['password']);
-$sql="select * from perfis where perfilId";
+echo $sql="select * from perfis where perfilEmail=".$email." and perfilNome=".$nome." and perfilPassword=".$password;
 $result=mysqli_query($con,$sql);
 
 if ($nome === 'admin' AND $password ==='admin'){

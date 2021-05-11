@@ -43,12 +43,10 @@ function entrar() {
     }
     if ($('#password').val() == '') {
         erro = true;
-
-    }alert(erro);
+    }
     if ($('#email').val() == '') {
         erro = true;
-    }
-    if (!erro) {
+    } else if (erro) {
         $.ajax({
             url: "confirmaLogin.php",
             type: "post",
@@ -56,19 +54,19 @@ function entrar() {
                 nome: utilizador,
                 email: email,
                 password: password
-
             },
             success: function (result) {
                 if (parseInt(result) == 1) {
+                   $('#frmConfirma').submit();
+
+                } else if (erro) {
                     erro = true;
                     alert('Dados Mal Inseridos');
-                } else if (!erro) {
-                    $('#frmConfirma').submit();
                 }
             }
         });
-
     }
+    alert(erro)
 }
 
 
