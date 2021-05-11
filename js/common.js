@@ -37,6 +37,15 @@ $('#emails').focusin(function () {
 function valido(){
     let email=$('#email').val();
     let erro=false;
+    if($('#localidade').val()==''){
+        erro=true;
+    }
+    if($('#pass').val()==''){
+        erro=true;
+    }
+    if($('#Spass').val()==''){
+        erro=true;
+    }
     if($('#nome').val()==''){
         erro=true;
     }

@@ -486,7 +486,7 @@ function bot($menu = HOME, $id = 0)
         <div class="modal fade" id="registar" tabindex="-1" aria-labelledby="registar" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="Register999.php" method="post" class="contact-form" id="frmRegisto">
+                    <form action="Register.php" method="post" class="contact-form" id="frmRegisto">
                         <div class="modal-header">
                             <h5 class="modal-title" id="registar">Registar</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -503,13 +503,13 @@ function bot($menu = HOME, $id = 0)
                                     <input type="email" id="email" name="email" placeholder="Email">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
-                                    <input type="text" name="localidade" placeholder="Localidade">
+                                    <input type="text" name="localidade" id="localidade" placeholder="Localidade">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
-                                    <input type="password" name="pass" placeholder="Palavra-Passe">
+                                    <input type="password" name="pass" id="pass" placeholder="Palavra-Passe">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
-                                    <input type="password" name="Spass" placeholder="Confirmar Palavra-Passe">
+                                    <input type="password" name="Spass" id="Spass" placeholder="Confirmar Palavra-Passe">
                                 </div>
                             </div>
                         </div>
