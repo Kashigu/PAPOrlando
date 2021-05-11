@@ -1,6 +1,6 @@
 //------------------------------------------------------------- Funções para confirmaçoes -------------------------------------------------------//
 
-function validarEmail(email){
+/*function validarEmail(email){
     $.post('AJAX/AJAXVerifyEmail.php', {email:email }, function (data){
         $('#emailV').text(data);
     });
@@ -32,53 +32,85 @@ $('#emails').focusin(function () {
     $('#emailVs').text('');
 }).keyup(function (){
     validarEmails($('#emails').val());
-});
+});*/
 
-function valido(){
-    let email=$('#email').val();
-    let erro=false;
-    if($('#localidade').val()==''){
-        erro=true;
+
+function entrar() {
+    let erro = false;
+
+    if ($('#utilizador').val() == '') {
+        erro = true;
     }
-    if($('#pass').val()==''){
-        erro=true;
+    if ($('#password').val() == '') {
+        erro = true;
+
+    }alert(erro);
+    if ($('#email').val() == '') {
+        erro = true;
     }
-    if($('#Spass').val()==''){
-        erro=true;
-    }
-    if($('#nome').val()==''){
-        erro=true;
-    }
-    if($('#email').val()==''){
-        erro=true;
-    }else{
+    if (!erro) {
         $.ajax({
-            url:"AJAX/AJAXVerifyEmail.php",
-            type:"post",
-            data:{
+            url: "confirmaLogin.php",
+            type: "post",
+            data: {
+                nome: utilizador,
+                email: email,
+                password: password
+
+            },
+            success: function (result) {
+                if (parseInt(result) == 1) {
+                    erro = true;
+                    alert('Dados Mal Inseridos');
+                } else if (!erro) {
+                    $('#frmConfirma').submit();
+                }
+            }
+        });
+
+    }
+}
+
+
+function valido() {
+    let email = $('#email').val();
+    let erro = false;
+    if ($('#localidade').val() == '') {
+        erro = true;
+    }
+    if ($('#pass').val() == '') {
+        erro = true;
+    }
+    if ($('#Spass').val() == '') {
+        erro = true;
+    }
+    if ($('#nome').val() == '') {
+        erro = true;
+    }
+    if ($('#email').val() == '') {
+        erro = true;
+    } else {
+        $.ajax({
+            url: "AJAX/AJAXVerifyEmail.php",
+            type: "post",
+            data: {
                 txt: email
             },
-            success: function (result){
-                if(parseInt(result)==1){
-                    erro=true;
+            success: function (result) {
+                if (parseInt(result) == 1) {
+                    erro = true;
                     $('#errorMsg').html('Email já existente!');
-                }else if(!erro){
+                } else if (!erro) {
                     $('#frmRegisto').submit();
                 }
             }
         });
 
     }
-
-
-
-
-
 }
 
 
 //------------------------------------------------------------ Funções para o Registar ----------------------------------------------------------------------//
-
 
 
 //------------------------------------------------------------ FUNÇÕES PARA O DISTRITO ----------------------------------------------------------------------//
@@ -487,13 +519,13 @@ function mostrarFavoritos() {
 }
 
 //------------------------------------------------------------Funcoes para ListaReserva ------------------------------------//
-function fillTableReservas(txt = '',id) {
+function fillTableReservas(txt = '', id) {
     $.ajax({
         url: "AJAX/AJAXFillReservas.php",
         type: "post",
         data: {
             txt: txt,
-            id:id
+            id: id
         },
         success: function (result) {
             $('#tableContent').html(result);
@@ -566,13 +598,14 @@ function EditarTableReservas() {
         }
     });
 }
+
 //------------------------------------------------------------Funcoes para ListaReservaAdmin ------------------------------------//
 function fillTableReservasAdmin(id = -1) {
     $.ajax({
         url: "AJAX/AJAXFillReservasAdmin.php",
         type: "post",
         data: {
-            id:id
+            id: id
         },
         success: function (result) {
             $('#tableContent').html(result);
@@ -581,7 +614,6 @@ function fillTableReservasAdmin(id = -1) {
 
 
 }
-
 
 
 //--------------------------------------------------------------------Funçoes para REDES estabelecimentos -------------------------------//
@@ -644,7 +676,7 @@ function mostra() {
 }
 
 
-function listaComentarios(id){
+function listaComentarios(id) {
     $.ajax({
         url: "AJAX/AJAXFillComentarios.php",
         type: "post",
@@ -658,23 +690,24 @@ function listaComentarios(id){
         }
     });
 }
-function comentario(id=-1) {
 
-            $.ajax({
-                url: "AJAX/AJAXPutComentarioEstabelecimento.php",
-                type: "post",
-                data: {
-                    idEstabelecimento: id,
-                    txt: $('#comentarioTexto').val()
-                },
-                success: function (result) {
+function comentario(id = -1) {
 
-                   listaComentarios(id);
+    $.ajax({
+        url: "AJAX/AJAXPutComentarioEstabelecimento.php",
+        type: "post",
+        data: {
+            idEstabelecimento: id,
+            txt: $('#comentarioTexto').val()
+        },
+        success: function (result) {
 
-                }
-            });
+            listaComentarios(id);
 
         }
+    });
+
+}
 
 function rating(id) {
     $.ajax({

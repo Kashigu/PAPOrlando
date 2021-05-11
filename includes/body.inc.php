@@ -533,7 +533,7 @@ function bot($menu = HOME, $id = 0)
         <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="confirmaLogin.php" method="post" class="contact-form">
+                    <form action="confirmaLogink.php" method="post" class="contact-form" id="frmConfirma">
                         <div class="modal-header">
                             <h5 class="modal-title" id="login">Iniciar Sessão</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -548,10 +548,10 @@ function bot($menu = HOME, $id = 0)
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
                                     <span id="emailVs"></span>
-                                    <input type="email" id="emails" name="email" placeholder="Email">
+                                    <input type="email" id="email" name="email" placeholder="Email">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
-                                    <input type="password" id="id" name="password" placeholder="Palavra-Passe">
+                                    <input type="password" id="password" name="password" placeholder="Palavra-Passe">
                                 </div>
                             </div>
                         </div>
@@ -560,7 +560,7 @@ function bot($menu = HOME, $id = 0)
                                 <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
                             </div>
                             <div class="col-lg-5 meio">
-                                <button type="submit" class="btn btn-primary mt-2">Entrar</button>
+                                <button onclick="entrar()" type="button" class="btn btn-primary mt-2">Entrar</button>
 
                             </div>
                         </div>
