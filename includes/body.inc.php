@@ -518,7 +518,7 @@ function bot($menu = HOME, $id = 0)
                                 <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
                             </div>
                             <div class="col-lg-5 meio">
-                                <button onclick="valido()" type="submit" class="btn btn-primary mt-2">Registar</button>
+                                <button onclick="valido()" type="button" class="btn btn-primary mt-2">Registar</button>
 
                             </div>
                         </div>
@@ -619,6 +619,7 @@ function bot($menu = HOME, $id = 0)
 
     <script>
         $('document').ready(function () {
+            valido();
             <?php
             if($menu == ESTABELECIMENTOSP){
             ?>
