@@ -486,7 +486,7 @@ function bot($menu = HOME, $id = 0)
         <div class="modal fade" id="registar" tabindex="-1" aria-labelledby="registar" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="Register.php" method="post" class="contact-form">
+                    <form action="Register999.php" method="post" class="contact-form" id="frmRegisto">
                         <div class="modal-header">
                             <h5 class="modal-title" id="registar">Registar</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -496,10 +496,10 @@ function bot($menu = HOME, $id = 0)
                         <div class="row">
                             <div class="modal-body">
                                 <div class="col-lg-6 mt-3 meio">
-                                    <input type="text" name="nome" placeholder="Nome de Utilizador">
+                                    <input type="text" name="nome" id="nome" placeholder="Nome de Utilizador">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
-                                    <span id="tableContent"></span>
+                                    <span id="errorMsg"></span>
                                     <input type="email" id="email" name="email" placeholder="Email">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
@@ -619,7 +619,7 @@ function bot($menu = HOME, $id = 0)
 
     <script>
         $('document').ready(function () {
-            valido();
+
             <?php
             if($menu == ESTABELECIMENTOSP){
             ?>

@@ -35,17 +35,36 @@ $('#emails').focusin(function () {
 });
 
 function valido(){
-    $.ajax({
-        url:"AJAX/AJAXVerifyEmail.php",
-        type:"post",
-        data:{
-            txt: txt
-        },
-        success: function (result){
-            $('#tableContent').html(result);
-        }
-        }
-    )
+    let email=$('#email').val();
+    let erro=false;
+    if($('#nome').val()==''){
+        erro=true;
+    }
+    if($('#email').val()==''){
+        erro=true;
+    }else{
+        $.ajax({
+            url:"AJAX/AJAXVerifyEmail.php",
+            type:"post",
+            data:{
+                txt: email
+            },
+            success: function (result){
+                if(parseInt(result)==1){
+                    erro=true;
+                    $('#errorMsg').html('Email já existente!');
+                }else if(!erro){
+                    $('#frmRegisto').submit();
+                }
+            }
+        });
+
+    }
+
+
+
+
+
 }
 
 

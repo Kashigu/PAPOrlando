@@ -1,15 +1,8 @@
 <?php
-include_once("../includes/config.inc.php");
+include_once("../includes/body.inc.php");
 
 $txt= addslashes($_POST['txt']);
-$sql = "select perfilEmail from perfis";
+$sql = "select perfilEmail from perfis where perfilEmail='$txt'";
 $resultado = mysqli_query($con, $sql);
-$dados = mysqli_fetch_array($resultado);
-
-
-if ($txt === $dados['perfilEmail']) {
-    echo 'Email já existente';
-} else {
-    echo 'Email válido';
-}
+echo mysqli_affected_rows($con);
 ?>
