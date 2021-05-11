@@ -4,7 +4,7 @@ include_once("includes/body.inc.php");
 $nome=addslashes($_POST['nome']);
 $email=$_POST['email'];
 $password=addslashes($_POST['password']);
-echo $sql="select * from perfis where perfilEmail=".$email." and perfilNome=".$nome." and perfilPassword=".$password;
+echo $sql="select * from perfis where perfilEmail='$email' and perfilNome='$nome' and perfilPassword='$password'";
 $result=mysqli_query($con,$sql);
 
 if ($nome === 'admin' AND $password ==='admin'){
@@ -30,10 +30,7 @@ if ($nome === 'admin' AND $password ==='admin'){
         }else if ($nome === $dados['perfilNome'] AND $password === $dados['perfilPassword'] AND $dados['perfilEstado'] == 'inativo' and $dados['perfilAdmin']=='utilizador'){
             $verificacao='sim';
             header("location:index.php?message");
-        } else if(!isset($_SESSION['id']) AND !isset($verificacao)){{
-            header("location:index.php?msg");
-        }
         }
     }}
-bot();
+
 ?>

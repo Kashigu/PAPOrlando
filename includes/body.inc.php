@@ -8,39 +8,11 @@ include_once("config.inc.php");
 $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
 $con->set_charset("utf8");
 
-if (isset($_GET['msg'])) {
 
-    alert("Palavra-passe está errada, tente de novo.");
-}
 if (isset($_GET['message'])) {
 
     alertinativo("Esta conta foi desativada.");
 }
-
-if (isset($_GET['ero'])) {
-
-    alerta("Palavra Passe errada.");
-}
-
-if (isset($_GET['nome'])) {
-
-    alerta("Nome está errado, tente de novo.");
-}
-
-if (isset($_GET['email'])) {
-
-    alerta("Email está errado, tente de novo.");
-}
-function alert($msg)
-{
-    echo "<script type='text/javascript'>alert('$msg');</script>";
-}
-
-function alerta($ero)
-{
-    echo "<script type='text/javascript'>alert('$ero');</script>";
-}
-
 function alertinativo($message)
 {
     echo "<script type='text/javascript'>alert('$message');</script>";
@@ -506,9 +478,11 @@ function bot($menu = HOME, $id = 0)
                                     <input type="text" name="localidade" id="localidade" placeholder="Localidade">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
+                                    <span id="errorMsgP"></span>
                                     <input type="password" name="pass" id="pass" placeholder="Palavra-Passe">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
+                                    <span id="errorMsgS"></span>
                                     <input type="password" name="Spass" id="Spass" placeholder="Confirmar Palavra-Passe">
                                 </div>
                             </div>
@@ -533,7 +507,7 @@ function bot($menu = HOME, $id = 0)
         <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="confirmaLogink.php" method="post" class="contact-form" id="frmConfirma">
+                    <form action="confirmaLogin.php" method="post" class="contact-form" id="frmConfirma">
                         <div class="modal-header">
                             <h5 class="modal-title" id="login">Iniciar Sessão</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -547,8 +521,7 @@ function bot($menu = HOME, $id = 0)
                                            placeholder="Nome de Utilizador">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
-                                    <span id="emailVs"></span>
-                                    <input type="email" id="email" name="email" placeholder="Email">
+                                    <input type="email" id="emails" name="email" placeholder="Email">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
                                     <input type="password" id="password" name="password" placeholder="Palavra-Passe">

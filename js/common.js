@@ -36,6 +36,9 @@ $('#emails').focusin(function () {
 
 
 function entrar() {
+    let emails = $('#emails').val();
+    let utilizador = $('#utilizador').val();
+    let password = $('#password').val();
     let erro = false;
 
     if ($('#utilizador').val() == '') {
@@ -44,15 +47,15 @@ function entrar() {
     if ($('#password').val() == '') {
         erro = true;
     }
-    if ($('#email').val() == '') {
+    if ($('#emails').val() == '') {
         erro = true;
-    } else if (erro) {
+    } else {
         $.ajax({
-            url: "confirmaLogin.php",
+            url: "AJAX/AJAXConfirmaLogin.php",
             type: "post",
             data: {
                 nome: utilizador,
-                email: email,
+                email: emails,
                 password: password
             },
             success: function (result) {
@@ -66,7 +69,6 @@ function entrar() {
             }
         });
     }
-    alert(erro)
 }
 
 
@@ -76,11 +78,13 @@ function valido() {
     if ($('#localidade').val() == '') {
         erro = true;
     }
-    if ($('#pass').val() == '') {
+    if ($('#pass').val() ==  '' || ($('#pass').val() != ($('#Spass').val() ))) {
         erro = true;
+        $('#errorMsgP').html('Palavra Mal Introduzida!');
     }
-    if ($('#Spass').val() == '') {
+    if ($('#Spass').val() == '' || ($('#Spass').val() != ($('#pass').val() ))) {
         erro = true;
+        $('#errorMsgS').html('Palavra Mal Introduzida!');
     }
     if ($('#nome').val() == '') {
         erro = true;
