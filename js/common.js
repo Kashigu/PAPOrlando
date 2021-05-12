@@ -80,7 +80,6 @@ function valido() {
     }
     if ($('#pass').val() ==  '' || ($('#pass').val() != ($('#Spass').val() ))) {
         erro = true;
-        $('#errorMsgP').html('Palavra Mal Introduzida!');
     }
     if ($('#Spass').val() == '' || ($('#Spass').val() != ($('#pass').val() ))) {
         erro = true;
