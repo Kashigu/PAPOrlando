@@ -173,7 +173,7 @@ toposingle(PORTUGAL);
                         <div class="categories-text">
                             <h4><?php echo $dadosCategorias['categoriaNome'] ?></h4>
                             <p><?php echo $dados['n'] ?> Listados</p>
-                                    <a href="procurar.php">Ver Todos</a>
+                                    <a href="procurar.php?categoria=<?php echo $dadosCategorias['categoriaId']?>">Ver Todos</a>
                                 </div>
                             </div>
                         </div>
@@ -203,7 +203,7 @@ toposingle(PORTUGAL);
                                 <div class="categories-text">
                                     <h4><?php echo $dadosCategorias['categoriaNome'] ?></h4>
                                     <p><?php echo $dados['n'] ?> Listados</p>
-                                    <a href="procurar.php">Ver Todos</a>
+                                    <a href="procurar.php?categoria=<?php echo $dadosCategorias['categoriaId']?>">Ver Todos</a>
                                 </div>
                             </div>
                         </div>
