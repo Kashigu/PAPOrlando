@@ -154,22 +154,25 @@ toposingle(PORTUGAL);
             <div class="categories-left">
                 <div class="row">
                 <?php
-                       /* $sql2="Select count(*) as n
-                               from estabelecimentos 
-                               WHERE estabelecimentoCategoriaId = 1";
-                        $resultado=mysqli_query($con,$sql2);
-                        $dados=mysqli_num_rows($resultado);*/
+
+
                     while ($dadosCategorias = mysqli_fetch_array($resultCategorias)) {
-                        ?>
 
-                        <div class="col-md-12">
-                            <div class="categories-item set-bg" <?php echo $dadosCategorias['categoriaId'] ?> data-setbg="<?php echo $dadosCategorias['categoriaImagemURL'] ?>">
+                 $sql2="Select count(*) as n
+                       from estabelecimentos 
+                       WHERE estabelecimentoCategoriaId =".$dadosCategorias['categoriaId'];
+                $resultado=mysqli_query($con,$sql2);
+                $dados=mysqli_fetch_assoc($resultado);
+                ?>
+
+                <div class="col-md-12">
+                    <div class="categories-item set-bg" <?php echo $dadosCategorias['categoriaId'] ?> data-setbg="<?php echo $dadosCategorias['categoriaImagemURL'] ?>">
 
 
-                                <a href="<?php echo $dadosCategorias['categoriaImagemURL'] ?>" class="img-hover pop-up"> <img src="img/zoom.png" alt=""></a>
-                                <div class="categories-text">
-                                    <h4><?php echo $dadosCategorias['categoriaNome'] ?></h4>
-                                    <p><?php /*echo $resultado*/ ?> Listados</p>
+                        <a href="<?php echo $dadosCategorias['categoriaImagemURL'] ?>" class="img-hover pop-up"> <img src="img/zoom.png" alt=""></a>
+                        <div class="categories-text">
+                            <h4><?php echo $dadosCategorias['categoriaNome'] ?></h4>
+                            <p><?php echo $dados['n'] ?> Listados</p>
                                     <a href="procurar.php">Ver Todos</a>
                                 </div>
                             </div>
@@ -186,6 +189,11 @@ toposingle(PORTUGAL);
                     <?php
                     mysqli_data_seek($resultCategorias,1);
                     while ($dadosCategorias = mysqli_fetch_array($resultCategorias)) {
+                        $sql2="Select count(*) as n
+                       from estabelecimentos 
+                       WHERE estabelecimentoCategoriaId =".$dadosCategorias['categoriaId'];
+                        $resultado=mysqli_query($con,$sql2);
+                        $dados=mysqli_fetch_assoc($resultado);
                         ?>
                         <div class="col-md-12">
                             <div class="categories-item set-bg" <?php echo $dadosCategorias['categoriaId'] ?> data-setbg="<?php echo $dadosCategorias['categoriaImagemURL'] ?>">
@@ -194,7 +202,7 @@ toposingle(PORTUGAL);
                                 <a href="<?php echo $dadosCategorias['categoriaImagemURL'] ?>" class="img-hover pop-up"> <img src="img/zoom.png" alt=""></a>
                                 <div class="categories-text">
                                     <h4><?php echo $dadosCategorias['categoriaNome'] ?></h4>
-                                    <p>2373 Listados</p>
+                                    <p><?php echo $dados['n'] ?> Listados</p>
                                     <a href="procurar.php">Ver Todos</a>
                                 </div>
                             </div>
