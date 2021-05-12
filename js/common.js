@@ -59,11 +59,12 @@ function entrar() {
                 password: password
             },
             success: function (result) {
-                if (parseInt(result) == 1) {
+                if ((result) == 1) {
+                    erro = true;
                    $('#frmConfirma').submit();
 
-                } else if (erro) {
-                    erro = true;
+                } else if (!erro) {
+
                     alert('Dados Mal Inseridos');
                 }
             }
