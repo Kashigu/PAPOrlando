@@ -255,10 +255,6 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 
                         </div>
                         <div class="col-lg-6">
-                            <label>Imagens do Estabelecimento: </label>
-                            <input type="file"
-                                   value="<?php echo $dadosEstabelecimentos['estabelecimentoInteriorURL'] ?>"
-                                   name="estabelecimento" id="estabelecimento">
 
                         </div>
                         <div class="col-lg-4 mt-3">
