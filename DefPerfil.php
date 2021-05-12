@@ -24,7 +24,7 @@ if ($erro = 1){
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form action="confirmaEditaUtilizador.php" class="contact-form" method="post" enctype="multipart/form-data"> <!-- (class importante ) falta poder clicar na imagem para trocar!-->
+                <form action="confirmaEditaUtilizador.php" class="contact-form" method="post" enctype="multipart/form-data" id="frmEdita"> <!-- (class importante ) falta poder clicar na imagem para trocar!-->
 
                     <input type="hidden" name="id" value="<?php echo $id?>">
                     <div>
@@ -45,16 +45,19 @@ if ($erro = 1){
                             <input type="text" value="<?php echo $dadosPerfis['perfilLocalidade'] ?>" placeholder="Localidade" id="perfilLocalidade" name="perfilLocalidade">
                         </div>
                         <div class="col-lg-6">
-                            <input type="password"  name="perfilOld" placeholder="Atual Palavra-passe">
+                            <span id="MSG" ></span>
+                            <input type="password"  id="perfilOld" name="perfilOld" placeholder="Atual Palavra-passe">
                         </div>
                         <div class="col-lg-6">
-                            <input type="password" name="perfilPalavra" placeholder="Nova Palavra-passe">
+                            <input type="password" id="perfilPalavra" name="perfilPalavra" placeholder="Nova Palavra-passe">
                         </div>
                         <div class="col-lg-6">
-                            <input type="password" name="ConfirmaperfilPalavra" placeholder="Confirmação Nova Palavra-passe">
+
+                            <input type="password" id="ConfirmaperfilPalavra" name="ConfirmaperfilPalavra" placeholder="Confirmação Nova Palavra-passe">
+                            <span id="errorMsgSS"></span>
                         </div>
                         <div class="col-lg-4 meio">
-                            <button type="submit">Confirmar alterações </button>
+                            <button onclick="def(<?php echo $id ?>)" type="button">Confirmar alterações </button>
                         </div>
                 </form>
             </div>

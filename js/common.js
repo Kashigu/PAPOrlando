@@ -1,4 +1,61 @@
-//------------------------------------------------------------- Funções para confirmaçoes -------------------------------------------------------//
+//------------------------------------------------------------- Funções para DefPerfil ---------------------------------------------------------------//
+function def(id) {
+    let emails = $('#perfilEmail').val();
+    let utilizador = $('#perfilNome').val();
+    let localidade = $('#perfilLocalidade').val();
+    let password = $('#perfilOld').val();
+    let erro = false;
+
+    if ($('#perfilNome').val() == '') {
+        erro = true;
+    }
+
+    if ($('#perfilLocalidade').val() == '') {
+        erro = true;
+    }
+    if ($('#perfilEmail').val() == '') {
+        erro = true;
+    }
+    if ($('#perfilPalavra').val() == '') {
+        erro = true;
+    }
+    if ($('#ConfirmaperfilPalavra').val() == '' || ($('#ConfirmaperfilPalavra').val() != ($('#perfilPalavra').val()))) {
+        erro = true;
+        $('#errorMsgSS').html('Palavra Mal Introduzida!');
+    } else {
+        $.ajax({
+            url: "AJAX/AJAXConfirmaDef.php",
+            type: "post",
+            data: {
+                id:id,
+                nome: utilizador,
+                email: emails,
+                localidade:localidade,
+                password: password
+            },
+            success: function (result) {
+                alert(result)
+                if ($('#perfilOld').val() != (result)) {
+                    erro = true;
+                }
+                if ((result) == 1) {
+                    erro = true;
+                    $('#frmEdita').submit();
+
+                }
+                if ((result) == 0) {
+                    erro = true;
+                    $('#MSG').html('Palavra Mal Introduzida');
+
+                }
+
+            }
+        });
+    }
+}
+
+
+//------------------------------------------------------------- Funções para Login ---------------------------------------------------------------//
 
 
 function entrar() {
@@ -27,7 +84,7 @@ function entrar() {
             success: function (result) {
                 if ((result) == 1) {
                     erro = true;
-                   $('#frmConfirma').submit();
+                    $('#frmConfirma').submit();
 
                 } else if (!erro) {
 
@@ -38,17 +95,17 @@ function entrar() {
     }
 }
 
-
+//------------------------------------------------------------ Funções para o Registar ----------------------------------------------------------------------//
 function valido() {
     let email = $('#email').val();
     let erro = false;
     if ($('#localidade').val() == '') {
         erro = true;
     }
-    if ($('#pass').val() ==  '' || ($('#pass').val() != ($('#Spass').val() ))) {
+    if ($('#pass').val() == '' || ($('#pass').val() != ($('#Spass').val()))) {
         erro = true;
     }
-    if ($('#Spass').val() == '' || ($('#Spass').val() != ($('#pass').val() ))) {
+    if ($('#Spass').val() == '' || ($('#Spass').val() != ($('#pass').val()))) {
         erro = true;
         $('#errorMsgS').html('Palavra Mal Introduzida!');
     }
@@ -76,9 +133,6 @@ function valido() {
 
     }
 }
-
-
-//------------------------------------------------------------ Funções para o Registar ----------------------------------------------------------------------//
 
 
 //------------------------------------------------------------ FUNÇÕES PARA O DISTRITO ----------------------------------------------------------------------//
