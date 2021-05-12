@@ -1,39 +1,5 @@
 //------------------------------------------------------------- Funções para confirmaçoes -------------------------------------------------------//
 
-/*function validarEmail(email){
-    $.post('AJAX/AJAXVerifyEmail.php', {email:email }, function (data){
-        $('#emailV').text(data);
-    });
-}
-
-$('#email').focusin(function () {
-    if ($('#email').val() ===''){
-        $('#emailV').text('Meta um Email Válido');
-    } else  {
-        validarEmail($('#email').val());
-    }
-}).blur(function (){
-    $('#emailV').text('');
-}).keyup(function (){
-    validarEmail($('#email').val());
-});
-
-function validarEmails(email){
-    $.post('AJAX/AJAXVerifyEmails.php', {email:email }, function (data){
-        $('#emailVs').text(data);
-    });
-}
-
-$('#emails').focusin(function () {
-    if ($('#emails').val() ===''){
-        validarEmails($('#emails').val());
-    }
-}).blur(function (){
-    $('#emailVs').text('');
-}).keyup(function (){
-    validarEmails($('#emails').val());
-});*/
-
 
 function entrar() {
     let emails = $('#emails').val();
