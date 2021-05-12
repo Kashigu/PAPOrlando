@@ -9,7 +9,7 @@ $sql .= " where estabelecimentoId=$id";
 $resultEstabelecimentos = mysqli_query($con, $sql);
 $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 ?>
-<!--                                                 ESTÁ COM PROBLEMAS ESTA PÁGINA                                                      -->
+
 <div class="hero-listing set-bg" data-setbg="<?php echo $dadosEstabelecimentos['estabelecimentoFundoURL'] ?>">
 </div>
 <!-- Hero Section End -->
