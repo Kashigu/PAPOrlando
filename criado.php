@@ -104,40 +104,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                         <div class="client-reviews mt-3">
                             <h3>Revisão</h3>
                             <div class="reviews-item">
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <h5>"A Great Place"</h5>
-                                <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae
-                                    massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class
-                                    aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                                    himenaeos. </p>
-                                <div class="client-text">
-                                    <h5>Michael Smith</h5>
-                                    <span>March 03, 2019</span>
-                                </div>
-                            </div>
-                            <div class="reviews-item">
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <h5>"The best food in town"</h5>
-                                <p>Donec eget efficitur ex. Donec eget dolor vitae eros feugiat tristique id vitae
-                                    massa. Proin vulputate congue rutrum. Fusce lobortis a enim eget tempus. Class
-                                    aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                                    himenaeos. </p>
-                                <div class="client-text">
-                                    <h5>Michael Smith</h5>
-                                    <span>March 03, 2019</span>
-                                </div>
+                                <div class="col-lg-12" id="tableContent"></div>
                             </div>
                         </div>
                     </div>
@@ -173,5 +140,5 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 </section>
 
 <?php
-bot(HOME);
+bot(SINGLE, $id);
 ?>
