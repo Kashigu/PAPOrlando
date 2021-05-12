@@ -16,12 +16,10 @@ $email = $_POST['email'];
 $logo = $_FILES['logo']['name'];
 $fundo = $_FILES['fundo']['name'];
 //$google = $_FILES['google'];
-$estabelecimento = $_FILES['estabelecimento']['name'];
 
 
 $novoNome="imagens/".$logo;
 $novoNome1="imagens/".$fundo;
-$novoNome2="imagens/".$estabelecimento;
 
 //$sql ="UPDATE perfis set perfilNome ='".$nome."'and perfilAvatar='".$novoNome."'and perfilLocalidade='".$localidade."' and perfilEmail='".$email."' where perfilId='$id'";
 
@@ -44,10 +42,6 @@ if($logo!=''){
 if($fundo!=''){
     $sql.=", estabelecimentoFundoURL='imagens/".$fundo."'";
     copy($_FILES['fundo']['tmp_name'],$novoNome1);
-}
-if($estabelecimento!=''){
-    $sql.=",estabelecimentoInteriorURL='imagens/".$estabelecimento."'";
-    copy($_FILES['estabelecimento']['tmp_name'],$novoNome2);
 }
 
  $sql.=" where estabelecimentoId=".$id;

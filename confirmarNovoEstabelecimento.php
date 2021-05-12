@@ -18,31 +18,29 @@ $sobre1 = $_POST['reviewTexto1'];
 $logo = $_FILES['logo']['name'];
 $fundo = $_FILES['fundo']['name'];
 //$google = $_FILES['google'];
-$estabelecimento = $_FILES['estabelecimento']['name'];
+
 
 
 $novoNome="imagens/".$logo;
 $novoNome1="imagens/".$fundo;
-$novoNome2="imagens/".$estabelecimento;
+
 
 
 
 copy($_FILES['logo']['tmp_name'],$novoNome);
 copy($_FILES['fundo']['tmp_name'],$novoNome1);
-copy($_FILES['estabelecimento']['tmp_name'],$novoNome2);
+
 
 
 $sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimentoCategoriaId,estabelecimentoNome,estabelecimentoSlogan,
                                     estabelecimentoDescricao,estabelecimentoDescricao2,
                                     estabelecimentoLocalidade,estabelecimentoDistritoId,estabelecimentoMorada,
                                     estabelecimentoTelefone,estabelecimentoEmail,
-                                    estabelecimentoMiniaturaURL,estabelecimentoFundoURL,
-                                    estabelecimentoInteriorURL) values('" . $idUtilizador . "','" . $idCategoria . "','" . $nome . "','" . $nomeSlogan . "',
+                                    estabelecimentoMiniaturaURL,estabelecimentoFundoURL) values('" . $idUtilizador . "','" . $idCategoria . "','" . $nome . "','" . $nomeSlogan . "',
                                                                         '" . $sobre . "','" . $sobre1 . "','" . $nomeLoca . "',
                                                                         '" . $nomeDistrito . "','" . $rua . "','" . $numero . "',
                                                                         '" . $email . "',
-                                                                        '" . $novoNome . "','" . $novoNome1 . "',
-                                                                        '" . $novoNome2 . "');";
+                                                                        '" . $novoNome . "','" . $novoNome1 . "');";
 
 mysqli_query($con, $sql);
 $idEst=mysqli_insert_id($con); // último Id criado pelo Insert

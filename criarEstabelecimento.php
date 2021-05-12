@@ -231,8 +231,6 @@ $id=intval($_GET['id']);
 
                         </div>
                         <div class="col-lg-6">
-                            <label>Imagens do Estabelecimento: </label>
-                            <input type="file" name="estabelecimento" id="estabelecimento">
 
                         </div>
                         <div class="col-lg-4 mt-3">
