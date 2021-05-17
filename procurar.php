@@ -4,9 +4,13 @@ toposingle(PROCURAR);
 
 if(isset ($_GET['categoria'] )) {
     $categoria = intval($_GET['categoria']);
+}else{
+$categoria=-1;
 }
 if(isset ($_GET['distrito'] )) {
     $distrito = intval($_GET['distrito']);
+} else{
+$distrito=-1;
 }
 ?>
 
@@ -36,8 +40,10 @@ if(isset ($_GET['distrito'] )) {
                             while ($dadosCategorias = mysqli_fetch_array($resultCategorias)) {
                                 ?>
                                 <option id="search"
-                                        <?php if ($dadosCategorias['categoriaId'] == $categoria)
-                                            echo " selected " ?> value="<?php echo $dadosCategorias['categoriaId'] ?>">
+                                    <?php if ($dadosCategorias['categoriaId'] == $categoria)
+                                        echo " selected " ?>
+                                    value="<?php echo $dadosCategorias['categoriaId'] ?>">
+
                                     <?php echo $dadosCategorias['categoriaNome'] ?>
                                 </option>
                                 <?php
