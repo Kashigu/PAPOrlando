@@ -17,7 +17,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 
             <div class="col-3 mt-2">
 
-                <a href="criado.php?id=<?php echo $dadosEstabelecimentos['estabelecimentoId'] ?>"><img src="<?php echo $dadosEstabelecimentos['estabelecimentoMiniaturaURL'] ?>" ></a>
+                <a href="criado.php?id=<?php echo $dadosEstabelecimentos['estabelecimentoId'] ?>"><img class="quadradinho" src="<?php echo $dadosEstabelecimentos['estabelecimentoMiniaturaURL'] ?>" ></a>
             </div>
             <div class="col-9 mt-2" id="tableContent">
 
