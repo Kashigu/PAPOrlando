@@ -214,13 +214,7 @@ $distrito=-1;
                     <div class="col-lg-12 row" id="tableContent">
                     </div>
 
-                        <div class="col-lg-12 text-right">
-                            <div class="pagination-num">
-                                <a href="#">01</a>
-                                <a href="#">02</a>
-                                <a href="#">03</a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
