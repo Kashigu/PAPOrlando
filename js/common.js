@@ -34,7 +34,6 @@ function def(id) {
                 password: password
             },
             success: function (result) {
-                alert(result)
                 if ($('#perfilOld').val() != (result)) {
                     erro = true;
                 }
