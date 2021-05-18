@@ -205,7 +205,7 @@ $distrito=-1;
                     <div class="col-lg-12">
                         <form action="procurar.php" class="arrange-select nice-select2">
                             <span>Ordenar por</span>
-                            <select>
+                            <select id="searchOptions">
                                 <option>Relevância</option>
                                 <option>Mais Recente</option>
                             </select>

@@ -427,7 +427,7 @@ function preview_image(event) {
 
 //-----------------------------------------------------------FUNÇÕES PARA O PROCURAR.PHP----------------------------------------------//
 
-function fillTableEstabelecimentosProcurar(txt = '', categoria = -1, distrito = -1) {
+function fillTableEstabelecimentosProcurar(txt = '', categoria = -1, distrito = -1, novo = -1) {
     //alert(txt + ' ' + categoria+' '+distrito);/*
     $.ajax({
         url: "AJAX/AJAXFillEstabelecimentosProcurar.php",
@@ -435,7 +435,8 @@ function fillTableEstabelecimentosProcurar(txt = '', categoria = -1, distrito = 
         data: {
             txt: txt,
             categoria: categoria,
-            distrito: distrito
+            distrito: distrito,
+            novo:novo
         },
         success: function (result) {
             $('#tableContent').html(result);

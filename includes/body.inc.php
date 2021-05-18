@@ -598,13 +598,16 @@ function bot($menu = HOME, $id = 0)
             ?>
 
             $('#searchEstabelecimento').keyup(function () {
-                fillTableEstabelecimentosProcurar(this.value, $('#searchCategoria').val(), $('#searchDistrito').val());
+                fillTableEstabelecimentosProcurar(this.value, $('#searchCategoria').val(), $('#searchDistrito').val(), $('#searchOptions').val());
             });
             $('#searchCategoria').change(function () {
-                fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), this.value, $('#searchDistrito').val());
+                fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), this.value, $('#searchDistrito').val(), $('#searchOptions').val());
             });
             $('#searchDistrito').change(function () {
-                fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), $('#searchCategoria').val(), this.value);
+                fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), $('#searchCategoria').val(), this.value, $('#searchOptions').val());
+            });
+            $('#searchOptions').change(function () {
+                fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), $('#searchCategoria').val(),  $('#searchDistrito').val(),this.value);
             });
             fillTableEstabelecimentosProcurar();
 

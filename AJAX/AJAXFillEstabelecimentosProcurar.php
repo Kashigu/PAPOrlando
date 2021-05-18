@@ -3,6 +3,7 @@ include_once("../includes/body.inc.php");
 $txt=addslashes($_POST['txt']);
 $categoria=intval($_POST['categoria']);
 $distrito=intval($_POST['distrito']);
+$novo=intval($_POST['novo']);
 
 
 $resultado_por_pagina = 9;
@@ -43,13 +44,17 @@ $esta_pagina_primeiro_resultado = ($pagina-1)*$resultado_por_pagina;
                     INNER JOIN categorias
                     on categoriaId=estabelecimentoCategoriaId where 1";
     if($txt!='')
-        $sql.=" and estabelecimentoNome LIKE '%$txt%'";
+        $sql.=" and estabelecimentoNome LIKE '%$txt%' ";
     if($categoria!=-1)
-        $sql.=" and categoriaId=$categoria";
+        $sql.=" and categoriaId=$categoria ";
     if($distrito!=-1){
-        $sql.=" and distritoId =$distrito";
+        $sql.=" and distritoId =$distrito ";
         }
+    if ($novo!=-1){
+        $sql.=" order by estabelecimentoId desc ";
+    }
     $sql.=" LIMIT " . $esta_pagina_primeiro_resultado . ',' . $resultado_por_pagina;
+    echo $sql;
 
 $resultEstabelecimentos = mysqli_query($con, $sql);
 while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
