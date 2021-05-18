@@ -2,15 +2,15 @@
 include_once("includes/body.inc.php");
 toposingle(PROCURAR);
 
-if(isset ($_GET['categoria'] )) {
+if (isset ($_GET['categoria'])) {
     $categoria = intval($_GET['categoria']);
-}else{
-$categoria=-1;
+} else {
+    $categoria = -1;
 }
-if(isset ($_GET['distrito'] )) {
+if (isset ($_GET['distrito'])) {
     $distrito = intval($_GET['distrito']);
-} else{
-$distrito=-1;
+} else {
+    $distrito = -1;
 }
 ?>
 
@@ -42,7 +42,7 @@ $distrito=-1;
                                 <option id="search"
                                     <?php if ($dadosCategorias['categoriaId'] == $categoria)
                                         echo " selected " ?>
-                                    value="<?php echo $dadosCategorias['categoriaId'] ?>">
+                                        value="<?php echo $dadosCategorias['categoriaId'] ?>">
 
                                     <?php echo $dadosCategorias['categoriaNome'] ?>
                                 </option>
@@ -64,8 +64,8 @@ $distrito=-1;
                             while ($dadosDistritos = mysqli_fetch_array($resultDistritos)) {
                                 ?>
                                 <option id="search"
-                                        <?php if ($dadosDistritos['distritoId'] == $distrito)
-                                            echo " selected " ?>
+                                    <?php if ($dadosDistritos['distritoId'] == $distrito)
+                                        echo " selected " ?>
                                         value="<?php echo $dadosDistritos['distritoId'] ?>">
                                     <?php echo $dadosDistritos['distritoNome'] ?>
                                 </option>
@@ -213,12 +213,10 @@ $distrito=-1;
                     </div>
                     <div class="col-lg-12 row" id="tableContent">
                     </div>
-
-
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
 </section>
 
 

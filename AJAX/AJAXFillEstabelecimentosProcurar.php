@@ -20,7 +20,6 @@ if($categoria!=-1)
     $sql.=" and categoriaId=$categoria";
 if($distrito!=-1)
     $sql.=" and distritoId =$distrito";
-$sql;
 
 $resultado= mysqli_query($con,$sql);
 $numero_de_resultados = mysqli_num_rows($resultado);
@@ -54,9 +53,9 @@ $esta_pagina_primeiro_resultado = ($pagina-1)*$resultado_por_pagina;
         $sql.=" order by estabelecimentoId desc ";
     }
     $sql.=" LIMIT " . $esta_pagina_primeiro_resultado . ',' . $resultado_por_pagina;
-   $sql;
-
 $resultEstabelecimentos = mysqli_query($con, $sql);
+
+
 while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
     ?>
     <div class="col-lg-4 col-sm-6">
