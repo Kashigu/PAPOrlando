@@ -4,20 +4,52 @@ $txt=addslashes($_POST['txt']);
 $categoria=intval($_POST['categoria']);
 $distrito=intval($_POST['distrito']);
 
-    $sql="
+
+$resultado_por_pagina = 9;
+
+$sql= "
                     select *
                     from distritos inner join estabelecimentos 
                     on distritoId=estabelecimentoDistritoId
                     INNER JOIN categorias
                     on categoriaId=estabelecimentoCategoriaId where 1 ";
+if($txt!='')
+    $sql.=" and estabelecimentoNome LIKE '%$txt%'";
+if($categoria!=-1)
+    $sql.=" and categoriaId=$categoria";
+if($distrito!=-1)
+    $sql.=" and distritoId =$distrito";
+$sql;
+
+$resultado= mysqli_query($con,$sql);
+$numero_de_resultados = mysqli_num_rows($resultado);
+
+
+$numero_de_paginas= ceil ($numero_de_resultados/$resultado_por_pagina);
+
+
+if(!isset($_GET['pagina'])){
+    $pagina=1;
+} else {
+    $pagina =$_GET['pagina'];
+}
+
+$esta_pagina_primeiro_resultado = ($pagina-1)*$resultado_por_pagina;
+
+    $sql="
+                    select *
+                    from distritos inner join estabelecimentos 
+                    on distritoId=estabelecimentoDistritoId
+                    INNER JOIN categorias
+                    on categoriaId=estabelecimentoCategoriaId where 1";
     if($txt!='')
         $sql.=" and estabelecimentoNome LIKE '%$txt%'";
     if($categoria!=-1)
         $sql.=" and categoriaId=$categoria";
-    if($distrito!=-1)
+    if($distrito!=-1){
         $sql.=" and distritoId =$distrito";
-
-$sql;
+        }
+    $sql.=" LIMIT " . $esta_pagina_primeiro_resultado . ',' . $resultado_por_pagina;
 
 $resultEstabelecimentos = mysqli_query($con, $sql);
 while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
@@ -47,33 +79,6 @@ while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
 <div class="col-lg-12 text-right">
     <div class="pagination-num">
         <?php
-
-        $resultado_por_pagina = 9;
-
-        $sql= "Select * from estabelecimentos";
-        $resultado= mysqli_query($con,$sql);
-        $numero_de_resultados = mysqli_num_rows($resultado);
-
-
-        $numero_de_paginas= ceil ($numero_de_resultados/$resultado_por_pagina);
-
-
-        if(!isset($_GET['pagina'])){
-            $pagina=1;
-        } else {
-            $pagina =$_GET['pagina'];
-        }
-
-        $esta_pagina_primeiro_resultado = ($pagina-1)*$resultado_por_pagina;
-
-
-        $sql="Select * from estabelecimentos LIMIT " . $esta_pagina_primeiro_resultado . ',' . $resultado_por_pagina;
-        $result=mysqli_query($con,$sql);
-
-        while ($row =mysqli_fetch_array($result)){
-            echo $row['estabelecimentoId'] . ' ' . $row['estabelecimentoNome'] .'<br>';
-        }
-
         for ($pagina=1;$pagina<=$numero_de_paginas;$pagina++){
             echo '<a href="procurar.php?pagina=' . $pagina . '">' . $pagina . '</a>';
         }
