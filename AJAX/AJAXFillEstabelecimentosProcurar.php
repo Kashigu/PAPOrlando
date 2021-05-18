@@ -54,7 +54,7 @@ $esta_pagina_primeiro_resultado = ($pagina-1)*$resultado_por_pagina;
         $sql.=" order by estabelecimentoId desc ";
     }
     $sql.=" LIMIT " . $esta_pagina_primeiro_resultado . ',' . $resultado_por_pagina;
-    echo $sql;
+   $sql;
 
 $resultEstabelecimentos = mysqli_query($con, $sql);
 while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
