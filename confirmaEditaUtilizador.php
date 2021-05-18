@@ -27,7 +27,7 @@ if (isset($old) and isset($palavra)) {
             $sql .= " , perfilPassword='" . $Comf . "' where perfilId=" . $id;
             echo $sql;
             $result = mysqli_query($con, $sql);
-            header("location:Defperfil.php?id={$id}");
+            header("location:novoperfil.php?id={$id}");
         }
     }
 }
