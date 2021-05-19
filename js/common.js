@@ -6,50 +6,55 @@ function def(id) {
     let password = $('#perfilOld').val();
     let erro = false;
 
-    if ($('#perfilNome').val() == '') {
-        erro = true;
-    }
+    if ($('#output_image').val() == '' || ($('#output_image').val() == ($('#output_image').val()))) {
 
-    if ($('#perfilLocalidade').val() == '') {
-        erro = true;
-    }
-    if ($('#perfilEmail').val() == '') {
-        erro = true;
-    }
-    if ($('#perfilPalavra').val() == '') {
-        erro = true;
-    }
-    if ($('#ConfirmaperfilPalavra').val() == '' || ($('#ConfirmaperfilPalavra').val() != ($('#perfilPalavra').val()))) {
-        erro = true;
-        $('#errorMsgSS').html('Palavra Mal Introduzida!');
-    } else {
-        $.ajax({
-            url: "AJAX/AJAXConfirmaDef.php",
-            type: "post",
-            data: {
-                id:id,
-                nome: utilizador,
-                email: emails,
-                localidade:localidade,
-                password: password
-            },
-            success: function (result) {
-                if ($('#perfilOld').val() != (result)) {
-                    erro = true;
+        $('#frmEdita').submit()
+
+        if ($('#perfilNome').val() == '') {
+            erro = true;
+        }
+
+        if ($('#perfilLocalidade').val() == '') {
+            erro = true;
+        }
+        if ($('#perfilEmail').val() == '') {
+            erro = true;
+        }
+        if ($('#perfilPalavra').val() == '') {
+            erro = true;
+        }
+        if ($('#ConfirmaperfilPalavra').val() == '' || ($('#ConfirmaperfilPalavra').val() != ($('#perfilPalavra').val()))) {
+            erro = true;
+            $('#errorMsgSS').html('Palavra Mal Introduzida!');
+        } else {
+            $.ajax({
+                url: "AJAX/AJAXConfirmaDef.php",
+                type: "post",
+                data: {
+                    id: id,
+                    nome: utilizador,
+                    email: emails,
+                    localidade: localidade,
+                    password: password
+                },
+                success: function (result) {
+                    if ($('#perfilOld').val() != (result)) {
+                        erro = true;
+                    }
+                    if ((result) == 1) {
+                        erro = true;
+                        $('#frmEdita').submit();
+
+                    }
+                    if ((result) == 0) {
+                        erro = true;
+                        $('#MSG').html('Palavra Mal Introduzida');
+
+                    }
+
                 }
-                if ((result) == 1) {
-                    erro = true;
-                    $('#frmEdita').submit();
-
-                }
-                if ((result) == 0) {
-                    erro = true;
-                    $('#MSG').html('Palavra Mal Introduzida');
-
-                }
-
-            }
-        });
+            });
+        }
     }
 }
 
@@ -436,7 +441,7 @@ function fillTableEstabelecimentosProcurar(txt = '', categoria = -1, distrito = 
             txt: txt,
             categoria: categoria,
             distrito: distrito,
-            novo:novo
+            novo: novo
         },
         success: function (result) {
             $('#tableContent').html(result);
