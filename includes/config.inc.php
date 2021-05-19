@@ -16,5 +16,8 @@ define("GALERIA",9);
 define("RESERVAS",10);
 define("SINGLE",11);
 define("RESERVASADMIN",12);
+define("REGISTOSPORPAGINA",9);
+
+
 
 ?>

@@ -427,7 +427,7 @@ function topAdmin($menu = GESTAO)
 
     <?php
 }
-function bot($menu = HOME, $id = 0)
+function bot($menu = HOME, $id = 0,$pg=1)
 {
     ?>
 
@@ -609,7 +609,7 @@ function bot($menu = HOME, $id = 0)
             $('#searchOptions').change(function () {
                 fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), $('#searchCategoria').val(),  $('#searchDistrito').val(),this.value);
             });
-            fillTableEstabelecimentosProcurar();
+            fillTableEstabelecimentosProcurar('',-1,-1,-1,<?php echo $pg?>);
 
             <?php }
             if ($menu == GALERIA){

@@ -221,5 +221,10 @@ if (isset ($_GET['distrito'])) {
 
 
 <?php
-bot(ESTABELECIMENTOSP);
+if(!isset($_GET['pagina'])){
+    $pagina=1;
+} else {
+    $pagina=intval($_GET['pagina']);
+}
+bot(ESTABELECIMENTOSP,0,$pagina);
 ?>

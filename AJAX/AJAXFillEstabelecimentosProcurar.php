@@ -4,9 +4,9 @@ $txt=addslashes($_POST['txt']);
 $categoria=intval($_POST['categoria']);
 $distrito=intval($_POST['distrito']);
 $novo=intval($_POST['novo']);
+$pagina=intval($_POST['pag']);
 
 
-$resultado_por_pagina = 9;
 
 $sql= "
                     select *
@@ -22,19 +22,16 @@ if($distrito!=-1)
     $sql.=" and distritoId =$distrito";
 
 $resultado= mysqli_query($con,$sql);
-$numero_de_resultados = mysqli_num_rows($resultado);
+ $numero_de_resultados = mysqli_num_rows($resultado);
 
 
-$numero_de_paginas= ceil ($numero_de_resultados/$resultado_por_pagina);
+$numero_de_paginas= ceil ($numero_de_resultados/REGISTOSPORPAGINA);
 
 
-if(!isset($_GET['pagina'])){
-    $pagina=1;
-} else {
-    $pagina =$_GET['pagina'];
-}
 
-$esta_pagina_primeiro_resultado = ($pagina-1)*$resultado_por_pagina;
+
+
+ $esta_pagina_primeiro_resultado = ($pagina-1)*REGISTOSPORPAGINA;
 
     $sql="
                     select *
@@ -52,7 +49,9 @@ $esta_pagina_primeiro_resultado = ($pagina-1)*$resultado_por_pagina;
     if ($novo!=-1){
         $sql.=" order by estabelecimentoId desc ";
     }
-    $sql.=" LIMIT " . $esta_pagina_primeiro_resultado . ',' . $resultado_por_pagina;
+    $sql.=" LIMIT " . $esta_pagina_primeiro_resultado . ',' . REGISTOSPORPAGINA;
+
+    echo $sql;
 $resultEstabelecimentos = mysqli_query($con, $sql);
 
 
@@ -83,9 +82,10 @@ while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
 <div class="col-lg-12 text-right">
     <div class="pagination-num">
         <?php
-        for ($pagina=1;$pagina<=$numero_de_paginas;$pagina++){
-            echo '<a href="procurar.php?pagina=' . $pagina . '">' . $pagina . '</a>';
-        }
+        if($numero_de_paginas>1)
+            for ($pagina=1;$pagina<=$numero_de_paginas;$pagina++){
+                echo '<a href="procurar.php?pagina=' . $pagina . '">' . $pagina . '</a>';
+            }
         ?>
     </div>
 </div>

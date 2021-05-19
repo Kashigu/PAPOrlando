@@ -32,16 +32,6 @@ if (isset($old) and isset($palavra)) {
     }
 }
 
-$sql1 = "Update perfis set perfilNome='" . $nome . "', perfilLocalidade='" . $localidade . "', perfilEmail='" . $email . "'";
-
-if ($imagem != '') {
-    $sql1 .= ", perfilAvatar='imagens/" . $imagem . "'";
-    copy($_FILES['perfilAvatar']['tmp_name'], $novoNome);
-}
-$sql1 .= " where perfilId=" . $id;
-$result1 = mysqli_query($con, $sql1);
-header("location:novoperfil.php?id={$id}");
-
 
 ?>
 
