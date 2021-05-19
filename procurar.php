@@ -206,8 +206,9 @@ if (isset ($_GET['distrito'])) {
                         <form action="procurar.php" class="arrange-select nice-select2">
                             <span>Ordenar por</span>
                             <select id="searchOptions">
-                                <option>Relevância</option>
-                                <option>Mais Recente</option>
+                                <option value="-1">Escolha Opção</option>
+                                <option value="1">Mais Antigo</option>
+                                <option value="2">Mais Recente</option>
                             </select>
                         </form>
                     </div>

@@ -1,58 +1,58 @@
 <?php
 include_once("../includes/body.inc.php");
-$txt=addslashes($_POST['txt']);
-$categoria=intval($_POST['categoria']);
-$distrito=intval($_POST['distrito']);
-$novo=intval($_POST['novo']);
-$pagina=intval($_POST['pag']);
+$txt = addslashes($_POST['txt']);
+$categoria = intval($_POST['categoria']);
+$distrito = intval($_POST['distrito']);
+$novo = intval($_POST['novo']);
+
+$pagina = intval($_POST['pag']);
+
+    echo $novo;
+
+    $sql = "
+                        select *
+                        from distritos inner join estabelecimentos 
+                        on distritoId=estabelecimentoDistritoId
+                        INNER JOIN categorias
+                        on categoriaId=estabelecimentoCategoriaId where 1 ";
+    if ($txt != '')
+        $sql .= " and estabelecimentoNome LIKE '%$txt%'";
+    if ($categoria != -1)
+        $sql .= " and categoriaId=$categoria";
+    if ($distrito != -1)
+        $sql .= " and distritoId =$distrito";
+
+    $resultado = mysqli_query($con, $sql);
+    $numero_de_resultados = mysqli_num_rows($resultado);
 
 
-
-$sql= "
-                    select *
-                    from distritos inner join estabelecimentos 
-                    on distritoId=estabelecimentoDistritoId
-                    INNER JOIN categorias
-                    on categoriaId=estabelecimentoCategoriaId where 1 ";
-if($txt!='')
-    $sql.=" and estabelecimentoNome LIKE '%$txt%'";
-if($categoria!=-1)
-    $sql.=" and categoriaId=$categoria";
-if($distrito!=-1)
-    $sql.=" and distritoId =$distrito";
-
-$resultado= mysqli_query($con,$sql);
- $numero_de_resultados = mysqli_num_rows($resultado);
+    $numero_de_paginas = ceil($numero_de_resultados / REGISTOSPORPAGINA);
 
 
-$numero_de_paginas= ceil ($numero_de_resultados/REGISTOSPORPAGINA);
+    $esta_pagina_primeiro_resultado = ($pagina - 1) * REGISTOSPORPAGINA;
 
+    $sql = "
+                        select *
+                        from distritos inner join estabelecimentos 
+                        on distritoId=estabelecimentoDistritoId
+                        INNER JOIN categorias
+                        on categoriaId=estabelecimentoCategoriaId where 1";
 
+    if ($txt != '')
+        $sql .= " and estabelecimentoNome LIKE '%$txt%' ";
+    if ($categoria != -1)
+        $sql .= " and categoriaId=$categoria ";
+    if ($distrito != -1)
+        $sql .= " and distritoId =$distrito ";
+    if ($novo == 2)
+        $sql .= " order by estabelecimentoId desc ";
+    if ($novo == 1)
+        $sql .= " order by estabelecimentoId asc ";
 
-
-
- $esta_pagina_primeiro_resultado = ($pagina-1)*REGISTOSPORPAGINA;
-
-    $sql="
-                    select *
-                    from distritos inner join estabelecimentos 
-                    on distritoId=estabelecimentoDistritoId
-                    INNER JOIN categorias
-                    on categoriaId=estabelecimentoCategoriaId where 1";
-    if($txt!='')
-        $sql.=" and estabelecimentoNome LIKE '%$txt%' ";
-    if($categoria!=-1)
-        $sql.=" and categoriaId=$categoria ";
-    if($distrito!=-1){
-        $sql.=" and distritoId =$distrito ";
-        }
-    if ($novo!=-1){
-        $sql.=" order by estabelecimentoId desc ";
-    }
-    $sql.=" LIMIT " . $esta_pagina_primeiro_resultado . ',' . REGISTOSPORPAGINA;
+    $sql .= " LIMIT " . $esta_pagina_primeiro_resultado . ',' . REGISTOSPORPAGINA;
 
     echo $sql;
-$resultEstabelecimentos = mysqli_query($con, $sql);
+    $resultEstabelecimentos = mysqli_query($con, $sql);
 
 
 while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
@@ -82,8 +82,8 @@ while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
 <div class="col-lg-12 text-right">
     <div class="pagination-num">
         <?php
-        if($numero_de_paginas>1)
-            for ($pagina=1;$pagina<=$numero_de_paginas;$pagina++){
+        if ($numero_de_paginas > 1)
+            for ($pagina = 1; $pagina <= $numero_de_paginas; $pagina++) {
                 echo '<a href="procurar.php?pagina=' . $pagina . '">' . $pagina . '</a>';
             }
         ?>
