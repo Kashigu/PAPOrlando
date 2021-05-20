@@ -542,7 +542,6 @@ function bot($menu = HOME, $id = 0,$pg=1 )
             </div>
         </div>
     </div>
-
     <div class="container">
 
         <!-- Modal Logout-->

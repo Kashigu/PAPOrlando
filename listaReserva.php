@@ -60,6 +60,7 @@ $id = intval($_GET['id']);
     <div class="modal-dialog">
         <div class="modal-content">
             <form action="confirmaEditaReserva.php" class="contact-form" method="post" enctype="multipart/form-data">
+                <input type="hidden" value="<?php echo $id ?>" name="id">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editarlabel">Editar Reserva</h5>
 
@@ -81,7 +82,6 @@ $id = intval($_GET['id']);
                     </div>
                     <div class="col-lg-5 meio">
                         <button  type="submit" class="btn btn-danger mt-2">Alterar</button>
-                        <!-- onclick="EditarTableCategorias();"-->
                     </div>
 
             </form>

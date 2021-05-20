@@ -586,7 +586,7 @@ function DeleteTableReserva(id) {                                           // P
             categoria: parseInt($('#ReservaID').html())
         },
         success: function (result) {
-            fillTableReservas(id);
+            fillTableReservas("",result);
         }
     });
 }
