@@ -84,7 +84,7 @@ while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
         <?php
         if ($numero_de_paginas > 1)
             for ($pagina = 1; $pagina <= $numero_de_paginas; $pagina++) {
-                echo '<a href="procurar.php?pagina=' . $pagina . '">' . $pagina . '</a>';
+                echo "<a onclick=\"fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), $('#searchCategoria').val(),  $('#searchDistrito').val(),$('#searchOptions').val(),".$pagina.");\"  href=\"#\">" . $pagina . "</a>";
             }
         ?>
     </div>
