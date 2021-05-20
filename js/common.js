@@ -319,6 +319,23 @@ function EditarTableCategorias() {
 }
 
 //----------------------------------------------------------------FUNÇÕES PARA OS ESTABELECIMENTOS ---------------------------------------------------------//
+function certeza() {
+    let categoria = $('#categoria').val();
+    let distrito = $('#distrito').val();
+    let erro = false;
+
+    if ($('#categoria').val() == '') {
+        erro = true;
+        $('#Erro').html('Precisa de Categoria');
+    }
+
+    if ($('#distrito').val() == '' || $('#distrito').val() == -1) {
+        erro = true;
+        $('#ErroD').html('Precisa de Distrito');
+    }
+        $('#frmFazer').submit();
+
+}
 
 function fillTableEstabelecimentos(txt = '') {
     $.ajax({
@@ -427,7 +444,7 @@ function preview_image(event) {
 
 //-----------------------------------------------------------FUNÇÕES PARA O PROCURAR.PHP----------------------------------------------//
 
-function fillTableEstabelecimentosProcurar(txt = '', categoria = -1, distrito = -1, novo = -1, pagina=1, recente=-1) {
+function fillTableEstabelecimentosProcurar(txt = '', categoria = -1, distrito = -1, novo = -1, pagina = 1, recente = -1) {
     //alert(txt + ' ' + categoria+' '+distrito);/*
     $.ajax({
         url: "AJAX/AJAXFillEstabelecimentosProcurar.php",
@@ -437,8 +454,8 @@ function fillTableEstabelecimentosProcurar(txt = '', categoria = -1, distrito = 
             categoria: categoria,
             distrito: distrito,
             novo: novo,
-            pag:pagina,
-            recente:recente
+            pag: pagina,
+            recente: recente
         },
         success: function (result) {
             $('#tableContent').html(result);
@@ -586,7 +603,7 @@ function DeleteTableReserva(id) {                                           // P
             categoria: parseInt($('#ReservaID').html())
         },
         success: function (result) {
-            fillTableReservas("",result);
+            fillTableReservas("", result);
         }
     });
 }

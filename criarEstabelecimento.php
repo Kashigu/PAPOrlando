@@ -140,7 +140,7 @@ $id=intval($_GET['id']);
             <div class="row">
                 <div class="col-lg-12">
 
-                   <form action="confirmarNovoEstabelecimento.php" class="contact-form" method="post" enctype="multipart/form-data">
+                   <form action="confirmarNovoEstabelecimento.php" class="contact-form" method="post" enctype="multipart/form-data" id="frmFazer">
                     <input type="hidden" value="<?php echo $id ?>" name="id">
                        <div class="row">
 
@@ -157,11 +157,12 @@ $id=intval($_GET['id']);
                                         <span class="checkmark"></span>
                                 <span type="radio" name="categoria2[]" >  <?php echo $dadosCategorias['categoriaNome']?>
                                 </span> </label>
+
                         </div>
                                         <?php
                                     }
                                     ?>
-
+                           <span id="Erro"></span>
 
 
                             <!-- <label for="cafe">Café
@@ -196,9 +197,14 @@ $id=intval($_GET['id']);
 
 
                         </div>
+
                         <div class="col-lg-6">
                             <input type="text" name="nomeSlogan" id="nomeSlogan" placeholder="Slogan">
                         </div>
+                           <div CLASS="col-lg-2 offset-lg-2"></div>
+
+                               <span id="ErroD"></span>
+
                         <div class="col-lg-12">
                             <textarea name="reviewTexto" id="myTextarea" placeholder="Sobre o Estabelecimento"></textarea>
                         </div>
@@ -236,7 +242,7 @@ $id=intval($_GET['id']);
                         <div class="col-lg-4 mt-3">
                         </div>
                         <div class="col-lg-8 mt-3">
-                            <button type="submit">Confirmar Estabelecimento </button>
+                            <button onclick="certeza()" type="button">Confirmar Estabelecimento </button>
                         </div>
                     </div>
                     </form>
