@@ -7,7 +7,7 @@ $novo = intval($_POST['novo']);
 
 $pagina = intval($_POST['pag']);
 
-    echo $novo;
+$novo;
 
     $sql = "
                         select *
@@ -51,7 +51,7 @@ $pagina = intval($_POST['pag']);
 
     $sql .= " LIMIT " . $esta_pagina_primeiro_resultado . ',' . REGISTOSPORPAGINA;
 
-    echo $sql;
+    $sql;
     $resultEstabelecimentos = mysqli_query($con, $sql);
 
 
