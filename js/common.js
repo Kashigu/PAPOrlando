@@ -320,21 +320,88 @@ function EditarTableCategorias() {
 
 //----------------------------------------------------------------FUNÇÕES PARA OS ESTABELECIMENTOS ---------------------------------------------------------//
 function certeza() {
-    let categoria = $('#categoria').val();
-    let distrito = $('#distrito').val();
+    let email = $('#email').val();
+    let numero = $('#numero').val();
     let erro = false;
 
-    if ($('#categoria').val() == '') {
+    if ($('#categoria').val() == -1) {
         erro = true;
         $('#Erro').html('Precisa de Categoria');
     }
 
-    if ($('#distrito').val() == '' || $('#distrito').val() == -1) {
+    if ($('#distrito').val() == -1) {
         erro = true;
         $('#ErroD').html('Precisa de Distrito');
-    }
-        $('#frmFazer').submit();
 
+    }
+
+
+    if ($('#nomeEsta').val() == '') {
+        erro = true;
+        $('#ErroEN').html('Precisa de Nome');
+
+    }
+    if ($('#nomeLoca').val() == '') {
+        erro = true;
+        $('#ErroEL').html('Precisa de Localidade');
+
+    }
+    if ($('#rua').val() == '') {
+        erro = true;
+        $('#ErroR').html('Precisa de Rua');
+
+    }
+    if ($('#logo').val() == '') {
+        erro = true;
+        $('#Elogo').html('Precisa de Logótipo');
+
+    }
+    if ($('#fundo').val() == '') {
+        erro = true;
+        $('#Efundo').html('Precisa de Imagem de Fundo');
+    }
+    if ($('#numero').val() == '') {
+        erro = true;
+        $('#ErroNi').html('Precisa de Número');
+    }
+    if ($('#email').val() == '') {
+        erro = true;
+        $('#ErroEi').html('Precisa de Email');
+    } else {
+        $.ajax({
+            url: "AJAX/AJAXConfirmaEmail.php",
+            type: "post",
+            data: {
+                email: email,
+            },
+            success: function (result) {
+                if ((result) == 1) {
+                    erro = true;
+                    $('#ErroEmail').html('Email já Existente');
+                }
+                if ((result) == 0) {
+                    $.ajax({
+                        url: "AJAX/AJAXConfirmaNumero.php",
+                        type: "post",
+                        data: {
+                            numero: numero,
+                        },
+                        success: function (result) {
+
+                            if ((result) == 1) {
+                                erro = true;
+                                $('#ErroNum').html('Número já Existente');
+                            }
+                            if ((result) == 0) {
+                                erro = true;
+                                $('#frmFazer').submit();
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    }
 }
 
 function fillTableEstabelecimentos(txt = '') {
