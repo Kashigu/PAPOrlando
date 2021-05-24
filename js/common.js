@@ -818,13 +818,16 @@ function comentario(id = -1) {
 }
 
 function rating(id) {
+alert('sda');
     $.ajax({
         url: "AJAX/AJAXPutRatingEstabelecimento.php",
         type: "post",
         data: {
-            idRede: id
+            idRede: id,
+            valor: $('#star5').val()
         },
         success: function (result) {
+            alert('er')
             $.ajax({
                 url: "AJAX/AJAXGetRatingEstabelecimento.php",
                 type: "post",
@@ -837,9 +840,7 @@ function rating(id) {
 
                 }
             });
-
-
         }
     });
-
+    alert('e');
 }
