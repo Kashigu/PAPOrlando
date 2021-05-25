@@ -661,13 +661,13 @@ function eliminaReserva(id) {  // abre o modal e injecta o ID
     })
 }
 
-function DeleteTableReserva(id) {                                           // Problemas com o id quando confirmo o delete //
+function DeleteTableReserva() {                                           // Problemas com o id quando confirmo o delete //
     $('#staticBackdropDele').modal('toggle');
     $.ajax({
         url: "AJAX/AJAXDeleteReservas.php",
         type: "post",
         data: {
-            categoria: parseInt($('#ReservaID').html())
+            reserva: parseInt($('#ReservaID').html())
         },
         success: function (result) {
             fillTableReservas("", result);

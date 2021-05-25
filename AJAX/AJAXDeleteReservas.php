@@ -1,7 +1,7 @@
 <?php
 include_once("../includes/body.inc.php");
 
-$reservaId=$_POST['categoria'];
+$reservaId=$_POST['reserva'];
 
 $sql= "delete from reservas where reservaId=".$reservaId;
 
