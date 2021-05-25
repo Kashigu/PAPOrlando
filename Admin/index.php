@@ -94,22 +94,36 @@ topoadmin();
     <div class="container-fluid">
         <div class="categories-left">
             <div class="row">
+                <?php
+
+                $sql2="Select count(*) as n
+                       from estabelecimentos";
+                $resultado=mysqli_query($con,$sql2);
+                $dados=mysqli_fetch_assoc($resultado);
+                ?>
                 <div class="col-md-12">
                     <div class="categories-item set-bg" data-setbg="../img/categories/cat-1.jpg">
                         <a href="../img/categories/cat-1.jpg" class="img-hover pop-up"><img src="../img/zoom.png" alt=""></a>
                         <div class="categories-text">
                             <h4>Estabelecimentos</h4>
-                            <p>2373 Listados</p>
+                            <p><?php echo $dados['n'] ?> Listados</p>
                             <a href="estabelecimentos.php">Ver Todos</a>
                         </div>
                     </div>
                 </div>
+                <?php
+
+                $sql2="Select count(*) as n
+                       from categorias";
+                $resultado=mysqli_query($con,$sql2);
+                $dados=mysqli_fetch_assoc($resultado);
+                ?>
                 <div class="col-md-12">
                     <div class="categories-item set-bg" data-setbg="../img/categories/cat-4.jpg">
                         <a href="../img/categories/cat-4.jpg" class="img-hover pop-up"><img src="../img/zoom.png" alt=""></a>
                         <div class="categories-text">
                             <h4>Categorias</h4>
-                            <p>2373 Listados</p>
+                            <p><?php echo $dados['n'] ?> Listados</p>
                             <a href="categorias.php">Ver Todos</a>
                         </div>
                     </div>
@@ -118,22 +132,36 @@ topoadmin();
         </div>
         <div class="categories-right">
             <div class="row">
+                <?php
+
+                $sql2="Select count(*) as n
+                       from perfis";
+                $resultado=mysqli_query($con,$sql2);
+                $dados=mysqli_fetch_assoc($resultado);
+                ?>
                 <div class="col-md-12">
                     <div class="categories-item set-bg" data-setbg="../img/maozinhas.jpg">
                         <a href="../img/maozinhas.jpg" class="img-hover pop-up"><img src="../img/zoom.png" alt=""></a>
                         <div class="categories-text">
                             <h4>Utilizadores</h4>
-                            <p>2373 Listados</p>
+                            <p><?php echo $dados['n'] ?> Listados</p>
                             <a href="utilizadores.php">Ver Todos</a>
                         </div>
                     </div>
                 </div>
+                <?php
+
+                $sql2="Select count(*) as n
+                       from distritos";
+                $resultado=mysqli_query($con,$sql2);
+                $dados=mysqli_fetch_assoc($resultado);
+                ?>
                 <div class="col-md-12">
                     <div class="categories-item set-bg" data-setbg="../img/distritos.jpg">
                         <a href="../img/distritos.jpg" class="img-hover pop-up"><img src="../img/zoom.png" alt=""></a>
                         <div class="categories-text">
                             <h4>Distritos</h4>
-                            <p>2373 Listados</p>
+                            <p><?php echo $dados['n'] ?> Listados</p>
                             <a href="distritos.php">Ver Todos</a>
                         </div>
                     </div>
