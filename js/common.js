@@ -656,7 +656,6 @@ function eliminaReserva(id) {  // abre o modal e injecta o ID
             $("#idReserva").html('Confirma que deseja eliminar a Reserva ?');
 
             $("#staticBackdropDele").modal("toggle");
-            //fillTableCategorias();
         }
     })
 }
@@ -670,7 +669,7 @@ function DeleteTableReserva() {                                           // Pro
             reserva: parseInt($('#ReservaID').html())
         },
         success: function (result) {
-            fillTableReservas("", result);
+            fillTableReservas('', result);
         }
     });
 }

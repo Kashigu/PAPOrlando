@@ -53,8 +53,8 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                         <div class="share-btn">
                             <a href="reserva.php?id=<?php echo $id ?>">Fazer Reserva</a>
                         </div>
-                        <div class="share-icon">
-                            <a id="gosto" onclick="gosto(<?php echo $id ?>)" align="left">
+                        <div class="share-icon" >
+                            <a id="gosto" onclick="gosto(<?php echo $id ?>)" align="left" title="Gosto">
                                 <?php
                                 // verifica se o utilizador gosta da foto
                                 $sql = "select * from redes where redePerfilId=" . $_SESSION['id'] . " and redeEstabelecimentoId=" . $id . " and redeTipo='gosto'";
@@ -70,7 +70,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                                 }
                                 ?>
                             </a>
-                            <a id="favorito" onclick="favorito(<?php echo $id ?>)" align="left">
+                            <a id="favorito" onclick="favorito(<?php echo $id ?>)" align="left" title="Favorito">
                                 <?php
                                 // verifica se o utilizador gosta da foto
                                 $sql = "select * from redes where redePerfilId=" . $_SESSION['id'] . " and redeEstabelecimentoId=" . $id . " and redeTipo='favorito'";
