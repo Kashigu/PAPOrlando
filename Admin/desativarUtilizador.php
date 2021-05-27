@@ -6,7 +6,7 @@ $id=intval($_GET['id']);
 include_once ("../includes/config.inc.php");
 $con=mysqli_connect(HOST,USER,PASSWORD,DATABASE);
 
-echo $sql="update perfis set perfilEstado ='inativo' where perfilId=".$id;
+$sql="update perfis set perfilEstado ='inativo' where perfilId=".$id;
 
 mysqli_query($con,$sql);
 header("location:utilizadores.php");
@@ -17,5 +17,5 @@ header("location:utilizadores.php");
 <script src="../js/smoothscroll.js"></script>
 <script src="../js/custom.js"></script>
 <?php
-botAdmin();
+
 ?>
