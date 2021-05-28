@@ -12,6 +12,11 @@ if (isset ($_GET['distrito'])) {
 } else {
     $distrito = -1;
 }
+if (isset ($_GET['nome'])) {
+    $nome = addslashes($_GET['nome']);
+} else {
+    $nome = '';
+}
 ?>
 
 <!-- Map Section Begin -->
@@ -79,7 +84,7 @@ if (isset ($_GET['distrito'])) {
                     <div class="location-search1 col-lg-12 mt-3 ">
                         <h5>Nome do Estabelecimento</h5>
 
-                        <input class="location-search1 nice-select1" type="text" id="searchEstabelecimento">
+                        <input class="location-search1 nice-select1" type="text" id="searchEstabelecimento" name="nome" value=" <?php echo $nome?>">
                     </div>
                 </form>
             </div>

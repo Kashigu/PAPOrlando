@@ -50,7 +50,7 @@ toposingle(PORTUGAL);
                             <p></p>
                             <div class="location-search1 col-lg-10 mt-3">
                                 <h5>Nome do Estabelecimento</h5>
-                                <input class="location-search1 nice-select1" type="text" id="search">
+                                <input class="location-search1 nice-select1" type="text" id="search" name="nome">
                             </div>
                             <button type="submit">Procurar Agora</button>
 
