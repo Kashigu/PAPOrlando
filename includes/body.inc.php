@@ -29,12 +29,13 @@ function toposingle($menu = PORTUGAL)
     <html lang="zxx" xmlns="http://www.w3.org/1999/html">
 
     <head>
+        <link rel="shortcut icon" href="img/Caminhos_Portucalenses_icon.ico">
         <meta charset="UTF-8">
         <meta name="description" content="Yoga Studio Template">
         <meta name="keywords" content="Yoga, unica, creative, html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Local Directory | Template</title>
+        <title>Locals</title>
 
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
@@ -70,7 +71,7 @@ function toposingle($menu = PORTUGAL)
     <header class="header-section listings">
         <div class="container-fluid">
             <div class="logo">
-                <a href="index.php"><img src="img/logo.png" alt=""></a>
+                <a href="index.php"><img src="img/logo.png" style="margin-top: 10px; margin-left: 30px;" alt=""></a>
             </div>
             <nav class="main-menu mobile-menu">
                 <?php
@@ -201,12 +202,13 @@ function topoadmin($menu = GESTAO)
 <html lang="zxx">
 
     <head>
+        <link rel="shortcut icon" href="../img/Caminhos_Portucalenses_icon.ico">
         <meta charset="UTF-8">
         <meta name="description" content="Yoga Studio Template">
         <meta name="keywords" content="Yoga, unica, creative, html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Local Directory | Template</title>
+        <title>Locals</title>
 
         <!-- Google Font -->
         <link href="../https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
@@ -235,7 +237,7 @@ function topoadmin($menu = GESTAO)
     <header class="header-section listings">
         <div class="container-fluid">
             <div class="logo">
-                <a href="../index.php"><img src="../img/logo.png" alt=""></a>
+                <a href="../index.php"><img src="../img/logo.png" style="margin-top: 10px; margin-left: 30px;" alt=""></a>
             </div>
             <nav class="main-menu mobile-menu">
                 <ul>
@@ -319,12 +321,13 @@ function topAdmin($menu = GESTAO)
 <html lang="zxx">
 
     <head>
+        <link rel="shortcut icon" href="../img/Caminhos_Portucalenses_icon.ico">
         <meta charset="UTF-8">
         <meta name="description" content="Yoga Studio Template">
         <meta name="keywords" content="Yoga, unica, creative, html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Local Directory | Template</title>
+        <title>Locals</title>
 
         <!-- Google Font -->
         <link href="../https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
@@ -353,7 +356,7 @@ function topAdmin($menu = GESTAO)
     <header class="header-section listings">
         <div class="container-fluid">
             <div class="logo">
-                <a href="../index.php"><img src="../img/logo.png" alt=""></a>
+                <a href="../index.php"><img src="../img/logo.png" style="margin-top: 10px; margin-left: 30px;" alt=""></a>
             </div>
             <nav class="main-menu mobile-menu">
                 <ul>
