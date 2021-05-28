@@ -1,6 +1,6 @@
 <?php
 include_once("includes/body.inc.php");
-toposingle();
+toposingle(RESERVAS);
 $id = intval($_GET['id']);
 ?>
 
