@@ -131,7 +131,7 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                                 <tr>
                                                     <td><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></td>
                                                     <td>
-                                                        <a href="criado.php?id=<?php echo $dadosEstabelecimentos['estabelecimentoId'] ?>">Ver
+                                                        <a class="a2" href="criado.php?id=<?php echo $dadosEstabelecimentos['estabelecimentoId'] ?>">Ver
                                                     </td>
                                                     </a>
                                                 </tr>
