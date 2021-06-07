@@ -62,7 +62,7 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                             <tr>
                                                 <td><?php echo $dadosRedes['estabelecimentoNome'] ?></td>
                                                 <td>
-                                                    <a href="single-listing.php?id=<?php echo $dadosRedes['estabelecimentoId'] ?>">Ver
+                                                    <a class="a2" href="single-listing.php?id=<?php echo $dadosRedes['estabelecimentoId'] ?>">Ver
                                                 </td>
                                                 </a>
                                             </tr>
@@ -97,7 +97,7 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                             <tr>
                                                 <td><?php echo $dadosRedes['estabelecimentoNome'] ?></td>
                                                 <td>
-                                                    <a href="single-listing.php?id=<?php echo $dadosRedes['estabelecimentoId'] ?>">Ver
+                                                    <a class="a2" href="single-listing.php?id=<?php echo $dadosRedes['estabelecimentoId'] ?>">Ver
                                                 </td>
                                                 </a>
                                             </tr>
@@ -143,7 +143,7 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                                 <tr>
                                                     <td><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></td>
                                                     <td>
-                                                        <a href="single-listing.php?id=<?php echo $dadosEstabelecimentos['estabelecimentoId'] ?>">Ver
+                                                        <a class="a2" href="single-listing.php?id=<?php echo $dadosEstabelecimentos['estabelecimentoId'] ?>">Ver
                                                     </td>
                                                     </a>
                                                 </tr>
