@@ -21,7 +21,7 @@ $result = mysqli_query($con, $sql);
 $sql1="select * from perfis where perfilId=".$_SESSION['id'];
 $resultado=mysqli_query($con,$sql1);
 $dados=mysqli_fetch_array($resultado);
-
+//coisas
 ?>
 
 
