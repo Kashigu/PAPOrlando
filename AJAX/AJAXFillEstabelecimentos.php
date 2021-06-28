@@ -2,6 +2,7 @@
 // dados na base de dados
 include_once("../includes/body.inc.php");
 $txt = addslashes($_POST['txt']);
+session_start();
 
 /*$sql = "Select * from estabelecimentos inner join estabelecimentocategorias on estabelecimentoId = estabelecimentoCategoriaEstabelecimentoId
         inner join perfis where estabelecimentoNome LIKE '%$txt%'";*/
@@ -17,6 +18,9 @@ $sql = " select *
 
 $result = mysqli_query($con, $sql);
 
+$sql1="select * from perfis where perfilId=".$_SESSION['id'];
+$resultado=mysqli_query($con,$sql1);
+$dados=mysqli_fetch_array($resultado);
 
 ?>
 
@@ -25,7 +29,7 @@ $result = mysqli_query($con, $sql);
 
             <table class="table table-striped table-hover">
                 <td colspan="7" align='right'>
-                    <a href="../criarEstabelecimento.php"><i class='fas text-dark'> Adiciona</i></a>
+                    <a href="../criarEstabelecimento.php?id=<?php echo $dados['perfilId'] ?>"><i class='fas text-dark'> Adiciona</i></a>
                 </td>
                 <tr>
                     <th>Id</th>
