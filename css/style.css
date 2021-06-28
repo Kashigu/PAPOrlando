@@ -272,6 +272,17 @@ p {
     margin-left: auto;
     margin-right: auto;
 }
+.a3:hover{
+
+    color: deeppink;
+    background-color: transparent;
+    text-decoration: none;
+}
+.a3{
+    color: deeppink;
+    background-color: transparent;
+    text-decoration: none;
+}
 
 .quadradinho{
     display: inline;
