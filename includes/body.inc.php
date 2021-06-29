@@ -642,14 +642,22 @@ function bot($menu = HOME, $id = 0,$pg=1 )
             });
             fillTableReservasAdmin(<?php echo $id ?>);
             <?php
-            if($menu == HOME ){
+            }if($menu == HOME ){
             ?>
             $('#tableContent').keyup(function () {
                 valido(this.value);
             });
             valido();
             <?php
-            }
+            }if ($menu == RESERVASHISTORICO){
+            ?>
+            $('#tableContent').keyup(function () {
+                fillTableReservasHistorico(this.value,<?php echo $id ?>);
+
+            });
+            fillTableReservasHistorico(<?php echo $id ?>);
+
+            <?php
             }
             ?>
         })

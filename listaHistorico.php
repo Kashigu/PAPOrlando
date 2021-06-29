@@ -11,8 +11,9 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 
 <section class="contact-section spad">
 
+
     <div class="container">
-        <a href="listaHistorico.php?id=<?php echo $id?>"><button style="margin-left: 67%">Ver Histórico</button></a>
+        <a href="listaReservaAdmin.php?id=<?php echo $id?>"><button>Voltar</button></a>
         <h3 class="mt-2"><?php echo $dadosEstabelecimentos['estabelecimentoNome']  ?></h3>
         <div class="row mt-2">
 
@@ -28,6 +29,6 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 </section>
 
 <?php
-bot(RESERVASADMIN,$id);
+bot(RESERVASHISTORICO,$id);
 ?>
 

@@ -8,6 +8,7 @@
     <file url="file://$PROJECT_DIR$/AJAX/AJAXFillEstabelecimentosProcurar.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXFillReservas.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXFillReservasAdmin.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AJAX/AJAXFillReservasHistorico.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXFillUtilizador.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXFillimagens.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXGetComentarioEstabelecimento.php" charset="UTF-8" />
@@ -39,6 +40,7 @@
     <file url="file://$PROJECT_DIR$/includes/body.inc.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/index.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/common.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/listaHistorico.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/listaReserva.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/listaReservaAdmin.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/novoperfil.php" charset="UTF-8" />

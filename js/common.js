@@ -722,6 +722,21 @@ function fillTableReservasAdmin(id = -1) {
 
 }
 
+function fillTableReservasHistorico(id = -1) {
+    $.ajax({
+        url: "AJAX/AJAXFillReservasHistorico.php",
+        type: "post",
+        data: {
+            id: id
+        },
+        success: function (result) {
+            $('#tableContent').html(result);
+        }
+    });
+
+
+}
+
 
 //--------------------------------------------------------------------Funçoes para REDES estabelecimentos -------------------------------//
 

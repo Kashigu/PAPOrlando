@@ -22,18 +22,13 @@ $resultEstabelecimentos = mysqli_query($con, $sql);
                 ?>
 
                 <tr>
-                    <?php if ($dadosEstabelecimentos['reservaEstado'] == 'eliminar') {
-                    } elseif ($dadosEstabelecimentos['reservaEstado'] == 'neutro') {
-                        ?>
+                   <?php if ($dadosEstabelecimentos['reservaEstado'] == 'aceitar') { ?>
+
                         <td><?php echo $dadosEstabelecimentos['reservaData'] ?></td>
                         <td><?php echo $dadosEstabelecimentos['reservaDescricao'] ?></td>
 
-                        <td width="5%"><a class="a3"
-                                          href="aceitarReserva.php?id=<?php echo $dadosEstabelecimentos['reservaId']; ?>">
-                                Aceitar </a></td>
-                        <td width="5%"><a class="a3"
-                                          href="recusarReserva.php?id=<?php echo $dadosEstabelecimentos['reservaId']; ?>">
-                                Recusar </a></td>
+                        <td width="5%" ><i class="fa fa-check"></i></td>
+
                         <?php
                     }
                     ?>
