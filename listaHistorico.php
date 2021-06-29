@@ -14,7 +14,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 
     <div class="container">
         <a href="listaReservaAdmin.php?id=<?php echo $id?>"><button>Voltar</button></a>
-        <h3 class="mt-2"><?php echo $dadosEstabelecimentos['estabelecimentoNome']  ?></h3>
+        <h3 class="mt-2">Histórico <?php echo $dadosEstabelecimentos['estabelecimentoNome']  ?></h3>
         <div class="row mt-2">
 
             <div class="col-3 mt-2">
