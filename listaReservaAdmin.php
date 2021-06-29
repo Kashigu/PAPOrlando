@@ -13,7 +13,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 
     <div class="container">
         <a href="criado.php?id=<?php echo $id?>"><button>Voltar</button></a>
-        <a href="listaHistorico.php?id=<?php echo $id?>"><button style="margin-left: 57%">Ver Histórico</button></a>
+        <a href="listaHistorico.php?id=<?php echo $id?>"><button style="margin-left: 52%">Ver Lista de Reservas</button></a>
         <h3 class="mt-2"><?php echo $dadosEstabelecimentos['estabelecimentoNome']  ?></h3>
         <div class="row mt-2">
 

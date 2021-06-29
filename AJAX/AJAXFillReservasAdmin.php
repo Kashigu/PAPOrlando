@@ -3,9 +3,16 @@ include_once("../includes/body.inc.php");
 session_start();
 
 $id = intval($_POST['id']);
-$sql = "Select * from reservas inner join estabelecimentos on reservaEstabelecimentoId=estabelecimentoId
-                               inner join perfis on reservaPerfilId=perfilId
-                               where estabelecimentoId =" . $id;
+//$sql = "Select * from reservas inner join estabelecimentos on reservaEstabelecimentoId=estabelecimentoId
+      //                         inner join perfis on reservaPerfilId=perfilId
+    //                           where estabelecimentoId =" . $id;
+
+$sql = "select reservaData, perfilId,
+                DATEDIFF(reservaData,current_date) as reservaData1,reservaId,reservaEstado,reservaDescricao
+	
+								from reservas inner join perfis on reservaPerfilId=perfilId
+                                              inner join estabelecimentos on reservaEstabelecimentoId=estabelecimentoId
+								              where DATEDIFF(reservaData,current_date) > 0 and estabelecimentoId=".$id;
 
 $resultEstabelecimentos = mysqli_query($con, $sql);
 
