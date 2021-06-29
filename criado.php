@@ -35,7 +35,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                     <div class="intro-share">
                         <div class="share-btn">
                             <a href="galeria.php?id=<?php echo $id ?>">Adicionar uma Galeria de Fotos</a>
-                            <a class="mt-1" href="definicoesEstabelecimento.php?id=<?php echo $id ?>">Definições</a>
+                            <a class="mt-1" href="definicoesEstabelecimento.php?id=<?php echo $id ?>" style="margin-left:7px">Definições</a>
                             <a class="mt-1" href="listaReservaAdmin.php?id=<?php echo $id ?>">Ver Reservas</a>
                         </div>
                         <div class="share-icon">
