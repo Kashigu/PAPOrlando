@@ -167,13 +167,12 @@ function toposingle($menu = PORTUGAL)
                 if ($_SESSION['id'] == $dadosEstab['estabelecimentoPerfilId']) { ?>
 
                     <nav class="arrange-select nice-select2 mobile-menu header-right">
-                        <select name="estabe" id="estabe">
+                        <select name="estabe" id="estabe" >
                             <?php
-                            while ($dadosEstab = mysqli_fetch_array($resultEstab)) {
+                            while ($dadosEstab = mysqli_fetch_array($resultEstab)){
                                 ?>
-                                <option value="<?php echo $dadosEstab['estabelecimentoId'] ?> "><a
-                                            href="criado.php?id=<?php echo $dadosEstab['estabelecimentoId'] ?>"> <?php echo $dadosEstab['estabelecimentoNome'] ?>
-                                </option></a>
+                                <option> <?php echo $dadosEstab['estabelecimentoId'] ?> <?php echo $dadosEstab['estabelecimentoNome'] ?>
+                                </option>
                                 <?php
                             }
                             ?>
@@ -289,8 +288,7 @@ function topoadmin($menu = GESTAO)
                                 <?php
                                 while ($dadosEstab = mysqli_fetch_array($resultEstab)) {
                                     ?>
-                                    <option value="<?php echo $dadosEstab['estabelecimentoId'] ?> "><a
-                                                href="criado.php?id=<?php echo $dadosEstab['estabelecimentoId'] ?>"> <?php echo $dadosEstab['estabelecimentoNome'] ?>
+                                    <a href="criado.php?id=<?php echo $dadosEstab['estabelecimentoId'] ?>"><option value="<?php echo $dadosEstab['estabelecimentoId'] ?> "> <?php echo $dadosEstab['estabelecimentoNome'] ?>
                                     </option></a>
                                     <?php
                                 }
@@ -408,8 +406,7 @@ function topAdmin($menu = GESTAO)
                             <?php
                             while ($dadosEstab = mysqli_fetch_array($resultEstab)) {
                                 ?>
-                                <option value="<?php echo $dadosEstab['estabelecimentoId'] ?> "><a
-                                            href="criado.php?id=<?php echo $dadosEstab['estabelecimentoId'] ?>"> <?php echo $dadosEstab['estabelecimentoNome'] ?>
+                                <a href="criado.php?id=<?php echo $dadosEstab['estabelecimentoId'] ?>"><option value="<?php echo $dadosEstab['estabelecimentoId'] ?> "><?php echo $dadosEstab['estabelecimentoNome'] ?>
                                 </option></a>
                                 <?php
                             }

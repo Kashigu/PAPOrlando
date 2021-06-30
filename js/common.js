@@ -861,3 +861,8 @@ alert('sda');
     });
     alert('e');
 }
+
+
+function estabe(id){
+    window.location = "criado.php?id="+id;
+}
