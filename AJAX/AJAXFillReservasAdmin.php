@@ -12,7 +12,7 @@ $sql = "select reservaData, perfilId,
 	
 								from reservas inner join perfis on reservaPerfilId=perfilId
                                               inner join estabelecimentos on reservaEstabelecimentoId=estabelecimentoId
-								              where DATEDIFF(reservaData,current_date) > 0 and estabelecimentoId=".$id;
+								              where DATEDIFF(reservaData,current_date) >= 0 and estabelecimentoId=".$id;
 
 $resultEstabelecimentos = mysqli_query($con, $sql);
 

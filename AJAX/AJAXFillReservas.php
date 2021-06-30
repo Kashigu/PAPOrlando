@@ -18,7 +18,7 @@ echo $sql = "select reservaData, perfilId,
 	
 								from reservas inner join perfis on reservaPerfilId=perfilId
                                               inner join estabelecimentos on reservaEstabelecimentoId=estabelecimentoId
-								              where DATEDIFF(reservaData,current_date) > 0 and reservaPerfilId=".$id." and estabelecimentoNome LIKE '%$txt%'";
+								              where DATEDIFF(reservaData,current_date) >= 0 and reservaPerfilId=".$id." and estabelecimentoNome LIKE '%$txt%'";
 
 $resultEstabelecimentos = mysqli_query($con, $sql);
 
