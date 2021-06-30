@@ -2,7 +2,9 @@
 include_once("includes/body.inc.php");
 
 $nome=addslashes($_POST['nome']);
+$nome= ucfirst($nome);
 $email=$_POST['email'];
+$email= lcfirst($email);
 $password=addslashes($_POST['password']);
 echo $sql="select * from perfis where perfilEmail='$email' and perfilNome='$nome' and perfilPassword='$password'";
 $result=mysqli_query($con,$sql);
