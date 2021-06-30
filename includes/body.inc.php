@@ -520,13 +520,17 @@ function bot($menu = HOME, $id = 0,$pg=1 )
                         <div class="row">
                             <div class="modal-body">
                                 <div class="col-lg-6 mt-3 meio">
+                                    <span id="NoName"></span>
                                     <input type="text" id="utilizador" name="nome"
                                            placeholder="Nome de Utilizador">
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
+                                    <span id="NoEmail"></span>
                                     <input type="email" id="emails" name="email" placeholder="Email">
+
                                 </div>
                                 <div class="col-lg-6 mt-3 meio">
+                                    <span id="NoPass"></span>
                                     <input type="password" id="password" name="password" placeholder="Palavra-Passe">
                                 </div>
                             </div>
