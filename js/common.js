@@ -65,12 +65,15 @@ function entrar() {
 
     if ($('#utilizador').val() == '') {
         erro = true;
+        $('#NoName').html('Introduza Nome');
     }
     if ($('#password').val() == '') {
         erro = true;
+        $('#NoPass').html('Introduza Password');
     }
     if ($('#emails').val() == '') {
         erro = true;
+        $('#NoEmail').html('Introduza Email');
     } else {
         $.ajax({
             url: "AJAX/AJAXConfirmaLogin.php",
