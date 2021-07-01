@@ -166,7 +166,7 @@ function toposingle($menu = PORTUGAL)
                 $dadosEstab = mysqli_fetch_array($result);
                 if ($_SESSION['id'] == $dadosEstab['estabelecimentoPerfilId']) { ?>
 
-                    <nav class="arrange-select nice-select2 mobile-menu header-right">
+                    <nav class="arrange-select nice-select2 mobile-menu header-right" style="margin-right: 10px">
                         <select name="estabe" id="estabe" >
                             <?php
                             while ($dadosEstab = mysqli_fetch_array($resultEstab)){
@@ -283,7 +283,7 @@ function topoadmin($menu = GESTAO)
                     $dadosEstab = mysqli_fetch_array($result);
                     if ($_SESSION['id'] == $dadosEstab['estabelecimentoPerfilId']) { ?>
 
-                        <nav class="arrange-select nice-select2 mobile-menu header-right">
+                        <nav class="arrange-select nice-select2 mobile-menu header-right" style="margin-right: 10px">
                             <select name="estabe" id="estabe">
                                 <?php
                                 while ($dadosEstab = mysqli_fetch_array($resultEstab)) {
@@ -401,7 +401,7 @@ function topAdmin($menu = GESTAO)
                 $dadosEstab = mysqli_fetch_array($result);
                 if ($_SESSION['id'] == $dadosEstab['estabelecimentoPerfilId']) { ?>
 
-                    <nav class="arrange-select nice-select2 mobile-menu header-right">
+                    <nav class="arrange-select nice-select2 mobile-menu header-right" style="margin-right: 25px">
                         <select name="estabe" id="estabe">
                             <?php
                             while ($dadosEstab = mysqli_fetch_array($resultEstab)) {
