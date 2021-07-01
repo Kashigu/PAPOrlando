@@ -35,9 +35,7 @@ $sql1="select
 $resultEstabelecimentos = mysqli_query($con, $sql1);
 
 ?>
-<button>Apagar Reservas Recusadas</button>
-<button>Apagar Reservas Aceites</button>
-<button>Apagar Reservas Desatualizadas</button>
+<a href="apagarReservasRecusadas.php?id=<?php echo $id ?>"> <button style="margin-left: 77%">Apagar Reservas Recusadas</button></a>
 <?php
 while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
     ?>
