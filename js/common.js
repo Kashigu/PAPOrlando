@@ -688,25 +688,12 @@ function editaReserva(id) {  // abre o modal e injecta o ID
         },
         success: function (result) {
             $("#reservaDescricao").val(result)
+            $("#reservaData").val(result)
+            $("#reservaHora").val(result)
             $("#reservaId").val(id);
         }
     });
     $("#editar").modal("toggle");
-}
-
-function EditarTableReservas() {
-    $('#editar').modal('toggle');
-    $.ajax({
-        url: "AJAX/AJAXEditReservas.php",
-        type: "post",
-        data: {
-            reservaDescricao: $('#reservaDescricao').val(),
-            reservaId: $('#reservaId').val()
-        },
-        success: function (result) {
-            fillTableReservas();
-        }
-    });
 }
 
 //------------------------------------------------------------Funcoes para ListaReservaAdmin ------------------------------------//

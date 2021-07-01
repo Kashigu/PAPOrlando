@@ -71,7 +71,13 @@ $id = intval($_GET['id']);
                 <div class="row">
                     <div class="modal-body">
                         <div class="col-lg-6 mt-3 meio">
-                            <textarea type="text" id="reservaDescricao" name="reservaDescricao"> <?php ?> </textarea>
+                            <input type="date" id="reservaData" name="reservaData">
+                        </div>
+                        <div class="col-lg-6 mt-3 meio">
+                            <input type="time" id="reservaHora" name="reservaHora">
+                        </div>
+                        <div class="col-lg-6 mt-3 meio">
+                            <textarea type="text" id="reservaDescricao" name="reservaDescricao"> </textarea>
                         </div>
                         <input type="hidden" id="reservaId" name="reservaId">
                     </div>
