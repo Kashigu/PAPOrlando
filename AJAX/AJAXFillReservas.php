@@ -13,14 +13,26 @@ $id = intval($_POST['id']);
 						inner join reservas on reservaEstabelecimentoId=estabelecimentoId
 						where reservaPerfilId=2)*/
 
-echo $sql = "select reservaData, perfilId,
-                DATEDIFF(reservaData,current_date) as reservaData1,reservaId,reservaEstado,reservaDescricao,reservaEstabelecimentoId
-	
-								from reservas inner join perfis on reservaPerfilId=perfilId
-                                              inner join estabelecimentos on reservaEstabelecimentoId=estabelecimentoId
-								              where DATEDIFF(reservaData,current_date) >= 0 and reservaPerfilId=".$id." and estabelecimentoNome LIKE '%$txt%'";
 
-$resultEstabelecimentos = mysqli_query($con, $sql);
+$sql1="select 
+ estabelecimentoNome
+ ,estabelecimentoId
+ ,estabelecimentoMiniaturaURL
+ ,reservaData
+-- , perfilId
+-- , DATEDIFF(reservaData,current_date) as reservaData1
+ ,reservaId
+ ,reservaEstado
+ ,reservaDescricao
+-- , reservaEstabelecimentoId */
+ from estabelecimentos inner join reservas on reservaEstabelecimentoId=estabelecimentoId
+ inner join perfis on perfilId = reservaPerfilId
+ where DATEDIFF(reservaData,current_date) >= 0 and reservaPerfilId=$id and estabelecimentoNome LIKE '%$txt%'";
+
+
+
+
+$resultEstabelecimentos = mysqli_query($con, $sql1);
 
 ?>
 <button>Apagar Reservas Recusadas</button>
