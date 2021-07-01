@@ -151,7 +151,7 @@ function toposingle($menu = PORTUGAL)
                 ?>
                 <div class="header-right">
                 <div class="user-access">
-                    <a data-toggle="modal" data-target="#sair">Desconectar</a>
+                    <a style="margin-right: 10px" data-toggle="modal" data-target="#sair">Sair</a>
 
                     <a href="novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">
                         <img src="<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
@@ -171,7 +171,7 @@ function toposingle($menu = PORTUGAL)
                             <?php
                             while ($dadosEstab = mysqli_fetch_array($resultEstab)){
                                 ?>
-                                <option> <?php echo $dadosEstab['estabelecimentoId'] ?> <?php echo $dadosEstab['estabelecimentoNome'] ?>
+                                <option value="<?php echo $dadosEstab['estabelecimentoId'] ?> "> <?php echo $dadosEstab['estabelecimentoNome'] ?>
                                 </option>
                                 <?php
                             }
@@ -268,7 +268,7 @@ function topoadmin($menu = GESTAO)
                     ?>
                     <div class="header-right">
                     <div class="user-access">
-                        <a data-toggle="modal" data-target="#sair">Desconectar</a>
+                        <a style="margin-right: 10px" -toggle="modal" data-target="#sair">Sair</a>
 
                         <a href="../novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">
                             <img src="../<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
@@ -386,7 +386,7 @@ function topAdmin($menu = GESTAO)
                 ?>
                 <div class="header-right">
                 <div class="user-access">
-                    <a data-toggle="modal" data-target="#sair">Desconectar</a>
+                    <a style="margin-right: 10px" data-toggle="modal" data-target="#sair">Sair</a>
 
                     <a href="../novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">
                         <img src="../<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
@@ -554,7 +554,7 @@ function bot($menu = HOME, $id = 0,$pg=1 )
                 <div class="modal-content">
                     <form action="Logout.php" method="post" class="contact-form">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="sair">Desconectar</h5>
+                            <h5 class="modal-title" id="sair">Sair</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -701,7 +701,7 @@ function botAdmin($menu = HOME)
                 <div class="modal-content">
                     <form action="Logout.php" method="post" class="contact-form">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="sair">Desconectar</h5>
+                            <h5 class="modal-title" id="sair">Sair</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
