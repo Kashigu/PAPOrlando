@@ -84,12 +84,12 @@ if (isset ($_GET['nome'])) {
                     <div class="location-search1 col-lg-12 mt-3 ">
                         <h5>Nome do Estabelecimento</h5>
 
-                        <input class="location-search1 nice-select1" type="text" id="searchEstabelecimento" name="nome" value=" <?php echo $nome?>">
+                        <input class="location-search1 nice-select1" type="text" id="searchEstabelecimento" name="nome"
+                               value=" <?php echo $nome ?>">
                     </div>
                 </form>
             </div>
         </div>
-    </div>
     </div>
 </section>
 <!-- Search Filter Section End -->
@@ -227,10 +227,10 @@ if (isset ($_GET['nome'])) {
 
 
 <?php
-if(!isset($_GET['pagina'])){
-    $pagina=1;
+if (!isset($_GET['pagina'])) {
+    $pagina = 1;
 } else {
-    $pagina=intval($_GET['pagina']);
+    $pagina = intval($_GET['pagina']);
 }
-bot(ESTABELECIMENTOSP,0,$pagina);
+bot(ESTABELECIMENTOSP, 0, $pagina);
 ?>
