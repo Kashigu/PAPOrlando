@@ -688,13 +688,11 @@ function editaReserva(id) {  // abre o modal e injecta o ID
         },
         success: function (result) {
 
-            var frase = result;
-            var espaco = "»*?";
-            var todo= str.split(frase,espaco);
+            var todo= result.split("»");
 
-            $("#reservaDescricao").val(todo)
-            $("#reservaData").val(todo)
-            $("#reservaHora").val(todo)
+            $("#reservaDescricao").html(todo[0]);
+            $("#reservaData").val(todo[1]);
+            $("#reservaHora").val(todo[2]);
             $("#reservaId").val(id);
         }
     });

@@ -7,6 +7,8 @@ $sql="Select * from reservas where reservaId=$id";
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
 
-echo $dados['reservaDescricao']."»*?";
-echo $dados['reservaData']."»*?";
+echo $dados['reservaDescricao']."»";
+$timeStamp=strtotime($dados['reservaData']);
+echo date("Y-m-d",$timeStamp)."»";
+echo date("H:i",$timeStamp);
 ?>

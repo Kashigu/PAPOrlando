@@ -42,6 +42,7 @@ $id = intval($_GET['id']);
                 <div class="modal-footer">
                     <div class="col-lg-7 meio">
                         <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Fechar</button>
+
                     </div>
                     <div class="col-lg-5 meio">
                         <button
@@ -85,6 +86,7 @@ $id = intval($_GET['id']);
                 <div class="modal-footer mt-2">
                     <div class="col-lg-7 meio">
                         <button type="button" class="btn btn-dark mt-2" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-secondary pull-left" onclick="alert($('#reservaData').val())" >alert</button>
                     </div>
                     <div class="col-lg-5 meio">
                         <button  type="submit" class="btn btn-danger mt-2">Alterar</button>
