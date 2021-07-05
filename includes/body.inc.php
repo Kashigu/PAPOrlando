@@ -268,7 +268,7 @@ function topoadmin($menu = GESTAO)
                     ?>
                     <div class="header-right">
                     <div class="user-access">
-                        <a style="margin-right: 10px" -toggle="modal" data-target="#sair">Sair</a>
+                        <a style="margin-right: 10px" data-toggle="modal" data-target="#sair">Sair</a>
 
                         <a href="../novoperfil.php?id=<?php echo $dadosPerfis['perfilId'] ?>">
                             <img src="../<?php echo $dadosPerfis['perfilAvatar'] ?>" class="reduzido"></a>
@@ -694,7 +694,7 @@ function botAdmin($menu = HOME)
     </div>
     </footer> -->
     <!-- Footer Section End -->
-
+    <div class="container">
         <!-- Modal Logout-->
         <div class="modal fade" id="sair" tabindex="-1" aria-labelledby="sair" aria-hidden="true">
             <div class="modal-dialog">
@@ -778,10 +778,6 @@ function botAdmin($menu = HOME)
             <?php }
 
             ?>
-
-
-
-
         })
     </script>
     </body>
