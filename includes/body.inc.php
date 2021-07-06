@@ -9,15 +9,6 @@ $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
 $con->set_charset("utf8");
 
 
-if (isset($_GET['message'])) {
-
-    alertinativo("Esta conta foi desativada.");
-}
-function alertinativo($message)
-{
-    echo "<script type='text/javascript'>alert('$message');</script>";
-}
-
 function toposingle($menu = PORTUGAL)
 
 {
