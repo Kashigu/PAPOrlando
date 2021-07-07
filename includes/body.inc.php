@@ -190,6 +190,7 @@ function toposingle($menu = PORTUGAL){
 
 function topoadmin($menu = GESTAO)
 {
+    global $idEstabelecimento;
 
     ?>
     <!DOCTYPE html>
@@ -283,8 +284,12 @@ function topoadmin($menu = GESTAO)
                                 <?php
                                 while ($dadosEstab = mysqli_fetch_array($resultEstab)) {
                                     ?>
-                                    <a href="criado.php?id=<?php echo $dadosEstab['estabelecimentoId'] ?>"><option value="<?php echo $dadosEstab['estabelecimentoId'] ?> "> <?php echo $dadosEstab['estabelecimentoNome'] ?>
-                                    </option></a>
+                                    <option
+                                        <?php
+                                        if($idEstabelecimento==$dadosEstab['estabelecimentoId']) echo " selected ";
+                                        ?>
+                                            value="<?php echo $dadosEstab['estabelecimentoId'] ?> "> <?php echo $dadosEstab['estabelecimentoNome'] ?>
+                                    </option>
                                     <?php
                                 }
                                 ?>
@@ -308,6 +313,7 @@ function topoadmin($menu = GESTAO)
 
 function topAdmin($menu = GESTAO)
 {
+    global $idEstabelecimento;
 
     ?>
     <!DOCTYPE html>
@@ -401,8 +407,12 @@ function topAdmin($menu = GESTAO)
                             <?php
                             while ($dadosEstab = mysqli_fetch_array($resultEstab)) {
                                 ?>
-                                <a href="criado.php?id=<?php echo $dadosEstab['estabelecimentoId'] ?>"><option value="<?php echo $dadosEstab['estabelecimentoId'] ?> "><?php echo $dadosEstab['estabelecimentoNome'] ?>
-                                </option></a>
+                                <option
+                                    <?php
+                                    if($idEstabelecimento==$dadosEstab['estabelecimentoId']) echo " selected ";
+                                    ?>
+                                        value="<?php echo $dadosEstab['estabelecimentoId'] ?> "> <?php echo $dadosEstab['estabelecimentoNome'] ?>
+                                </option>
                                 <?php
                             }
                             ?>
@@ -741,6 +751,9 @@ function botAdmin($menu = HOME)
 
     <script>
         $('document').ready(function () {
+            $('select').on('change', function() {
+                window.location="../criado.php?id="+this.value;
+            });
 
             <?php
             if ($menu == DISTRITOS){
