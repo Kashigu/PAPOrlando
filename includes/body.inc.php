@@ -127,8 +127,8 @@ function toposingle($menu = PORTUGAL)
         ?>
         <div class="header-right">
             <div class="user-access">
-                <a data-toggle="modal" data-target="#registar">Registar/</a>
-                <a data-toggle="modal" data-target="#login">Iniciar Sessão</a>
+                <a href="#" data-toggle="modal" data-target="#registar">Registar/</a>
+                <a href="#" data-toggle="modal" data-target="#login">Iniciar Sessão</a>
                 <div id="mobile-menu-wrap"></div>
             </div>
             <?php

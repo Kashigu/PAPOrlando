@@ -87,20 +87,30 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                                 ?>
                             </a>
                         </div>
-                        <div id="status"></div>
-                        <fieldset class="ratings">
-                            <legend>Rating:</legend>
-                            <input type="radio" id="star5" name="ratings" value="5" onclick="rating(<?php echo $id ?>) ">
-                            <label for="star5" title="Muito Bom">5 stars</label>
-                            <input type="radio" id="star4" name="ratings" value="4" onclick="rating(<?php echo $id ?>) ">
-                            <label for="star4" title="Bom">4 stars</label>
-                            <input type="radio" id="star3" name="ratings" value="3" onclick="rating(<?php echo $id ?>) ">
-                            <label for="star3" title="Neutro">3 stars</label>
-                            <input type="radio" id="star2" name="ratings" value="2" onclick="rating(<?php echo $id ?>) ">
-                            <label for="star2" title="Mau">2 stars</label>
-                            <input type="radio" id="star1" name="ratings" value="1" onclick="rating(<?php echo $id ?>) ">
-                            <label for="star1" title="Horrivel">1 star</label>
-                        </fieldset>
+                        <div class="bg-primary" id="status" style="margin-left: 180px">
+                            <fieldset class="ratings">
+                                <legend>Rating:</legend>
+                                <?php
+                                $sql = "select ratingValor from ratings inner join redes on redeId = ratingRedeId
+                                        where redePerfilId =".$_SESSION['id']. " and redeEstabelecimentoId=".$id;
+                                $result=mysqli_query($con, $sql);
+                                $dados=mysqli_fetch_array($result);
+                                ?>
+                                <input type="radio" <?php if($dados[0]==5) echo " checked "?>   id="star5" name="ratings" value="5" onclick="rating(<?php echo $id ?>,5) ">
+                                <label for="star5" title="Muito Bom">5 stars</label>
+                                <input type="radio" <?php if($dados[0]==4) echo " checked "?> id="star4" name="ratings" value="4" onclick="rating(<?php echo $id ?>,4) ">
+                                <label for="star4" title="Bom">4 stars</label>
+                                <input type="radio" <?php if($dados[0]==3) echo " checked "?> id="star3" name="ratings" value="3" onclick="rating(<?php echo $id ?>,3) ">
+                                <label for="star3" title="Neutro">3 stars</label>
+                                <input type="radio" <?php if($dados[0]==2) echo " checked "?> id="star2" name="ratings" value="2" onclick="rating(<?php echo $id ?>,2) ">
+                                <label for="star2" title="Mau">2 stars</label>
+                                <input type="radio" <?php if($dados[0]==1) echo " checked "?>  id="star1" name="ratings" value="1" onclick="rating(<?php echo $id ?>,1) ">
+                                <label for="star1" title="Horrivel">1 star</label>
+                            </fieldset>
+
+
+                        </div>
+
                         <div class="clearfix"></div>
                     </div>
                 </div>

@@ -824,32 +824,16 @@ function comentario(id = -1) {
 
 }
 
-function rating(id) {
-alert('sda');
+function rating(id, valor) {
+
     $.ajax({
         url: "AJAX/AJAXPutRatingEstabelecimento.php",
         type: "post",
         data: {
-            idRede: id,
-            valor: $('#star5').val()
-        },
-        success: function (result) {
-            alert('er')
-            $.ajax({
-                url: "AJAX/AJAXGetRatingEstabelecimento.php",
-                type: "post",
-                data: {
-                    idRede: id,
-                    valor: $('#star5').val()
-                },
-                success: function (result) {
-                    $('#star5').html(result);
-
-                }
-            });
+            id: id,
+            valor: valor
         }
     });
-    alert('e');
 }
 
 
