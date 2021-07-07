@@ -1,5 +1,5 @@
 <?php
-// dados na base de dados
+// dados na base de dados               NÃO USADO EM LADO ALGUM
 include_once("../includes/body.inc.php");
 session_start();
 $id=intval($_POST['idRede']);
