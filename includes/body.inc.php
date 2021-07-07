@@ -7,12 +7,12 @@ error_reporting(E_ALL);
 include_once("config.inc.php");
 $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
 $con->set_charset("utf8");
+$idEstabelecimento=0;
+if(isset($_GET['id']))
+    $idEstabelecimento=$_GET['id'];
 
-
-function toposingle($menu = PORTUGAL)
-
-{
-
+function toposingle($menu = PORTUGAL){
+    global $idEstabelecimento;
 
     ?>
 
@@ -162,7 +162,11 @@ function toposingle($menu = PORTUGAL)
                             <?php
                             while ($dadosEstab = mysqli_fetch_array($resultEstab)){
                                 ?>
-                                <option value="<?php echo $dadosEstab['estabelecimentoId'] ?> "> <?php echo $dadosEstab['estabelecimentoNome'] ?>
+                                <option
+                                        <?php
+                                        if($idEstabelecimento==$dadosEstab['estabelecimentoId']) echo " selected ";
+                                        ?>
+                                        value="<?php echo $dadosEstab['estabelecimentoId'] ?> "> <?php echo $dadosEstab['estabelecimentoNome'] ?>
                                 </option>
                                 <?php
                             }
@@ -587,6 +591,9 @@ function bot($menu = HOME, $id = 0,$pg=1 )
     <script>
         $('document').ready(function () {
 
+            $('select').on('change', function() {
+                window.location="criado.php?id="+this.value;
+            });
             <?php
             if($menu == ESTABELECIMENTOSP){
             ?>
@@ -624,6 +631,7 @@ function bot($menu = HOME, $id = 0,$pg=1 )
             <?php
             }if($menu == SINGLE){
             ?>
+
             listaComentarios(<?php echo $id ?>);
             <?php
             }if($menu == RESERVASADMIN){
