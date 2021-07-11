@@ -158,7 +158,7 @@ function toposingle($menu = PORTUGAL){
                 if ($_SESSION['id'] == $dadosEstab['estabelecimentoPerfilId']) { ?>
 
                     <nav class="arrange-select nice-select2 mobile-menu header-right" style="margin-right: 10px">
-                        <select name="estabe" id="estabe" >
+                        <select name="estabe" id="estabe" onchange="if (this.value) window.location.href='criado.php?id=' + this.value" >
                             <?php
                             while ($dadosEstab = mysqli_fetch_array($resultEstab)){
                                 ?>
@@ -280,7 +280,7 @@ function topoadmin($menu = GESTAO)
                     if ($_SESSION['id'] == $dadosEstab['estabelecimentoPerfilId']) { ?>
 
                         <nav class="arrange-select nice-select2 mobile-menu header-right" style="margin-right: 10px">
-                            <select name="estabe" id="estabe">
+                            <select name="estabe" id="estabe" onchange="if (this.value) window.location.href='../criado.php?id=' + this.value">
                                 <?php
                                 while ($dadosEstab = mysqli_fetch_array($resultEstab)) {
                                     ?>
@@ -403,7 +403,7 @@ function topAdmin($menu = GESTAO)
                 if ($_SESSION['id'] == $dadosEstab['estabelecimentoPerfilId']) { ?>
 
                     <nav class="arrange-select nice-select2 mobile-menu header-right" style="margin-right: 25px">
-                        <select name="estabe" id="estabe">
+                        <select name="estabe" id="estabe" onchange="if (this.value) window.location.href='../criado.php?id=' + this.value">
                             <?php
                             while ($dadosEstab = mysqli_fetch_array($resultEstab)) {
                                 ?>
@@ -601,7 +601,7 @@ function bot($menu = HOME, $id = 0,$pg=1 )
     <script>
         $('document').ready(function () {
 
-            $('select').on('change', function() {
+            $('#estabe').on('change', function() {
                 window.location="criado.php?id="+this.value;
             });
             <?php
@@ -751,7 +751,7 @@ function botAdmin($menu = HOME)
 
     <script>
         $('document').ready(function () {
-            $('select').on('change', function() {
+            $('#estabe').on('change', function() {
                 window.location="../criado.php?id="+this.value;
             });
 
