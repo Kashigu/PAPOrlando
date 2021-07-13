@@ -120,7 +120,7 @@ if (isset ($_GET['nome'])) {
                      </div> -->
                     <div class="rating-filter">
                         <h3>Ratings</h3>
-                        <div class="rating-option">
+                        <div class="rating-option" id="searchRatings">
                             <div class="ro-item">
                                 <input type="radio">
                                 <label>5.0</label>
