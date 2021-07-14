@@ -264,8 +264,8 @@ $id = intval($_GET['id']);
                                 <span id="Efundo"></span>
                             </div>
                             <div class="col-lg-6">
-                                <label>Posição do Estabelecimento no Google Earth: </label>
-                                <input type="file" name="google" id="google">
+                                <label>Posição do Estabelecimento no Google Maps: </label>
+                                <input type="text" name="google" id="google">
 
                             </div>
                             <div class="col-lg-6">
