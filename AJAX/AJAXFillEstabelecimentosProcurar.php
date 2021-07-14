@@ -9,7 +9,7 @@ $pagina = intval($_POST['pag']);
 $rating = floatval($_POST['rating']);
 
 
-print_r($_POST);
+//print_r($_POST);
 //$novo;
 
     $sql = "select estabelecimentos.*, categoriaNome, ifnull(tabela.medRating,' NR') as rating

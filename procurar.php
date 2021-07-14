@@ -177,6 +177,17 @@ if (isset ($_GET['nome'])) {
                                     <i class="fa fa-star grey-bg"></i>
                                 </div>
                             </div>
+                            <div class="ro-item">
+                                <input type="radio" name="searchRatings" value="0">
+                                <label  onclick="filtraRating(0)">0.0</label>
+                                <div class="rating-pic">
+                                    <i class="fa fa-star grey-bg"></i>
+                                    <i class="fa fa-star grey-bg"></i>
+                                    <i class="fa fa-star grey-bg"></i>
+                                    <i class="fa fa-star grey-bg"></i>
+                                    <i class="fa fa-star grey-bg"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="distance-filter">
