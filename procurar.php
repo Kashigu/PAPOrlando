@@ -85,7 +85,7 @@ if (isset ($_GET['nome'])) {
                         <h5>Nome do Estabelecimento</h5>
 
                         <input class="location-search1 nice-select1" type="text" id="searchEstabelecimento" name="nome"
-                               value=" <?php echo $nome ?>">
+                               value="<?php echo $nome ?>">
                     </div>
                 </form>
             </div>
@@ -120,10 +120,11 @@ if (isset ($_GET['nome'])) {
                      </div> -->
                     <div class="rating-filter">
                         <h3>Ratings</h3>
-                        <div class="rating-option" id="searchRatings">
+                        <div class="rating-option" id="divSearchRating">
+                            <input type="hidden" id="searchRatings" value="-1">
                             <div class="ro-item">
-                                <input type="radio">
-                                <label>5.0</label>
+                                <input type="radio" name="searchRatings" value="5">
+                                <label onclick="filtraRating(5)">5.0</label>
                                 <div class="rating-pic">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -133,8 +134,8 @@ if (isset ($_GET['nome'])) {
                                 </div>
                             </div>
                             <div class="ro-item">
-                                <input type="radio">
-                                <label>4.0</label>
+                                <input type="radio" name="searchRatings" value="4">
+                                <label onclick="filtraRating(4)">4.0</label>
                                 <div class="rating-pic">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -144,8 +145,8 @@ if (isset ($_GET['nome'])) {
                                 </div>
                             </div>
                             <div class="ro-item">
-                                <input type="radio">
-                                <label>3.0</label>
+                                <input type="radio" name="searchRatings" value="3">
+                                <label onclick="filtraRating(3)" >3.0</label>
                                 <div class="rating-pic">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -155,8 +156,8 @@ if (isset ($_GET['nome'])) {
                                 </div>
                             </div>
                             <div class="ro-item">
-                                <input type="radio">
-                                <label>2.0</label>
+                                <input type="radio" name="searchRatings" value="2">
+                                <label onclick="filtraRating(2)"  >2.0</label>
                                 <div class="rating-pic">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -166,8 +167,8 @@ if (isset ($_GET['nome'])) {
                                 </div>
                             </div>
                             <div class="ro-item">
-                                <input type="radio">
-                                <label>1.0</label>
+                                <input type="radio" name="searchRatings" value="1">
+                                <label  onclick="filtraRating(1)"  >1.0</label>
                                 <div class="rating-pic">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star grey-bg"></i>
@@ -214,6 +215,7 @@ if (isset ($_GET['nome'])) {
                                 <option value="-1">Escolha Opção</option>
                                 <option value="1">Mais Antigo</option>
                                 <option value="2">Mais Recente</option>
+                                <option value="3">Melhor Rating</option>
                             </select>
                         </form>
                     </div>

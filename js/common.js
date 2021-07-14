@@ -514,7 +514,7 @@ function preview_image(event) {
 
 //-----------------------------------------------------------FUNÇÕES PARA O PROCURAR.PHP----------------------------------------------//
 
-function fillTableEstabelecimentosProcurar(txt = '', categoria = -1, distrito = -1, novo = -1, pagina = 1, recente = -1) {
+function fillTableEstabelecimentosProcurar(txt = '', categoria = -1, distrito = -1, pagina = 1, recente = -1, rating=-1) {
     //alert(txt + ' ' + categoria+' '+distrito);/*
     $.ajax({
         url: "AJAX/AJAXFillEstabelecimentosProcurar.php",
@@ -523,9 +523,9 @@ function fillTableEstabelecimentosProcurar(txt = '', categoria = -1, distrito = 
             txt: txt,
             categoria: categoria,
             distrito: distrito,
-            novo: novo,
             pag: pagina,
-            recente: recente
+            recente: recente,
+            rating: rating
         },
         success: function (result) {
             $('#tableContent').html(result);
@@ -835,8 +835,8 @@ function rating(id, valor) {
         }
     });
 }
+function filtraRating(valor){
+    $('#searchRatings').val(valor);
+    fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), $('#searchCategoria').val(),  $('#searchDistrito').val(),1,$('#searchOptions').val() ,valor);
 
-
-function estabe(id){
-    window.location = "criado.php?id="+id;
 }

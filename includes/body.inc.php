@@ -432,7 +432,7 @@ function topAdmin($menu = GESTAO)
 
     <?php
 }
-function bot($menu = HOME, $id = 0,$pg=1 )
+    function bot($menu = HOME, $id = 0,$pg=1 )
 {
     ?>
 
@@ -609,21 +609,19 @@ function bot($menu = HOME, $id = 0,$pg=1 )
             ?>
 
             $('#searchEstabelecimento').keyup(function () {
-                fillTableEstabelecimentosProcurar(this.value, $('#searchCategoria').val(), $('#searchDistrito').val(), $('#searchOptions').val(), $('#searchRatings').val());
+                fillTableEstabelecimentosProcurar(this.value, $('#searchCategoria').val(), $('#searchDistrito').val(),<?php echo $pg?>, $('#searchOptions').val(), $('#searchRatings').val());
             });
             $('#searchCategoria').change(function () {
-                fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), this.value, $('#searchDistrito').val(), $('#searchOptions').val(), $('#searchRatings').val());
+                fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), this.value, $('#searchDistrito').val(),<?php echo $pg?>, $('#searchOptions').val(), $('#searchRatings').val());
             });
             $('#searchDistrito').change(function () {
-                fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), $('#searchCategoria').val(), this.value, $('#searchOptions').val(), $('#searchRatings').val());
+                fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), $('#searchCategoria').val(), this.value, <?php echo $pg?>, $('#searchOptions').val(), $('#searchRatings').val());
             });
             $('#searchOptions').change(function () {
-                fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), $('#searchCategoria').val(),  $('#searchDistrito').val(), $('#searchRatings').val(),this.value);
+                fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), $('#searchCategoria').val(),  $('#searchDistrito').val(),<?php echo $pg?>, this.value, $('#searchRatings').val());
             });
-            $('#searchRatings').change(function () {
-                fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), $('#searchCategoria').val(),  $('#searchDistrito'). val(), $('#searchOptions').val(),this.value);
-            });
-            fillTableEstabelecimentosProcurar('',-1,-1,-1,-1,<?php echo $pg?>); //os valores não são guardados quando passa de página //
+
+            fillTableEstabelecimentosProcurar('',-1,-1,<?php echo $pg?>,-1); //os valores não são guardados quando passa de página //
 
             <?php }
             if ($menu == GALERIA){

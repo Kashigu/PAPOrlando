@@ -3,57 +3,57 @@ include_once("../includes/body.inc.php");
 $txt = addslashes($_POST['txt']);
 $categoria = intval($_POST['categoria']);
 $distrito = intval($_POST['distrito']);
-$novo = intval($_POST['novo']);
+$novo = intval($_POST['recente']);
 
 $pagina = intval($_POST['pag']);
-
-$novo;
-
-    $sql = "
-                        select *
-                        from distritos inner join estabelecimentos 
-                        on distritoId=estabelecimentoDistritoId
-                        INNER JOIN categorias
-                        on categoriaId=estabelecimentoCategoriaId where 1 ";
-    if ($txt != '')
-        $sql .= " and estabelecimentoNome LIKE '%$txt%'";
-    if ($categoria != -1)
-        $sql .= " and categoriaId=$categoria";
-    if ($distrito != -1)
-        $sql .= " and distritoId =$distrito";
-
-    $resultado = mysqli_query($con, $sql);
-    $numero_de_resultados = mysqli_num_rows($resultado);
+$rating = floatval($_POST['rating']);
 
 
-    $numero_de_paginas = ceil($numero_de_resultados / REGISTOSPORPAGINA);
+print_r($_POST);
+//$novo;
 
-
-    $esta_pagina_primeiro_resultado = ($pagina - 1) * REGISTOSPORPAGINA;
-
-    $sql = "
-                        select *
-                        from distritos inner join estabelecimentos 
-                        on distritoId=estabelecimentoDistritoId
-                        INNER JOIN categorias
-                        on categoriaId=estabelecimentoCategoriaId where 1";
+    $sql = "select estabelecimentos.*, categoriaNome, ifnull(tabela.medRating,' NR') as rating
+from estabelecimentos left join categorias
+                        on categoriaId=estabelecimentoCategoriaId left join 
+(
+	select redeEstabelecimentoId, round(avg(ratingValor),1) as medRating
+	from redes inner join ratings on redeId=ratingRedeId
+	group by 1
+	) as tabela
+on estabelecimentoId=redeEstabelecimentoId
+ where 1";
 
     if ($txt != '')
         $sql .= " and estabelecimentoNome LIKE '%$txt%' ";
     if ($categoria != -1)
-        $sql .= " and categoriaId=$categoria ";
+        $sql .= " and estabelecimentoCategoriaId=$categoria ";
     if ($distrito != -1)
-        $sql .= " and distritoId =$distrito ";
-    if ($novo == 2)
-        $sql .= " order by estabelecimentoId desc ";
+        $sql .= " and estabelecimentoDistritoId =$distrito ";
+    if ($rating !=-1){
+       // $rating-=0.5;
+        $sql.= " having rating<>'NR' && rating >= $rating";
+    }
+
+    $resultado=mysqli_query($con,$sql);
+    $numero_de_resultados = mysqli_num_rows($resultado);
+    $numero_de_paginas = ceil($numero_de_resultados / REGISTOSPORPAGINA);
+    $esta_pagina_primeiro_resultado = ($pagina - 1) * REGISTOSPORPAGINA;
+
+
+
     if ($novo == 1)
         $sql .= " order by estabelecimentoId asc ";
+    if ($novo == 2)
+        $sql .= " order by estabelecimentoId desc ";
+    if ($novo == 3){
+        $sql .= " order by rating desc ";
+    }
+
 
     $sql .= " LIMIT " . $esta_pagina_primeiro_resultado . ',' . REGISTOSPORPAGINA;
 
-    $sql;
+   // $sql;
     $resultEstabelecimentos = mysqli_query($con, $sql);
-
 
 while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
     ?>
@@ -64,7 +64,7 @@ while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
                 <img class="centrinho"
                      src="<?php echo $dadosEstabelecimentos['estabelecimentoMiniaturaURL'] ?>"
                      alt="">
-                <div class="rating">4.9</div>
+                <div class="rating"><?php echo $dadosEstabelecimentos['rating']?></div>
                 <div class="tic-text"><?php echo $dadosEstabelecimentos['categoriaNome'] ?></div>
             </div>
             <div class="arrange-text">
@@ -84,7 +84,7 @@ while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
         <?php
         if ($numero_de_paginas > 1)
             for ($pagina = 1; $pagina <= $numero_de_paginas; $pagina++) {
-                echo "<a onclick=\"fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), $('#searchCategoria').val(),  $('#searchDistrito').val(),$('#searchOptions').val(),".$pagina.");\"  href=\"#\">" . $pagina . "</a>";
+                echo "<a onclick=\"fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), $('#searchCategoria').val(),  $('#searchDistrito').val(),".$pagina.",$('#searchOptions').val());\"  href=\"#\">" . $pagina . "</a>";
             }
         ?>
     </div>
