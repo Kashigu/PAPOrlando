@@ -4,8 +4,8 @@ $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
 $nome = addslashes($_POST['nome']);
 $email = addslashes($_POST['email']);
 $localidade = addslashes($_POST['localidade']);
-$password = addslashes($_POST['pass']);
-$Spassword = addslashes($_POST['Spass']);
+$password = md5(addslashes($_POST['pass']));
+$Spassword = md5(addslashes($_POST['Spass']));
 
 
 if (isset($password) and isset($Spassword)) {
