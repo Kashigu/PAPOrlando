@@ -17,7 +17,7 @@ $email = $_POST['email'];
 $sobre1 = $_POST['reviewTexto1'];
 $logo = $_FILES['logo']['name'];
 $fundo = $_FILES['fundo']['name'];
-//$google = $_FILES['google'];
+$google = addslashes($_POST['google']);
 
 
 
@@ -32,15 +32,15 @@ copy($_FILES['fundo']['tmp_name'],$novoNome1);
 
 
 
-$sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimentoCategoriaId,estabelecimentoNome,estabelecimentoSlogan,
+echo $sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimentoCategoriaId,estabelecimentoNome,estabelecimentoSlogan,
                                     estabelecimentoDescricao,estabelecimentoDescricao2,
                                     estabelecimentoLocalidade,estabelecimentoDistritoId,estabelecimentoMorada,
                                     estabelecimentoTelefone,estabelecimentoEmail,
-                                    estabelecimentoMiniaturaURL,estabelecimentoFundoURL) values('" . $idUtilizador . "','" . $idCategoria . "','" . $nome . "','" . $nomeSlogan . "',
+                                    estabelecimentoMiniaturaURL,estabelecimentoFundoURL,estabelecimentoPosicao) values('" . $idUtilizador . "','" . $idCategoria . "','" . $nome . "','" . $nomeSlogan . "',
                                                                         '" . $sobre . "','" . $sobre1 . "','" . $nomeLoca . "',
                                                                         '" . $nomeDistrito . "','" . $rua . "','" . $numero . "',
                                                                         '" . $email . "',
-                                                                        '" . $novoNome . "','" . $novoNome1 . "');";
+                                                                        '" . $novoNome . "','" . $novoNome1 . "','" . $google . "');";
 
 mysqli_query($con, $sql);
 $idEst=mysqli_insert_id($con); // último Id criado pelo Insert
@@ -48,5 +48,5 @@ $idEst=mysqli_insert_id($con); // último Id criado pelo Insert
 /*$sql="insert into estabelecimentocategorias values($idCategoria,$idEst,'')";
 mysqli_query($con, $sql);*/
 
-header("location:criado.php?id=$idEst");
+//header("location:criado.php?id=$idEst");
 ?>
