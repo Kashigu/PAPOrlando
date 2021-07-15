@@ -53,8 +53,6 @@ if (isset ($_GET['nome'])) {
                                 </option>
                                 <?php
                             }
-
-
                             ?>
 
                         </select>

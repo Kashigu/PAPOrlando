@@ -251,7 +251,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                         </div>
                         <div class="col-lg-6">
                             <label>Posição do Estabelecimento no Google Earth: </label>
-                            <input type="file" name="google" id="google">
+                            <input type="text" name="google" id="google"value="<?php echo $dadosEstabelecimentos['estabelecimentoPosicao'] ?>">
 
                         </div>
                         <div class="col-lg-6">

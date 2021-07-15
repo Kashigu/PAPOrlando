@@ -328,6 +328,7 @@ ul,
 ol {
     padding: 0;
     margin: 0;
+
 }
 
 [class^=flaticon-]:before,
@@ -642,7 +643,7 @@ direita {
     margin-bottom: 34px;
 }
 
-.filter-search {
+.filter-search  {
     padding: 25px 38px 38px;
     position: relative;
     z-index: 1;
@@ -660,9 +661,11 @@ direita {
     z-index: -1;
 }
 
-.filter-search .category-search {
+.filter-search .category-search ul {
     display: inline-block;
     width: calc(41% - 20px);
+    overflow-y: scroll;
+
 }
 
 .filter-search .category-search h5 { /* h5 de Procurar Categoria*/
@@ -1492,9 +1495,10 @@ direita {
     width: 100%;
 }
 
-.search-filter .filter-search .location-search {
+.search-filter .filter-search .location-search ul {
     display: inline-block;
     width: calc(41% - 20px);
+    overflow-y: scroll;
 }
 
 .search-filter .filter-search .location-search h5 {

@@ -15,7 +15,7 @@ $numero = $_POST['numero'];
 $email = $_POST['email'];
 $logo = $_FILES['logo']['name'];
 $fundo = $_FILES['fundo']['name'];
-//$google = $_FILES['google'];
+$google = addslashes($_POST['google']);
 
 
 $novoNome="imagens/".$logo;
@@ -31,7 +31,8 @@ $sql="Update estabelecimentos set estabelecimentoNome='".$nome."', estabelecimen
                                     , estabelecimentoDistritoId='".$nomeDistrito."'
                                     , estabelecimentoMorada='".$rua."'
                                     , estabelecimentoTelefone='".$numero."'
-                                    , estabelecimentoCategoriaId='".$idCategoria."'";
+                                    , estabelecimentoCategoriaId='".$idCategoria."'
+                                    , estabelecimentoPosicao='".$google."'";
 
 
 if($logo!=''){
@@ -44,9 +45,9 @@ if($fundo!=''){
     copy($_FILES['fundo']['tmp_name'],$novoNome1);
 }
 
- $sql.=" where estabelecimentoId=".$id;
+echo $sql.=" where estabelecimentoId=".$id;
 
 $result = mysqli_query($con, $sql);
-header("location:criado.php?id={$id}");
+//header("location:criado.php?id={$id}");
 ?>
 
