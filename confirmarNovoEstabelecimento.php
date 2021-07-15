@@ -17,7 +17,7 @@ $email = $_POST['email'];
 $sobre1 = $_POST['reviewTexto1'];
 $logo = $_FILES['logo']['name'];
 $fundo = $_FILES['fundo']['name'];
-$google = addslashes($_POST['google']);
+$google = $_POST['google'];
 
 
 
@@ -48,5 +48,5 @@ $idEst=mysqli_insert_id($con); // último Id criado pelo Insert
 /*$sql="insert into estabelecimentocategorias values($idCategoria,$idEst,'')";
 mysqli_query($con, $sql);*/
 
-//header("location:criado.php?id=$idEst");
+header("location:criado.php?id=$idEst");
 ?>
