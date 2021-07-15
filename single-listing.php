@@ -21,7 +21,21 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
             <div class="row">
                 <div class="col-lg-7">
                     <div class="about-intro">
-                        <div class="rating">4.9</div>
+                        <?php
+                        $sql = "select estabelecimentos.*, categoriaNome, ifnull(tabela.medRating,' NR') as rating
+                                        from estabelecimentos left join categorias
+                                                                on categoriaId=estabelecimentoCategoriaId left join 
+                                        (
+                                            select redeEstabelecimentoId, round(avg(ratingValor),1) as medRating
+                                            from redes inner join ratings on redeId=ratingRedeId
+                                            group by 1
+                                            ) as tabela
+                                        on estabelecimentoId=redeEstabelecimentoId
+                                         where estabelecimentoId=$id";
+                        $rating = mysqli_query($con, $sql);
+                        $dadosRating = mysqli_fetch_array($rating);
+                        ?>
+                        <div class="rating"><?php echo $dadosRating['rating'] ?></div>
                         <div class="intro-text">
                             <h2><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></h2>
                             <h4><?php echo $dadosEstabelecimentos['estabelecimentoLocalidade'] ?></h4>

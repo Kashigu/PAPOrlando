@@ -21,7 +21,21 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
             <div class="row">
                 <div class="col-lg-7">
                     <div class="about-intro">
-                        <div class="rating">4.9</div>
+                        <?php
+                        $sql = "select estabelecimentos.*, categoriaNome, ifnull(tabela.medRating,' NR') as rating
+                                        from estabelecimentos left join categorias
+                                                                on categoriaId=estabelecimentoCategoriaId left join 
+                                        (
+                                            select redeEstabelecimentoId, round(avg(ratingValor),1) as medRating
+                                            from redes inner join ratings on redeId=ratingRedeId
+                                            group by 1
+                                            ) as tabela
+                                        on estabelecimentoId=redeEstabelecimentoId
+                                         where estabelecimentoId=$id";
+                        $rating = mysqli_query($con, $sql);
+                        $dadosRating = mysqli_fetch_array($rating);
+                        ?>
+                        <div class="rating"><?php echo $dadosRating['rating'] ?></div>
                         <div class="intro-text">
                             <h2><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></h2>
                             <h4><?php echo $dadosEstabelecimentos['estabelecimentoLocalidade'] ?></h4>
@@ -35,7 +49,8 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                     <div class="intro-share">
                         <div class="share-btn">
                             <a href="galeria.php?id=<?php echo $id ?>">Adicionar uma Galeria de Fotos</a>
-                            <a class="mt-1" href="definicoesEstabelecimento.php?id=<?php echo $id ?>" style="margin-left:7px">Definições</a>
+                            <a class="mt-1" href="definicoesEstabelecimento.php?id=<?php echo $id ?>"
+                               style="margin-left:7px">Definições</a>
                             <a class="mt-1" href="listaReservaAdmin.php?id=<?php echo $id ?>">Ver Reservas</a>
                         </div>
                         <div class="share-icon">
@@ -67,7 +82,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                                     $controle_ativo = 2;
                                     $sql = "Select * from imagens where imagemEstabelecimentoId=" . $id;
                                     $resultImagens = mysqli_query($con, $sql);
-                                    while ($dadosImagens = mysqli_fetch_array($resultImagens)){ ?>
+                                    while ($dadosImagens = mysqli_fetch_array($resultImagens)) { ?>
                                         <?php
                                         if ($controle_ativo == 2) { ?>
                                             <div class="carousel-item active ">
@@ -105,6 +120,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                             <h3>Revisão</h3>
                             <div class="reviews-item">
                                 <div class="col-lg-12" id="tableContent"></div>
+                                height="385" style="border:0;" allowfullscreen=""
                             </div>
                         </div>
                     </div>
@@ -116,7 +132,6 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                                 <?php
                                 echo $dadosEstabelecimentos['estabelecimentoPosicao']
                                 ?>
-                                <img src="img/pin.png" alt="">height="385" style="border:0;" allowfullscreen=""
                             </div>
                             <div class="contact-text">
                                 <h4>Informação</h4>
