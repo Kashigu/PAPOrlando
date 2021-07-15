@@ -141,21 +141,22 @@ $dadosPerfis = mysqli_fetch_array($resultPerfis)
                                                     </tr>
                                                     <?php
                                                 }
-                                            } else {
-                                                while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
-                                                    ?>
-                                                    <tr>
-                                                        <td><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></td>
-                                                        <td>
-                                                            <a class="a2"
-                                                               href="single-listing.php?id=<?php echo $dadosEstabelecimentos['estabelecimentoId'] ?>">Ver
-                                                        </td>
-                                                        </a>
-                                                    </tr>
-                                                    <?php
-                                                }
+                                            }
+                                        } else {
+                                            while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
+                                                ?>
+                                                <tr>
+                                                    <td><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></td>
+                                                    <td>
+                                                        <a class="a2"
+                                                           href="single-listing.php?id=<?php echo $dadosEstabelecimentos['estabelecimentoId'] ?>">Ver
+                                                    </td>
+                                                    </a>
+                                                </tr>
+                                                <?php
                                             }
                                         }
+
                                         ?>
                                     </table>
                                 </div>
