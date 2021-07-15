@@ -799,4 +799,17 @@ function botAdmin($menu = HOME)
 
 }
 
-?>
+
+
+function novoMap($txt,$w,$h){
+    $pini=strpos($txt,'width="');
+    $pin2=strpos($txt,'"',$pini+8);
+    $width='width="'.substr($txt,$pini+7,($pin2-$pini)-7).'"';
+    $pini=strpos($txt,'height="');
+    $pin2=strpos($txt,'"',$pini+9);
+    $height='height="'.substr($txt,$pini+8,($pin2-$pini)-8).'"';
+    $txt=str_replace($width,'width="'.$w.'"',$txt);
+    $txt=str_replace($height,'height="'.$h.'"',$txt);
+    return($txt);
+}
+    ?>

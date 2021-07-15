@@ -40,7 +40,7 @@ echo $sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimen
                                                                         '" . $sobre . "','" . $sobre1 . "','" . $nomeLoca . "',
                                                                         '" . $nomeDistrito . "','" . $rua . "','" . $numero . "',
                                                                         '" . $email . "',
-                                                                        '" . $novoNome . "','" . $novoNome1 . "','" . $google . "');";
+                                                                        '" . $novoNome . "','" . $novoNome1 . "','" . novoMap($google,300,385) . "');";
 
 mysqli_query($con, $sql);
 $idEst=mysqli_insert_id($con); // último Id criado pelo Insert
