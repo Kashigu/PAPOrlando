@@ -1,6 +1,6 @@
 <?php
 include_once("includes/body.inc.php");
-toposingle();
+toposingle(SINGLE);
 $id = intval($_GET['id']);
 
 $sql="select * from estabelecimentos where estabelecimentoId=".$id;

@@ -1,6 +1,6 @@
 <?php
 include_once("includes/body.inc.php");
-toposingle();
+toposingle(SINGLE);
 $id = intval($_GET['id']);
 ?>
     <link href="summernote.css" rel="stylesheet">
