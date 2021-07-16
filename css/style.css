@@ -703,6 +703,7 @@ direita {
     margin-top: 1px;
     width: 100%;
     overflow-y: scroll;
+    height: 225px;
 }
 
 .wrapper { /*poop da internet*/
@@ -806,6 +807,7 @@ direita {
     margin-top: 1px;
     width: 100%;
     overflow-y: scroll;
+    height: 225px;
 }
 
 .filter-search button {
@@ -1493,6 +1495,8 @@ direita {
     border-radius: 0;
     margin-top: 1px;
     width: 100%;
+    overflow-y: scroll;
+    height: 225px;
 }
 
 .search-filter .filter-search .location-search {
@@ -1535,6 +1539,7 @@ direita {
     margin-top: 1px;
     width: 100%;
     overflow-y: scroll;
+    height: 225px;
 }
 
 .search-filter .filter-search button {
