@@ -9,7 +9,6 @@ toposingle(PORTUGAL);
             <div class="row">
                 <div class="col-lg-12">
                     <div class="hero-text">
-
                         <h1>Portugal</h1>
                         <form action="procurar.php" class="filter-search filter-search1">
                             <div class="category-search col-lg-5">
@@ -27,7 +26,6 @@ toposingle(PORTUGAL);
                                         <?php
                                     }
                                     ?>
-
                                 </select>
                             </div>
                             <div class="location-search col-lg-5">
@@ -53,7 +51,6 @@ toposingle(PORTUGAL);
                                 <input class="location-search1 nice-select1" type="text" id="search" name="nome">
                             </div>
                             <button type="submit">Procurar Agora</button>
-
                         </form>
                     </div>
                 </div>
@@ -143,37 +140,40 @@ toposingle(PORTUGAL);
 
     <!-- Categories Section Begin -->
     <p></p>
-    <?php
+<?php
 
-        $sql = "select * from categorias order by categoriaNome";
-        $resultCategorias = mysqli_query($con, $sql);
-    ?>
+$sql = "select * from categorias order by categoriaNome";
+$resultCategorias = mysqli_query($con, $sql);
+?>
     <section class="categories-section spad">
         <div class="container-fluid">
 
             <div class="categories-left">
                 <div class="row">
-                <?php
+                    <?php
 
 
                     while ($dadosCategorias = mysqli_fetch_array($resultCategorias)) {
 
-                 $sql2="Select count(*) as n
+                        $sql2 = "Select count(*) as n
                        from estabelecimentos 
-                       WHERE estabelecimentoCategoriaId =".$dadosCategorias['categoriaId'];
-                $resultado=mysqli_query($con,$sql2);
-                $dados=mysqli_fetch_assoc($resultado);
-                ?>
+                       WHERE estabelecimentoCategoriaId =" . $dadosCategorias['categoriaId'];
+                        $resultado = mysqli_query($con, $sql2);
+                        $dados = mysqli_fetch_assoc($resultado);
+                        ?>
 
-                <div class="col-md-12">
-                    <div class="categories-item set-bg" <?php echo $dadosCategorias['categoriaId'] ?> data-setbg="<?php echo $dadosCategorias['categoriaImagemURL'] ?>">
+                        <div class="col-md-12">
+                            <div class="categories-item set-bg" <?php echo $dadosCategorias['categoriaId'] ?>
+                                 data-setbg="<?php echo $dadosCategorias['categoriaImagemURL'] ?>">
 
 
-                        <a href="<?php echo $dadosCategorias['categoriaImagemURL'] ?>" class="img-hover pop-up"> <img src="img/zoom.png" alt=""></a>
-                        <div class="categories-text">
-                            <h4><?php echo $dadosCategorias['categoriaNome'] ?></h4>
-                            <p><?php echo $dados['n'] ?> Listados</p>
-                                    <a href="procurar.php?categoria=<?php echo $dadosCategorias['categoriaId']?>">Ver Todos</a>
+                                <a href="<?php echo $dadosCategorias['categoriaImagemURL'] ?>" class="img-hover pop-up">
+                                    <img src="img/zoom.png" alt=""></a>
+                                <div class="categories-text">
+                                    <h4><?php echo $dadosCategorias['categoriaNome'] ?></h4>
+                                    <p><?php echo $dados['n'] ?> Listados</p>
+                                    <a href="procurar.php?categoria=<?php echo $dadosCategorias['categoriaId'] ?>">Ver
+                                        Todos</a>
                                 </div>
                             </div>
                         </div>
@@ -187,23 +187,26 @@ toposingle(PORTUGAL);
             <div class="categories-right">
                 <div class="row">
                     <?php
-                    mysqli_data_seek($resultCategorias,1);
+                    mysqli_data_seek($resultCategorias, 1);
                     while ($dadosCategorias = mysqli_fetch_array($resultCategorias)) {
-                        $sql2="Select count(*) as n
+                        $sql2 = "Select count(*) as n
                        from estabelecimentos 
-                       WHERE estabelecimentoCategoriaId =".$dadosCategorias['categoriaId'];
-                        $resultado=mysqli_query($con,$sql2);
-                        $dados=mysqli_fetch_assoc($resultado);
+                       WHERE estabelecimentoCategoriaId =" . $dadosCategorias['categoriaId'];
+                        $resultado = mysqli_query($con, $sql2);
+                        $dados = mysqli_fetch_assoc($resultado);
                         ?>
                         <div class="col-md-12">
-                            <div class="categories-item set-bg" <?php echo $dadosCategorias['categoriaId'] ?> data-setbg="<?php echo $dadosCategorias['categoriaImagemURL'] ?>">
+                            <div class="categories-item set-bg" <?php echo $dadosCategorias['categoriaId'] ?>
+                                 data-setbg="<?php echo $dadosCategorias['categoriaImagemURL'] ?>">
 
 
-                                <a href="<?php echo $dadosCategorias['categoriaImagemURL'] ?>" class="img-hover pop-up"> <img src="img/zoom.png" alt=""></a>
+                                <a href="<?php echo $dadosCategorias['categoriaImagemURL'] ?>" class="img-hover pop-up">
+                                    <img src="img/zoom.png" alt=""></a>
                                 <div class="categories-text">
                                     <h4><?php echo $dadosCategorias['categoriaNome'] ?></h4>
                                     <p><?php echo $dados['n'] ?> Listados</p>
-                                    <a href="procurar.php?categoria=<?php echo $dadosCategorias['categoriaId']?>">Ver Todos</a>
+                                    <a href="procurar.php?categoria=<?php echo $dadosCategorias['categoriaId'] ?>">Ver
+                                        Todos</a>
                                 </div>
                             </div>
                         </div>

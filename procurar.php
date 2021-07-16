@@ -48,13 +48,11 @@ if (isset ($_GET['nome'])) {
                                     <?php if ($dadosCategorias['categoriaId'] == $categoria)
                                         echo " selected " ?>
                                         value="<?php echo $dadosCategorias['categoriaId'] ?>">
-
                                     <?php echo $dadosCategorias['categoriaNome'] ?>
                                 </option>
                                 <?php
                             }
                             ?>
-
                         </select>
                     </div>
                     <div class="location-search col-lg-6">
@@ -74,8 +72,6 @@ if (isset ($_GET['nome'])) {
                                 </option>
                                 <?php
                             }
-
-
                             ?>
                         </select>
                     </div>

@@ -661,10 +661,10 @@ direita {
     z-index: -1;
 }
 
-.filter-search .category-search ul {
+.filter-search .category-search {
     display: inline-block;
     width: calc(41% - 20px);
-    overflow-y: scroll;
+
 
 }
 
@@ -702,6 +702,7 @@ direita {
     border-radius: 0;
     margin-top: 1px;
     width: 100%;
+    overflow-y: scroll;
 }
 
 .wrapper { /*poop da internet*/
@@ -713,8 +714,6 @@ direita {
 .filter-search .location-search { /* tem haver com a barra do select */
     display: inline-block;
     width: calc(41% - 20px);
-
-
 }
 
 .filter-search1 .location-search1 { /* tem haver com a barra para escrever o local  */
@@ -806,6 +805,7 @@ direita {
     border-radius: 0;
     margin-top: 1px;
     width: 100%;
+    overflow-y: scroll;
 }
 
 .filter-search button {
@@ -1495,10 +1495,9 @@ direita {
     width: 100%;
 }
 
-.search-filter .filter-search .location-search ul {
+.search-filter .filter-search .location-search {
     display: inline-block;
     width: calc(41% - 20px);
-    overflow-y: scroll;
 }
 
 .search-filter .filter-search .location-search h5 {
@@ -1535,6 +1534,7 @@ direita {
     border-radius: 0;
     margin-top: 1px;
     width: 100%;
+    overflow-y: scroll;
 }
 
 .search-filter .filter-search button {
@@ -2775,7 +2775,7 @@ direita {
         width: 100%;
     }
 
-    .filter-search .location-search {
+    .filter-search .location-search ul{
         width: 100%;
         margin-bottom: 30px;
     }
