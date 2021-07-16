@@ -3,6 +3,7 @@ function def(id) {
     let emails = $('#perfilEmail').val();
     let utilizador = $('#perfilNome').val();
     let localidade = $('#perfilLocalidade').val();
+    let imagem = $('#perfilAvatar').val();
     let password = $('#perfilOld').val();
     let erro = false;
 
@@ -31,7 +32,8 @@ function def(id) {
                 nome: utilizador,
                 email: emails,
                 localidade: localidade,
-                password: password
+                password: password,
+                imagem:imagem
             },
             success: function (result) {
                 if ($('#perfilOld').val() != (result)) {
@@ -327,7 +329,7 @@ function certeza() {
     let numero = $('#numero').val();
     let erro = false;
 
-    if ($('#categoria').val() == -1) {
+    if ($('#categoria').val() == 0) {
         erro = true;
         $('#Erro').html('Precisa de Categoria');
     }
@@ -337,8 +339,11 @@ function certeza() {
         $('#ErroD').html('Precisa de Distrito');
 
     }
+    if ($('#google').val() == '') {
+        erro = true;
+        $('#posicao').html('Precisa de Posição');
 
-
+    }
     if ($('#nomeEsta').val() == '') {
         erro = true;
         $('#ErroEN').html('Precisa de Nome');

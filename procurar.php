@@ -184,31 +184,6 @@ if (isset ($_GET['nome'])) {
                             </div>
                         </div>
                     </div>
-                    <div class="distance-filter">
-                        <h3>Distância</h3>
-                        <div class="distance-option">
-                            <div class="do-item">
-                                <input type="radio">
-                                <label>0.0-0.3km</label>
-                            </div>
-                            <div class="do-item">
-                                <input type="radio">
-                                <label>0.3-0.6km</label>
-                            </div>
-                            <div class="do-item">
-                                <input type="radio">
-                                <label>0.6-0.9km</label>
-                            </div>
-                            <div class="do-item">
-                                <input type="radio">
-                                <label>1.0-3.0km</label>
-                            </div>
-                            <div class="do-item">
-                                <input type="radio">
-                                <label>3.0-10.0km</label>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="col-lg-9">
