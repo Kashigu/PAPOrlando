@@ -310,7 +310,7 @@ $resultCategorias = mysqli_query($con, $sql);
      </section>
      <!-- How It Works Section End -->
 
-    <!-- App Section Begin -->
+    <!-- App Section Begin
     <section class="app-section spad">
         <div class="container">
             <div class="row">
@@ -340,7 +340,7 @@ $resultCategorias = mysqli_query($con, $sql);
             </div>
         </div>
     </section>
-
+    -->
 <?php
 bot(HOME);
 ?>
