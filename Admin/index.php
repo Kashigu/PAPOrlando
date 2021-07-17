@@ -102,8 +102,8 @@ topoadmin();
                 $dados=mysqli_fetch_assoc($resultado);
                 ?>
                 <div class="col-md-12">
-                    <div class="categories-item set-bg" data-setbg="../img/categories/cat-1.jpg">
-                        <a href="../img/categories/cat-1.jpg" class="img-hover pop-up"><img src="../img/zoom.png" alt=""></a>
+                    <div class="categories-item set-bg" data-setbg="../img/hero_listing.jpg">
+                        <a href="../img/hero_listing.jpg" class="img-hover pop-up"><img src="../img/zoom.png" alt=""></a>
                         <div class="categories-text">
                             <h4>Estabelecimentos</h4>
                             <p><?php echo $dados['n'] ?> Listados</p>
@@ -119,8 +119,8 @@ topoadmin();
                 $dados=mysqli_fetch_assoc($resultado);
                 ?>
                 <div class="col-md-12">
-                    <div class="categories-item set-bg" data-setbg="../img/categories/cat-4.jpg">
-                        <a href="../img/categories/cat-4.jpg" class="img-hover pop-up"><img src="../img/zoom.png" alt=""></a>
+                    <div class="categories-item set-bg" data-setbg="../img/blog-3.jpg">
+                        <a href="../img/blog-3.jpg" class="img-hover pop-up"><img src="../img/zoom.png" alt=""></a>
                         <div class="categories-text">
                             <h4>Categorias</h4>
                             <p><?php echo $dados['n'] ?> Listados</p>
@@ -157,8 +157,8 @@ topoadmin();
                 $dados=mysqli_fetch_assoc($resultado);
                 ?>
                 <div class="col-md-12">
-                    <div class="categories-item set-bg" data-setbg="../img/distritos.jpg">
-                        <a href="../img/distritos.jpg" class="img-hover pop-up"><img src="../img/zoom.png" alt=""></a>
+                    <div class="categories-item set-bg" data-setbg="../img/lisboa.jpg">
+                        <a href="../img/lisboa.jpg" class="img-hover pop-up"><img src="../img/zoom.png" alt=""></a>
                         <div class="categories-text">
                             <h4>Distritos</h4>
                             <p><?php echo $dados['n'] ?> Listados</p>
