@@ -120,7 +120,6 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                             <h3>Revisão</h3>
                             <div class="reviews-item">
                                 <div class="col-lg-12" id="tableContent"></div>
-                                height="385" style="border:0;" allowfullscreen=""
                             </div>
                         </div>
                     </div>
