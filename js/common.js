@@ -109,7 +109,7 @@ function valido() {
     if ($('#pass').val() == '' || ($('#pass').val() != ($('#Spass').val()))) {
         erro = true;
     }
-    if ($('#Spass').val() == '' || ($('#Spass').val() != ($('#pass').val()))) {
+    if ($('#Spass').val() == '0' || ($('#Spass').val() != ($('#pass').val()))) {
         erro = true;
         $('#errorMsgS').html('Palavra Mal Introduzida!');
     }
