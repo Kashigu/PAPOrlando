@@ -17,16 +17,18 @@ $novoNome = "imagens/" . $imagem;
 $sql2 = "select perfilPassword from perfis where perfilId = " . $id;
 $passe = mysqli_query($con, $sql2);
 $resultado = mysqli_fetch_array($passe);
-
-if ($imagem != '') {
-    $sql = "update perfis set ";
-    $sql .= " perfilAvatar='imagens/" . $imagem . "'";
-    copy($_FILES['perfilAvatar']['tmp_name'], $novoNome);
-    $sql.="where perfilId = $id";
-    $result = mysqli_query($con, $sql);
-    header("location:novoperfil.php?id={$id}");
-
-} elseif (isset($old) and isset($palavra)) {
+echo $old;?><br>
+<?php
+echo $palavra;
+?><br>
+<?php
+echo $Comf;
+?><br>
+<?php
+echo $resultado['perfilPassword'];
+?><br>
+<?php
+if (isset($old) and isset($palavra)) {
     if ($old == $resultado['perfilPassword']) {
         if ($Comf == $palavra) {
             $sql = "Update perfis set perfilNome='" . $nome . "', perfilLocalidade='" . $localidade . "', perfilEmail='" . $email . "'";
@@ -38,7 +40,7 @@ if ($imagem != '') {
             $sql .= " , perfilPassword='" . $Comf . "' where perfilId=" . $id;
             echo $sql;
             $result = mysqli_query($con, $sql);
-            header("location:novoperfil.php?id={$id}");
+            //header("location:novoperfil.php?id={$id}");
         }
     }
 }
