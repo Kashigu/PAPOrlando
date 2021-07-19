@@ -20,7 +20,7 @@ function def(id) {
     if ($('#perfilPalavra').val() == '') {
         erro = true;
     }
-    if ($('#ConfirmaperfilPalavra').val() == '' || ($('#ConfirmaperfilPalavra').val() != ($('#perfilPalavra').val()))) {
+    if ($('#ConfirmaperfilPalavra').val() != ($('#perfilPalavra').val())) {
         erro = true;
         $('#errorMsgSS').html('Palavra Mal Introduzida!');
     } else {

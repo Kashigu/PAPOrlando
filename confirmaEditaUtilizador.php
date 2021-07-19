@@ -6,8 +6,8 @@ $old = addslashes($_POST['perfilOld']);
 $old = md5($old);
 $palavra = addslashes($_POST['perfilPalavra']);
 $Comf = addslashes($_POST['ConfirmaperfilPalavra']);
-$palavra=md5($palavra);
-$Comf=md5($Comf);
+$palavra = md5($palavra);
+$Comf = md5($Comf);
 $email = $_POST['perfilEmail'];
 $id = $_POST['id'];
 $imagem = $_FILES['perfilAvatar']['name'];
@@ -17,13 +17,16 @@ $novoNome = "imagens/" . $imagem;
 $sql2 = "select perfilPassword from perfis where perfilId = " . $id;
 $passe = mysqli_query($con, $sql2);
 $resultado = mysqli_fetch_array($passe);
-if ($imagem != '') {
-                $sql="update perfis set ";
-                $sql.= " perfilAvatar='imagens/" . $imagem . "'";
-                copy($_FILES['perfilAvatar']['tmp_name'], $novoNome);
-            }
 
-elseif (isset($old) and isset($palavra)) {
+if ($imagem != '') {
+    $sql = "update perfis set ";
+    $sql .= " perfilAvatar='imagens/" . $imagem . "'";
+    copy($_FILES['perfilAvatar']['tmp_name'], $novoNome);
+    $sql.="where perfilId = $id";
+    $result = mysqli_query($con, $sql);
+    header("location:novoperfil.php?id={$id}");
+
+} elseif (isset($old) and isset($palavra)) {
     if ($old == $resultado['perfilPassword']) {
         if ($Comf == $palavra) {
             $sql = "Update perfis set perfilNome='" . $nome . "', perfilLocalidade='" . $localidade . "', perfilEmail='" . $email . "'";
