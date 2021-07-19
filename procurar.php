@@ -12,8 +12,8 @@ if (isset ($_GET['distrito'])) {
 } else {
     $distrito = -1;
 }
-if (isset ($_GET['nome'])) {
-    $nome = addslashes($_GET['nome']);
+if (isset ($_GET['txt'])) {
+    $nome = addslashes($_GET['txt']);
 } else {
     $nome = '';
 }
