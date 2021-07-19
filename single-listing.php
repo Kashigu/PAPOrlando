@@ -1,4 +1,9 @@
 <?php
+
+
+
+
+
 include_once("includes/body.inc.php");
 toposingle(SINGLE);
 $id = intval($_GET['id']);
@@ -40,8 +45,30 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                             <h2><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></h2>
                             <h4><?php echo $dadosEstabelecimentos['estabelecimentoLocalidade'] ?></h4>
                             <p><?php echo $dadosEstabelecimentos['estabelecimentoSlogan'] ?></p>
-                            <div class="open">Abre amanhã às 10 da manhã</div>
-                            <div class="closed">Fechado agora</div>
+
+                            <?php
+                            $hora=date("H",time())+1;
+                            $hora.=date("i",time());
+                            echo $hora;
+                             $horaI=  date("H",strtotime($dadosEstabelecimentos['estabelecimentoHoraInicial']));
+                             $horaI.= date("i",strtotime($dadosEstabelecimentos['estabelecimentoHoraInicial']));
+                            echo $horaI;
+                             $horaF= date("H",strtotime($dadosEstabelecimentos['estabelecimentoHoraFinal']));
+                             $horaF.= date("i",strtotime($dadosEstabelecimentos['estabelecimentoHoraFinal']));
+                             echo $horaF;
+                        //echo ($hora>=$dadosEstabelecimentos['estabelecimentoHoraInicial'] ?'s':'n');
+                            echo $horaI>=$dadosEstabelecimentos['estabelecimentoHoraInicial'];
+                            if($horaI>=$dadosEstabelecimentos['estabelecimentoHoraInicial'] && $horaF <= $dadosEstabelecimentos['estabelecimentoHoraFinal'])
+                            { ?>
+                                <div class="closed">Aberto desde
+                                    as <?php echo $dadosEstabelecimentos['estabelecimentoHoraInicial'] ?></div>
+                                <?php
+                            } else{
+                                ?>
+                                <div class="open">Fechado agora</div>
+                                <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -67,7 +94,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                         <div class="share-btn">
                             <a href="reserva.php?id=<?php echo $id ?>">Fazer Reserva</a>
                         </div>
-                        <div class="share-icon" >
+                        <div class="share-icon">
                             <a id="gosto" onclick="gosto(<?php echo $id ?>)" align="left" title="Gosto">
                                 <?php
                                 // verifica se o utilizador gosta da foto
@@ -106,19 +133,24 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                                 <legend>Rating:</legend>
                                 <?php
                                 $sql = "select ratingValor from ratings inner join redes on redeId = ratingRedeId
-                                        where redePerfilId =".$_SESSION['id']. " and redeEstabelecimentoId=".$id;
-                                $result=mysqli_query($con, $sql);
-                                $dados=mysqli_fetch_array($result);
+                                        where redePerfilId =" . $_SESSION['id'] . " and redeEstabelecimentoId=" . $id;
+                                $result = mysqli_query($con, $sql);
+                                $dados = mysqli_fetch_array($result);
                                 ?>
-                                <input type="radio" <?php if($dados[0]==5) echo " checked "?>   id="star5" name="ratings" value="5" onclick="rating(<?php echo $id ?>,5) ">
+                                <input type="radio" <?php if ($dados[0] == 5) echo " checked " ?> id="star5"
+                                       name="ratings" value="5" onclick="rating(<?php echo $id ?>,5) ">
                                 <label for="star5" title="Muito Bom">5 stars</label>
-                                <input type="radio" <?php if($dados[0]==4) echo " checked "?> id="star4" name="ratings" value="4" onclick="rating(<?php echo $id ?>,4) ">
+                                <input type="radio" <?php if ($dados[0] == 4) echo " checked " ?> id="star4"
+                                       name="ratings" value="4" onclick="rating(<?php echo $id ?>,4) ">
                                 <label for="star4" title="Bom">4 stars</label>
-                                <input type="radio" <?php if($dados[0]==3) echo " checked "?> id="star3" name="ratings" value="3" onclick="rating(<?php echo $id ?>,3) ">
+                                <input type="radio" <?php if ($dados[0] == 3) echo " checked " ?> id="star3"
+                                       name="ratings" value="3" onclick="rating(<?php echo $id ?>,3) ">
                                 <label for="star3" title="Neutro">3 stars</label>
-                                <input type="radio" <?php if($dados[0]==2) echo " checked "?> id="star2" name="ratings" value="2" onclick="rating(<?php echo $id ?>,2) ">
+                                <input type="radio" <?php if ($dados[0] == 2) echo " checked " ?> id="star2"
+                                       name="ratings" value="2" onclick="rating(<?php echo $id ?>,2) ">
                                 <label for="star2" title="Mau">2 stars</label>
-                                <input type="radio" <?php if($dados[0]==1) echo " checked "?>  id="star1" name="ratings" value="1" onclick="rating(<?php echo $id ?>,1) ">
+                                <input type="radio" <?php if ($dados[0] == 1) echo " checked " ?> id="star1"
+                                       name="ratings" value="1" onclick="rating(<?php echo $id ?>,1) ">
                                 <label for="star1" title="Horrivel">1 star</label>
                             </fieldset>
 

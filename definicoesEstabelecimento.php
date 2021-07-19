@@ -184,10 +184,12 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                         </div>
 
                         <div class="col-lg-6 mt-4">
+                            <label>Nome:</label>
                             <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?>"
                                    name="nomeEsta" id="nomeEsta" placeholder="Nome do Estabelecimento">
                         </div>
                         <div class="col-lg-3 mt-4">
+                            <label>Concelho:</label>
                             <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoLocalidade'] ?>"
                                    name="nomeLoca" id="nomeLoca" placeholder="Concelho">
                         </div>
@@ -214,8 +216,19 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
 
                         </div>
                         <div class="col-lg-6">
+                            <label>Slogan:</label>
                             <input type="text" value="<?php echo $dadosEstabelecimentos['estabelecimentoSlogan'] ?>"
                                    name="nomeSlogan" id="nomeSlogan" placeholder="Slogan">
+                        </div>
+                        <div class="col-lg-3">
+                            <label>Aberto a partir das:</label>
+                            <input type="time" value="<?php echo $dadosEstabelecimentos['estabelecimentoHoraInicial'] ?>"
+                                   name="HoraI" id="HoraF">
+                        </div>
+                        <div class="col-lg-3">
+                            <label>Fechado a partir das:</label>
+                            <input type="time" value="<?php echo $dadosEstabelecimentos['estabelecimentoHoraFinal'] ?>"
+                                   name="HoraF" id="HoraF">
                         </div>
                         <div class="col-lg-12">
                             <textarea name="reviewTexto" id="myTextarea" placeholder="Sobre o Estabelecimento"><?php echo $dadosEstabelecimentos['estabelecimentoDescricao'] ?></textarea>

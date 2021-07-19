@@ -333,7 +333,14 @@ function certeza() {
         erro = true;
         $('#Erro').html('Precisa de Categoria');
     }
-
+    if ($('#HoraI').val() == '--:--'){
+        erro=true;
+        $('#ErroHI').html('Precisa de Hora ')
+    }
+    if ($('#HoraF').val() == '--:--'){
+        erro=true;
+        $('#ErroHF').html('Precisa de Hora')
+    }
     if ($('#distrito').val() == -1) {
         erro = true;
         $('#ErroD').html('Precisa de Distrito');

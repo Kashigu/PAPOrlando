@@ -191,10 +191,12 @@ $id = intval($_GET['id']);
 
                             </div>
                             <div class="col-lg-6 mt-4">
+                                <label>Nome:</label>
                                 <span id="ErroEN"></span>
                                 <input type="text" name="nomeEsta" id="nomeEsta" placeholder="Nome do Estabelecimento">
                             </div>
                             <div class="col-lg-3 mt-4">
+                                <label>Concelho:</label>
                                 <span id="ErroEL"></span>
                                 <input type="text" name="nomeLoca" id="nomeLoca" placeholder="Concelho">
                             </div>
@@ -215,15 +217,25 @@ $id = intval($_GET['id']);
                                     ?>
                                 </select>
 
-
+                                <span id="ErroD"></span>
                             </div>
+
 
                             <div class="col-lg-6">
+                                <label>Slogan:</label>
                                 <input type="text" name="nomeSlogan" id="nomeSlogan" placeholder="Slogan">
                             </div>
-                            <div CLASS="col-lg-2 offset-lg-2"></div>
+                            <div class="col-lg-3">
+                                <label>Aberto a partir das: </label>
+                                <input type="time" name="HoraI" id="HoraI" >
+                                <span id="ErroHI"></span>
+                            </div>
+                            <div class="col-lg-3">
+                                <label>Fechado a partir das: </label>
+                                <input type="time" name="HoraF" id="HoraF">
+                                <span id="ErroHF"></span>
+                            </div>
 
-                            <span id="ErroD"></span>
 
                             <div class="col-lg-12">
                                 <textarea name="reviewTexto" id="myTextarea"
@@ -231,42 +243,46 @@ $id = intval($_GET['id']);
                             </div>
                             <div class="col-lg-6 mt-3">
                                 <label>Rua: </label>
-                                <input type="text" name="rua" id="rua" placeholder="Rua" class="mt-3">
                                 <span id="ErroR"></span>
+                                <input type="text" name="rua" id="rua" placeholder="Rua" class="mt-3">
+
                                 <br>
                                 <label>Número: </label>
-                                <input type="tel" name="numero" id="numero" placeholder="Número" class="mt-3">
                                 <span id="ErroNum"></span>
                                 <span id="ErroNi"></span>
+                                <input type="tel" name="numero" id="numero" placeholder="Número" class="mt-3">
+
+
                                 <br>
                                 <label class="mt-2">Email: </label>
-                                <input type="email" name="email" id="email" placeholder="Email do Estabelecimento"
-                                       class="mt-3">
                                 <span id="ErroEmail"></span>
                                 <span id="ErroEi"></span>
+                                <input type="email" name="email" id="email" placeholder="Email do Estabelecimento"
+                                       class="mt-3">
                             </div>
                             <div class="col-lg-6 mt-3">
                                 <div class="row">
                                     <label>Horas de Trabalho: </label>
                                     <textarea name="reviewTexto1" id="myTextarea1"
-                                              placeholder="Horas de Trabalho"></textarea>
+                                              placeholder="Segunda-Feira                8:00 - 16:00 ..."></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <label>Logótipo: </label>
-                                <input type="file" name="logo" id="logo">
                                 <span id="Elogo"></span>
+                                <input type="file" name="logo" id="logo">
 
                             </div>
                             <div class="col-lg-6">
                                 <label>Imagem de Fundo: </label>
-                                <input type="file" name="fundo" id="fundo">
                                 <span id="Efundo"></span>
+                                <input type="file" name="fundo" id="fundo">
                             </div>
                             <div class="col-lg-6 mt-4">
                                 <label>Posição do Estabelecimento no Google Maps: </label>
-                                <input type="text" name="google" id="google">
                                 <span id="posicao"></span>
+                                <input type="text" name="google" id="google">
+
 
                             </div>
                             <div class="col-lg-6">

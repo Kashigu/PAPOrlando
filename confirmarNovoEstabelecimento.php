@@ -18,7 +18,8 @@ $sobre1 = $_POST['reviewTexto1'];
 $logo = $_FILES['logo']['name'];
 $fundo = $_FILES['fundo']['name'];
 $google = $_POST['google'];
-
+$horaI= addslashes($_POST['HoraI']);
+$horaF= addslashes($_POST['HoraF']);
 
 
 $novoNome="imagens/".$logo;
@@ -36,11 +37,11 @@ echo $sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimen
                                     estabelecimentoDescricao,estabelecimentoDescricao2,
                                     estabelecimentoLocalidade,estabelecimentoDistritoId,estabelecimentoMorada,
                                     estabelecimentoTelefone,estabelecimentoEmail,
-                                    estabelecimentoMiniaturaURL,estabelecimentoFundoURL,estabelecimentoPosicao) values('" . $idUtilizador . "','" . $idCategoria . "','" . $nome . "','" . $nomeSlogan . "',
+                                    estabelecimentoMiniaturaURL,estabelecimentoFundoURL,estabelecimentoPosicao,estabelecimentoHoraInicial,estabelecimentoHoraFinal) values('" . $idUtilizador . "','" . $idCategoria . "','" . $nome . "','" . $nomeSlogan . "',
                                                                         '" . $sobre . "','" . $sobre1 . "','" . $nomeLoca . "',
                                                                         '" . $nomeDistrito . "','" . $rua . "','" . $numero . "',
                                                                         '" . $email . "',
-                                                                        '" . $novoNome . "','" . $novoNome1 . "','" . novoMap($google,300,385) . "');";
+                                                                        '" . $novoNome . "','" . $novoNome1 . "','" . novoMap($google,300,385) . "','" . $horaI . "','" . $horaF . "');";
 
 mysqli_query($con, $sql);
 $idEst=mysqli_insert_id($con); // último Id criado pelo Insert

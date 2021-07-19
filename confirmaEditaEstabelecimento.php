@@ -17,6 +17,9 @@ $logo = $_FILES['logo']['name'];
 $fundo = $_FILES['fundo']['name'];
 $google = $_POST['google'];
 
+$horaI= addslashes($_POST['HoraI']);
+$horaF= addslashes($_POST['HoraF']);
+
 
 $novoNome="imagens/".$logo;
 $novoNome1="imagens/".$fundo;
@@ -31,12 +34,12 @@ $sql="Update estabelecimentos set estabelecimentoNome='".$nome."', estabelecimen
                                     , estabelecimentoDistritoId='".$nomeDistrito."'
                                     , estabelecimentoMorada='".$rua."'
                                     , estabelecimentoTelefone='".$numero."'
-                                    , estabelecimentoCategoriaId='".$idCategoria."'";
+                                    , estabelecimentoCategoriaId='".$idCategoria."'
+                                    , estabelecimentoHoraInicial='".$horaI."'
+                                    , estabelecimentoHoraFinal='".$horaF."'";
 if($google!=''){
    $sql.=", estabelecimentoPosicao='".novoMap($google,300,385)."'";
 }
-
-
 
 if($logo!=''){
     $sql.=", estabelecimentoMiniaturaURL='imagens/".$logo."'";
