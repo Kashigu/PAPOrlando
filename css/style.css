@@ -1825,6 +1825,14 @@ direita {
     color: #fff;
     letter-spacing: 0.2px;
 }
+.arrange-items .arrange-text .closed { /* caixa rosa*/
+    display: inline-block;
+    padding: 7px 20px;
+    background: #CACDD6;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 0.2px;
+}
 
 .arrange-items .arrange-text .open.tomorrow { /* caixa preta*/
     background: #CACDD6;

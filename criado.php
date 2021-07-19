@@ -40,8 +40,23 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                             <h2><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></h2>
                             <h4><?php echo $dadosEstabelecimentos['estabelecimentoLocalidade'] ?></h4>
                             <p><?php echo $dadosEstabelecimentos['estabelecimentoSlogan'] ?></p>
-                            <div class="open">Abre amanhã às 10 da manhã</div>
-                            <div class="closed">Fechado agora</div>
+                            <?php
+                            $hora = date("H", time()) + 1;
+                            $hora .= ':';
+                            $hora .= date("i", time());
+                            $hora .= ':00';
+                            $hora;
+                            //echo ($hora>=$dadosEstabelecimentos['estabelecimentoHoraInicial'] ?'s':'n');
+                            if ($hora >= $dadosEstabelecimentos['estabelecimentoHoraInicial'] and $hora <= $dadosEstabelecimentos['estabelecimentoHoraFinal']) { ?>
+                                <div class="closed">Aberto desde
+                                    as <?php echo $dadosEstabelecimentos['estabelecimentoHoraInicial'] ?> até às <?php echo $dadosEstabelecimentos['estabelecimentoHoraFinal'] ?></div>
+                                <?php
+                            } else {
+                                ?>
+                                <div class="open">Fechado agora</div>
+                                <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>

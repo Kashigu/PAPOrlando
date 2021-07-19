@@ -71,7 +71,23 @@ while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
                 <h5><?php echo $dadosEstabelecimentos['estabelecimentoNome'] ?></h5>
                 <span><?php echo $dadosEstabelecimentos['estabelecimentoLocalidade'] ?></span>
                 <p><?php echo $dadosEstabelecimentos['estabelecimentoSlogan'] ?></p>
-                <div class="open tomorrow">Abre amanhã às 10 da manhã</div>
+                <?php
+                $hora = date("H", time()) + 1;
+                $hora .= ':';
+                $hora .= date("i", time());
+                $hora .= ':00';
+                $hora;
+                //echo ($hora>=$dadosEstabelecimentos['estabelecimentoHoraInicial'] ?'s':'n');
+                if ($hora >= $dadosEstabelecimentos['estabelecimentoHoraInicial'] and $hora <= $dadosEstabelecimentos['estabelecimentoHoraFinal']) { ?>
+                    <div class="open tomorrow" style="background:#FF5581">Aberto até
+                        às <?php echo $dadosEstabelecimentos['estabelecimentoHoraFinal'] ?></div>
+                    <?php
+                } else {
+                    ?>
+                    <div class="closed" style="background:#CACDD6">Fechado agora</div>
+                    <?php
+                }
+                ?>
             </div>
         </a>
     </div>

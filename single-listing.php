@@ -1,9 +1,6 @@
 <?php
 
 
-
-
-
 include_once("includes/body.inc.php");
 toposingle(SINGLE);
 $id = intval($_GET['id']);
@@ -47,23 +44,17 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                             <p><?php echo $dadosEstabelecimentos['estabelecimentoSlogan'] ?></p>
 
                             <?php
-                            $hora=date("H",time())+1;
-                            $hora.=date("i",time());
-                            echo $hora;
-                             $horaI=  date("H",strtotime($dadosEstabelecimentos['estabelecimentoHoraInicial']));
-                             $horaI.= date("i",strtotime($dadosEstabelecimentos['estabelecimentoHoraInicial']));
-                            echo $horaI;
-                             $horaF= date("H",strtotime($dadosEstabelecimentos['estabelecimentoHoraFinal']));
-                             $horaF.= date("i",strtotime($dadosEstabelecimentos['estabelecimentoHoraFinal']));
-                             echo $horaF;
-                        //echo ($hora>=$dadosEstabelecimentos['estabelecimentoHoraInicial'] ?'s':'n');
-                            echo $horaI>=$dadosEstabelecimentos['estabelecimentoHoraInicial'];
-                            if($horaI>=$dadosEstabelecimentos['estabelecimentoHoraInicial'] && $horaF <= $dadosEstabelecimentos['estabelecimentoHoraFinal'])
-                            { ?>
+                            $hora = date("H", time()) + 1;
+                            $hora .= ':';
+                            $hora .= date("i", time());
+                            $hora .= ':00';
+                            $hora;
+                            //echo ($hora>=$dadosEstabelecimentos['estabelecimentoHoraInicial'] ?'s':'n');
+                            if ($hora >= $dadosEstabelecimentos['estabelecimentoHoraInicial'] and $hora <= $dadosEstabelecimentos['estabelecimentoHoraFinal']) { ?>
                                 <div class="closed">Aberto desde
-                                    as <?php echo $dadosEstabelecimentos['estabelecimentoHoraInicial'] ?></div>
+                                    as <?php echo $dadosEstabelecimentos['estabelecimentoHoraInicial'] ?> até às <?php echo $dadosEstabelecimentos['estabelecimentoHoraFinal'] ?></div>
                                 <?php
-                            } else{
+                            } else {
                                 ?>
                                 <div class="open">Fechado agora</div>
                                 <?php
