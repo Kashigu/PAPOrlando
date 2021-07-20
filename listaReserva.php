@@ -50,7 +50,7 @@ $id = intval($_GET['id']);
                     </div>
                 </div>
         </div>
-        <input type="hidden" id="ReservaID">
+        <input type="hidden" id="ReservaID" value="">
         </form >
     </div>
 </div>

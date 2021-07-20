@@ -620,8 +620,8 @@ function topAdmin($menu = GESTAO)
             $('#searchOptions').change(function () {
                 fillTableEstabelecimentosProcurar($('#searchEstabelecimento').val(), $('#searchCategoria').val(),  $('#searchDistrito').val(),<?php echo $pg?>, this.value, $('#searchRatings').val());
             });
-
-            fillTableEstabelecimentosProcurar('',-1,-1,<?php echo $pg?>,-1); //os valores não são guardados quando passa de página //
+            $('#searchOptions').trigger('change');
+            //fillTableEstabelecimentosProcurar('',-1,-1,<?php //echo $pg?>,-1); //os valores não são guardados quando passa de página //
 
             <?php }
             if ($menu == GALERIA){
