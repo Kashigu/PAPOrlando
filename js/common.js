@@ -36,15 +36,12 @@ function def(id) {
                 imagem:imagem
             },
             success: function (result) {
-                if ($('#perfilOld').val() != (result)) {
-                    erro = true;
-                }
-                if ((result) == 1) {
-                    erro = true;
+
+                if (parseInt(result) == 1) {
+
                     $('#frmEdita').submit();
 
-                }
-                if ((result) == 0) {
+                }else {
                     erro = true;
                     $('#MSG').html('Palavra Mal Introduzida');
 
