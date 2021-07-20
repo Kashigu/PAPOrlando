@@ -83,20 +83,7 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                 <div class="col-lg-4 offset-lg-1">
                     <div class="intro-share">
                         <div class="share-btn">
-                            <?php
-                            $sql1="select * from categorias inner join estabelecimentos on categoriaId=estabelecimentoCategoriaId where estabelecimentoId=".$id;
-                            $resultadoCat=mysqli_query($con,$sql1);
-                            $dadosCat=mysqli_fetch_array($resultadoCat);
-                            if ($dadosCat['categoriaNome']=="Hoteis"){
-                                ?>
-                                <a href="check.php?id=<?php echo $id ?>">Fazer Reserva</a>
-                            <?php
-                            }elseif($dadosCat['categoriaNome']!="Hoteis"){
-                            ?>
                             <a href="reserva.php?id=<?php echo $id ?>">Fazer Reserva</a>
-                            <?php
-                            }
-                            ?>
                         </div>
                         <div class="share-icon">
                             <a id="gosto" onclick="gosto(<?php echo $id ?>)" align="left" title="Gosto">
