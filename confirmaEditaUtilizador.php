@@ -19,14 +19,15 @@ $passe = mysqli_query($con, $sql2);
 $resultado = mysqli_fetch_array($passe);
 echo $old;?><br>
 <?php
+echo $resultado['perfilPassword'];
+?><br>
+<?php
 echo $palavra;
 ?><br>
 <?php
 echo $Comf;
 ?><br>
-<?php
-echo $resultado['perfilPassword'];
-?><br>
+
 <?php
 if (isset($old) and isset($palavra)) {
     if ($old == $resultado['perfilPassword']) {
@@ -44,7 +45,6 @@ if (isset($old) and isset($palavra)) {
         }
     }
 }
-
 
 ?>
 
