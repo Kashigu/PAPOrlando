@@ -221,10 +221,9 @@ $dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)
                     <div class="about-right">
                         <div class="contact-info">
                             <div class="map">
-                                <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49862.023915177015!2d-8.931703043416729!3d38.64022258033498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19409858c24d63%3A0x500ebbde4910920!2sPinhal%20Novo!5e0!3m2!1spt-PT!2spt!4v1615487503795!5m2!1spt-PT!2spt"
-                                        height="385" style="border:0;" allowfullscreen="">
-                                </iframe>
+                                <?php
+                                echo $dadosEstabelecimentos['estabelecimentoPosicao']
+                                ?>
                             </div>
                             <div class="contact-text">
                                 <h4>Informação</h4>
