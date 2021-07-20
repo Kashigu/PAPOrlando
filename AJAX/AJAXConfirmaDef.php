@@ -3,6 +3,7 @@ include_once("../includes/body.inc.php");
 
 $id = $_POST['id'];
 $old = addslashes($_POST['password']);
+$old=md5($old);
 
 
 $sql2 = "select perfilPassword from perfis where perfilId = " . $id;

@@ -29,6 +29,16 @@ echo $Comf;
 ?><br>
 
 <?php
+/*if ($imagem != '') {
+    $sql="update perfis set ";
+    $sql .= ", perfilAvatar='imagens/" . $imagem . "'";
+    copy($_FILES['perfilAvatar']['tmp_name'], $novoNome);
+    $sql.="where perfilId =".$id;
+    $result = mysqli_query($con, $sql);
+    //header("location:novoperfil.php?id={$id}");
+}*/
+
+
 if (isset($old) and isset($palavra)) {
     if ($old == $resultado['perfilPassword']) {
         if ($Comf == $palavra) {
