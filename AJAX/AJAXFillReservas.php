@@ -77,7 +77,7 @@ while ($dadosEstabelecimentos = mysqli_fetch_array($resultEstabelecimentos)) {
                                         onclick="editaReserva(<?php echo $dadosEstabelecimentos['reservaId']; ?>)"><i
                                             class="fa fa-edit text-primary"></i></a></td>
                             <td class="centertext"><a
-                                        onclick="eliminaReserva(<?php echo $dadosEstabelecimentos['reservaId']; ?>)"> <i
+                                        onclick="eliminaReserva(<?php echo $dadosEstabelecimentos['reservaId'] ?>,<?php echo $id; ?>)"> <i
                                             class="fa fa-trash  text-danger"></i></a></td>
 
                             <?php

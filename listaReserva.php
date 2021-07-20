@@ -25,8 +25,8 @@ $id = intval($_GET['id']);
      aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form method="post" enctype="multipart/form-data" class="contact-form">
 
+                <input type="hidden" id="PerfilId" value="<?php echo $id ?>">
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Eliminar Reserva</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -50,8 +50,8 @@ $id = intval($_GET['id']);
                     </div>
                 </div>
         </div>
-        <input type="hidden" id="ReservaID" value="">
-        </form >
+        <input type="hidden" id="ReservaID" value="-1">
+
     </div>
 </div>
 

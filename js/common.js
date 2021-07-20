@@ -655,13 +655,16 @@ function fillTableReservas(txt = '', id) {
 
 }
 
-function eliminaReserva(id) {  // abre o modal e injecta o ID
-    $("#ReservaID").html(id);
+function eliminaReserva(id,per) {  // abre o modal e injecta o ID
+    $("#ReservaID").val(id);
+
+
     $.ajax({
         url: "AJAX/AJAXGetNameReservas.php",
         type: "post",
         data: {
-            idReserva: id
+            idReserva: id,
+            idPerfil: per
         },
         success: function (result) {
 
@@ -674,11 +677,13 @@ function eliminaReserva(id) {  // abre o modal e injecta o ID
 
 function DeleteTableReserva() {                                           // Problemas com o id quando confirmo o delete //
     $('#staticBackdropDele').modal('toggle');
+
     $.ajax({
         url: "AJAX/AJAXDeleteReservas.php",
         type: "post",
         data: {
-            reserva: parseInt($('#ReservaID').html())
+            reserva: parseInt($('#ReservaID').val()),
+
         },
         success: function (result) {
             fillTableReservas('', result);
