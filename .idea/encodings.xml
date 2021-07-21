@@ -8,6 +8,13 @@
     <file url="file://$PROJECT_DIR$/AJAX/AJAXConfirmaLogin.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXConfirmaNumero.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXDeleteCategorias.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AJAX/AJAXDeleteDistrito.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AJAX/AJAXDeleteEstabelecimentos.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AJAX/AJAXDeleteImagens.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AJAX/AJAXDeleteReservas.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AJAX/AJAXDeleteUtilizador.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AJAX/AJAXEditCategorias.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AJAX/AJAXEditDistritos.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXFillCategorias.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXFillComentarios.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXFillDistritos.php" charset="UTF-8" />
@@ -22,9 +29,11 @@
     <file url="file://$PROJECT_DIR$/AJAX/AJAXGetFavoritoEstabelecimento.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXGetGostoEstabelecimento.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXGetNameCategorias.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AJAX/AJAXGetNameDistritos.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXGetNameEstabelecimentos.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXGetNameImagens.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXGetNameReservas.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AJAX/AJAXGetNameUtilizador.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXGetRatingEstabelecimento.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXPutComentarioEstabelecimento.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXPutFavoritoEstabelecimento.php" charset="UTF-8" />
@@ -45,27 +54,42 @@
     <file url="file://$PROJECT_DIR$/Admin/index.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Admin/utilizadores.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/DefPerfil.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Logout.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Register.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aceitarReserva.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/apagarReservasRecusadas.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/confirmaEditaEstabelecimento.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/confirmaEditaImagem.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/confirmaEditaReserva.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/confirmaEditaUtilizador.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/confirmaListaReserva.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/confirmaLogin.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/confirmaNovaCategoria.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/confirmaNovaImagem.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/confirmarNovoEstabelecimento.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/criado.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/criarEstabelecimento.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/definicoesEstabelecimento.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/editarCategorias.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/galeria.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hotel.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/includes/body.inc.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/includes/config.inc.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/index.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/common.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/listaHistorico.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/listaReserva.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/listaReservaAdmin.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/map.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/md5.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/novoperfil.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/procurar.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recusarReserva.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/reserva.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/restaurante.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/segundo.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/single-listing.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/teste.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/teste.php" charset="UTF-8" />
     <file url="PROJECT" charset="ISO-8859-1" />
   </component>
 </project>
