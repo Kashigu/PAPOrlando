@@ -5,7 +5,7 @@ session_start();
 
 
 $idPer=$_SESSION['id'];
-$idEst=intval($_POST['id']); //vem escondido no formul·rio
+$idEst=intval($_POST['id']); //vem escondido no formul√°rio
 $descricao=$_POST['descricao'];
 $data=addslashes($_POST['data']);
 $hora=addslashes($_POST['hora']);

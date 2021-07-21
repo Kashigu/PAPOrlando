@@ -44,7 +44,7 @@ header("location:categorias.php");
 
 
 
-//------------------------------------------------------------- Não consegui -------------------------------------//
+
 
 include_once("../includes/body.inc.php");
 $categoria = addslashes($_POST['categoriaNome']);

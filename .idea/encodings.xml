@@ -2,6 +2,12 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/123.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AJAX/AJAXAddDistritos.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AJAX/AJAXConfirmaDef.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AJAX/AJAXConfirmaEmail.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AJAX/AJAXConfirmaLogin.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AJAX/AJAXConfirmaNumero.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AJAX/AJAXDeleteCategorias.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXFillCategorias.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXFillComentarios.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXFillDistritos.php" charset="UTF-8" />
@@ -26,14 +32,20 @@
     <file url="file://$PROJECT_DIR$/AJAX/AJAXPutRatingEstabelecimento.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXVerifyEmail.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXVerifyEmails.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Admin/Logout.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Admin/ativarAdmin.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Admin/ativarUtilizador.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Admin/confirmaNovaCategoria.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/Admin/distritos.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/Admin/categorias.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Admin/confirmaEditaCategoria.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Admin/confirmaNovaCategoria.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Admin/desativarAdmin.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Admin/desativarUtilizador.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Admin/distritos.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Admin/estabelecimentos.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Admin/index.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Admin/utilizadores.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/Admin/utilizadores.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/DefPerfil.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/confirmaEditaUtilizador.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/confirmaLogin.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/confirmaNovaCategoria.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/confirmarNovoEstabelecimento.php" charset="UTF-8" />
