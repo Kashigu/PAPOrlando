@@ -326,7 +326,7 @@ function certeza() {
     let numero = $('#numero').val();
     let erro = false;
 
-    if ($('#categoria').val() == 0) {
+    if ($('#categoria').val() == -1) {
         erro = true;
         $('#Erro').html('Precisa de Categoria');
     }
