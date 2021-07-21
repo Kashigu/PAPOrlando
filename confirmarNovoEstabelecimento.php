@@ -33,7 +33,7 @@ copy($_FILES['fundo']['tmp_name'],$novoNome1);
 
 
 
-echo $sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimentoCategoriaId,estabelecimentoNome,estabelecimentoSlogan,
+$sql = "insert into estabelecimentos (estabelecimentoPerfilId,estabelecimentoCategoriaId,estabelecimentoNome,estabelecimentoSlogan,
                                     estabelecimentoDescricao,estabelecimentoDescricao2,
                                     estabelecimentoLocalidade,estabelecimentoDistritoId,estabelecimentoMorada,
                                     estabelecimentoTelefone,estabelecimentoEmail,
