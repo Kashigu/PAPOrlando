@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 include_once("config.inc.php");
 $con = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
-$con->set_charset("utf8");
+$con->set_charset("utf-8");
 $idEstabelecimento=0;
 if(isset($_GET['id']))
     $idEstabelecimento=$_GET['id'];

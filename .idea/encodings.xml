@@ -26,9 +26,11 @@
     <file url="file://$PROJECT_DIR$/AJAX/AJAXPutRatingEstabelecimento.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXVerifyEmail.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AJAX/AJAXVerifyEmails.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Admin/ativarAdmin.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Admin/ativarUtilizador.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Admin/confirmaNovaCategoria.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Admin/distritos.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/Admin/estabelecimentos.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/Admin/estabelecimentos.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Admin/index.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Admin/utilizadores.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/DefPerfil.php" charset="UTF-8" />
